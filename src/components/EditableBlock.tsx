@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./EditableBlock.module.css";
 import Image from "next/image";
 import type { BlockType } from "@prisma/client";
+import { useRouter } from "next/navigation";
 
 interface EditableBlockProps {
   relUrl: string;
@@ -27,9 +28,9 @@ export const EditableBlock = ({
   const [content, setContent] = useState<string | null>(initialContent ?? null);
   const [editing, setEditing] = useState(false);
   const [newContent, setNewContent] = useState("");
+  const router = useRouter();
 
   const saveBlock = async () => {
-
     try {
       const res = await fetch("/api/blocks", {
         method: "POST",
@@ -46,6 +47,7 @@ export const EditableBlock = ({
       if (res.ok) {
         setContent(newContent);
         setEditing(false);
+        router.refresh(); 
       } else {
         console.error(await res.text());
       }
