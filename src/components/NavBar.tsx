@@ -5,10 +5,13 @@ export default function NavBar() {
   return (
     <header className={styles.nav}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.brand}>Project Unknown</Link>
+        <Link href="/" className={styles.brand}>
+          Project Unknown
+        </Link>
         <nav className={styles.links}>
-          <Link href="/about" className={styles.link}>About</Link>
-          <Link href="/contact" className={styles.link}>Contact</Link>
+          <Link className={styles.link} href="/about-us">About us (static)</Link>
+          {/* <Link className={styles.link} href="/pages/example">Dynamic page example</Link>
+          <Link className={styles.link} href="/admin/pages">Admin: Pages</Link> */}
         </nav>
       </div>
     </header>

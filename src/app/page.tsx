@@ -1,13 +1,28 @@
-import styles from "./index.module.css";
+import { EditableBlock } from "~/components/EditableBlock"
+import { getBlocksForPage } from "~/server/blocks";
 
-export default function Home() {
+export default async function Home() {
+
+  const blockMap = await getBlocksForPage("/");
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        <h1 className={styles.title}>
-          Project <span className={styles.pinkSpan}>Unknown</span>
-        </h1>
-      </div>
+    <main style={{ padding: 24 }}>
+      <h1>Project Unknown</h1>
+
+      <EditableBlock
+          relUrl="/"
+          blockKey="text1"
+          isAdmin={true}
+          initialContent={blockMap["text1"]?.content}
+          blockType={blockMap["text1"]?.blockType ?? "TEXT"}
+        />
+
+        <EditableBlock
+          relUrl="/"
+          blockKey="text2"
+          isAdmin={true}
+          initialContent={blockMap["text2"]?.content}
+          blockType={blockMap["text2"]?.blockType ?? "TEXT"}
+        />
     </main>
   );
 }
