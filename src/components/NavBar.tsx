@@ -124,7 +124,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   return (
     <header className={`${styles.header} ${styles[mode]}`}>
       <div
-  className={cx("container", styles.headerContainer, active && styles.searchActive)}
+  className={cx("containerr", styles.headerContainer, active && styles.searchActive)}
 >
         <Link href={"/"} className={styles.leftHeader}>
           <Image
