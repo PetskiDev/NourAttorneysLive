@@ -16,6 +16,8 @@ export default async function Home() {
           blockType={blockMap["text1"]?.blockType ?? "TEXT"}
         />
 
+        <h2>TIP</h2>
+
         <EditableBlock
           relUrl="/"
           blockKey="text2"
