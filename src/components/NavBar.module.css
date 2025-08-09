@@ -472,9 +472,10 @@
   left: 50%;
   transform: translate(-50%, 100%);
   width: 100%;
+  animation: menuItemSlideDown .8s linear forwards;
 }
 
-.mobilePanelTop.open .mobileNavItem>span:nth-child(2){
+.activeItem>span:nth-child(2){
   animation: menuItemSlideUp .8s linear forwards;
 }
 
@@ -496,19 +497,21 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-  .bar,
-  .mobileOverlay,
-  .mobilePanelTop,
-  .searchInput,
-  .searchLabelBtn,
-  .searchBox::after {
-    transition: none !important;
+@keyframes menuItemSlideDown {
+  from {
+    transform: translate(-50%, 0%);
   }
 
-  .mobilePanelTop.open {
-    transform: translate3d(0, 0, 0)!important;
+  10% {
+    transform: translate(-50%, 55%);
+  }
+
+  20%{
+    transform: translate(-50%, 100%);
+  }
+
+  to {
+    transform: translate(-50%, 100%);
   }
 }
 

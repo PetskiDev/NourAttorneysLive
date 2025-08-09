@@ -33,6 +33,51 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
+  const [activeCount, setActiveCount] = useState(0);
+const [menuAnimating, setMenuAnimating] = useState(false);
+const timersRef = useRef<number[]>([]);
+
+const clearTimers = () => {
+  timersRef.current.forEach((t) => clearTimeout(t));
+  timersRef.current = [];
+};
+
+const openMenu = () => {
+  if (menuAnimating || menuOpen) return;
+  setMenuAnimating(true);
+  setMenuOpen(true);
+  setActiveCount(0);
+  for (let i = 1; i <= navbarPages.length; i++) {
+    const t = window.setTimeout(() => setActiveCount(i), i * 100);
+    timersRef.current.push(t);
+  }
+  const done = window.setTimeout(
+    () => setMenuAnimating(false),
+    navbarPages.length * 100 + 20
+  );
+  timersRef.current.push(done);
+};
+
+const closeMenu = () => {
+  if (menuAnimating || !menuOpen) return;
+  setMenuAnimating(true);
+  const start = activeCount;
+  for (let step = 0; step < start; step++) {
+    const nextCount = start - 1 - step;
+    const t = window.setTimeout(() => setActiveCount(nextCount), step * 100);
+    timersRef.current.push(t);
+  }
+  const done = window.setTimeout(() => {
+    setMenuOpen(false);
+    setMenuAnimating(false);
+    clearTimers();
+  }, start * 100 + 20);
+  timersRef.current.push(done);
+};
+
+const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
+
+
   // --- Mobile menu state ---
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -280,7 +325,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu-panel"
-            onClick={() => setMenuOpen((o) => !o)}
+            onClick={toggleMenu}
+
           >
             <span className={styles.burger} aria-hidden="true">
               <span className={cx(styles.bar, styles.barTop)} />
@@ -305,12 +351,13 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
         aria-label="Mobile Menu"
       >
         <nav className={styles.mobileNav}>
-          {navbarPages.map((p) => (
+          {navbarPages.map((p, index) => (
             <Link
               key={p.link}
               href={p.link}
-              className={styles.mobileNavItem}
-              onClick={() => setMenuOpen(false)}
+              className={cx(styles.mobileNavItem, index < activeCount && styles.activeItem)}
+
+              onClick={closeMenu}
             >
               <span>{p.title}</span>
               <span>{p.title}</span>
