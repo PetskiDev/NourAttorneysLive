@@ -11,12 +11,13 @@ export async function POST(req: Request) {
 
     await db.block.upsert({
       where: { pageRelUrl_key: { pageRelUrl: data.relUrl, key: data.key } },
-      update: { content: data.content, blockType: data.blockType },
+      update: { content: data.content, blockType: data.blockType, elementTag: data.elementTag },
       create: {
         pageRelUrl: data.relUrl,
         key: data.key,
         content: data.content,
         blockType: data.blockType,
+        elementTag: data.elementTag,
       },
     });
 

@@ -24,6 +24,7 @@ model Block {
   key        String
   blockType  BlockType
   content    String
+  elementTag String?
   updatedAt  DateTime  @updatedAt
 
   @@unique([pageRelUrl, key], name: "pageRelUrl_key") 

@@ -6,9 +6,9 @@ export async function getBlocksForPage(page: string) {
     where: { pageRelUrl: page },
   });
 
-  const blockMap: Record<string, { content: string; blockType: BlockType }> = {};
+  const blockMap: Record<string, { content: string; blockType: BlockType; elementTag?: string | null }> = {};
   for (const block of blocks) {
-    blockMap[block.key] = { content: block.content, blockType: block.blockType };
+    blockMap[block.key] = { content: block.content, blockType: block.blockType, elementTag: block.elementTag };
   }
 
   return blockMap;
