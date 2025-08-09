@@ -3,6 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useMemo, useState } from "react";
+import MediaLibraryModal from "~/components/MediaLibraryModal";
 import { z } from "zod";
 
 const PersonSchema = z.object({
@@ -32,6 +33,7 @@ export default function AdminPeoplePage() {
     imageUrl: "",
     featured: false,
   });
+  const [showCreateMedia, setShowCreateMedia] = useState(false);
 
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editForm, setEditForm] = useState<EditablePerson | null>(null);
@@ -79,6 +81,7 @@ export default function AdminPeoplePage() {
       });
       if (!res.ok) throw new Error(`Create failed: ${res.status}`);
       setCreateForm({ name: "", role: "", imageUrl: "", featured: false });
+      setShowCreateMedia(false);
       await loadPeople();
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : "Unknown error";
@@ -219,20 +222,25 @@ export default function AdminPeoplePage() {
           />
         </div>
         <div>
-          <label
-            htmlFor="imageUrl"
-            style={{ display: "block", fontWeight: 600 }}
-          >
-            Image URL
+          <label htmlFor="imageUrl" style={{ display: "block", fontWeight: 600 }}>
+            Image
           </label>
-          <input
-            id="imageUrl"
-            value={createForm.imageUrl ?? ""}
-            onChange={(e) =>
-              setCreateForm((f) => ({ ...f, imageUrl: e.target.value }))
-            }
-            style={{ width: "100%" }}
-          />
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <div style={{ width: 120, height: 60, position: "relative", border: "1px solid #ddd", borderRadius: 6, overflow: "hidden", background: "#fafafa" }}>
+              {createForm.imageUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={createForm.imageUrl} alt="Preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              ) : (
+                <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "#999", fontSize: 12 }}>No image</div>
+              )}
+            </div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <button type="button" onClick={() => setShowCreateMedia(true)}>Select image</button>
+              {createForm.imageUrl ? (
+                <button type="button" onClick={() => setCreateForm((f) => ({ ...f, imageUrl: "" }))}>Clear</button>
+              ) : null}
+            </div>
+          </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <input
@@ -251,6 +259,15 @@ export default function AdminPeoplePage() {
           </button>
         </div>
       </form>
+
+      <MediaLibraryModal
+        open={showCreateMedia}
+        onClose={() => setShowCreateMedia(false)}
+        onSelect={(url) => {
+          setCreateForm((f) => ({ ...f, imageUrl: url }));
+          setShowCreateMedia(false);
+        }}
+      />
 
       <div style={{ overflowX: "auto" }}>
         <table

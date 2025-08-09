@@ -1,5 +1,6 @@
 import { db } from "~/server/db";
 import { type NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { z } from "zod";
 
 const PersonSchema = z.object({
@@ -34,6 +35,7 @@ export async function POST(req: NextRequest) {
         featured: data.featured,
       },
     });
+    revalidatePath("/people");
     return NextResponse.json(newPerson, { status: 201 });
   } catch (err: unknown) {
     if (err instanceof z.ZodError) {
