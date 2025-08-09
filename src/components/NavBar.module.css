@@ -1,37 +1,668 @@
-.nav {
+/* Modes set a color variable we reuse everywhere */
+/* Modes */
+.light {
+  --c: #fff;
+  /* header text/icons */
+  --icon-filter: invert(100%);
+  --panel-bg: #0a3edb;
+  /* mobile menu top sheet */
+  --panel-fg: #fff;
+}
+
+.dark {
+  --c: #000;
+  --icon-filter: invert(0%);
+  --panel-bg: #fff;
+  /* mobile menu top sheet */
+  --panel-fg: #000;
+}
+
+.header {
+  /* declare header height var for offsets */
+  --header-h: 85px;
+  /* desktop default */
   position: sticky;
   top: 0;
-  z-index: 50;
-  background-color: #000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--c);
+  z-index: 1000;
+  /* keep header above sheet */
+  background: var(--panel-bg);
 }
 
-.inner {
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 85px;
+  z-index: 1000000;
+  background: var(--panel-bg);
+}
+
+.midHeader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
+  gap: 20px;
 }
 
-.brand {
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
+.midHeader a {
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.links {
+.leftHeader {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftHeader img {
+  filter: var(--icon-filter);
+  width: 211px;
+  height: 20px;
+}
+
+.rightHeader {
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  z-index: 10000;
 }
 
 .link {
-  color: white;
-  opacity: 0.9;
+  color: inherit;
   text-decoration: none;
 }
 
-.link:hover {
+/* ---- Search ---- */
+
+.searchBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px 2px 0;
+}
+
+/* underline that grows */
+.searchBox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 420ms cubic-bezier(.16, 1, .3, 1);
+}
+
+/* when active, expand the line smoothly */
+.active.searchBox::after {
+  transform: scaleX(1);
+}
+
+/* Label that will slide/fade away */
+.searchLabelBtn {
+  all: unset;
+  cursor: text;
+  color: inherit;
+  opacity: 0.7;
+  line-height: 1;
+  transition:
+    transform 360ms cubic-bezier(.16, 1, .3, 1),
+    opacity 260ms ease;
+}
+
+/* when active, nudge right & fade out to simulate moving into placeholder */
+.active .searchLabelBtn {
+  transform: translateX(8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Keep input always in DOM for smooth width/placeholder animation */
+.searchBoxInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+/* Input: expand width on activation */
+.searchInput {
+  flex: 0 0 auto;
+  min-width: 0;
+  width: 0px;
+  /* collapsed when inactive */
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0;
+  /* hidden until active */
+  transition:
+    width 420ms cubic-bezier(.16, 1, .3, 1),
+    opacity 220ms ease;
+}
+
+/* Placeholder starts invisible; fades in after a short delay */
+.searchInput::placeholder {
+  color: currentColor;
+  opacity: 0;
+  transition: opacity 260ms ease 180ms;
+}
+
+/* Active state: input grows and the placeholder fades in */
+.active .searchInput {
+  /* desktop default width; adjust as needed */
   opacity: 1;
 }
+
+@media only screen and (min-width: 768px){
+  .active .searchInput {
+  width: 220px;
+  /* desktop default width; adjust as needed */
+  opacity: 1;
+}
+}
+
+.active .searchInput::placeholder {
+  opacity: 0.5;
+}
+
+/* Icon buttons — reset + no default styles */
+.iconBtn {
+  all: unset;
+  /* nukes UA styles */
+  -webkit-appearance: none;
+  /* extra safety */
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  line-height: 0;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.iconBtn:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 2px;
+}
+
+.iconImg {
+  width: 19px;
+  height: 19px;
+  filter: var(--icon-filter);
+  /* white in light, black in dark */
+}
+
+.xIcon img {
+  height: 14px;
+  width: 14px;
+}
+
+/* Position the dropdown right under the input */
+.searchResults {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  z-index: 1000;
+  max-height: 320px;
+  overflow-y: auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.searchResultItem {
+  display: block;
+  padding: 10px 12px;
+  color: #222;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.searchResultItem:hover,
+.activeResult {
+  background: #f5f5f5;
+}
+
+.noResults {
+  padding: 10px 12px;
+  color: #888;
+}
+
+/* ----- Responsive tweaks / variables ----- */
+
+@media (max-width: 768px) {
+  .headerContainer {
+    height: 56px;
+  }
+
+  .header {
+    --header-h: 56px;
+  }
+
+  .midHeader {
+    display: none;
+  }
+}
+
+/* When search is active on mobile, hide the logo and let the right header fill */
+@media (max-width: 768px) {
+  .searchActive .leftHeader {
+  }
+
+  .searchActive .rightHeader {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+
+  .searchActive .searchBox {
+    width: 100%;
+  }
+
+  .searchActive .searchBoxInner {
+    width: 100%;
+  }
+
+  .searchBoxInner {
+    width: 100%;
+    overflow: hidden;              /* prevents content jump while growing */
+  }
+
+  /* Let the input grow via max-width instead of width */
+  .searchInput {
+    width: calc(95vw - 40px);                   /* so it can exceed 0 when allowed */
+    flex: 1 1 auto;
+    min-width: 0;                  /* allow shrinking in flex row */
+    max-width: 0;                  /* collapsed */
+    opacity: 0;                    /* matches your existing behavior */
+    transition:
+      max-width 420ms cubic-bezier(.16,1,.3,1),
+      opacity 220ms ease;
+  }
+
+  .active .searchInput {
+    max-width: 100%;               /* expands smoothly */
+    opacity: 1;
+  }  /* full-width on mobile */
+}
+
+/* ----- Burger (3 lines -> X) ----- */
+
+.burgerBtn {
+  all: unset;
+  display: none;
+  /* hidden on desktop */
+  margin-left: 12px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+@media (max-width: 768px) {
+  .burgerBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.burgerBtn:focus-visible {
+  outline: 1px dashed currentColor;
+  outline-offset: 4px;
+}
+
+.burger {
+  position: relative;
+  width: 24px;
+  height: 20px;
+  display: inline-block;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: currentColor;
+  transform-origin: 50% 50%;
+  transition:
+    transform 520ms cubic-bezier(.16, 1, .3, 1),
+    /* smoother, springy ease-out */
+    opacity 360ms ease,
+    top 520ms cubic-bezier(.16, 1, .3, 1);
+}
+
+/* initial positions */
+.barTop {
+  top: 2px;
+}
+
+.barMid {
+  top: 9px;
+}
+
+.barBot {
+  top: 16px;
+}
+
+/* morph to X when open */
+.open .barTop {
+  top: 9px;
+  transform: rotate(45deg);
+}
+
+.open .barMid {
+  opacity: 0;
+  transform: scaleX(0.4);
+}
+
+.open .barBot {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+/* ----- Mobile overlay (below header) ----- */
+
+.mobileOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--header-h);
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 320ms cubic-bezier(.16, 1, .3, 1);
+  z-index: 997;
+  /* below panel, above page content; header stays above all */
+}
+
+.mobileOverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ----- Top Sheet Panel (slides from under header) ----- */
+
+.mobilePanelTop {
+  background: var(--panel-bg);
+  color: var(--panel-fg);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: var(--header-h);
+  height: calc(100svh - var(--header-h));
+  overflow: auto;
+
+  /* Curtain starts fully above */
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
+
+  /* Curtain-like slide: slow start, steady pull, soft stop */
+  transition: transform 1s cubic-bezier(.25, .8, .25, 1);
+
+  z-index: 998;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 28px;
+  justify-content: center;
+  backdrop-filter: saturate(1.3) blur(4px);
+
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.mobilePanelTop.open {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Vertical nav list (uppercase, centered spacing) */
+.mobileNav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 0 4px;
+}
+
+.mobileNavItem {
+  color: inherit;
+  /* uses var(--panel-fg) */
+  text-decoration: none;
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 2px;
+}
+
+/* Optional: improve touch targets a bit */
+.mobileNavItem {
+  padding: 6px 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bar,
+  .mobileOverlay,
+  .mobilePanelTop,
+  .searchInput,
+  .searchLabelBtn,
+  .searchBox::after {
+    transition: none !important;
+  }
+
+  .mobilePanelTop {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Hide left header (logo) smoothly on mobile when search is active */
+@media (max-width: 768px) {
+  .leftHeader {
+    transition: opacity 0.28s ease 0s, visibility 0s linear 0.28s; /* default delay so it doesn't flash */
+  }
+
+  .searchActive .leftHeader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.14s ease 0s, visibility 0s linear 0.14s;
+  }
+
+  /* Delay showing logo until animation ends */
+  .leftHeader:not(.searchActive .leftHeader) {
+    transition-delay: 0.42s; /* match search animation duration */
+  }
+
+  .searchActive .rightHeader {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+  .searchActive .searchBox { width: 100%; }
+  .searchActive .searchBoxInner { width: 100%; }
+  .active .searchInput { width: 100%; } /* full-width on mobile */
+}
+
+/* --- Mobile: pin the logo so layout doesn't jump --- */
+@media (max-width: 768px) {
+  /* Reserve space for the absolute logo so the right side doesn't shift */
+  .headerContainer {
+    position: relative;
+    /* match your logo width (+ a little breathing room) */
+  }
+
+  .leftHeader {
+    position: absolute;
+    left: 12px;              /* tweak to taste */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;              /* below search UI if needed */
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition:
+      opacity 420ms cubic-bezier(.16,1,.3,1),
+      transform 420ms cubic-bezier(.16,1,.3,1);
+  }
+
+  /* Smoothly fade/slide the logo away when search is active */
+  .searchActive .leftHeader {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%) translateX(-8px); /* subtle nudge */
+  }
+
+  .rightHeader{
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  /* Full-width search on mobile stays as you had it */
+  .searchActive .rightHeader {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+  .searchActive .searchBox { width: 100%; }
+  .searchActive .searchBoxInner { width: 100%; }
+  .active .searchInput { width: 100%; }
+}
+
+.searchLabelBtn {
+  all: unset;
+  cursor: text;
+  color: inherit;
+  opacity: 0.7;
+  line-height: 1;
+  position: relative; /* normal flow when inactive */
+  transition:
+    transform 360ms cubic-bezier(.16, 1, .3, 1),
+    opacity 260ms ease;
+}
+
+.active .searchLabelBtn {
+  position: absolute;           /* remove from layout so no gap */
+  left: 0;                       /* align with input start */
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Smooth label-to-placeholder animation without flicker */
+.searchBox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 4px 2px 0;
+
+  /* Reserve space for the label; animate to 0 when active */
+  --label-w: 64px;                  /* adjust to match your "Search" label width */
+  padding-left: var(--label-w);
+  transition: padding-left 420ms cubic-bezier(.16,1,.3,1);
+}
+.active.searchBox {
+  padding-left: 0;
+}
+
+.searchLabelBtn {
+  all: unset;
+  cursor: text;
+  color: inherit;
+  opacity: 1;
+  line-height: 1;
+
+  position: absolute;              /* always absolute */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);     /* vertically centered */
+  will-change: opacity, transform;
+  transition:
+    transform 360ms cubic-bezier(.16,1,.3,1),
+    opacity 0ms ease;
+}
+
+.active .searchLabelBtn {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(8px);
+}
+
+/* Mobile: keep collapse anchored left; delay label padding until collapse ends */
+@media (max-width: 768px) {
+  /* base: delay padding-left changes by 420ms (same as your input/underline timing) */
+  .searchBox {
+    transition: padding-left 420ms cubic-bezier(.16,1,.3,1) 420ms;
+  }
+  /* while ACTIVE: no delay (padding-left goes to 0 immediately on open) */
+  .active.searchBox {
+    transition: padding-left 420ms cubic-bezier(.16,1,.3,1) 0ms;
+  }
+
+  /* make sure content stays anchored left during the collapse */
+  .searchBoxInner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;  /* anchor left */
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* (optional, but helps) ensure no auto margins sneak in */
+  .searchInput {
+    margin: 0;
+  }
+
+  /* show the label only after the collapse finished (instant pop-in) */
+  .searchLabelBtn {
+    transition:
+      transform 360ms cubic-bezier(.16,1,.3,1),
+      opacity 0s linear 420ms;    /* appears instantly after 420ms */
+  }
+  .active .searchLabelBtn {
+    transition:
+      transform 360ms cubic-bezier(.16,1,.3,1),
+      opacity 0s linear 420ms;    /* disappears instantly at end when opening */
+  }
+}
+
+/* Mobile: label hides immediately on open, reappears only after collapse ends */
+@media (max-width: 768px) {
+  /* Label is absolutely positioned already; control visibility instead of opacity fades */
+  .active .searchLabelBtn {
+    visibility: hidden;   /* vanish instantly when activating */
+    opacity: 0;
+    transition: none;     /* no fade on mobile */
+    pointer-events: none;
+  }
+
+  /* When deactivating, wait for the input collapse (420ms) before showing the label */
+  .searchBox:not(.active) .searchLabelBtn {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 420ms, opacity 0s linear 420ms;
+    /* appears instantly, but only after 420ms delay */
+  }
+}
+
