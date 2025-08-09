@@ -47,3 +47,26 @@ model People {
   featured  Boolean  @default(false)
   createdAt DateTime @default(now())
 }
+
+model Expertise {
+  id        Int        @id @default(autoincrement())
+  title     String
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  services  Service[]
+}
+
+model Service {
+  id           Int        @id @default(autoincrement())
+  expertiseId  Int
+  title        String
+  slug         String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  expertise    Expertise  @relation(fields: [expertiseId], references: [id], onDelete: Cascade)
+
+  @@unique([expertiseId, slug])
+  @@index([expertiseId])
+}

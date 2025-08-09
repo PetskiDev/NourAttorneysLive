@@ -4,7 +4,7 @@ import { getBlocksForPage } from "~/server/blocks";
 
 export default async function Home() {
 
-  const blockMap: Record<string, { content: string; blockType: string; elementTag?: string | null }> = await getBlocksForPage("/");
+  const blockMap = await getBlocksForPage("/");
   return (
     <main style={{ padding: 24 }}>
       <h1>Project Unknown</h1>
