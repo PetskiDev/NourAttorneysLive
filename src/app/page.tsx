@@ -8,6 +8,8 @@ export default async function Home() {
     <main style={{ padding: 24 }}>
       <h1>Project Unknown</h1>
 
+      <h2>theproject</h2>
+
       <EditableBlock
           relUrl="/"
           blockKey="text1"
