@@ -19,10 +19,9 @@ const navbarPages = [
 
 const insightPages = [...navbarPages];
 
-
-
 /** Helper to join class names without leaving trailing spaces */
-const cx = (...cls: Array<string | false | undefined>) => cls.filter(Boolean).join(" ");
+const cx = (...cls: Array<string | false | undefined>) =>
+  cls.filter(Boolean).join(" ");
 
 export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const router = useRouter();
@@ -121,11 +120,17 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     }
   };
 
+
+
   return (
     <header className={`${styles.header} ${styles[mode]}`}>
       <div
-  className={cx("containerr", styles.headerContainer, active && styles.searchActive)}
->
+        className={cx(
+          "containerr",
+          styles.headerContainer,
+          active && styles.searchActive,
+        )}
+      >
         <Link href={"/"} className={styles.leftHeader}>
           <Image
             src="/logo.svg"
@@ -246,7 +251,10 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                       role="option"
                       id={`navbar-search-option-${i}`}
                       aria-selected={i === highlightIdx}
-                      className={cx(styles.searchResultItem, i === highlightIdx && styles.activeResult)}
+                      className={cx(
+                        styles.searchResultItem,
+                        i === highlightIdx && styles.activeResult,
+                      )}
                       onMouseEnter={() => setHighlightIdx(i)}
                       onMouseDown={(e) => e.preventDefault()}
                       onClick={() => {
@@ -304,7 +312,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
               className={styles.mobileNavItem}
               onClick={() => setMenuOpen(false)}
             >
-              {p.title}
+              <span>{p.title}</span>
+              <span>{p.title}</span>
             </Link>
           ))}
         </nav>
