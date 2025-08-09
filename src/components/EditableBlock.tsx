@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./EditableBlock.module.css";
 import Image from "next/image";
 import type { BlockType } from "@prisma/client";
@@ -47,7 +47,7 @@ export const EditableBlock = ({
       if (res.ok) {
         setContent(newContent);
         setEditing(false);
-        router.refresh(); 
+        router.refresh();
       } else {
         console.error(await res.text());
       }

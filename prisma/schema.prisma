@@ -36,3 +36,13 @@ enum BlockType {
   VIDEO
   HTML
 }
+
+
+model People {
+  id        Int      @id @default(autoincrement())
+  name      String
+  role      String
+  imageUrl  String?
+  featured  Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
