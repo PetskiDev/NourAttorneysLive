@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 type Props = {
   /** Targets (headings + .accent-text by default) */
@@ -37,6 +38,7 @@ export default function RevealController({
   deadZonePx = 100,
   fadeZonePx = 100,
 }: Props) {
+  const pathname = usePathname();
   const ioRef = useRef<IntersectionObserver | null>(null);
   const moRef = useRef<MutationObserver | null>(null);
 
@@ -101,6 +103,12 @@ export default function RevealController({
   };
 
   useEffect(() => {
+    // Clear all state when pathname changes (client-side routing)
+    inViewRef.current.clear();
+    stateRef.current = new WeakMap<Element, ElState>();
+    lockedRef.current = new WeakSet<Element>();
+    lastYRef.current = 0;
+
     const contentRoot = document.querySelector<HTMLElement>("[data-reveal-content]");
     if (!contentRoot) return;
 
@@ -193,7 +201,7 @@ export default function RevealController({
       moRef.current = null;
       inViewRef.current.clear();
     };
-  }, [selector, rootMargin, threshold, deadZonePx, fadeZonePx]);
+  }, [selector, rootMargin, threshold, deadZonePx, fadeZonePx, pathname]);
 
   return null;
 }
