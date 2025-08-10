@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import NavBar from "~/components/NavBar";
 import SmoothScrollProvider from "~/components/SmoothScrollProvider";
+import RevealController from "./RevealController";
+
+
 
 type Mode = "light" | "dark";
 
@@ -28,6 +31,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   // Keep header outside transform layer to avoid blurring and sticky glitches
   return (
     <SmoothScrollProvider headerOffset={0}>
+      <RevealController/>
       <NavBar key={pathname} mode={mode} />
       {children}
     </SmoothScrollProvider>

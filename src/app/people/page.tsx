@@ -29,6 +29,26 @@ export default async function PeoplePage() {
           </article>
         ))}
       </div>
+      
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
+      <h1>uwau</h1>
     </main>
   );
 }

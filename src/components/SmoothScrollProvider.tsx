@@ -78,11 +78,9 @@ export default function SmoothScrollProvider({
   const lastTimeRef = useRef<number | null>(null);
   const isTouchDeviceRef = useRef(false);
 
-  // Use effect instead of layout effect to avoid SSR warnings; all logic is client-only
+  // Touch/mobile detection (robust)
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    // Touch/mobile detection (robust)
     const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
     const hasTouchPoints =
       typeof navigator !== "undefined" && navigator.maxTouchPoints > 0;
@@ -109,10 +107,21 @@ export default function SmoothScrollProvider({
     };
   }, []);
 
+  // Helper: broadcast virtual scroll
+  const dispatchVirtualScroll = useCallback((y: number) => {
+    // Optional: expose CSS var for debugging or other consumers
+    rootRef.current?.style.setProperty("--virtual-scroll-y", String(y));
+    // Fire a window-level event so any controller can listen
+    const evt = new CustomEvent("virtualscroll", { detail: { y } });
+    window.dispatchEvent(evt);
+  }, []);
+
   const applyTransform = (y: number) => {
     if (!contentRef.current) return;
     // No rounding: preserves smooth sub-pixel motion
     contentRef.current.style.transform = `translate3d(0, ${-y}px, 0)`;
+    // Notify listeners (RevealController, etc.)
+    dispatchVirtualScroll(y);
   };
 
   const computeBounds = useCallback(() => {
@@ -128,7 +137,7 @@ export default function SmoothScrollProvider({
     currentRef.current = clamp(currentRef.current, 0, maxScrollRef.current);
 
     applyTransform(currentRef.current);
-  }, [headerOffset]);
+  }, [headerOffset, dispatchVirtualScroll]);
 
   // Convert per-60fps alpha (a60) to time-corrected alpha for dt seconds
   // alpha(dt) = 1 - (1 - a60)^(dt * 60)
@@ -175,7 +184,7 @@ export default function SmoothScrollProvider({
         rafRef.current = null;
       }
     },
-    [alphaTimeCorrected, easing, inputSmoothing, microSteps]
+    [alphaTimeCorrected, easing, inputSmoothing, microSteps, applyTransform]
   );
 
   const requestTick = useCallback(() => {
@@ -207,7 +216,7 @@ export default function SmoothScrollProvider({
       const raw = normalizeDelta(e);
       let delta = raw * inputScale; // desktop sensitivity unchanged
       delta = clamp(delta, -maxDeltaPerEvent, maxDeltaPerEvent);
-      setDesiredTarget(desiredTargetRef.current + delta*2);
+      setDesiredTarget(desiredTargetRef.current + delta * 2);
     },
     [inputScale, maxDeltaPerEvent, setDesiredTarget]
   );
@@ -321,6 +330,9 @@ export default function SmoothScrollProvider({
     // Kick off animation loop
     requestTick();
 
+    // Also emit an initial virtual scroll value for listeners
+    dispatchVirtualScroll(currentRef.current);
+
     return () => {
       window.removeEventListener("resize", recalc);
       window.removeEventListener("wheel", wheelHandler);
@@ -338,7 +350,7 @@ export default function SmoothScrollProvider({
         rafRef.current = null;
       }
     };
-  }, [computeBounds, onWheel, onKeyDown, onTouchStart, onTouchMove, onTouchEnd, requestTick]);
+  }, [computeBounds, onWheel, onKeyDown, onTouchStart, onTouchMove, onTouchEnd, requestTick, dispatchVirtualScroll]);
 
   const contentStyle: React.CSSProperties = {
     willChange: "transform",
@@ -353,20 +365,16 @@ export default function SmoothScrollProvider({
     overflow: "hidden",
   };
 
-  // Notes:
-  // - Motion easing remains 20/90 (time-corrected), preserving the ~45-frame settle.
-  // - Smoother feel: (a) input low-pass, (b) lower per-event caps, (c) micro-steps.
-  // - Touch sensitivity is mobile-only via multiplier; wheels/keys unaffected.
-
   return (
     <div
       ref={rootRef}
       style={rootStyle}
+      data-reveal-root=""             // ← expose a stable root for RevealController
       aria-description={`Virtual smooth scroll (~${framesHint} frames, easing ${easing.toFixed(
         4
       )}, micro-steps ${microSteps}, inputScale ${inputScale}, inputSmoothing ${inputSmoothing}, touch x${touchSensitivityMultiplier})`}
     >
-      <div ref={contentRef} style={contentStyle}>
+      <div ref={contentRef} style={contentStyle} data-reveal-content="">
         {children}
       </div>
     </div>

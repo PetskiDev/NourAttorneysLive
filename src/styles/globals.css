@@ -67,3 +67,20 @@ body {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 }
+
+
+/* Start hidden to avoid FOUC */
+[data-reveal-content] h1,
+[data-reveal-content] h2,
+[data-reveal-content] h3,
+[data-reveal-content] h4,
+[data-reveal-content] h5,
+[data-reveal-content] h6 {
+  opacity: 0;
+  transition: opacity 500ms ease-out; /* matches controller default */
+}
+
+/* RevealController will set data-revealed="1" */
+[data-reveal-content] [data-revealed="1"] {
+  opacity: 1;
+}
