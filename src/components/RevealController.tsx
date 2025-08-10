@@ -32,6 +32,7 @@ export default function RevealController({
   const mutationObserverRef = useRef<MutationObserver | null>(null);
   const elementsRef = useRef<Set<Element>>(new Set());
   const initiallyAnimatedRef = useRef<WeakSet<Element>>(new WeakSet());
+  const isBootingRef = useRef<boolean>(true);
 
   const zoneParams = useMemo(() => ({ bottomZoneStartPx, fadeZonePx }), [bottomZoneStartPx, fadeZonePx]);
 
@@ -83,6 +84,7 @@ export default function RevealController({
   }, [initialFadeMs]);
 
   const updateOnScroll = useCallback(() => {
+    if (isBootingRef.current) return;
     const vh = window.innerHeight;
     const params = zoneParams;
     elementsRef.current.forEach((el) => {
@@ -103,9 +105,16 @@ export default function RevealController({
     contentRootRef.current = contentRoot;
 
     // Collect initial targets and set styles
+    isBootingRef.current = true;
     ensureTargetsListed();
     styleInitialStates();
-    updateOnScroll();
+    // Defer the first mapping until after initial transitions are applied
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        isBootingRef.current = false;
+        updateOnScroll();
+      });
+    });
 
     // Listen to virtual scroll events from SmoothScrollProvider
     const onVirtualScroll = () => updateOnScroll();
@@ -137,9 +146,14 @@ export default function RevealController({
         });
       }
       if (needsStyle) {
-        // Apply initial style to any newly added nodes and update mapping
+        // Apply initial style to any newly added nodes
         styleInitialStates();
-        updateOnScroll();
+        // Defer mapping to let transitions attach
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            updateOnScroll();
+          });
+        });
       }
     });
     mo.observe(contentRoot, { childList: true, subtree: true });
