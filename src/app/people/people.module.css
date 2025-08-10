@@ -1,0 +1,15 @@
+.peopleTopContainer h4 {
+    text-transform: uppercase;
+}
+
+.peopleTopTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+

@@ -84,3 +84,16 @@ body {
 [data-reveal-content] [data-revealed="1"] {
   opacity: 1;
 }
+
+.headline_1{
+  font-size: 220px;
+  font-weight: 700;
+  letter-spacing: -5%;
+}
+
+.subheadline_2{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -4%;
+}
