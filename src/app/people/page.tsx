@@ -1,6 +1,5 @@
 import EditablePersonImage from "~/components/EditablePersonImage";
 import { db } from "~/server/db";
-import styles from "./people.module.css"
 
 export const dynamic = "force-static";
 

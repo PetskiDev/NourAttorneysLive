@@ -76,27 +76,18 @@ export default function SmoothScrollProvider({
 
   const touchStartYRef = useRef<number | null>(null);
   const lastTimeRef = useRef<number | null>(null);
-  const prefersReducedMotion = useRef(false);
   const isTouchDeviceRef = useRef(false);
 
   useLayoutEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Prefers-reduced-motion
-    const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
-    prefersReducedMotion.current = !!mq?.matches;
-    const onChange = (e: MediaQueryListEvent) => (prefersReducedMotion.current = e.matches);
-    mq?.addEventListener?.("change", onChange);
-
     // Touch/mobile detection (robust)
     const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
     const hasTouchPoints =
-      typeof navigator !== "undefined" ? (navigator as any).maxTouchPoints > 0 : false;
+      typeof navigator !== "undefined" && navigator.maxTouchPoints > 0;
     const onTouchCapable = "ontouchstart" in window;
     const uaMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone|Kindle|Silk/i.test(ua);
     isTouchDeviceRef.current = hasTouchPoints || onTouchCapable || uaMobile;
-
-    return () => mq?.removeEventListener?.("change", onChange);
   }, []);
 
   // Lock page scroll
@@ -141,7 +132,6 @@ export default function SmoothScrollProvider({
   // Convert per-60fps alpha (a60) to time-corrected alpha for dt seconds
   // alpha(dt) = 1 - (1 - a60)^(dt * 60)
   const alphaTimeCorrected = useCallback((a60: number, dtSeconds: number) => {
-    if (prefersReducedMotion.current) return 1;
     const base = Math.max(0, Math.min(1, a60));
     const frames = dtSeconds * 60;
     return 1 - Math.pow(1 - base, frames);
@@ -149,7 +139,7 @@ export default function SmoothScrollProvider({
 
   const tick = useCallback(
     (now: number) => {
-      if (lastTimeRef.current == null) lastTimeRef.current = now;
+      lastTimeRef.current ??= now;
       const dt = Math.max(0.000_001, (now - lastTimeRef.current) / 1000);
       lastTimeRef.current = now;
 
@@ -188,9 +178,7 @@ export default function SmoothScrollProvider({
   );
 
   const requestTick = useCallback(() => {
-    if (rafRef.current == null) {
-      rafRef.current = window.requestAnimationFrame(tick);
-    }
+    rafRef.current ??= window.requestAnimationFrame(tick);
   }, [tick]);
 
   const setDesiredTarget = useCallback(
@@ -227,8 +215,8 @@ export default function SmoothScrollProvider({
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
       const targetEl = e.target as HTMLElement | null;
-      const tag = (targetEl?.tagName || "").toLowerCase();
-      if (tag === "input" || tag === "textarea" || (targetEl as any)?.isContentEditable) return;
+      const tag = (targetEl?.tagName ?? "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || targetEl?.isContentEditable) return;
 
       const viewport = window.innerHeight;
       let handled = true;
@@ -270,15 +258,20 @@ export default function SmoothScrollProvider({
   // Touch
   const onTouchStart = useCallback((e: TouchEvent) => {
     if (e.touches.length > 0) {
-      touchStartYRef.current = e.touches[0].clientY;
+      const firstTouch = e.touches.item(0);
+      if (!firstTouch) return;
+      touchStartYRef.current = firstTouch.clientY;
     }
   }, []);
 
   const onTouchMove = useCallback(
     (e: TouchEvent) => {
       if (touchStartYRef.current == null) return;
+      if (e.touches.length === 0) return;
       e.preventDefault();
-      const y = e.touches[0].clientY;
+      const firstTouch = e.touches.item(0);
+      if (!firstTouch) return;
+      const y = firstTouch.clientY;
       const dy = touchStartYRef.current - y;
       touchStartYRef.current = y;
 
@@ -302,33 +295,41 @@ export default function SmoothScrollProvider({
     const resizeObserver =
       "ResizeObserver" in window ? new ResizeObserver(() => computeBounds()) : null;
 
-    if (contentRef.current && resizeObserver) {
-      resizeObserver.observe(contentRef.current);
+    const contentElement = contentRef.current;
+    if (contentElement && resizeObserver) {
+      resizeObserver.observe(contentElement);
     }
 
     const recalc = () => computeBounds();
     computeBounds();
     window.addEventListener("resize", recalc);
 
-    window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("keydown", onKeyDown, { passive: false });
-    window.addEventListener("touchstart", onTouchStart, { passive: false });
-    window.addEventListener("touchmove", onTouchMove, { passive: false });
-    window.addEventListener("touchend", onTouchEnd, { passive: false });
+    // Wrap handlers to satisfy EventListener typing for add/remove symmetry
+    const wheelHandler: EventListener = (evt) => onWheel(evt as WheelEvent);
+    const keydownHandler: EventListener = (evt) => onKeyDown(evt as KeyboardEvent);
+    const touchStartHandler: EventListener = (evt) => onTouchStart(evt as TouchEvent);
+    const touchMoveHandler: EventListener = (evt) => onTouchMove(evt as TouchEvent);
+    const touchEndHandler: EventListener = () => onTouchEnd();
+
+    window.addEventListener("wheel", wheelHandler, { passive: false });
+    window.addEventListener("keydown", keydownHandler, { passive: false });
+    window.addEventListener("touchstart", touchStartHandler, { passive: false });
+    window.addEventListener("touchmove", touchMoveHandler, { passive: false });
+    window.addEventListener("touchend", touchEndHandler, { passive: false });
 
     // Kick off animation loop
     requestTick();
 
     return () => {
       window.removeEventListener("resize", recalc);
-      window.removeEventListener("wheel", onWheel as any);
-      window.removeEventListener("keydown", onKeyDown as any);
-      window.removeEventListener("touchstart", onTouchStart as any);
-      window.removeEventListener("touchmove", onTouchMove as any);
-      window.removeEventListener("touchend", onTouchEnd as any);
+      window.removeEventListener("wheel", wheelHandler);
+      window.removeEventListener("keydown", keydownHandler);
+      window.removeEventListener("touchstart", touchStartHandler);
+      window.removeEventListener("touchmove", touchMoveHandler);
+      window.removeEventListener("touchend", touchEndHandler);
 
-      if (resizeObserver && contentRef.current) {
-        resizeObserver.unobserve(contentRef.current);
+      if (resizeObserver && contentElement) {
+        resizeObserver.unobserve(contentElement);
         resizeObserver.disconnect();
       }
       if (rafRef.current != null) {

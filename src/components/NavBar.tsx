@@ -202,6 +202,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
             role="combobox"
             aria-haspopup="listbox"
             aria-expanded={active && filteredPages.length > 0}
+            aria-controls="navbar-search-listbox"
             aria-owns="navbar-search-listbox"
           >
             {/* Label that turns into placeholder */}
@@ -211,7 +212,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
               onClick={openSearch}
               aria-label="Open search"
             >
-                <img
+                <Image
                   src="/search.svg"
                   alt=""
                   aria-hidden="true"
@@ -252,7 +253,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                     onClick={clearSearch}
                     aria-label="Clear search"
                   >
-                    <img
+                    <Image
                       className={styles.iconImg}
                       src="/x.svg"
                       alt=""
@@ -276,7 +277,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                       }
                     }}
                   >
-                    <img
+                    <Image
                       className={styles.iconImg}
                       src="/search.svg"
                       alt=""
