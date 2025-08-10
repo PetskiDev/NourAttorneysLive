@@ -17,7 +17,7 @@ const navbarPages = [
   { title: "Contacts", link: "/contact" },
 ];
 
-const insightPages = [...navbarPages];
+// Single source of truth for pages (avoid duplicating arrays to keep SSR props stable)
 
 /** Helper to join class names without leaving trailing spaces */
 const cx = (...cls: Array<string | false | undefined>) =>
@@ -125,13 +125,20 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const filteredPages = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
-    return insightPages.filter((p) => p.title.toLowerCase().includes(q));
+    return navbarPages.filter((p) => p.title.toLowerCase().includes(q));
   }, [query]);
 
   useEffect(() => {
     if (filteredPages.length === 0) setHighlightIdx(-1);
     else setHighlightIdx(0);
   }, [filteredPages.length]);
+
+  // Cleanup any pending animation timers on unmount to avoid leaks
+  useEffect(() => {
+    return () => {
+      clearTimers();
+    };
+  }, []);
 
   const closeIfEmptyAndOutside = (e: React.FocusEvent<HTMLInputElement>) => {
     const root = e.currentTarget.closest(`.${styles.searchBox}`);

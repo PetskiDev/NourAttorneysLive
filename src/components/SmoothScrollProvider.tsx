@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -78,7 +78,8 @@ export default function SmoothScrollProvider({
   const lastTimeRef = useRef<number | null>(null);
   const isTouchDeviceRef = useRef(false);
 
-  useLayoutEffect(() => {
+  // Use effect instead of layout effect to avoid SSR warnings; all logic is client-only
+  useEffect(() => {
     if (typeof window === "undefined") return;
 
     // Touch/mobile detection (robust)
