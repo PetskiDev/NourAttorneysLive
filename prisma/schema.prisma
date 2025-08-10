@@ -61,12 +61,11 @@ model Service {
   id           Int        @id @default(autoincrement())
   expertiseId  Int
   title        String
-  slug         String
+  slug         String     @unique
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
   expertise    Expertise  @relation(fields: [expertiseId], references: [id], onDelete: Cascade)
 
-  @@unique([expertiseId, slug])
   @@index([expertiseId])
 }

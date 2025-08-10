@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 import { z } from "zod";
+import Link from "next/link";
 
 const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -319,7 +320,9 @@ function ServicesPanel({
           ) : (
             expertise.services.map((s) => (
               <tr key={s.id}>
-                <td style={td}>{s.title}</td>
+                <td style={td}>
+                  <Link href={`/services/${s.slug}`} target="_blank">{s.title}</Link>
+                </td>
                 <td style={td}>{s.slug}</td>
                 <td style={td}>
                   <button onClick={() => onDelete(s.id)}>Delete</button>
