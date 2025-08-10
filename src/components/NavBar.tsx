@@ -216,6 +216,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                   src="/search.svg"
                   alt=""
                   aria-hidden="true"
+                  width={20}
+                  height={20}
                   style={{ width: 20, height: 20 }}
                   className="mob"
                 />
@@ -258,6 +260,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                       src="/x.svg"
                       alt=""
                       aria-hidden="true"
+                      width={16}
+                      height={16}
                     />
                   </button>
 
@@ -282,6 +286,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                       src="/search.svg"
                       alt=""
                       aria-hidden="true"
+                      width={16}
+                      height={16}
                     />
                   </button>
                 </>
