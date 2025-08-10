@@ -8,8 +8,61 @@
     justify-content: space-between;
 }
 
+.memberCard{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+}
 
+.memberCard>div:nth-child(1){
+    width: 100%;
+    aspect-ratio: 560 / 676;
+    overflow: hidden;
+    position: relative;
+}
 
+.memberCard>div:nth-child(1) img{
+    width: 100%;
+    height: auto;
+    position: relative!important;
+}
 
+.teamContainer{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
 
+.teamTop{
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
 
+.mainMember{
+    width: 34%;
+}
+
+.membersOne{
+    width: calc(66% - 20px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 20px;
+}
+
+.membersOne>.memberCard{
+    width: calc(25% - 20px);
+}
+
+.membersTwo{
+    display: flex;
+    gap: 20px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.membersTwo>.memberCard{
+    width: calc((100% - 100px) / 6 );
+}

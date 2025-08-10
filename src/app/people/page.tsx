@@ -10,8 +10,25 @@ const cx = (...cls: Array<string | false | undefined>) =>
 export default async function PeoplePage() {
   const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
 
+  const [main, ...rest] = people; // first person is the big one
+
+  const MemberCard = ({ person }: { person: (typeof people)[number] }) => (
+    <div className={styles.memberCard}>
+      <div>
+        <EditablePersonImage
+          personId={person.id}
+          initialUrl={person.imageUrl ?? null}
+          isAdmin={true}
+          alt={person.name}
+        />
+      </div>
+      <div className="title_1">{person.name}</div>
+      <div className="subtitle_1">{person.role}</div>
+    </div>
+  );
+
   return (
-    <main style={{ height: 2000 }}>
+    <main>
       <section id="people-top">
         <div className={cx("containerr", styles.peopleTopContainer)}>
           <div className={styles.peopleTopTop}>
@@ -35,59 +52,66 @@ export default async function PeoplePage() {
         </div>
       </section>
       <section id="people-actual">
-        <div className={styles.mainPerson}></div>
-      </section>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-          gap: 16,
-        }}
-      >
-        {people.map((p) => (
-          <article
-            key={p.id}
-            style={{
-              border: "1px solid #eee",
-              borderRadius: 8,
-              overflow: "hidden",
-            }}
-          >
-            <div style={{ width: "100%", height: 180, position: "relative" }}>
-              <EditablePersonImage
-                personId={p.id}
-                initialUrl={p.imageUrl ?? null}
-                isAdmin={true}
-                alt={p.name}
-              />
+        <div className={cx("containerr", "team", styles.teamContainer)}>
+          <div className={styles.teamTop}>
+            {/* mainMember (big) */}
+            <div className={styles.mainMember}>
+              {main && <MemberCard person={main} />}
             </div>
-            <div style={{ padding: 12 }}>
-              <div style={{ fontWeight: 700 }}>{p.name}</div>
-              <div style={{ color: "#666" }}>{p.role}</div>
-            </div>
-          </article>
-        ))}
-      </div>
 
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
-      <h1>uwau</h1>
+            {/* membersOne with fixed empty slots: 2nd, 5th, 7th (1-based) */}
+            <div className={styles.membersOne}>
+              {(() => {
+                const EMPTY = new Set([1, 4, 6]); // 0-based positions to keep empty
+                let iRest = 0;
+                return Array.from({ length: 8 }).map((_, i) => {
+                  if (EMPTY.has(i))
+                    return (
+                      <div key={`empty-${i}`} className={styles.memberCard} />
+                    );
+                  const person = rest[iRest++];
+                  return person ? (
+                    <MemberCard key={person.id} person={person} />
+                  ) : (
+                    <div key={`pad-${i}`} className={styles.memberCard} />
+                  );
+                });
+              })()}
+            </div>
+          </div>
+          <div className={styles.membersTwo}>
+            {(() => {
+              const remaining = rest.slice(5); // after main + membersOne
+              const EMPTY = new Set([1, 5, 8, 10, 12, 14]); // 0-based => 2,6,9,11,13,15
+              const CYCLE = 17; // 1..17 then repeat
+              const items: React.ReactNode[] = [];
+              let idx = 0;
+              let pos = 0;
+
+              while (idx < remaining.length) {
+                const cyclePos = pos % CYCLE; // 0..16
+                if (EMPTY.has(cyclePos)) {
+                  items.push(
+                    <div key={`empty-${pos}`} className={styles.memberCard} />,
+                  );
+                } else {
+                  const person = remaining[idx++];
+                  items.push(
+                    person ? (
+                      <MemberCard key={person.id} person={person} />
+                    ) : (
+                      <div key={`pad-${pos}`} className={styles.memberCard} />
+                    ),
+                  );
+                }
+                pos++;
+              }
+              return items;
+            })()}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

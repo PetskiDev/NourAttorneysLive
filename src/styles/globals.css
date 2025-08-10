@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
   padding: 0;
@@ -95,5 +96,20 @@ body {
   font-size: 36px;
   font-weight: 700;
   line-height: 110%;
+  letter-spacing: -4%;
+}
+
+.title_1{
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  color: #101010;
+  letter-spacing: -4%;
+}
+
+.subtitle_1{
+  color: #545454;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
   letter-spacing: -4%;
 }
