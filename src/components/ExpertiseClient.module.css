@@ -98,7 +98,7 @@
   border: 1px solid #e5e5e5;
   border-top: none;
   z-index: 1000;
-  max-height: 320px;
+  max-height: 200px;
   overflow-y: auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }

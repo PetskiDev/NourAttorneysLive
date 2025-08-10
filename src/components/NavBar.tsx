@@ -7,14 +7,15 @@ import { useRouter } from "next/navigation";
 import styles from "./NavBar.module.css";
 
 type Mode = "light" | "dark";
+type SearchItem = { title: string; link: string; type: "page" | "service" };
 
-const navbarPages = [
-  { title: "About us", link: "/about-us" },
-  { title: "Expertise", link: "/expertise" },
-  { title: "Our people", link: "/people" },
-  { title: "Frameworks", link: "/frameworks" },
-  { title: "Insights", link: "/insights" },
-  { title: "Contacts", link: "/contact" },
+const navbarPages: SearchItem[] = [
+  { title: "About us", link: "/about-us", type: "page" },
+  { title: "Expertise", link: "/expertise", type: "page" },
+  { title: "Our people", link: "/people", type: "page" },
+  { title: "Frameworks", link: "/frameworks", type: "page" },
+  { title: "Insights", link: "/insights", type: "page" },
+  { title: "Contacts", link: "/contact", type: "page" },
 ];
 
 // Single source of truth for pages (avoid duplicating arrays to keep SSR props stable)
@@ -32,6 +33,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const [highlightIdx, setHighlightIdx] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const [services, setServices] = useState<SearchItem[] | null>(null);
 
   const [activeCount, setActiveCount] = useState(0);
   const [menuAnimating, setMenuAnimating] = useState(false);
@@ -108,10 +110,31 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen, active]);
 
+  const ensureServicesLoaded = async () => {
+    if (services !== null) return;
+    try {
+      const cached = sessionStorage.getItem("all-services");
+      if (cached) {
+        const parsed = JSON.parse(cached) as Array<{ title: string; slug: string }>;
+        setServices(parsed.map((s) => ({ title: s.title, link: `/services/${s.slug}`, type: "service" })));
+        return;
+      }
+    } catch {}
+    try {
+      const res = await fetch("/api/services", { cache: "no-store" });
+      if (!res.ok) return;
+      const list = (await res.json()) as Array<{ title: string; slug: string }>;
+      const mapped = list.map((s) => ({ title: s.title, link: `/services/${s.slug}`, type: "service" as const }));
+      setServices(mapped);
+      try { sessionStorage.setItem("all-services", JSON.stringify(list)); } catch {}
+    } catch {}
+  };
+
   const openSearch = () => {
     setActive(true);
     // focus after styles toggle so the caret appears right where you expect
     setTimeout(() => inputRef.current?.focus(), 0);
+    void ensureServicesLoaded();
   };
 
   const clearSearch = () => {
@@ -120,13 +143,18 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     inputRef.current?.focus();
   };
 
-  const handleChange = (v: string) => setQuery(v);
+  const handleChange = (v: string) => {
+    setQuery(v);
+    if (v.trim() !== "") void ensureServicesLoaded();
+  };
 
   const filteredPages = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
-    return navbarPages.filter((p) => p.title.toLowerCase().includes(q));
-  }, [query]);
+    return (services ?? [])
+      .filter((s) => s.title.toLowerCase().includes(q))
+      .slice(0, 20);
+  }, [query, services]);
 
   useEffect(() => {
     if (filteredPages.length === 0) setHighlightIdx(-1);
@@ -311,8 +339,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
               >
                 {filteredPages.length > 0 ? (
                   filteredPages.map((p, i) => (
-                    <Link
-                      key={p.link}
+                  <Link
+                    key={`${p.type}-${p.link}`}
                       href={p.link}
                       role="option"
                       id={`navbar-search-option-${i}`}
