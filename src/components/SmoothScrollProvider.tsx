@@ -116,13 +116,16 @@ export default function SmoothScrollProvider({
     window.dispatchEvent(evt);
   }, []);
 
-  const applyTransform = (y: number) => {
-    if (!contentRef.current) return;
-    // No rounding: preserves smooth sub-pixel motion
-    contentRef.current.style.transform = `translate3d(0, ${-y}px, 0)`;
-    // Notify listeners (RevealController, etc.)
-    dispatchVirtualScroll(y);
-  };
+  const applyTransform = useCallback(
+    (y: number) => {
+      if (!contentRef.current) return;
+      // No rounding: preserves smooth sub-pixel motion
+      contentRef.current.style.transform = `translate3d(0, ${-y}px, 0)`;
+      // Notify listeners (RevealController, etc.)
+      dispatchVirtualScroll(y);
+    },
+    [dispatchVirtualScroll]
+  );
 
   const computeBounds = useCallback(() => {
     if (!contentRef.current) return;
@@ -137,7 +140,7 @@ export default function SmoothScrollProvider({
     currentRef.current = clamp(currentRef.current, 0, maxScrollRef.current);
 
     applyTransform(currentRef.current);
-  }, [headerOffset, dispatchVirtualScroll]);
+  }, [headerOffset, applyTransform]);
 
   // Convert per-60fps alpha (a60) to time-corrected alpha for dt seconds
   // alpha(dt) = 1 - (1 - a60)^(dt * 60)
