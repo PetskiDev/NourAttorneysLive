@@ -23,17 +23,60 @@ type Expertise = {
 export default function ExpertiseClient({ expertise }: { expertise: Expertise[] }) {
   const allServices = expertise.flatMap((e) => e.services);
   const [activeId, setActiveId] = useState<number | "all">("all");
+  const [query, setQuery] = useState("");
+  const listboxId = useId();
 
   const activeServices =
     activeId === "all"
       ? allServices
       : expertise.find((e) => e.id === activeId)?.services ?? [];
 
+  const filteredServices = query.trim()
+    ? activeServices.filter((s) =>
+        s.title.toLowerCase().includes(query.trim().toLowerCase()),
+      )
+    : activeServices;
+
   return (
     <div className={styles.wrap}>
-      <div className={styles.title}>
-        EXPERTISE
-        <sup className={styles.counts}>{allServices.length}</sup>
+      <div className={styles.topRow}>
+        <div className={styles.title}>
+          EXPERTISE
+          <sup className={styles.counts}>{allServices.length}</sup>
+        </div>
+
+        {/* Search */}
+        <div
+          className={styles.searchBox}
+          role="combobox"
+          aria-haspopup="listbox"
+          aria-expanded={query.trim() !== ""}
+          aria-controls={query.trim() !== "" ? listboxId : undefined}
+        >
+          <div className={styles.searchBoxInner}>
+            <input
+              type="text"
+              placeholder="Service name"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              className={styles.searchInput}
+              aria-autocomplete="list"
+            />
+          </div>
+
+          {query.trim() !== "" && (
+            <div className={styles.searchResults} role="listbox" id={listboxId}>
+              {activeServices
+                .filter((s) => s.title.toLowerCase().includes(query.trim().toLowerCase()))
+                .slice(0, 10)
+                .map((s) => (
+                  <Link key={s.id} href={`/services/${s.slug}`} className={styles.searchResultItem}>
+                    {s.title}
+                  </Link>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className={styles.tabs}>
@@ -55,7 +98,7 @@ export default function ExpertiseClient({ expertise }: { expertise: Expertise[] 
       </div>
 
       <div className={styles.grid}>
-        {activeServices.map((s) => (
+        {filteredServices.map((s) => (
           <Link key={s.id} href={`/services/${s.slug}`} className={styles.serviceItem}>
             {s.title}
           </Link>
@@ -65,6 +108,6 @@ export default function ExpertiseClient({ expertise }: { expertise: Expertise[] 
   );
 }
 
-import { useState } from "react";
+import { useId, useState } from "react";
 
 
