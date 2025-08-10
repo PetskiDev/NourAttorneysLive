@@ -34,49 +34,51 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const resultsRef = useRef<HTMLDivElement>(null);
 
   const [activeCount, setActiveCount] = useState(0);
-const [menuAnimating, setMenuAnimating] = useState(false);
-const timersRef = useRef<number[]>([]);
+  const [menuAnimating, setMenuAnimating] = useState(false);
+  const timersRef = useRef<number[]>([]);
 
-const clearTimers = () => {
-  timersRef.current.forEach((t) => clearTimeout(t));
-  timersRef.current = [];
-};
+  const clearTimers = () => {
+    timersRef.current.forEach((t) => clearTimeout(t));
+    timersRef.current = [];
+  };
 
-const openMenu = () => {
-  if (menuAnimating || menuOpen) return;
-  setMenuAnimating(true);
-  setMenuOpen(true);
-  setActiveCount(0);
-  for (let i = 1; i <= navbarPages.length; i++) {
-    const t = window.setTimeout(() => setActiveCount(i), i * 100);
-    timersRef.current.push(t);
-  }
-  const done = window.setTimeout(
-    () => setMenuAnimating(false),
-    navbarPages.length * 100 + 20
-  );
-  timersRef.current.push(done);
-};
+  const openMenu = () => {
+    if (menuAnimating || menuOpen) return;
+    setMenuAnimating(true);
+    setMenuOpen(true);
+    setActiveCount(0);
+    for (let i = 1; i <= navbarPages.length; i++) {
+      const t = window.setTimeout(() => setActiveCount(i), i * 100);
+      timersRef.current.push(t);
+    }
+    const done = window.setTimeout(
+      () => setMenuAnimating(false),
+      navbarPages.length * 100 + 20,
+    );
+    timersRef.current.push(done);
+  };
 
-const closeMenu = () => {
-  if (menuAnimating || !menuOpen) return;
-  setMenuAnimating(true);
-  const start = activeCount;
-  for (let step = 0; step < start; step++) {
-    const nextCount = start - 1 - step;
-    const t = window.setTimeout(() => setActiveCount(nextCount), step * 100);
-    timersRef.current.push(t);
-  }
-  const done = window.setTimeout(() => {
-    setMenuOpen(false);
-    setMenuAnimating(false);
-    clearTimers();
-  }, start * 100 + 20);
-  timersRef.current.push(done);
-};
+  const closeMenu = () => {
+    if (menuAnimating || !menuOpen) return;
+    setMenuAnimating(true);
+    const start = activeCount;
+    for (let step = 0; step < start; step++) {
+      const nextCount = start - 1 - step;
+      const t = window.setTimeout(() => setActiveCount(nextCount), step * 100);
+      timersRef.current.push(t);
+    }
+    const done = window.setTimeout(
+      () => {
+        setMenuOpen(false);
+        setMenuAnimating(false);
+        clearTimers();
+      },
+      start * 100 + 20,
+    );
+    timersRef.current.push(done);
+  };
 
-const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
-
+  const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
 
   // --- Mobile menu state ---
   const [menuOpen, setMenuOpen] = useState(false);
@@ -165,8 +167,6 @@ const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
     }
   };
 
-
-
   return (
     <header className={`${styles.header} ${styles[mode]}`}>
       <div
@@ -211,7 +211,14 @@ const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
               onClick={openSearch}
               aria-label="Open search"
             >
-              Search
+                <img
+                  src="/search.svg"
+                  alt=""
+                  aria-hidden="true"
+                  style={{ width: 20, height: 20 }}
+                  className="mob"
+                />
+                <div className="mobnot">Search</div>
             </button>
 
             {/* Input is always in the DOM so we can animate width/placeholder */}
@@ -326,7 +333,6 @@ const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
             aria-expanded={menuOpen}
             aria-controls="mobile-menu-panel"
             onClick={toggleMenu}
-
           >
             <span className={styles.burger} aria-hidden="true">
               <span className={cx(styles.bar, styles.barTop)} />
@@ -355,8 +361,10 @@ const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
             <Link
               key={p.link}
               href={p.link}
-              className={cx(styles.mobileNavItem, index < activeCount && styles.activeItem)}
-
+              className={cx(
+                styles.mobileNavItem,
+                index < activeCount && styles.activeItem,
+              )}
               onClick={closeMenu}
             >
               <span>{p.title}</span>

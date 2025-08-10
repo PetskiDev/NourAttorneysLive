@@ -47,6 +47,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 100%;
+  justify-content: center;
 }
 
 .midHeader a {
@@ -169,9 +171,23 @@
   opacity: 1;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1250px) {
   .active .searchInput {
     width: 220px;
+    /* desktop default width; adjust as needed */
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .midHeader a{
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .active .searchInput {
+    width: 160px;
     /* desktop default width; adjust as needed */
     opacity: 1;
   }
@@ -247,9 +263,13 @@
   color: #888;
 }
 
+@media only screen and (max-width: 1250px){
+
+}
+
 /* ----- Responsive tweaks / variables ----- */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .headerContainer {
     height: 56px;
   }
@@ -264,7 +284,7 @@
 }
 
 /* When search is active on mobile, hide the logo and let the right header fill */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .searchActive .leftHeader {}
 
   .searchActive .rightHeader {
@@ -322,7 +342,7 @@
   line-height: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .burgerBtn {
     display: inline-flex;
     align-items: center;
@@ -516,7 +536,7 @@
 }
 
 /* Hide left header (logo) smoothly on mobile when search is active */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .leftHeader {
     transition: opacity 0.28s ease 0s, visibility 0s linear 0.28s;
     /* default delay so it doesn't flash */
@@ -556,7 +576,7 @@
 }
 
 /* --- Mobile: pin the logo so layout doesn't jump --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Reserve space for the absolute logo so the right side doesn't shift */
   .headerContainer {
@@ -578,6 +598,7 @@
     transition:
       opacity 420ms cubic-bezier(.16, 1, .3, 1),
       transform 420ms cubic-bezier(.16, 1, .3, 1);
+      z-index: 999999;
   }
 
   /* Smoothly fade/slide the logo away when search is active */
@@ -682,11 +703,12 @@
 }
 
 /* Mobile: keep collapse anchored left; delay label padding until collapse ends */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* base: delay padding-left changes by 420ms (same as your input/underline timing) */
   .searchBox {
     transition: padding-left 420ms cubic-bezier(.16, 1, .3, 1) 420ms;
+    --label-w: 14px;
   }
 
   /* while ACTIVE: no delay (padding-left goes to 0 immediately on open) */
@@ -726,7 +748,7 @@
 }
 
 /* Mobile: label hides immediately on open, reappears only after collapse ends */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
   /* Label is absolutely positioned already; control visibility instead of opacity fades */
   .active .searchLabelBtn {

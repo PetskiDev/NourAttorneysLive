@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
 }
 
 .containerr{
-  max-width: 1600px;
+  max-width: 1920px;
   margin: 0 auto;
   width: 95%;
   position: relative;
@@ -38,4 +38,16 @@ header{
 font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+@media only screen and (max-width: 1024px){
+  .mobnot{
+    display: none!important;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .mob{
+    display: none!important;
+  }
 }
