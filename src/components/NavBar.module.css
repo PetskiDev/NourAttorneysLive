@@ -51,6 +51,10 @@
   justify-content: center;
 }
 
+.mob {
+  filter: var(--icon-filter);
+}
+
 .midHeader a {
   font-size: 20px;
   font-weight: 400;

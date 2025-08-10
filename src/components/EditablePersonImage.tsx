@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./EditableBlock.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import MediaLibraryModal from "./MediaLibraryModal";
+import styles from "./EditablePersonImage.module.css"
 
 export default function EditablePersonImage({
   personId,
