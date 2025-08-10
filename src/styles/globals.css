@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
   position: relative;
 }
 
-header, section, footer{
+header, section, footer, main{
   width: 100%;
 }
 
@@ -50,4 +50,20 @@ font-family: "Manrope", sans-serif;
   .mob{
     display: none!important;
   }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden; /* lock native scroll */
+}
+
+/* The element we translate */
+.scroll-wrapper {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
 }

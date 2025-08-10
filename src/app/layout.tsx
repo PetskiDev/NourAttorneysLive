@@ -3,6 +3,7 @@
 import "~/styles/globals.css";
 import { usePathname } from "next/navigation";
 import NavBar from "~/components/NavBar";
+import SmoothScrollProvider from "~/components/SmoothScrollProvider";
 
 type Mode = "light" | "dark";
 
@@ -25,8 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <SmoothScrollProvider headerOffset={0}>
         <NavBar mode={mode} />
         {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );

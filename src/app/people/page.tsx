@@ -8,7 +8,7 @@ export default async function PeoplePage() {
   const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
 
   return (
-    <main style={{ padding: 24 }}>
+    <main style={{ padding: 24, height: 2000 }}>
       <h1 style={{ marginTop: 0 }}>People</h1>
 
       <div
