@@ -3,12 +3,7 @@ import { db } from "~/server/db";
 import { getBlocksForPage } from "~/server/blocks";
 import { EditableText } from "~/components/EditableText";
 
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const services = await db.service.findMany({ select: { slug: true } });
-  return services.map((s) => ({ slug: s.slug }));
-}
+export const revalidate = false;
 
 export default async function ServicePage({
   params,
@@ -24,8 +19,8 @@ export default async function ServicePage({
   const relUrl = `/services/${slug}`;
   const blocks = await getBlocksForPage(relUrl);
 
-//TIPS CODE GOES HERE
-//USE EDITABLEBLOCKS WITH relurl and blocks
+  //TIPS CODE GOES HERE
+  //USE EDITABLEBLOCKS WITH relurl and blocks
 
   return (
     <main style={{ padding: 24 }}>
