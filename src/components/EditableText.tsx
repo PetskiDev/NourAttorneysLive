@@ -84,6 +84,7 @@ export function EditableText({
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: "100vh"
           }}
         >
           <div
