@@ -1,3 +1,4 @@
+
 .aboutHero {
     background-color: #0033A0;
     color: white;
@@ -40,6 +41,128 @@
 .aboutHero>div>div:nth-child(2)>*:nth-child(1) {
     margin-bottom: -20px;
 }
+
+.aboutOne>div{
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 10px;
+}
+.aboutOne>div>div{
+    width: 50%;
+}
+
+.aboutOneLeft img{
+    width: 33%;
+    height: auto;
+    margin-top: 20%;
+}
+
+.aboutOneRight{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aboutOneRight img{
+    width: 66%;
+    height: auto;
+}
+
+.aboutTwo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.aboutTwoLine{
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutTwoLine>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(1){
+    width: 50%;
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 600;
+}
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(1)>span{
+    width: 30%;
+    margin-left: auto;
+}
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(2){
+    width: 50%;
+}
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(2)>span{
+    width: 50%;
+}
+
+.aboutTwoLine>div:nth-child(2){
+    width: 60%;
+    margin-left: 20%;
+}
+
+.aboutTwoLine>div:nth-child(3){
+    width: 25%;
+    margin-left: 50%;
+}
+
+.aboutNumbers>.containerr{
+    display: flex;
+}
+
+.numbersLeft, .numbersRight{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 536px;
+}
+
+.numbersLeftTop{
+    display: flex;
+}
+
+.numbersLeftBottom{
+    display: flex;
+    align-items: flex-end;
+}
+
+.numbersRightTop{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.numbersRightBottom{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.numbersInner{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 460px;
+    width: 210px;
+}
+
+.numbersInner::before{
+    content: "";
+    pos
+}
+
 
 @media only screen and (min-width: 1920px) {
     .aboutHero>div {
