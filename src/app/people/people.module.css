@@ -10,43 +10,43 @@
     justify-content: space-between;
 }
 
-.memberCard{
+.memberCard {
     display: flex;
     flex-direction: column;
     gap: 5px;
     overflow: hidden;
 }
 
-.memberCard>div:nth-child(1){
+.memberCard>div:nth-child(1) {
     width: 100%;
     aspect-ratio: 560 / 676;
     overflow: hidden;
     position: relative;
 }
 
-.memberCard>div:nth-child(1) img{
+.memberCard>div:nth-child(1) img {
     width: 100%;
     height: auto;
-    position: relative!important;
+    position: relative !important;
 }
 
-.teamContainer{
+.teamContainer {
     display: flex;
     gap: 20px;
     flex-direction: column;
 }
 
-.teamTop{
+.teamTop {
     display: flex;
     gap: 20px;
     align-items: stretch;
 }
 
-.mainMember{
+.mainMember {
     width: 34%;
 }
 
-.membersOne{
+.membersOne {
     width: calc(66% - 20px);
     display: flex;
     flex-wrap: wrap;
@@ -54,11 +54,11 @@
     row-gap: 20px;
 }
 
-.membersOne>.memberCard{
+.membersOne>.memberCard {
     width: calc(25% - 20px);
 }
 
-.membersTwo{
+.membersTwo {
     display: flex;
     gap: 20px;
     row-gap: 20px;
@@ -66,14 +66,94 @@
     padding-bottom: 40px;
 }
 
-.membersTwo>.memberCard{
-    width: calc((100% - 100px) / 6 );
+.membersTwo>.memberCard {
+    width: calc((100% - 100px) / 6);
 }
 
-.onlyDesktop { display: block; }
-.onlyMobile { display: none; }
+.desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-@media (max-width: 1023px) {
-  .onlyDesktop { display: none; }
-  .onlyMobile { display: block; }
+.mobile {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mainMember {
+        width: 68%;
+    }
+
+    .membersOne {
+        width: calc(32.9% - 20px);
+        flex-direction: column;
+    }
+
+    .membersOne .memberCard {
+        width: 100%;
+    }
+
+    .membersTwo .memberCard {
+        width: calc((100% - 40px) / 3);
+    }
+
+    .peopleTopContainer h4 {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        max-width: 80%;
+        font-size: 2.4vw;
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+    .peopleTopContainer h1 {
+        font-size: 14vw!important;
+    }
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mainMember {
+        width: 100%;
+    }
+
+    .membersOne {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .teamTop {
+        flex-direction: column;
+    }
+
+    .membersOne .memberCard {
+        width: calc(50% - 10px);
+    }
+
+    .membersTwo .memberCard {
+        width: calc(50% - 10px);
+    }
+
+    .peopleTopTop>div:nth-child(2) {
+        display: none;
+    }
 }

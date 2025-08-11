@@ -1,5 +1,5 @@
 import EditablePersonImage from "~/components/EditablePersonImage";
-import { getPeopleCached } from "~/server/cachedReads";
+import { db } from "~/server/db";
 import styles from "./people.module.css";
 import Image from "next/image";
 import { EditableText } from "~/components/EditableText";
@@ -11,7 +11,7 @@ const cx = (...cls: Array<string | false | undefined>) =>
 
 export default async function PeoplePage() {
   const blockMap = await getBlocksForPage("/people");
-  const people = await getPeopleCached();
+  const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
 
   const [main, ...rest] = people; // first person is the big one
 
@@ -69,38 +69,93 @@ export default async function PeoplePage() {
       </section>
       <section id="people-actual">
         <div className={cx("containerr", "team", styles.teamContainer)}>
-          <div className={cx("containerr", "team", styles.teamContainer)}>
-  {/* DESKTOP layout */}
-  <div className={`${styles.teamTop} ${styles.onlyDesktop}`}>
-    <div className={styles.mainMember}>
-      {main && <MemberCard person={main} />}
-    </div>
-    <div className={styles.membersOne}>
-      {/* existing EMPTY slot mapping logic */}
-    </div>
-  </div>
-  <div className={`${styles.membersTwo} ${styles.onlyDesktop}`}>
-    {/* existing EMPTY slot mapping logic */}
-  </div>
+          {/* DESKTOP (your existing layout, unchanged) */}
+          <div className={styles.desktop}>
+            <div className={styles.teamTop}>
+              {/* mainMember (big) */}
+              <div className={styles.mainMember}>
+                {main && <MemberCard person={main} />}
+              </div>
 
-  {/* MOBILE layout */}
-  <div className={`${styles.teamTop} ${styles.onlyMobile}`}>
-    <div className={styles.mainMember}>
-      {main && <MemberCard person={main} />}
-    </div>
-    <div className={styles.membersOne}>
-      {rest.slice(0, 2).map((person) => (
-        <MemberCard key={person.id} person={person} />
-      ))}
-    </div>
-  </div>
-  <div className={`${styles.membersTwo} ${styles.onlyMobile}`}>
-    {rest.slice(2).map((person) => (
-      <MemberCard key={person.id} person={person} />
-    ))}
-  </div>
-</div>
+              {/* membersOne with fixed empty slots: 2nd, 5th, 7th (1-based) */}
+              <div className={styles.membersOne}>
+                {(() => {
+                  const EMPTY = new Set([1, 4, 6]); // 0-based positions to keep empty
+                  let iRest = 0;
+                  return Array.from({ length: 8 }).map((_, i) => {
+                    if (EMPTY.has(i))
+                      return (
+                        <div key={`empty-${i}`} className={styles.memberCard} />
+                      );
+                    const person = rest[iRest++];
+                    return person ? (
+                      <MemberCard key={person.id} person={person} />
+                    ) : (
+                      <div key={`pad-${i}`} className={styles.memberCard} />
+                    );
+                  });
+                })()}
+              </div>
+            </div>
 
+            <div className={styles.membersTwo}>
+              {(() => {
+                const remaining = rest.slice(5); // after main + membersOne
+                const EMPTY = new Set([1, 5, 8, 10, 12, 14]); // 0-based
+                const CYCLE = 17;
+                const items: React.ReactNode[] = [];
+                let idx = 0;
+                let pos = 0;
+
+                while (idx < remaining.length) {
+                  const cyclePos = pos % CYCLE;
+                  if (EMPTY.has(cyclePos)) {
+                    items.push(
+                      <div
+                        key={`empty-${pos}`}
+                        className={styles.memberCard}
+                      />,
+                    );
+                  } else {
+                    const person = remaining[idx++];
+                    items.push(
+                      person ? (
+                        <MemberCard key={person.id} person={person} />
+                      ) : (
+                        <div key={`pad-${pos}`} className={styles.memberCard} />
+                      ),
+                    );
+                  }
+                  pos++;
+                }
+                return items;
+              })()}
+            </div>
+          </div>
+
+          {/* MOBILE (<1024px): same structure (teamTop → mainMember + membersOne, then membersTwo) */}
+          <div className={styles.mobile}>
+            <div className={styles.teamTop}>
+              {/* mainMember */}
+              <div className={styles.mainMember}>
+                {main && <MemberCard person={main} />}
+              </div>
+
+              {/* membersOne — next 2 people, no gaps */}
+              <div className={styles.membersOne}>
+                {rest.slice(0, 2).map((person) => (
+                  <MemberCard key={person.id} person={person} />
+                ))}
+              </div>
+            </div>
+
+            {/* membersTwo — rest of the people, no gaps */}
+            <div className={styles.membersTwo}>
+              {rest.slice(2).map((person) => (
+                <MemberCard key={person.id} person={person} />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </main>
