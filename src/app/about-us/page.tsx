@@ -94,6 +94,9 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="consulatitons-provided"
+                  placeholderContent="Placeholder content"
+                  placeholderTag="h4"
+                  className="headline_5"
                 />
                 <p className="body-text">legal consulatitons were probided</p>
               </div>
@@ -101,7 +104,13 @@ export default async function AboutUsPage() {
 
             <div className={styles.numbersLeftBottom}>
               <div className={styles.numbersInner}>
-                <EditableText relUrl="/about-us" blockKey="contract-drafted" />
+                <EditableText
+                  relUrl="/about-us"
+                  blockKey="contract-drafted"
+                  placeholderContent="Placeholder content"
+                  placeholderTag="h4"
+                  className="headline_5"
+                />
                 <p className="body-text">contract drafted</p>
               </div>
             </div>
@@ -113,6 +122,9 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="transaction-completed"
+                  placeholderContent="Placeholder content"
+                  placeholderTag="h4"
+                  className="headline_5"
                 />
                 <p className="body-text">commercial transactions completed</p>
               </div>
@@ -120,7 +132,13 @@ export default async function AboutUsPage() {
 
             <div className={styles.numbersRightBottom}>
               <div className={styles.numbersInner}>
-                <EditableText relUrl="/about-us" blockKey="win-rate" />
+                <EditableText
+                  relUrl="/about-us"
+                  blockKey="win-rate"
+                  placeholderContent="Placeholder content"
+                  placeholderTag="h4"
+                  className="headline_5"
+                />
                 <p className="body-text">case win rate</p>
               </div>
             </div>
@@ -163,7 +181,7 @@ export default async function AboutUsPage() {
             </div>
 
             <div>
-              <p>
+              <p className="body_text">
                 Nour began his legal career in 2007 after graduating from
                 Egypt's Faculty of Law. He gained valuable experience handling
                 civil, corporate and tax cases before founding Nour Attorneys in
@@ -172,7 +190,7 @@ export default async function AboutUsPage() {
                 on complex transactions. His expertise in joint ventures and
                 real estate deals quickly established his reputation.
               </p>
-              <p>
+              <p className="body_text">
                 In 2017, Nour moved his practice to Dubai to better serve
                 growing client demand in the emirate. The same year, he
                 qualified to practice before Appeal Courts, expanding his legal
@@ -180,7 +198,7 @@ export default async function AboutUsPage() {
                 brand across the Middle East. Known for innovative solutions,
                 the firm specialized in cross-border business matters.
               </p>
-              <p>
+              <p className="body_text">
                 Today, Nour Attorneys continues growing through strategic
                 partnerships. The firm remains committed to excellence while
                 expanding its regional presence.
@@ -197,10 +215,10 @@ export default async function AboutUsPage() {
           <h6 className="accent_text_1">
             Behind every case lies a story of strategy, precision, and human
             impact. Our case studies don’t just document victories - they reveal
-            how{" "}
+            how
             <span className="blue-text">
               [legal insight transforms challenges]
-            </span>{" "}
+            </span>
             into
           </h6>
           <h6 className="accent_text_1">
