@@ -4,14 +4,16 @@ import styles from "./people.module.css";
 import Image from "next/image";
 import { EditableText } from "~/components/EditableText";
 import { getBlocksForPage } from "~/server/blocks";
+import { getPeopleCached } from "~/server/cachedReads";
 
-export const dynamic = "force-static";
+export const revalidate = false;
+
 const cx = (...cls: Array<string | false | undefined>) =>
   cls.filter(Boolean).join(" ");
 
 export default async function PeoplePage() {
   const blockMap = await getBlocksForPage("/people");
-  const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
+  const people = await getPeopleCached();
 
   const [main, ...rest] = people; // first person is the big one
 
