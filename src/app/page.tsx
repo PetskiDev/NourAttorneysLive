@@ -8,21 +8,19 @@ export default async function Home() {
 
       <h2>theproject</h2>
 
+      <EditableText relUrl="/" blockKey="text1" />
       <EditableText
         relUrl="/"
-        blockKey="text1"
-        isAdmin={true}
+        blockKey="text2"
+        placeholderContent="Placeholder content"
+        placeholderTag="h1"
+        className="subtitle_1"
       />
+      <h2>TIP</h2>
 
-        <h2>TIP</h2>
-
-        <div style={{ width: 100, height: 100, position: "relative" }}>
-          <EditableImage
-            relUrl="/"
-            blockKey="image1"
-            isAdmin={true}
-          />
-        </div>
+      <div style={{ width: 100, height: 100, position: "relative" }}>
+        <EditableImage relUrl="/" blockKey="image1" />
+      </div>
     </main>
   );
 }

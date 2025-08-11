@@ -28,7 +28,6 @@ export default async function ServicePage({
         <EditableText
           relUrl={relUrl}
           blockKey="intro"
-          isAdmin={true}
         />
       </section>
 
@@ -36,7 +35,6 @@ export default async function ServicePage({
         <EditableText
           relUrl={relUrl}
           blockKey="details"
-          isAdmin={true}
         />
       </section>
     </main>

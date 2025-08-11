@@ -11,7 +11,6 @@ export default async function AboutUsPage() {
             <EditableText
               relUrl="/about-us"
               blockKey="headline"
-              isAdmin={true}
             />
           </div>
 
@@ -19,12 +18,10 @@ export default async function AboutUsPage() {
             <EditableText
               relUrl="/about-us"
               blockKey="accent_1"
-              isAdmin={true}
             />
             <EditableText
               relUrl="/about-us"
               blockKey="accent_2"
-              isAdmin={true}
             />
           </div>
 
@@ -47,7 +44,6 @@ export default async function AboutUsPage() {
             <EditableText
               relUrl="/about-us"
               blockKey="about-one"
-              isAdmin={true}
             />
 
             <Image src={"/about-2.jpeg"} height={600} width={240} alt="image" />

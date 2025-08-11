@@ -38,7 +38,6 @@ export default async function PeoplePage() {
               <EditableText
                 relUrl="/people"
                 blockKey="headline"
-                isAdmin={true}
               />
             </div>
             <div className={styles.circles}>
@@ -56,7 +55,6 @@ export default async function PeoplePage() {
               <EditableText
                 relUrl="/people"
                 blockKey="subheadline"
-                isAdmin={true}
               />
             </h4>
           </div>

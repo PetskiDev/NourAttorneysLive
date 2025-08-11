@@ -14,3 +14,10 @@ export const blockSchema = z.object({
 });
 
 export type BlockDTO = z.infer<typeof blockSchema>;
+
+export const blockDeleteSchema = z.object({
+  relUrl: z.string(),
+  key: z.string(),
+});
+
+export type BlockDeleteDTO = z.infer<typeof blockDeleteSchema>;

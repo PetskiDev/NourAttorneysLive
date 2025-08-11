@@ -65,6 +65,26 @@ export default function EditableTextClient({
     }
   };
 
+  const deleteBlock = async () => {
+    if (!confirm("Delete this block? This cannot be undone.")) return;
+    try {
+      const res = await fetch("/api/blocks", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ relUrl, key: blockKey }),
+      });
+
+      if (res.ok) {
+        setEditing(false);
+        router.refresh();
+      } else {
+        console.error(await res.text());
+      }
+    } catch (e) {
+      console.error("Delete failed", e);
+    }
+  };
+
   return (
     <>
       {!editing && (
@@ -114,6 +134,7 @@ export default function EditableTextClient({
               </select>
               <button onClick={saveBlock}>Save</button>
               <button onClick={() => setEditing(false)}>Cancel</button>
+              <button onClick={deleteBlock} style={{ color: "#b00020" }}>Delete</button>
             </div>
 
             <textarea

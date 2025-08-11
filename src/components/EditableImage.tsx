@@ -6,22 +6,27 @@ import styles from "./EditableBlock.module.css";
 export async function EditableImage({
   relUrl,
   blockKey,
-  isAdmin = false,
+  placeholderUrl,
+  placeholderAlt,
 }: {
   relUrl: string;
   blockKey: string;
-  isAdmin?: boolean;
+  /** Optional fallback URL when DB content is missing. Not persisted. */
+  placeholderUrl?: string;
+  /** Optional alt text for placeholder image. */
+  placeholderAlt?: string;
 }) {
   const blocks = await getBlocksForPage(relUrl);
   const block = blocks[blockKey] as { content: string | null } | undefined;
-  const url = block?.content ?? null;
+  const dbUrl = block?.content ?? null;
+  const url = dbUrl ?? placeholderUrl ?? null;
 
   return (
     <div style={{ position: "relative", width: "100%", height: "100%" }}>
       {url ? (
         <Image
           src={url}
-          alt={blockKey}
+          alt={placeholderAlt ?? blockKey}
           className={styles.image}
           fill
           sizes="100vw"
@@ -29,9 +34,7 @@ export async function EditableImage({
         />
       ) : null}
 
-      {isAdmin && (
-        <EditableImageClient relUrl={relUrl} blockKey={blockKey} />
-      )}
+      <EditableImageClient relUrl={relUrl} blockKey={blockKey} />
     </div>
   );
 }
