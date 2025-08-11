@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getServiceBySlugCached } from "~/server/cachedReads";
-import { getBlocksForPage } from "~/server/blocks";
 import { EditableText } from "~/components/EditableText";
 
 export const revalidate = false;
@@ -17,7 +16,6 @@ export default async function ServicePage({
   if (!service) return notFound();
 
   const relUrl = `/services/${slug}`;
-  const blocks = await getBlocksForPage(relUrl);
 
   //TIPS CODE GOES HERE
   //USE EDITABLEBLOCKS WITH relurl and blocks
@@ -31,8 +29,6 @@ export default async function ServicePage({
           relUrl={relUrl}
           blockKey="intro"
           isAdmin={true}
-          initialContent={blocks["intro"]?.content}
-          initialTag={blocks["intro"]?.elementTag ?? "p"}
         />
       </section>
 
@@ -41,8 +37,6 @@ export default async function ServicePage({
           relUrl={relUrl}
           blockKey="details"
           isAdmin={true}
-          initialContent={blocks["details"]?.content}
-          initialTag={blocks["details"]?.elementTag ?? "p"}
         />
       </section>
     </main>

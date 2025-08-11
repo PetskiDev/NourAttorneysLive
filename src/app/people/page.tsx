@@ -2,7 +2,6 @@ import EditablePersonImage from "~/components/EditablePersonImage";
 import styles from "./people.module.css";
 import Image from "next/image";
 import { EditableText } from "~/components/EditableText";
-import { getBlocksForPage } from "~/server/blocks";
 import { getPeopleCached } from "~/server/cachedReads";
 
 export const revalidate = false;
@@ -11,7 +10,6 @@ const cx = (...cls: Array<string | false | undefined>) =>
   cls.filter(Boolean).join(" ");
 
 export default async function PeoplePage() {
-  const blockMap = await getBlocksForPage("/people");
   const people = await getPeopleCached();
 
   const [main, ...rest] = people; // first person is the big one
@@ -41,8 +39,6 @@ export default async function PeoplePage() {
                 relUrl="/people"
                 blockKey="headline"
                 isAdmin={true}
-                initialContent={blockMap["headline"]?.content}
-                initialTag={blockMap["headline"]?.elementTag ?? "h1"}
               />
             </div>
             <div className={styles.circles}>
@@ -61,8 +57,6 @@ export default async function PeoplePage() {
                 relUrl="/people"
                 blockKey="subheadline"
                 isAdmin={true}
-                initialContent={blockMap["subheadline"]?.content}
-                initialTag={blockMap["subheadline"]?.elementTag ?? "h4"}
               />
             </h4>
           </div>
