@@ -43,11 +43,11 @@
 }
 
 .mainMember {
-    width: 34%;
+    width: 32.5%;
 }
 
 .membersOne {
-    width: calc(66% - 20px);
+    width: calc(67.5% - 20px);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -55,7 +55,7 @@
 }
 
 .membersOne>.memberCard {
-    width: calc(25% - 20px);
+    width: calc((100% - 60px) / 4);
 }
 
 .membersTwo {
@@ -92,11 +92,11 @@
     }
 
     .mainMember {
-        width: 68%;
+        width: 66%;
     }
 
     .membersOne {
-        width: calc(32.9% - 20px);
+        width: calc(34% - 20px);
         flex-direction: column;
     }
 
