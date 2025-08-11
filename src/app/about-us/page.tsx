@@ -33,10 +33,10 @@ export default async function AboutUsPage() {
               />
               <EditableText
                 relUrl="/about-us"
-                blockKey="accent_1"
+                blockKey="accent_2"
                 isAdmin={true}
-                initialContent={blockMap["accent_1"]?.content}
-                initialTag={blockMap["accent_1"]?.elementTag ?? "h1"}
+                initialContent={blockMap["accent_2"]?.content}
+                initialTag={blockMap["accent_2"]?.elementTag ?? "h1"}
               />
             </div>
             

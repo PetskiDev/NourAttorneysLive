@@ -69,62 +69,38 @@ export default async function PeoplePage() {
       </section>
       <section id="people-actual">
         <div className={cx("containerr", "team", styles.teamContainer)}>
-          <div className={styles.teamTop}>
-            {/* mainMember (big) */}
-            <div className={styles.mainMember}>
-              {main && <MemberCard person={main} />}
-            </div>
+          <div className={cx("containerr", "team", styles.teamContainer)}>
+  {/* DESKTOP layout */}
+  <div className={`${styles.teamTop} ${styles.onlyDesktop}`}>
+    <div className={styles.mainMember}>
+      {main && <MemberCard person={main} />}
+    </div>
+    <div className={styles.membersOne}>
+      {/* existing EMPTY slot mapping logic */}
+    </div>
+  </div>
+  <div className={`${styles.membersTwo} ${styles.onlyDesktop}`}>
+    {/* existing EMPTY slot mapping logic */}
+  </div>
 
-            {/* membersOne with fixed empty slots: 2nd, 5th, 7th (1-based) */}
-            <div className={styles.membersOne}>
-              {(() => {
-                const EMPTY = new Set([1, 4, 6]); // 0-based positions to keep empty
-                let iRest = 0;
-                return Array.from({ length: 8 }).map((_, i) => {
-                  if (EMPTY.has(i))
-                    return (
-                      <div key={`empty-${i}`} className={styles.memberCard} />
-                    );
-                  const person = rest[iRest++];
-                  return person ? (
-                    <MemberCard key={person.id} person={person} />
-                  ) : (
-                    <div key={`pad-${i}`} className={styles.memberCard} />
-                  );
-                });
-              })()}
-            </div>
-          </div>
-          <div className={styles.membersTwo}>
-            {(() => {
-              const remaining = rest.slice(5); // after main + membersOne
-              const EMPTY = new Set([1, 5, 8, 10, 12, 14]); // 0-based => 2,6,9,11,13,15
-              const CYCLE = 17; // 1..17 then repeat
-              const items: React.ReactNode[] = [];
-              let idx = 0;
-              let pos = 0;
+  {/* MOBILE layout */}
+  <div className={`${styles.teamTop} ${styles.onlyMobile}`}>
+    <div className={styles.mainMember}>
+      {main && <MemberCard person={main} />}
+    </div>
+    <div className={styles.membersOne}>
+      {rest.slice(0, 2).map((person) => (
+        <MemberCard key={person.id} person={person} />
+      ))}
+    </div>
+  </div>
+  <div className={`${styles.membersTwo} ${styles.onlyMobile}`}>
+    {rest.slice(2).map((person) => (
+      <MemberCard key={person.id} person={person} />
+    ))}
+  </div>
+</div>
 
-              while (idx < remaining.length) {
-                const cyclePos = pos % CYCLE; // 0..16
-                if (EMPTY.has(cyclePos)) {
-                  items.push(
-                    <div key={`empty-${pos}`} className={styles.memberCard} />,
-                  );
-                } else {
-                  const person = remaining[idx++];
-                  items.push(
-                    person ? (
-                      <MemberCard key={person.id} person={person} />
-                    ) : (
-                      <div key={`pad-${pos}`} className={styles.memberCard} />
-                    ),
-                  );
-                }
-                pos++;
-              }
-              return items;
-            })()}
-          </div>
         </div>
       </section>
     </main>

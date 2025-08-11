@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color: white;
+  background-color: white;
 }
 
 a {
@@ -15,7 +15,7 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol{
+h1, h2, h3, h4, h5, h6, p, ul, ol {
   padding: 0;
   margin: 0;
 }
@@ -24,32 +24,32 @@ h1, h2, h3, h4, h5, h6, p, ul, ol{
   box-sizing: border-box;
 }
 
-.containerr{
+.containerr {
   max-width: 1920px;
   margin: 0 auto;
   width: 95%;
   position: relative;
 }
 
-header, section, footer, main{
+header, section, footer, main {
   width: 100%;
 }
 
-header{
-font-family: "Manrope", sans-serif;
+header {
+  font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-@media only screen and (max-width: 1024px){
-  .mobnot{
-    display: none!important;
+@media only screen and (max-width: 1024px) {
+  .mobnot {
+    display: none !important;
   }
 }
 
-@media only screen and (min-width: 1024px){
-  .mob{
-    display: none!important;
+@media only screen and (min-width: 1024px) {
+  .mob {
+    display: none !important;
   }
 }
 
@@ -59,7 +59,8 @@ html, body {
 }
 
 body {
-  overflow: hidden; /* lock native scroll */
+  overflow: hidden;
+  /* lock native scroll */
 }
 
 /* The element we translate */
@@ -78,7 +79,8 @@ body {
 [data-reveal-content] h5,
 [data-reveal-content] h6 {
   opacity: 0;
-  transition: opacity 500ms ease-out; /* matches controller default */
+  transition: opacity 500ms ease-out;
+  /* matches controller default */
 }
 
 /* RevealController will set data-revealed="1" */
@@ -86,20 +88,20 @@ body {
   opacity: 1;
 }
 
-.headline_1>div>h1{
+.headline_1>div>h1 {
   font-size: 11vw;
   font-weight: 700;
   letter-spacing: -5%;
 }
 
-.subheadline_2>div>*{
+.subheadline_2>div>* {
   font-size: 1.9vw;
   font-weight: 700;
   line-height: 110%;
   letter-spacing: -4%;
 }
 
-.title_1{
+.title_1 {
   font-size: 20px;
   font-family: "Inter", sans-serif;
   font-weight: 600;
@@ -107,45 +109,50 @@ body {
   letter-spacing: -4%;
 }
 
-.subtitle_1{
+.subtitle_1 {
   color: #545454;
   font-family: "Inter", sans-serif;
   font-size: 18px;
   letter-spacing: -4%;
 }
 
-.accent_text_2>*>*{
-}
-
-.headline_1_2>*>*{
-}
-
-@media only screen and (min-width: 1920px){
-  .headline_1>div>h1{
-  font-size: 220px;
-}
-
-.subheadline_2>div>*{
-  font-size: 36px;
-}
-
-.title_1{
-  font-size: 20px;
-}
-
-.subtitle_1{
-  font-size: 18px;
-}
-
-.accent_text_2>*>*{
+.accent_text_2>*>* {
+  font-size: 1.5vw;
   font-family: "Inter";
-  font-weight: 400;
-  font-size: 24px;
+    font-weight: 400;
 }
 
-.headline_1_2>*>*{
-  
-  font-size: 280px;
+.headline_1_2>*>* {
+  font-size: 15vw;
   font-weight: 700;
 }
+
+@media only screen and (min-width: 1920px) {
+  .headline_1>div>h1 {
+    font-size: 220px;
+  }
+
+  .subheadline_2>div>* {
+    font-size: 36px;
+  }
+
+  .title_1 {
+    font-size: 20px;
+  }
+
+  .subtitle_1 {
+    font-size: 18px;
+  }
+
+  .accent_text_2>*>* {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  .headline_1_2>*>* {
+
+    font-size: 280px;
+    font-weight: 700;
+  }
 }
