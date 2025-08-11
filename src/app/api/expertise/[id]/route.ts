@@ -1,6 +1,8 @@
 import { db } from "~/server/db";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { revalidateTag } from "next/cache";
+import { tag } from "~/server/cacheTags";
 
 const UpdateExpertiseSchema = z.object({
   title: z.string().min(1).optional(),
@@ -35,6 +37,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   try {
     const data = UpdateExpertiseSchema.parse(await req.json());
     const updated = await db.expertise.update({ where: { id }, data });
+    revalidateTag(tag.expertiseList());
+    revalidateTag(tag.expertise(id));
     return NextResponse.json(updated, { status: 200 });
   } catch (err: unknown) {
     if (err instanceof Error) {
@@ -54,6 +58,8 @@ export async function DELETE(_req: Request, { params }: { params: Promise<{ id: 
   if (id === null) return NextResponse.json({ message: "Invalid id" }, { status: 400 });
   try {
     await db.expertise.delete({ where: { id } });
+    revalidateTag(tag.expertiseList());
+    revalidateTag(tag.expertise(id));
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err: unknown) {
     if (err instanceof Error) {

@@ -1,7 +1,8 @@
 import { db } from "~/server/db";
 import { type NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
 import { z } from "zod";
+import { tag } from "~/server/cacheTags";
 
 const PersonSchema = z.object({
   name: z.string().min(1),
@@ -35,7 +36,7 @@ export async function POST(req: NextRequest) {
         featured: data.featured,
       },
     });
-    revalidatePath("/people");
+    revalidateTag(tag.peopleList());
     return NextResponse.json(newPerson, { status: 201 });
   } catch (err: unknown) {
     if (err instanceof z.ZodError) {

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { db } from "~/server/db";
+import { getServiceBySlugCached } from "~/server/cachedReads";
 import { getBlocksForPage } from "~/server/blocks";
 import { EditableText } from "~/components/EditableText";
 
@@ -13,7 +13,7 @@ export default async function ServicePage({
   const p = await params;
   const slug = p.slug;
 
-  const service = await db.service.findUnique({ where: { slug } });
+  const service = await getServiceBySlugCached(slug);
   if (!service) return notFound();
 
   const relUrl = `/services/${slug}`;

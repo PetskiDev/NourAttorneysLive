@@ -1,6 +1,8 @@
 import { db } from "~/server/db";
 import { NextResponse } from "next/server";
 import { z } from "zod";
+import { revalidateTag } from "next/cache";
+import { tag } from "~/server/cacheTags";
 
 const UpdateServiceSchema = z.object({
   title: z.string().min(1).optional(),
@@ -39,7 +41,13 @@ export async function PUT(req: Request, { params }: { params: Promise<{ serviceI
   if (id === null) return NextResponse.json({ message: "Invalid id" }, { status: 400 });
   try {
     const data = UpdateServiceSchema.parse(await req.json());
+    const before = await db.service.findUnique({ where: { id } });
     const updated = await db.service.update({ where: { id }, data });
+    // Invalidate lists and slug-specific caches (old and new if changed)
+    revalidateTag(tag.serviceList());
+    if (before?.slug) revalidateTag(tag.serviceSlug(before.slug));
+    const newSlug = data.slug ?? before?.slug;
+    if (newSlug) revalidateTag(tag.serviceSlug(newSlug));
     return NextResponse.json(updated, { status: 200 });
   } catch (err: unknown) {
     if (err instanceof Error) {
@@ -58,7 +66,10 @@ export async function DELETE(_req: Request, { params }: { params: Promise<{ serv
   const id = parseId(serviceId);
   if (id === null) return NextResponse.json({ message: "Invalid id" }, { status: 400 });
   try {
+    const before = await db.service.findUnique({ where: { id } });
     await db.service.delete({ where: { id } });
+    revalidateTag(tag.serviceList());
+    if (before?.slug) revalidateTag(tag.serviceSlug(before.slug));
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err: unknown) {
     if (err instanceof Error) {

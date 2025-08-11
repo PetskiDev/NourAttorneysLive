@@ -3,7 +3,8 @@ import { db } from '~/server/db';
 import { blockSchema } from '~/lib/validators';
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
-import { revalidatePath } from 'next/cache';
+import { revalidateTag } from 'next/cache';
+import { tag } from '~/server/cacheTags';
 
 export async function POST(req: Request) {
   try {
@@ -21,7 +22,7 @@ export async function POST(req: Request) {
       },
     });
 
-    revalidatePath(data.relUrl, 'page');
+    revalidateTag(tag.block(data.relUrl));
 
 
     return NextResponse.json({ success: true });

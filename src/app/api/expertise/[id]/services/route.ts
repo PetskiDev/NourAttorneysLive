@@ -1,6 +1,8 @@
 import { db } from "~/server/db";
 import { type NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { revalidateTag } from "next/cache";
+import { tag } from "~/server/cacheTags";
 
 const ServiceCreateSchema = z.object({
   title: z.string().min(1),
@@ -43,6 +45,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
     const created = await db.service.create({
       data: { expertiseId, title: data.title, slug: data.slug },
     });
+    revalidateTag(tag.serviceList());
+    revalidateTag(tag.expertise(expertiseId));
     return NextResponse.json(created, { status: 201 });
   } catch (err: unknown) {
     if (err instanceof z.ZodError) {

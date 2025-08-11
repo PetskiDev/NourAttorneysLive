@@ -1,5 +1,5 @@
 import EditablePersonImage from "~/components/EditablePersonImage";
-import { db } from "~/server/db";
+import { getPeopleCached } from "~/server/cachedReads";
 import styles from "./people.module.css";
 import Image from "next/image";
 import { EditableText } from "~/components/EditableText";
@@ -11,7 +11,7 @@ const cx = (...cls: Array<string | false | undefined>) =>
 
 export default async function PeoplePage() {
   const blockMap = await getBlocksForPage("/people");
-  const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
+  const people = await getPeopleCached();
 
   const [main, ...rest] = people; // first person is the big one
 
