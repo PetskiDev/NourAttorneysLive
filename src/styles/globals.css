@@ -86,14 +86,14 @@ body {
   opacity: 1;
 }
 
-.headline_1{
-  font-size: 220px;
+.headline_1>div>h1{
+  font-size: 11vw;
   font-weight: 700;
   letter-spacing: -5%;
 }
 
-.subheadline_2{
-  font-size: 36px;
+.subheadline_2>div>*{
+  font-size: 1.9vw;
   font-weight: 700;
   line-height: 110%;
   letter-spacing: -4%;
@@ -112,4 +112,40 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   letter-spacing: -4%;
+}
+
+.accent_text_2>*>*{
+}
+
+.headline_1_2>*>*{
+}
+
+@media only screen and (min-width: 1920px){
+  .headline_1>div>h1{
+  font-size: 220px;
+}
+
+.subheadline_2>div>*{
+  font-size: 36px;
+}
+
+.title_1{
+  font-size: 20px;
+}
+
+.subtitle_1{
+  font-size: 18px;
+}
+
+.accent_text_2>*>*{
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.headline_1_2>*>*{
+  
+  font-size: 280px;
+  font-weight: 700;
+}
 }

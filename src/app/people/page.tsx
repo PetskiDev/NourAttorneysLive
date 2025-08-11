@@ -2,12 +2,15 @@ import EditablePersonImage from "~/components/EditablePersonImage";
 import { db } from "~/server/db";
 import styles from "./people.module.css";
 import Image from "next/image";
+import { EditableText } from "~/components/EditableText";
+import { getBlocksForPage } from "~/server/blocks";
 
 export const dynamic = "force-static";
 const cx = (...cls: Array<string | false | undefined>) =>
   cls.filter(Boolean).join(" ");
 
 export default async function PeoplePage() {
+  const blockMap = await getBlocksForPage("/people");
   const people = await db.people.findMany({ orderBy: { createdAt: "desc" } });
 
   const [main, ...rest] = people; // first person is the big one
@@ -32,7 +35,15 @@ export default async function PeoplePage() {
       <section id="people-top">
         <div className={cx("containerr", styles.peopleTopContainer)}>
           <div className={styles.peopleTopTop}>
-            <h1 className="headline_1">OUR PEOPLE</h1>
+            <div className="headline_1">
+              <EditableText
+                relUrl="/people"
+                blockKey="headline"
+                isAdmin={true}
+                initialContent={blockMap["headline"]?.content}
+                initialTag={blockMap["headline"]?.elementTag ?? "h1"}
+              />
+            </div>
             <div className={styles.circles}>
               <Image
                 src="/people-circles.svg"
@@ -45,8 +56,13 @@ export default async function PeoplePage() {
           </div>
           <div className={styles.peopleTopBottom}>
             <h4 className="subheadline_2">
-              team united by knowledge, integrity<br></br>and commitment to
-              sustainable growth
+              <EditableText
+                relUrl="/people"
+                blockKey="subheadline"
+                isAdmin={true}
+                initialContent={blockMap["subheadline"]?.content}
+                initialTag={blockMap["subheadline"]?.elementTag ?? "h4"}
+              />
             </h4>
           </div>
         </div>
@@ -111,7 +127,6 @@ export default async function PeoplePage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

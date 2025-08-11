@@ -150,7 +150,7 @@ export function EditableText({
       {isAdmin && !editing && (
         <button
           className={styles.editBtn}
-          style={{ left: -10, right: "auto", top: -15 }}
+          style={{ left: -10, right: "auto", top: -15, zIndex: 1000000000000 }}
           onClick={() => {
             setNewContent(content ?? "");
             setEditing(true);
