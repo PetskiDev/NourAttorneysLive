@@ -34,8 +34,9 @@ export default async function PeoplePage() {
       <section id="people-top">
         <div className={cx("containerr", styles.peopleTopContainer)}>
           <div className={styles.peopleTopTop}>
-            <div className="headline_1">
+            <div>
               <EditableText
+               className="headline_1"
                 relUrl="/people"
                 blockKey="headline"
               />
@@ -51,8 +52,9 @@ export default async function PeoplePage() {
             </div>
           </div>
           <div className={styles.peopleTopBottom}>
-            <h4 className="subheadline_2">
+            <h4>
               <EditableText
+               className="subheadline_2"
                 relUrl="/people"
                 blockKey="subheadline"
               />

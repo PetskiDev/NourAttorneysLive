@@ -11,11 +11,23 @@ export default async function AboutUsPage() {
     <main>
       <section className={styles.aboutHero}>
         <div className="containerr">
-            <EditableText relUrl="/about-us" blockKey="headline"  className="headline_1_2"/>
+          <EditableText
+            relUrl="/about-us"
+            blockKey="headline"
+            className="headline_1_2"
+          />
 
           <div>
-            <EditableText className="accent_text_2" relUrl="/about-us" blockKey="accent_1" />
-            <EditableText className="accent_text_2" relUrl="/about-us" blockKey="accent_2" />
+            <EditableText
+              className="accent_text_2"
+              relUrl="/about-us"
+              blockKey="accent_1"
+            />
+            <EditableText
+              className="accent_text_2"
+              relUrl="/about-us"
+              blockKey="accent_2"
+            />
           </div>
 
           <Image
@@ -34,8 +46,12 @@ export default async function AboutUsPage() {
           </div>
 
           <div className={styles.aboutOneRight}>
-            <div className="subheadline_2">
-              <EditableText relUrl="/about-us" blockKey="about-one" />
+            <div>
+              <EditableText
+                className="subheadline_2"
+                relUrl="/about-us"
+                blockKey="about-one"
+              />
             </div>
 
             <Image src={"/about-2.jpg"} height={600} width={240} alt="image" />
@@ -51,11 +67,25 @@ export default async function AboutUsPage() {
                 <span>[01]</span>
               </div>
               <div>
-                <EditableText className="title_5" relUrl="/about-us" blockKey="about-approach" />
+                <EditableText
+                  className="title_5"
+                  relUrl="/about-us"
+                  blockKey="about-approach"
+                />
               </div>
             </div>
-            <EditableText relUrl="/about-us" blockKey="about-ap-1" />
-            <EditableText relUrl="/about-us" blockKey="about-ap-2" />
+            <EditableText
+              className="body_text"
+              relUrl="/about-us"
+              blockKey="about-ap-1"
+            />
+            <div>
+              <p className="body_text">
+                just for today but for the future. True legal expertise isn’t
+                just about knowing the law, but it’s also about understanding
+                people, businesses, and the world and market they operate in.
+              </p>
+            </div>
           </div>
           <div className={styles.aboutTwoLine}>
             <div>
@@ -63,11 +93,26 @@ export default async function AboutUsPage() {
                 <span>[02]</span>
               </div>
               <div>
-                <EditableText className="title_5" placeholderContent="Our Vision" relUrl="/about-us" blockKey="about-vision" />
+                <EditableText
+                  className="title_5"
+                  placeholderContent="Our Vision"
+                  relUrl="/about-us"
+                  blockKey="about-vision"
+                />
               </div>
             </div>
-            <EditableText relUrl="/about-us" blockKey="about-vi-1" placeholderContent="Nour Attorneys strives to be more than just legal advisors; we are partners in progress, empowering businesses and individuals with the knowledge, support, and strategies they need to succeed. Through sustainability, education, and investment in our" className="body_text" />
-            <EditableText relUrl="/about-us" blockKey="about-vi-2" className="body_text" placeholderContent="people and community, we are building a lasting legacy of trust, growth, and positive change." />
+            <EditableText
+              relUrl="/about-us"
+              blockKey="about-vi-1"
+              placeholderContent="Nour Attorneys strives to be more than just legal advisors; we are partners in progress, empowering businesses and individuals with the knowledge, support, and strategies they need to succeed. Through sustainability, education, and investment in our"
+              className="body_text"
+            />
+            <EditableText
+              relUrl="/about-us"
+              blockKey="about-vi-2"
+              className="body_text"
+              placeholderContent="people and community, we are building a lasting legacy of trust, growth, and positive change."
+            />
           </div>
           <div className={styles.aboutTwoLine}>
             <div>
@@ -75,11 +120,26 @@ export default async function AboutUsPage() {
                 <span>[03]</span>
               </div>
               <div>
-                <EditableText className="title_5" relUrl="/about-us" blockKey="about-mission" placeholderContent="OUR MISSION" />
+                <EditableText
+                  className="title_5"
+                  relUrl="/about-us"
+                  blockKey="about-mission"
+                  placeholderContent="OUR MISSION"
+                />
               </div>
             </div>
-            <EditableText className="body_text" relUrl="/about-us" blockKey="about-mi-1" placeholderContent="Through the utilization of innovative technology, alternative dispute resolution, and sustainable legal practices, Nour Attorneys ensures that its clients receive proactive, transparent and personalized legal to withstand legal risks and unpredicted legal " />
-            <EditableText className="body_text" relUrl="/about-us" blockKey="about-mi-2" placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients' legal risks management, establishing a partnership based on trust, strategy, and discretion." />
+            <EditableText
+              className="body_text"
+              relUrl="/about-us"
+              blockKey="about-mi-1"
+              placeholderContent="Through the utilization of innovative technology, alternative dispute resolution, and sustainable legal practices, Nour Attorneys ensures that its clients receive proactive, transparent and personalized legal to withstand legal risks and unpredicted legal "
+            />
+            <EditableText
+              className="body_text"
+              relUrl="/about-us"
+              blockKey="about-mi-2"
+              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients&apos; legal risks management, establishing a partnership based on trust, strategy, and discretion."
+            />
           </div>
         </div>
       </section>
@@ -164,7 +224,7 @@ export default async function AboutUsPage() {
           </h5>
 
           <h5 className="accent_text_2">
-            of corporate law in the meedle east by providing unique services
+            of corporate law in the middle east by providing unique services
             that thrives the legal community to follow his steps.
           </h5>
 
@@ -181,7 +241,7 @@ export default async function AboutUsPage() {
             <div>
               <p className="body_text">
                 Nour began his legal career in 2007 after graduating from
-                Egypt's Faculty of Law. He gained valuable experience handling
+                Egypt&apos;s Faculty of Law. He gained valuable experience handling
                 civil, corporate and tax cases before founding Nour Attorneys in
                 May, 2009. Recognizing greater opportunities abroad, Nour
                 relocated to Abu Dhabi in 2010, advising international clients
@@ -337,7 +397,7 @@ export default async function AboutUsPage() {
                 With extensive experience in corporate law, dispute resolution,
                 and business legal advisory, Nour has established a reputation
                 for delivering bespoke legal solutions with precision and
-                integrity. Nour's background reflects a commitment to
+                integrity. Nour&apos;s background reflects a commitment to
                 excellence, shaping a firm that blends deep legal expertise with
                 a forward-thinking approach.
               </p>

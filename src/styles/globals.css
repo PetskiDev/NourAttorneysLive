@@ -146,7 +146,7 @@ body {
   border: 1px solid #c4c4c4;
 }
 
-.study-box > div:nth-child(1) {
+.study-box>div:nth-child(1) {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -185,7 +185,7 @@ body {
 }
 
 .accent_text_2 {
-  font-size: 1.5vw;
+  font-size: 1.7vw;
   font-family: "Inter";
   font-weight: 400;
   text-transform: uppercase;
@@ -202,10 +202,12 @@ body {
 }
 
 .body_text {
-  font-size: 18px;
+  font-size: 0.9vw;
   font-weight: 400;
   font-family: "Inter";
   color: #101010;
+  line-height: 120%;
+  letter-spacing: -0.04;
 }
 
 .title_3 {
@@ -233,8 +235,10 @@ body {
 
 .accent_text_1 {
   font-size: 36px;
-  font: 700;
+  font-weight: 700;
   text-transform: uppercase;
+  line-height: 110%;
+  letter-spacing: -0.04;
 }
 
 .title_2 {
@@ -275,7 +279,7 @@ body {
   font-family: "Inter";
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1930px) {
   .headline_1 {
     font-size: 220px;
   }
@@ -295,7 +299,7 @@ body {
   .accent_text_2 {
     font-family: "Inter";
     font-weight: 400;
-    font-size: 24px;
+    font-size: 34px;
   }
 
   .headline_1_2 {
@@ -313,5 +317,74 @@ body {
     font-weight: 400;
     font-family: "Inter";
     color: #101010;
+  }
+
+  .title_3 {
+    font-size: #101010;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -4%;
+  }
+
+  .subtitle_4 {
+    color: #545454;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Inter";
+    font-weight: 500;
+    letter-spacing: -4%;
+  }
+
+  .headline_2 {
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -4%;
+  }
+
+  .accent_text_1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 110%;
+    letter-spacing: -0.04;
+  }
+
+  .title_2 {
+    font-size: 18px;
+    font-family: "Inter";
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -4%;
+  }
+
+  .subtitle_2 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Inter";
+    color: #545454;
+  }
+
+  .descriptor_2 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Inter";
+    letter-spacing: -5%;
+  }
+
+  .accent_text_3 {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 120%;
+    letter-spacing: -7%;
+  }
+
+  .title_5 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Inter";
   }
 }
