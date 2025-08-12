@@ -94,8 +94,8 @@
 }
 
 .aboutTwoLine>div:nth-child(1)>div:nth-child(1)>span{
-    width: 30%;
-    margin-left: auto;
+    width: 50%;
+    margin-left: 40%;
 }
 
 .aboutTwoLine>div:nth-child(1)>div:nth-child(2){
@@ -116,15 +116,17 @@
     margin-left: 50%;
 }
 
-.aboutNumbers>.containerr{
+.aboutNumbers>*{
     display: flex;
     position: relative;
+    width: 100%;
 }
 
 .numbersLeft, .numbersRight{
     display: flex;
     flex-direction: column;
     width: 50%;
+    justify-content: space-between;
     height: 536px;
 }
 
@@ -155,8 +157,8 @@
     gap: 20px;
     align-items: center;
     justify-content: center;
-    height: 460px;
-    width: 210px;
+    height: 184;
+    width: 415px;
     position: relative;
 }
 
@@ -182,7 +184,7 @@
     border-bottom: 5px solid #0033A0;
 }
 
-.numberAbs{
+.numbersAbs{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -194,22 +196,24 @@
     text-align: center;
 }
 
-.history>.containerr{
+.history>:global(.containerr){
     display: flex;
     flex-direction: column;
     gap: 0px;
+    text-align: center;
 }
 
-.history>.containerr>h2:nth-child(1){
+.history>:global(.containerr)>h2:nth-child(1){
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.history>.containerr>.accent_text_2:nth-child(2){
+.history>:global(.containerr)>.accent_text_2:nth-child(2){
     margin-left: 35%;
     width: 50%;
 }
 
-.history>.containerr>.accent_text_2:nth-child(3){
+.history>:global(.containerr)>.accent_text_2:nth-child(3){
     margin-left: 50%;
     width: 35%;
 }
@@ -217,15 +221,26 @@
 .timelineDiv{
     display: flex;
     align-items: center;
+    margin-top: 15px;
 }
 
 .timelineDiv>div{
     width: 50%;
 }
 
+.timelineDiv>Div:nth-child(2){
+    text-align: left;
+}
+
+.timelineDiv>Div:nth-child(1){
+    text-align: right;
+}
+
 .timelineDiv img{
-    width: 50%;
-    margin-right: 15%;
+    height: auto;
+    width: 25%;
+    margin-right: 25%;
+    margin-left: auto;
 }
 
 .timelineDiv>div:nth-child(2){
@@ -239,6 +254,84 @@
     color: #545454;
 }
 
+.caseStudies>*{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+}
+
+.caseStudies>*>h2{
+    text-align: center;
+}
+
+.caseStudies>*>h6:nth-child(3){
+    width: 75%;
+    margin-left: 25%;
+}
+
+.founder>:global(.containerr){
+    display: flex;
+    flex-direction: column;
+}
+
+.founderTop{
+    width: 100%;
+}
+
+.founderTop>div{
+    display: flex;
+}
+
+.founderTop :global(.descriptor_2){
+    width: 33.4%;
+}
+
+.founderTop :global(.accent_text_3){
+    width: 66.6%;
+}
+
+.founderMid{
+    padding-left: 25%;
+
+}
+
+.founderBottom{
+    display: flex;
+}
+
+.founderBottom>*{
+    width: 50%;
+}
+
+.founderBottomRight{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.founderBottomRight>*:nth-child(1){
+    width: 50%;
+}
+
+.founderBottomRight img{
+    width: 25%;
+    height: auto;
+}
+
+.founderMid>*{
+}
+
+.threePart{
+    display: flex;
+    gap: 5px;
+    align-items: stretch;
+}
+
+.threePart>div{
+    width: 1px;
+    height: 100%;
+    background-color: #C4C4C4;
+}
 
 @media only screen and (min-width: 1920px) {
     .aboutHero>div {

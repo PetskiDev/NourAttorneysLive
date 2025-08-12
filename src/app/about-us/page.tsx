@@ -11,13 +11,11 @@ export default async function AboutUsPage() {
     <main>
       <section className={styles.aboutHero}>
         <div className="containerr">
-          <div className="headline_1_2">
-            <EditableText relUrl="/about-us" blockKey="headline" />
-          </div>
+            <EditableText relUrl="/about-us" blockKey="headline"  className="headline_1_2"/>
 
-          <div className="accent_text_2">
-            <EditableText relUrl="/about-us" blockKey="accent_1" />
-            <EditableText relUrl="/about-us" blockKey="accent_2" />
+          <div>
+            <EditableText className="accent_text_2" relUrl="/about-us" blockKey="accent_1" />
+            <EditableText className="accent_text_2" relUrl="/about-us" blockKey="accent_2" />
           </div>
 
           <Image
@@ -53,7 +51,7 @@ export default async function AboutUsPage() {
                 <span>[01]</span>
               </div>
               <div>
-                <EditableText relUrl="/about-us" blockKey="about-approach" />
+                <EditableText className="title_5" relUrl="/about-us" blockKey="about-approach" />
               </div>
             </div>
             <EditableText relUrl="/about-us" blockKey="about-ap-1" />
@@ -64,24 +62,24 @@ export default async function AboutUsPage() {
               <div>
                 <span>[02]</span>
               </div>
-              <span className="title_5">
-                <EditableText relUrl="/about-us" blockKey="about-vision" />
-              </span>
+              <div>
+                <EditableText className="title_5" placeholderContent="Our Vision" relUrl="/about-us" blockKey="about-vision" />
+              </div>
             </div>
-            <EditableText relUrl="/about-us" blockKey="about-vi-1" />
-            <EditableText relUrl="/about-us" blockKey="about-vi-2" />
+            <EditableText relUrl="/about-us" blockKey="about-vi-1" placeholderContent="Nour Attorneys strives to be more than just legal advisors; we are partners in progress, empowering businesses and individuals with the knowledge, support, and strategies they need to succeed. Through sustainability, education, and investment in our" className="body_text" />
+            <EditableText relUrl="/about-us" blockKey="about-vi-2" className="body_text" placeholderContent="people and community, we are building a lasting legacy of trust, growth, and positive change." />
           </div>
           <div className={styles.aboutTwoLine}>
             <div>
               <div>
                 <span>[03]</span>
               </div>
-              <span className="title_5">
-                <EditableText relUrl="/about-us" blockKey="about-mission" />
-              </span>
+              <div>
+                <EditableText className="title_5" relUrl="/about-us" blockKey="about-mission" placeholderContent="OUR MISSION" />
+              </div>
             </div>
-            <EditableText relUrl="/about-us" blockKey="about-mi-1" />
-            <EditableText relUrl="/about-us" blockKey="about-mi-2" />
+            <EditableText className="body_text" relUrl="/about-us" blockKey="about-mi-1" placeholderContent="Through the utilization of innovative technology, alternative dispute resolution, and sustainable legal practices, Nour Attorneys ensures that its clients receive proactive, transparent and personalized legal to withstand legal risks and unpredicted legal " />
+            <EditableText className="body_text" relUrl="/about-us" blockKey="about-mi-2" placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients' legal risks management, establishing a partnership based on trust, strategy, and discretion." />
           </div>
         </div>
       </section>
@@ -94,7 +92,7 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="consulatitons-provided"
-                  placeholderContent="Placeholder content"
+                  placeholderContent="12466"
                   placeholderTag="h4"
                   className="headline_5"
                 />
@@ -107,7 +105,7 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="contract-drafted"
-                  placeholderContent="Placeholder content"
+                  placeholderContent="14680"
                   placeholderTag="h4"
                   className="headline_5"
                 />
@@ -122,7 +120,7 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="transaction-completed"
-                  placeholderContent="Placeholder content"
+                  placeholderContent="3455"
                   placeholderTag="h4"
                   className="headline_5"
                 />
@@ -135,7 +133,7 @@ export default async function AboutUsPage() {
                 <EditableText
                   relUrl="/about-us"
                   blockKey="win-rate"
-                  placeholderContent="Placeholder content"
+                  placeholderContent="93.7 %"
                   placeholderTag="h4"
                   className="headline_5"
                 />
@@ -157,7 +155,7 @@ export default async function AboutUsPage() {
 
       <section className={styles.history}>
         <div className="containerr">
-          <h2 className="headline_2">OUT HISTORY</h2>
+          <h2 className="headline_2">OUR HISTORY</h2>
 
           <h5 className="accent_text_2">
             Nour Attorneys was founded in the year 2009 and started its
@@ -217,7 +215,7 @@ export default async function AboutUsPage() {
             impact. Our case studies don’t just document victories - they reveal
             how
             <span className="blue-text">
-              [legal insight transforms challenges]
+              &nbsp;[legal insight transforms challenges]&nbsp;
             </span>
             into
           </h6>
@@ -229,7 +227,7 @@ export default async function AboutUsPage() {
             <div className="studies-boxes-top">
               <div className="study-box">
                 <div>
-                  <div className="study-box-title">
+                  <div className="title_2">
                     Corporate defense: neutralizing a hostile takeover
                   </div>
                   <Image
@@ -239,7 +237,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="study-box-description">
+                <p className="subtitle_2">
                   A technology startup faced a forced buyout - we drafted a
                   shareholder agreement with strategic veto power. The offer
                   failed and the client received $20 million in growth
@@ -248,7 +246,7 @@ export default async function AboutUsPage() {
               </div>
               <div className="study-box">
                 <div>
-                  <div className="study-box-title">
+                  <div className="title_2">
                     ESG breakthrough: from greenwashing to industry leader
                   </div>
                   <Image
@@ -258,7 +256,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="study-box-description">
+                <p className="subtitle_2">
                   The manufacturer faced reputational damage due to
                   environmental claims - we rewrote the contracts to include
                   verifiable metrics. In a year the company was ranked 3rd in
@@ -270,7 +268,7 @@ export default async function AboutUsPage() {
             <div className="studies-boxes-bottom">
               <div className="study-box">
                 <div>
-                  <div className="study-box-title">
+                  <div className="title_2">
                     Arbitration win: turning the tables on a $50M Default
                   </div>
                   <Image
@@ -280,7 +278,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="study-box-description">
+                <p className="subtitle_2">
                   A contractor refused payment, citing &quot;breach of
                   contract&quot; - we exposed flawed arbitration clauses and
                   shifted the forum. The client recovered every dollar, plus 12%
@@ -289,7 +287,7 @@ export default async function AboutUsPage() {
               </div>
               <div className="study-box">
                 <div>
-                  <div className="study-box-title">
+                  <div className="title_2">
                     Tax revival: resurrecting a cross-border deal
                   </div>
                   <Image
@@ -299,7 +297,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="study-box-description">
+                <p className="subtitle_2">
                   A European holding company bled €2M yearly from double
                   taxation - we restructured its entity chain via treaty
                   jurisdictions. Now, they save €1.8M annually, compliantly.
