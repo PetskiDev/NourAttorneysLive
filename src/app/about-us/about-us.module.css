@@ -155,11 +155,10 @@
 .numbersInner{
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
     justify-content: center;
     height: 184;
-    width: 415px;
+    width: 50%;
     position: relative;
 }
 
@@ -330,7 +329,7 @@
 
 .threePart{
     display: flex;
-    gap: 5px;
+    gap: 15px;
     align-items: stretch;
 }
 
