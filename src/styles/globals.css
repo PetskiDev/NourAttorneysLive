@@ -1,11 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+  /* Defaults */
+  font-family: var(--font-inter), sans-serif;
+}
 
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
   background-color: white;
   color: #101010;
 }
@@ -16,9 +28,18 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
   padding: 0;
   margin: 0;
+  font-family: var(--font-manrope), sans-serif;
 }
 
 * {
@@ -32,7 +53,10 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
   position: relative;
 }
 
-header, section, footer, main {
+header,
+section,
+footer,
+main {
   width: 100%;
 }
 
@@ -54,7 +78,8 @@ header {
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -70,7 +95,6 @@ body {
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
 }
-
 
 /* Start hidden to avoid FOUC */
 [data-reveal-content] h1,
@@ -89,14 +113,14 @@ body {
   opacity: 1;
 }
 
-.studies-boxes{
+.studies-boxes {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 30px 0;
 }
 
-.studies-boxes-top{
+.studies-boxes-top {
   width: calc(50% - 10px);
   margin-left: calc(50% + 5px);
   display: flex;
@@ -104,7 +128,7 @@ body {
   align-items: stretch;
 }
 
-.studies-boxes-bottom{
+.studies-boxes-bottom {
   display: flex;
   gap: 20px;
   width: calc(50% - 10px);
@@ -112,34 +136,24 @@ body {
   align-items: stretch;
 }
 
-.study-box{
+.study-box {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
   padding: 20px;
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
 }
 
-.study-box>div:nth-child(1){
+.study-box > div:nth-child(1) {
   display: flex;
   justify-content: space-between;
   width: 100%;
-
 }
 
-
-
-
-
-
-
-
-
-
 .blue-text {
-  color: #0033A0;
+  color: #0033a0;
 }
 
 .headline_1 {
@@ -194,8 +208,6 @@ body {
   color: #101010;
 }
 
-
-
 .title_3 {
   font-size: #101010;
   font-size: 28px;
@@ -225,7 +237,7 @@ body {
   text-transform: uppercase;
 }
 
-.title_2{
+.title_2 {
   font-size: 18px;
   font-family: "Inter";
   font-weight: 600;
@@ -233,21 +245,21 @@ body {
   letter-spacing: -4%;
 }
 
-.subtitle_2{
+.subtitle_2 {
   font-size: 18px;
   font-weight: 400;
   font-family: "Inter";
   color: #545454;
 }
 
-.descriptor_2{
+.descriptor_2 {
   font-size: 18px;
   font-weight: 500;
   font-family: "Inter";
   letter-spacing: -5%;
 }
 
-.accent_text_3{
+.accent_text_3 {
   font-family: "Inter";
   font-weight: 500;
   font-size: 28px;
@@ -256,16 +268,12 @@ body {
   letter-spacing: -7%;
 }
 
-.title_5{
+.title_5 {
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 600;
   font-family: "Inter";
 }
-
-
-
-
 
 @media only screen and (min-width: 1920px) {
   .headline_1 {
