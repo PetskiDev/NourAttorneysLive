@@ -138,7 +138,7 @@ export default async function AboutUsPage() {
               className="body_text"
               relUrl="/about-us"
               blockKey="about-mi-2"
-              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients&apos; legal risks management, establishing a partnership based on trust, strategy, and discretion."
+              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients' legal risks management, establishing a partnership based on trust, strategy, and discretion."
             />
           </div>
         </div>
@@ -156,7 +156,7 @@ export default async function AboutUsPage() {
                   placeholderTag="h4"
                   className="headline_5"
                 />
-                <p className="body-text">legal consulatitons were probided</p>
+                <p className="body_text">legal consulatitons were probided</p>
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export default async function AboutUsPage() {
                   placeholderTag="h4"
                   className="headline_5"
                 />
-                <p className="body-text">contract drafted</p>
+                <p className="body_text">contract drafted</p>
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default async function AboutUsPage() {
                   placeholderTag="h4"
                   className="headline_5"
                 />
-                <p className="body-text">commercial transactions completed</p>
+                <p className="body_text">commercial transactions completed</p>
               </div>
             </div>
 
@@ -197,7 +197,7 @@ export default async function AboutUsPage() {
                   placeholderTag="h4"
                   className="headline_5"
                 />
-                <p className="body-text">case win rate</p>
+                <p className="body_text">case win rate</p>
               </div>
             </div>
           </div>
@@ -241,12 +241,13 @@ export default async function AboutUsPage() {
             <div>
               <p className="body_text">
                 Nour began his legal career in 2007 after graduating from
-                Egypt&apos;s Faculty of Law. He gained valuable experience handling
-                civil, corporate and tax cases before founding Nour Attorneys in
-                May, 2009. Recognizing greater opportunities abroad, Nour
-                relocated to Abu Dhabi in 2010, advising international clients
-                on complex transactions. His expertise in joint ventures and
-                real estate deals quickly established his reputation.
+                Egypt&apos;s Faculty of Law. He gained valuable experience
+                handling civil, corporate and tax cases before founding Nour
+                Attorneys in May, 2009. Recognizing greater opportunities
+                abroad, Nour relocated to Abu Dhabi in 2010, advising
+                international clients on complex transactions. His expertise in
+                joint ventures and real estate deals quickly established his
+                reputation.
               </p>
               <p className="body_text">
                 In 2017, Nour moved his practice to Dubai to better serve
@@ -415,63 +416,67 @@ export default async function AboutUsPage() {
 
               <div className={styles.threePart}>
                 <div></div>
-                <p className="body_text">
-                  Dear Friends, Colleagues, and Valued Clients,<br></br>
-                  <br></br>
-                  Nour Attorneys Law Firm was established not merely as a legal
-                  practice, but with a profound passion for helping others – a
-                  desire that has been with me since my childhood. I have always
-                  aspired to contribute meaningfully to the lives of people and
-                  to the growth of our community, making efforts that can bring
-                  about noticeable, positive change. When I speak of “People and
-                  Community,” I envision an inclusive circle that embraces
-                  myself, my family, my esteemed colleagues and their families,
-                  and, of course, our valued clients, their team members, and
-                  their families. It is this expansive vision that guides our
-                  work and our understanding of our purpose.<br></br>
-                  <br></br>
-                  For our clients, our constant aim is to be more than just a
-                  service provider; we strive to be a valuable asset that
-                  consistently delivers high-quality legal services and
-                  contributes to a better legal and business environment. We
-                  believe that by fostering a supportive and ethical legal
-                  framework, we help your businesses and corporate endeavors to
-                  flourish and achieve even greater heights. Therefore, I
-                  respectfully disagree with the common notion that a law firm’s
-                  biggest asset is its clients. Instead, we focus on how you,
-                  our clients, perceive us – as a trusted asset and a dedicated
-                  partner in your business journey.
-                </p>
-                <p className="body_text">
-                  To my colleagues, the dedicated members of our Firm,
-                  regardless of position or title: you are the true investors in
-                  Nour Attorneys. You contribute your invaluable time, effort,
-                  and expertise to our collective business capital, fostering
-                  growth in all aspects of our lives and working towards a
-                  shared mission. This mission remains ours, a testament to our
-                  collective endeavor, irrespective of the duration of our
-                  individual parts in it. Always remember, you are not merely
-                  the capital of this business; you are the investors who commit
-                  your most valuable resources in exchange for mutual benefits
-                  that enrich the lives of everyone around us.<br></br>
-                  <br></br>
-                  For our societies – our beloved UAE, and the diverse
-                  communities of each of our members and clients, irrespective
-                  of religion, race, or ethnicity – we aim to contribute
-                  significantly through our shared success and the growth we
-                  aspire to bring to every individual and entity we can reach.
-                  <br></br>
-                  <br></br>
-                  This message is a sincere reflection of my feelings and bona
-                  fide intentions, drafted from the heart and dedicated to each
-                  and every one of you. It is my earnest hope that during our
-                  shared journey, we will all find the peace and fulfillment we
-                  seek through the discovery of our true selves, and in doing
-                  so, achieve the goals that we deem most meaningful in this
-                  life.<br></br>
-                  <br></br>
-                  Best regards,<br></br>Mohamed Noureldin
-                </p>
+                <div className={styles.threePartTwo}>
+                  <p className="body_text">
+                    Dear Friends, Colleagues, and Valued Clients,<br></br>
+                    <br></br>
+                    Nour Attorneys Law Firm was established not merely as a
+                    legal practice, but with a profound passion for helping
+                    others – a desire that has been with me since my childhood.
+                    I have always aspired to contribute meaningfully to the
+                    lives of people and to the growth of our community, making
+                    efforts that can bring about noticeable, positive change.
+                    When I speak of “People and Community,” I envision an
+                    inclusive circle that embraces myself, my family, my
+                    esteemed colleagues and their families, and, of course, our
+                    valued clients, their team members, and their families. It
+                    is this expansive vision that guides our work and our
+                    understanding of our purpose.<br></br>
+                    <br></br>
+                    For our clients, our constant aim is to be more than just a
+                    service provider; we strive to be a valuable asset that
+                    consistently delivers high-quality legal services and
+                    contributes to a better legal and business environment. We
+                    believe that by fostering a supportive and ethical legal
+                    framework, we help your businesses and corporate endeavors
+                    to flourish and achieve even greater heights. Therefore, I
+                    respectfully disagree with the common notion that a law
+                    firm’s biggest asset is its clients. Instead, we focus on
+                    how you, our clients, perceive us – as a trusted asset and a
+                    dedicated partner in your business journey.
+                  </p>
+                  <p className="body_text">
+                    To my colleagues, the dedicated members of our Firm,
+                    regardless of position or title: you are the true investors
+                    in Nour Attorneys. You contribute your invaluable time,
+                    effort, and expertise to our collective business capital,
+                    fostering growth in all aspects of our lives and working
+                    towards a shared mission. This mission remains ours, a
+                    testament to our collective endeavor, irrespective of the
+                    duration of our individual parts in it. Always remember, you
+                    are not merely the capital of this business; you are the
+                    investors who commit your most valuable resources in
+                    exchange for mutual benefits that enrich the lives of
+                    everyone around us.<br></br>
+                    <br></br>
+                    For our societies – our beloved UAE, and the diverse
+                    communities of each of our members and clients, irrespective
+                    of religion, race, or ethnicity – we aim to contribute
+                    significantly through our shared success and the growth we
+                    aspire to bring to every individual and entity we can reach.
+                    <br></br>
+                    <br></br>
+                    This message is a sincere reflection of my feelings and bona
+                    fide intentions, drafted from the heart and dedicated to
+                    each and every one of you. It is my earnest hope that during
+                    our shared journey, we will all find the peace and
+                    fulfillment we seek through the discovery of our true
+                    selves, and in doing so, achieve the goals that we deem most
+                    meaningful in this life.<br></br>
+                    <br></br>
+                    Best regards,<br></br>Mohamed Noureldin
+                  </p>
+                </div>
               </div>
             </div>
           </div>

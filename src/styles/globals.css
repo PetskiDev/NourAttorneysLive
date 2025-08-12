@@ -156,6 +156,7 @@ body {
   font-size: 1.9vw;
   font-weight: 700;
   line-height: 110%;
+  text-transform: uppercase;
   letter-spacing: -4%;
 }
 
@@ -187,7 +188,7 @@ body {
 }
 
 .headline_5 {
-  font-size: 6.5vw;
+  font-size: 6vw;
   font-weight: 600;
 }
 
@@ -376,5 +377,79 @@ body {
     font-size: 18px;
     font-weight: 600;
     font-family: var(--font-inter);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .studies-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .studies-boxes-top {
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .studies-boxes-bottom {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+    align-items: stretch;
+  }
+
+  .study-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #c4c4c4;
+  }
+
+  .study-box>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .study-box .title_2 {
+    font-size: 2vw;
+  }
+
+  .study-box .subtitle_2 {
+    font-size: 1.8vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .studies-boxes {
+    gap: 10px;
+  }
+
+  .studies-boxes-top, .studies-boxes-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .study-box {
+    width: 100%;
+    gap: 40px;
+  }
+
+  .study-box .title_2 {
+    font-size: 4vw;
+  }
+
+  .study-box .subtitle_2 {
+    font-size: 3.8vw;
   }
 }
