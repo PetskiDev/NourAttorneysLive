@@ -69,3 +69,24 @@ model Service {
 
   @@index([expertiseId])
 }
+
+/// Insights blog/news entries
+model Insight {
+  id          Int              @id @default(autoincrement())
+  slug        String           @unique
+  title       String
+  description String
+  category    InsightCategory
+  publisher   String
+  imageUrl    String?
+  publishedAt DateTime         @default(now())
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+}
+
+enum InsightCategory {
+  ARTICLES
+  NEWS
+  UPDATES
+  PUBLICATIONS
+}

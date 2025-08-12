@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { db } from "./db";
 import { tag } from "./cacheTags";
+import type { Insight } from "@prisma/client";
 
 export const getPeopleCached = unstable_cache(
   async () => {
@@ -63,6 +64,27 @@ export async function getBlocksForPageCached(relUrl: string) {
       revalidate: false,
       tags: [tag.block(relUrl)],
     }
+  );
+  return cached();
+}
+
+export const getInsightsListCached = unstable_cache(
+  async () => {
+    return db.insight.findMany({ orderBy: { publishedAt: "desc" } });
+  },
+  ["getInsightsListCached"],
+  {
+    tags: [tag.insightsList()],
+  }
+) ;
+
+export function getInsightBySlugCached(slug: string): Promise<Insight | null> {
+  const cached = unstable_cache(
+    async () => {
+      return db.insight.findUnique({ where: { slug } });
+    },
+    ["getInsightBySlugCached", slug],
+    { tags: [tag.insightSlug(slug), tag.insightsList()] }
   );
   return cached();
 }

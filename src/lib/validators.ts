@@ -21,3 +21,53 @@ export const blockDeleteSchema = z.object({
 });
 
 export type BlockDeleteDTO = z.infer<typeof blockDeleteSchema>;
+
+// Shared primitive schemas
+export const slugSchema = z
+  .string()
+  .min(1, { message: 'Slug is required' })
+  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
+    message: 'Slug must be lowercase letters/numbers and hyphens only',
+  });
+
+// Insights
+export const insightCategoryValues = [
+  'ARTICLES',
+  'NEWS',
+  'UPDATES',
+  'PUBLICATIONS',
+] as const;
+
+export const insightCategorySchema = z.enum(insightCategoryValues);
+
+export const insightCreateSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
+  slug: slugSchema,
+  category: insightCategorySchema,
+  publisher: z.string().min(1),
+  imageUrl: z.string().url().optional().nullable(),
+  publishedAt: z.string().datetime().optional(),
+});
+
+// For updates, slug is immutable; do not allow changing it
+export const insightUpdateSchema = insightCreateSchema.partial().omit({ slug: true });
+
+export const insightResponseSchema = z.object({
+  id: z.number().int(),
+  slug: slugSchema,
+  title: z.string(),
+  description: z.string(),
+  category: insightCategorySchema,
+  publisher: z.string(),
+  imageUrl: z.string().url().nullable().optional(),
+  publishedAt: z.union([z.string(), z.date()]),
+  createdAt: z.union([z.string(), z.date()]),
+  updatedAt: z.union([z.string(), z.date()]),
+});
+
+export const insightArraySchema = z.array(insightResponseSchema);
+
+export type InsightCreateDTO = z.infer<typeof insightCreateSchema>;
+export type InsightUpdateDTO = z.infer<typeof insightUpdateSchema>;
+export type InsightResponseDTO = z.infer<typeof insightResponseSchema>;

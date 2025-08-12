@@ -7,6 +7,9 @@ export const tag = {
   serviceList: (): string => "service:list",
   serviceSlug: (slug: string): string => `service:slug:${slug}`,
   serviceId: (id: number | string): string => `service:id:${id}`,
+  insightsList: (): string => "insight:list",
+  insightSlug: (slug: string): string => `insight:slug:${slug}`,
+  insightId: (id: number | string): string => `insight:id:${id}`,
 };
 
 
