@@ -1,0 +1,74 @@
+.card {
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  
+  .categoryPill {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 2px solid #111;
+    color: #111;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  
+  .date {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+  }
+  
+  .description {
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  }
+  
+  .footerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+  }
+  
+  .readMore {
+    color: #111;
+    text-decoration: none;
+    border-bottom: 2px solid #111;
+    padding-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+  }
+  
+  .arrow {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -2px;
+  }
+  
+  
