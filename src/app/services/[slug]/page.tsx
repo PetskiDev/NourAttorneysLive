@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getServiceBySlugCached } from "~/server/cachedReads";
 import { EditableText } from "~/components/EditableText";
+import styles from "./servicesSlug.module.css"
+import Image from "next/image";
 
 export const revalidate = false;
 
@@ -22,6 +24,20 @@ export default async function ServicePage({
 
   return (
     <main style={{ padding: 24 }}>
+
+      <section className={styles.servicesHero}>
+
+        <div className="containerr">
+
+          <EditableText blockKey="title" relUrl={relUrl} placeholderContent="SERVICES TEMPLATE TITLE" placeholderTag="h1" className="headline_1_3"/>
+
+          <EditableText blockKey="heroDesc" relUrl={relUrl} placeholderContent="At Nour Attorneys, we provide comprehensive courts litigation services, representing your interests before all courts and official bodies. Our dedicated team is committed to helping you reclaim and protect your deserved rights, offering elite, tech-driven litigation services with a deep understanding of applicable laws." placeholderTag="p" className="accent_text_3"/>
+
+          <Image alt="illustration" src={"/service-template-illustration.svg"} />
+
+        </div>
+
+      </section>
       <h1 style={{ marginTop: 0 }}>{service.title}</h1>
 
       <section style={{ marginTop: 16 }}>

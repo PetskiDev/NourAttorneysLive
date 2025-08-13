@@ -261,7 +261,7 @@
 
   .searchBox { width: 100%; }
 
-  :global(.line) { display: none; }
+  .wrap div:global(.line) { display: none; }
 
   .bottomRow > div:nth-child(2) { width: 100%; }
 
