@@ -10,8 +10,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 8%;
-    padding-bottom: 4%;
+    padding-top: 6%;
+    padding-bottom: 6%;
 }
 
 .expertiseHero p{
@@ -33,4 +33,30 @@
     transform: translate(-50%, -50%);
     width: 30%;
     height: auto;
+}
+
+@media only screen and (max-width: 1440px){
+    .expertiseHero p{
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .expertiseHero p{
+        font-size: 18px;
+        width: 240px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 768px){
+    .expertiseHero h1{
+        font-size: 64px;
+        line-height: 90%;
+    }
+
+    .expertiseHero>*{
+        gap: 20px;
+    }
 }

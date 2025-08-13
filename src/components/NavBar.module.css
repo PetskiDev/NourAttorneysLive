@@ -456,7 +456,6 @@
   flex-direction: column;
   padding: 20px 16px 28px;
   justify-content: center;
-  backdrop-filter: saturate(1.3) blur(4px);
 
   border: none !important;
   box-shadow: none !important;
