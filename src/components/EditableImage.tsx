@@ -22,15 +22,16 @@ export async function EditableImage({
   const url = dbUrl ?? placeholderUrl ?? null;
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "100%" }}>
       {url ? (
         <Image
           src={url}
           alt={placeholderAlt ?? blockKey}
           className={styles.image}
-          fill
           sizes="100vw"
-          style={{ objectFit: "cover" }}
+          width={30}
+          height={30}
+          style={{ objectFit: "cover", position: 'relative' }}
         />
       ) : null}
 
