@@ -1,0 +1,36 @@
+.expertiseHero{
+    background-color: #0033A0;
+    color: white;
+}
+
+.expertiseHero>*{
+    padding: 4%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 8%;
+    padding-bottom: 4%;
+}
+
+.expertiseHero p{
+    color: white;
+    width: 14%;
+    position: relative;
+    z-index: 5;
+}
+
+.expertiseHero h1{
+    position: relative;
+    z-index: 5;
+}
+
+.expertiseHero img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: auto;
+}
