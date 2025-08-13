@@ -90,3 +90,19 @@ enum InsightCategory {
   UPDATES
   PUBLICATIONS
 }
+
+model FooterLink {
+  id        Int             @id @default(autoincrement())
+  category  FooterCategory
+  label     String
+  href      String
+  order     Int             @default(0)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+enum FooterCategory {
+  SOCIAL
+  NAVIGATION
+  CONTACTS
+}

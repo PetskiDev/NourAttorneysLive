@@ -71,3 +71,25 @@ export const insightArraySchema = z.array(insightResponseSchema);
 export type InsightCreateDTO = z.infer<typeof insightCreateSchema>;
 export type InsightUpdateDTO = z.infer<typeof insightUpdateSchema>;
 export type InsightResponseDTO = z.infer<typeof insightResponseSchema>;
+
+// Footer
+export const footerCategoryValues = [
+  'SOCIAL',
+  'NAVIGATION',
+  'CONTACTS',
+] as const;
+
+export const footerCategorySchema = z.enum(footerCategoryValues);
+
+export const footerCreateSchema = z.object({
+  category: footerCategorySchema,
+  label: z.string().min(1),
+  href: z.string().min(1),
+  order: z.number().int().optional().default(0),
+});
+
+export const footerUpdateSchema = footerCreateSchema.partial();
+
+export const footerReorderSchema = z.object({
+  updates: z.array(z.object({ id: z.number().int(), order: z.number().int() })),
+});

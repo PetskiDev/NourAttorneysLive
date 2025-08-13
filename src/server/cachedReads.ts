@@ -89,4 +89,6 @@ export function getInsightBySlugCached(slug: string): Promise<Insight | null> {
   return cached();
 }
 
+// Footer links cached read can be added here once the footer UI consumes it
+
 
