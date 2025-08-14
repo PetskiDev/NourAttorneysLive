@@ -99,6 +99,17 @@ export const getFooterLinksCached = unstable_cache(
   { tags: [tag.footerList()] }
 );
 
+export const getFooterTextCached = unstable_cache(
+  async () => {
+    const rows = await db.footerText.findMany();
+    const map: Record<string, string> = {};
+    for (const r of rows) map[r.key] = r.value;
+    return map as { LOCATION?: string; WORKING_HOURS?: string };
+  },
+  ["getFooterTextCached"],
+  { tags: [tag.footerText()] }
+);
+
 
 
 export const getPartnersListCached = unstable_cache(

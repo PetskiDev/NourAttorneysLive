@@ -12,6 +12,7 @@ export const tag = {
   insightId: (id: number | string): string => `insight:id:${id}`,
   footerList: (): string => "footer:list",
   footerId: (id: number | string): string => `footer:id:${id}`,
+  footerText: (): string => "footer:text",
   partnerList: (): string => "partner:list",
   partnerId: (id: number | string): string => `partner:id:${id}`,
   partnerSlug: (slug: string): string => `partner:slug:${slug}`,

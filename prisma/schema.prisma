@@ -107,6 +107,18 @@ enum FooterCategory {
   CONTACTS
 }
 
+/// Simple key-value storage for footer texts like Location and Working hours
+model FooterText {
+  key       FooterTextKey @id
+  value     String
+  updatedAt DateTime       @updatedAt
+}
+
+enum FooterTextKey {
+  LOCATION
+  WORKING_HOURS
+}
+
 model Partner {
   id        Int      @id @default(autoincrement())
   name      String

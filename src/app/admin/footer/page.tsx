@@ -28,6 +28,7 @@ export default function AdminFooterPage() {
   const [links, setLinks] = useState<FooterLink[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [texts, setTexts] = useState<{ LOCATION?: string; WORKING_HOURS?: string }>({});
 
   async function loadLinks() {
     setIsLoading(true);
@@ -45,8 +46,20 @@ export default function AdminFooterPage() {
     }
   }
 
+  async function loadTexts() {
+    try {
+      const res = await fetch("/api/footer/text", { cache: "no-store" });
+      if (!res.ok) throw new Error(`Failed to load: ${res.status}`);
+      const raw = (await res.json()) as unknown as { LOCATION?: string; WORKING_HOURS?: string };
+      setTexts(raw || {});
+    } catch {
+      // ignore for now
+    }
+  }
+
   useEffect(() => {
     void loadLinks();
+    void loadTexts();
   }, []);
 
   const byCategory = useMemo(() => {
@@ -79,6 +92,7 @@ export default function AdminFooterPage() {
         <div>Loading...</div>
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <TextsPanel texts={texts} onChanged={() => void loadTexts()} />
           {categories.map((c) => (
             <CategoryPanel
               key={c.key}
@@ -90,6 +104,41 @@ export default function AdminFooterPage() {
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+function TextsPanel({ texts, onChanged }: { texts: { LOCATION?: string; WORKING_HOURS?: string }; onChanged: () => void }) {
+  const [form, setForm] = useState<{ LOCATION: string; WORKING_HOURS: string }>(() => ({ LOCATION: texts.LOCATION ?? "", WORKING_HOURS: texts.WORKING_HOURS ?? "" }));
+  useEffect(() => setForm({ LOCATION: texts.LOCATION ?? "", WORKING_HOURS: texts.WORKING_HOURS ?? "" }), [texts]);
+  async function save(key: "LOCATION" | "WORKING_HOURS") {
+    await fetch("/api/footer/text", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, value: form[key] }),
+    });
+    onChanged();
+    if (typeof window !== "undefined") window.location.reload();
+  }
+  return (
+    <div style={{ border: "1px solid #ddd", borderRadius: 8, overflow: "hidden" }}>
+      <div style={{ background: "#fafafa", padding: "10px 12px", fontWeight: 600 }}>Footer texts</div>
+      <div style={{ padding: 12, display: "grid", gap: 12, gridTemplateColumns: "1fr 140px" }}>
+        <div style={{ display: "grid", gap: 6 }}>
+          <label style={{ fontWeight: 600 }}>Location</label>
+          <textarea value={form.LOCATION} onChange={(e) => setForm((f) => ({ ...f, LOCATION: e.target.value }))} rows={3} />
+        </div>
+        <div style={{ display: "flex", alignItems: "end" }}>
+          <button onClick={() => void save("LOCATION")}>Save</button>
+        </div>
+        <div style={{ display: "grid", gap: 6 }}>
+          <label style={{ fontWeight: 600 }}>Working hours</label>
+          <input value={form.WORKING_HOURS} onChange={(e) => setForm((f) => ({ ...f, WORKING_HOURS: e.target.value }))} />
+        </div>
+        <div style={{ display: "flex", alignItems: "end" }}>
+          <button onClick={() => void save("WORKING_HOURS")}>Save</button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -124,11 +173,13 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
     });
     cancelEdit();
     onChanged();
+    if (typeof window !== "undefined") window.location.reload();
   }
 
   async function remove(id: number) {
     await fetch(`/api/footer/${id}`, { method: "DELETE" });
     onChanged();
+    if (typeof window !== "undefined") window.location.reload();
   }
 
   // order saving now done by the panel-level Save button
@@ -146,6 +197,7 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
       setShowNew(false);
       setNewForm({ label: "", href: "" });
       onChanged();
+      if (typeof window !== "undefined") window.location.reload();
     } finally {
       setCreating(false);
     }

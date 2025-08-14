@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css";
 import Link from "next/link";
-import { getFooterLinksCached } from "~/server/cachedReads";
+import { getFooterLinksCached, getFooterTextCached } from "~/server/cachedReads";
 
 function groupLinks() {
   return getFooterLinksCached().then((all) => {
@@ -12,18 +12,23 @@ function groupLinks() {
 
 export default async function Footer() {
   const { navigation, social } = await groupLinks();
+  const texts = await getFooterTextCached();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.loc}>
           <h3 className={styles.sectionTitle}>Location</h3>
-          <ul className={styles.list}>
-            <li>Office 402, Crystal Tower,</li>
-            <li>Business Bay, Dubai, UAE</li>
-          </ul>
+          {texts.LOCATION ? (
+            <div style={{ whiteSpace: "pre-line" }}>{texts.LOCATION}</div>
+          ) : (
+            <ul className={styles.list}>
+              <li>Office 402, Crystal Tower,</li>
+              <li>Business Bay, Dubai, UAE</li>
+            </ul>
+          )}
           <div className={styles.subTitle}>Working hours</div>
-          <div>Mon–Fri: 9am — 6pm</div>
+          <div>{texts.WORKING_HOURS ?? "Mon–Fri: 9am — 6pm"}</div>
         </div>
         <div className={styles.nav}>
           <h3 className={styles.sectionTitle}>Navigation</h3>
