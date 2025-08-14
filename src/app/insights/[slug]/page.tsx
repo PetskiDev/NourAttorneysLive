@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getInsightBySlugCached } from "~/server/cachedReads";
 
 export const revalidate = false;
+export const dynamic = "force-static";
 
 export default async function InsightPage({ params }: { params: Promise<{ slug: string }> }) {
   const p = await params;

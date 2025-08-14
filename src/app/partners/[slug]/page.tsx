@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getPartnerBySlugCached } from "~/server/cachedReads";
 
 export const revalidate = false;
+export const dynamic = "force-static";
 
 export default async function PartnerPage({
   params,
