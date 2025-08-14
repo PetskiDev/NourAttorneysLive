@@ -170,12 +170,13 @@
   gap: 10px;
   position: relative;
   margin-bottom: 4%;
+  padding-top: 20px;
 }
 
 .insightsHero img{
   position: absolute;
   left: 50%;
-  top: -8%;
+  top: 0%;
   transform: translate(-50%, 0);
   width: 23%;
   height: auto;

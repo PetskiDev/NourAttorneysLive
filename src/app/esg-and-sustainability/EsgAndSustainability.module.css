@@ -1,0 +1,395 @@
+.esgHero {
+    background-color: #0033A0;
+}
+
+.esgHero>* {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2.5% 0;
+}
+
+.esgHero>*>h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>*>h6:nth-child(2) {
+    width: 50%;
+    text-align: right;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>*>h6:nth-child(3) {
+    width: 42%;
+    margin-left: 8%;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>*>h6:nth-child(4) {
+    width: 87%;
+    margin-left: 8%;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>*>h6:nth-child(5) {
+    width: 42%;
+    margin-left: 50%;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>*>h6:nth-child(6) {
+    width: 48%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 6;
+}
+
+.esgHero>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    margin: 0 auto;
+    opacity: 0.7;
+    position: relative;
+    z-index: 6;
+    margin-top: 5%;
+}
+
+.esgHero img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 360px;
+}
+
+.esgOne>div {
+    display: flex;
+    padding-top: 5%;
+}
+
+.esgOneLeft {
+    width: 50%;
+}
+
+.esgOneLeft img {
+    width: 33%;
+    height: auto;
+}
+
+.esgOneRight {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.esgOneRight>* {
+    width: 80%;
+}
+
+.esgOneRight>p {
+    width: 70%;
+    margin-bottom: 1%;
+}
+
+.esgOneRight>div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.esgOneRight>div>span {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #101010;
+}
+
+.esgTwo>div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.esgTwo>div>h4:nth-child(2) {
+    width: 40%;
+    margin-left: 50%;
+    margin-bottom: 3%;
+}
+
+.esgTwoRow {
+    display: flex;
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.esgTwoRow::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    width: 85%;
+    left: 0;
+    height: 20px;
+    border-top: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+}
+
+.esgTwoRowLeft {
+    display: flex;
+    width: 50%;
+}
+
+.esgTwoRowLeft>div {
+    width: 50%;
+}
+
+.esgTwoRowLeft>div:first-child {
+    color: #545454;
+    padding-left: 20px;
+}
+
+.esgTwoRowRight {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 35%;
+}
+
+.line1, .line2{
+    display: none;
+}
+
+.esgHero h4, .esgHero h5{
+    display: none;
+}
+
+@media only screen and (max-width: 1440px) {
+
+    .esgTwoRowRight {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 50%;
+    }
+
+    .esgTwoRow::before {
+        width: 100%;
+    }
+
+    .esgOneRight>p, .esgOneRight>div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .esgOneLeft {
+        display: none;
+    }
+
+    .esgOneRight {
+        width: 100%;
+    }
+
+    .esgTwo>div>h4:nth-child(2) {
+        width: 100%;
+        margin-left: 0%;
+        margin-bottom: 3%;
+    }
+
+    .esgTwoRowLeft>div:first-child {
+        display: none;
+    }
+
+    .esgTwoRowLeft>div:nth-child(2){
+        padding-left: 20px;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .esgTwoRowLeft{
+        width: 33.33%;
+    }
+
+    .esgTwoRowRight{
+        width: 66.66%;
+    }
+
+    .esgOneRight>div>span{
+        height: 20px;
+        width: 20px;
+        min-height: 20px;
+        min-width: 20px;
+    }
+
+    .esgOneRight>div>div{
+        font-size: 24px;
+    }
+
+    .esgOneRight>p{
+        font-size: 18px;
+    }
+
+    .esgTwoRowRight>p{
+        font-size: 16px;
+    }
+
+    .esgTwo h4{
+        letter-spacing: -1;
+    }
+
+    .esgHero h6{
+        display: none;
+    }
+
+    .esgHero h5{
+        display: block;
+        font-weight: 500;
+        font-size: 2.55vw;
+        position: relative;
+        z-index: 5;
+    }
+
+    .esgHero h5:nth-of-type(1){
+        width: 50%;
+        text-align: right;
+    }
+
+    .esgHero h5:nth-of-type(2){
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .esgHero h5:nth-of-type(3){
+        width: 50%;
+        text-align: left;
+        margin-left: 50%;
+    }
+
+    .esgHero>*>div>span{
+        font-size: 18px;
+    }
+
+    .esgHero>div>div{
+        gap: 0px;
+    }
+
+    .esgHero>*>h1{
+        font-size: 8vw;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px){
+    .esgOneRight>div>span{
+        height: 14px;
+        width: 14px;
+        min-height: 14px;
+        min-width: 14px;
+    }
+
+    .esgOneRight>div>div{
+        font-size: 18px;
+    }
+
+    .esgTwoRow{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .esgTwoRowLeft{
+        width: 100%;
+    }
+
+    .esgTwoRowRight{
+        width: 100%;
+        padding-left: 10px;
+    }
+
+    .esgTwoRowLeft>div:nth-child(2){
+        padding-left: 10px;
+    }
+
+    .esgTwo h4{
+        font-size: 26px;
+        letter-spacing: -0.5;
+    }
+
+    .esgHero h5{
+        display: none;
+    }
+
+    .esgHero h4{
+        display: block;
+        text-align: center;
+        position: relative;
+        z-index: 5;
+        margin:  100px auto;
+        font-weight: 500;
+        width: 85%;
+    }
+
+    .esgHero img:nth-of-type(1){
+        display: none;
+    }
+
+    .esgHero img:nth-of-type(2){
+        display: block;
+        position: absolute;
+        top: 15vw;
+        left: 50%;
+        transform: translate(-50%, -0%);
+        height: 80px;
+        width: auto;
+    }
+
+    .esgHero img:nth-of-type(3){
+        display: block;
+        position: absolute;
+        top: calc(20vw + 300px);
+        left: 50%;
+        transform: translate(-50%, -0%);
+        height: 80px;
+        width: auto;
+    }
+
+    .esgHero>*>div{
+        position: relative;
+        overflow: visible;
+        opacity: 1!important;
+    }
+
+.esgHero>*>div>span{
+    opacity: 0.7;
+}
+
+.esgHero>*{
+    padding: 5% 0;
+}
+
+    .esgHero>*>div::before{
+        content: "";
+        height: 80px;
+        background-size: 100% 100%;
+        width: 7px;
+        background-image: url("/esg-mobile.svg");
+        top: -110px;
+        position: absolute;
+    }
+}
