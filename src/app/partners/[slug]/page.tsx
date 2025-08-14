@@ -16,7 +16,6 @@ export default async function PartnerPage({
 
   return (
     <main style={{ padding: 24 }}>
-      <small> rendered At: {new Date().toISOString()}</small>
       <h1 style={{ marginTop: 0 }}>{partner.name}</h1>
       <div style={{ color: "#777", marginBottom: 16 }}>
         Industry: {partner.industry}
