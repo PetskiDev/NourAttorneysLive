@@ -183,7 +183,11 @@ export default function AdminPartnersPage() {
                       p.industry
                     )}
                   </td>
-                  <td style={td}><code>{p.slug}</code></td>
+                  <td style={td}>
+                    <a href={`/partners/${p.slug}`} target="_blank" rel="noreferrer">
+                      <code>{p.slug}</code>
+                    </a>
+                  </td>
                   <td style={td}>
                     {editingId === p.id ? (
                       <div style={{ display: "flex", gap: 8 }}>
