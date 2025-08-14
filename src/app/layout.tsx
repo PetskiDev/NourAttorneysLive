@@ -2,6 +2,7 @@ import "~/styles/globals.css";
 import ClientShell from "../components/ClientShell";
 import { Manrope } from "next/font/google";
 import { Inter } from "next/font/google";
+import Footer from "~/components/Footer/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -19,7 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
       <body>
-        <ClientShell>{children}</ClientShell>
+        <ClientShell>
+          {children}
+          <Footer />
+        </ClientShell>
       </body>
     </html>
   );

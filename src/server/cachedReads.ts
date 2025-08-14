@@ -89,7 +89,15 @@ export function getInsightBySlugCached(slug: string): Promise<Insight | null> {
   return cached();
 }
 
-// Footer links cached read can be added here once the footer UI consumes it
+export const getFooterLinksCached = unstable_cache(
+  async () => {
+    return db.footerLink.findMany({
+      orderBy: [{ category: "asc" }, { order: "asc" }, { createdAt: "asc" }],
+    });
+  },
+  ["getFooterLinksCached"],
+  { tags: [tag.footerList()] }
+);
 
 
 

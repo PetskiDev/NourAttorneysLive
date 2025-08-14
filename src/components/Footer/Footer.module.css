@@ -1,0 +1,131 @@
+.footer {
+  background: #063a98;
+  color: #e7eefc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 16px 20px 16px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "loc nav social contacts"
+    "email email email email"
+    "bottom bottom bottom bottom";
+}
+
+.loc {
+  grid-area: loc;
+}
+.nav {
+  grid-area: nav;
+}
+.social {
+  grid-area: social;
+}
+.contacts {
+  grid-area: contacts;
+}
+.emailWrap {
+  grid-area: email;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.bottom {
+  grid-area: bottom;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+.subTitle {
+  font-weight: 600;
+  margin: 16px 0 6px 0;
+}
+
+.list,
+.inlineList,
+.socialList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li {
+  margin: 8px 0;
+}
+.inlineList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+.socialList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.linkPlain { color: #e7eefc; text-decoration: none; }
+.linkUnderline { color: #e7eefc; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; display: inline-block; }
+
+.email { color: #ffffff; font-size: 28px; letter-spacing: 1px; text-decoration: none; }
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.legal {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    grid-template-areas:
+      "loc contacts nav"
+      "email email email"
+      "social social social"
+      "bottom bottom bottom";
+  }
+  .emailWrap {
+    padding: 28px 0;
+  }
+  .email {
+    font-size: 22px;
+  }
+  .inlineList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .socialList {
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Smallest screens: place Contacts below Location and Navigation, above the email */
+@media (max-width: 560px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-areas:
+      "loc nav"
+      "contacts contacts"
+      "email email"
+      "social social"
+      "bottom bottom";
+  }
+}
