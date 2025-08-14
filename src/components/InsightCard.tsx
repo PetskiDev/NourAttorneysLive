@@ -18,16 +18,21 @@ export default function InsightCard({
   publishedAt,
 }: InsightCardProps) {
   const href = `/insights/${slug}`;
+  const dateObj = new Date(publishedAt);
+  const formattedDate = new Intl.DateTimeFormat("en-GB", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+    timeZone: "UTC",
+  }).format(dateObj);
   return (
     <article className={styles.card}>
       <div>
         <div className={styles.headerRow}>
           <span className={`${styles.categoryPill} descriptor_1`}>{category}</span>
-          <span className={`${styles.date} footnote_2`}>
-            {new Date(publishedAt).toLocaleDateString()}
-          </span>
+          <span className={`${styles.date} footnote_2`}>{formattedDate}</span>
         </div>
-        <h3 className={`${styles.title} title_2`}>{title}</h3>
+        <p className={`${styles.title} title_2`}>{title}</p>
         <p className={`${styles.description} subtitle_2`}>{description}</p>
       </div>
       <div className={styles.footerRow}>

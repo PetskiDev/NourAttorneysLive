@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import type { Insight } from "@prisma/client";
 import InsightCard from "~/components/InsightCard";
@@ -46,19 +46,29 @@ function filterInsightsByCategories(all: Insight[], rawCatParam?: string) {
         UPDATES: 0,
         PUBLICATIONS: 0,
       } as Record<InsightCategory, number>,
-    }
+    },
   );
 
   return { filtered, counts } as const;
 }
 
-export default function InsightsListClient({ insights }: { insights: Insight[] }) {
+export default function InsightsListClient({
+  insights,
+}: {
+  insights: Insight[];
+}) {
   const searchParams = useSearchParams();
-  const cat = searchParams?.get("cat") ?? undefined;
+  const catFromUrl = searchParams?.get("cat") ?? undefined;
+  const [cat, setCat] = useState<string | undefined>(undefined);
+
+  // Ensure SSR renders "all" first, then client applies the filter after mount
+  useEffect(() => {
+    setCat(catFromUrl);
+  }, [catFromUrl]);
 
   const { filtered, counts } = useMemo(() => {
     return filterInsightsByCategories(insights, cat);
-  }, [insights, cat]);
+  }, [insights, cat]); 
 
   return (
     <>
@@ -87,5 +97,3 @@ export default function InsightsListClient({ insights }: { insights: Insight[] }
     </>
   );
 }
-
-

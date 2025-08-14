@@ -23,11 +23,11 @@ export default async function InsightsPage() {
           </p>
 
           <Image
-              src={"/insights-illustration.svg"}
-              alt="illustration"
-              width={30}
-              height={30}
-            />
+            src={"/insights-illustration.svg"}
+            alt="illustration"
+            width={30}
+            height={30}
+          />
         </div>
       </section>
       <section>
