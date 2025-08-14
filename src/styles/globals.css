@@ -161,6 +161,7 @@ body {
   font-size: 10.9vw;
   font-weight: 700;
   letter-spacing: -5%;
+  line-height: 90%;
 }
 
 .subheadline_2 {
@@ -316,6 +317,20 @@ body {
   font-weight: 400;
 }
 
+.descriptor_1{
+  font-size: 0.9vw;
+  font-family: var(--font-inter);
+  line-height: 105%;
+  font-weight: 400;
+}
+
+.footnote_2{
+  font-size: 0.8vw;
+  font-weight: 400;
+  line-height: 120%;
+  font-family: var(--font-inter);
+}
+
 @media only screen and (min-width: 1930px) {
   .headline_1 {
     font-size: 219px;
@@ -455,6 +470,20 @@ body {
     font-size: 66px;
     font-weight: 400;
   }
+
+  .descriptor_1{
+  font-size: 18px;
+  font-family: var(--font-inter);
+  line-height: 105%;
+  font-weight: 400;
+}
+
+.footnote_2{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 120%;
+  font-family: var(--font-inter);
+}
 }
 
 @media only screen and (max-width: 1024px) {

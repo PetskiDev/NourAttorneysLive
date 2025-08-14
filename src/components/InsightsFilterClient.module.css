@@ -1,12 +1,11 @@
 .wrap {
-  padding: 24px;
 }
 
 .topBar {
   display: flex;
   align-items: center;
-  gap: 12px;
   margin-bottom: 12px;
+  position: relative;
 }
 
 .categoryLabel {
@@ -36,18 +35,17 @@
 }
 
 .panelWrap {
-  position: relative;
 }
 
 .panel {
   position: absolute;
   z-index: 20;
-  top: 6px;
+  top: 26px;
   left: 0;
   width: 260px;
   background: #0b2c8e;
   color: #fff;
-  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
   padding: 12px;
 }
 
@@ -55,7 +53,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -87,7 +84,7 @@
   -webkit-appearance: none;
   width: 22px;
   height: 22px;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   border-radius: 2px;
   background: transparent;
   display: inline-block;
@@ -110,14 +107,14 @@
   color: #0b2c8e;
   border: none;
   padding: 10px 12px;
-  font-weight: 700;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card {
@@ -128,7 +125,7 @@
 
 .category {
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 
@@ -140,3 +137,135 @@
 /* removed scroll behavior per design */
 
 
+.wrap>section>div>a {
+  border-bottom: 1px solid #0033A0;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  gap: 10px;
+  width: auto;
+  margin-left: 50%;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.wrap>section>div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wrap>section>div>a img {
+  height: 4vw;
+  width: 4vw;
+}
+
+.wrap>section>div>a span {
+  color: #0033A0;
+}
+
+.insightsHero>div{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 4%;
+}
+
+.insightsHero img{
+  position: absolute;
+  left: 50%;
+  top: -8%;
+  transform: translate(-50%, 0);
+  width: 23%;
+  height: auto;
+}
+
+.insightsHero p{
+  margin-left: 50%;
+  width: 23%;
+  position: relative;
+  z-index: 5;
+}
+
+.insightsHero h1{
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+@media only screen and (min-width: 1920px) {
+  .wrap a img {
+    height: 68px;
+    width: 68px;
+  }
+}
+
+@media only screen and (max-width:1024px){
+  .insightsHero p{
+    text-align: center;
+    width: 376px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+.insightsHero h1{
+  font-size: 120px;
+}
+
+.wrap > section > div > a span{
+  font-size: 66px;
+}
+
+.wrap > section > div > a{
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.wrap > section > div > a img{
+  height: 68px;
+  width: 68px;
+}
+
+.panel{
+  width: calc(95vw);
+}
+}
+
+@media only screen and (max-width:768px){
+  .insightsHero p{
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+}
+
+.insightsHero h1{
+  font-size: 62px;
+  margin-top: 15px;
+}
+
+.wrap > section > div > a span{
+  font-size: 44px;
+}
+
+.wrap > section > div > a{
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.insightsHero img{
+  width: 140px;
+  top: 0;
+}
+
+.wrap > section > div > a img{
+  height: 44px;
+  width: 44px;
+}
+}
