@@ -92,3 +92,24 @@ export function getInsightBySlugCached(slug: string): Promise<Insight | null> {
 // Footer links cached read can be added here once the footer UI consumes it
 
 
+
+export const getPartnersListCached = unstable_cache(
+  async () => {
+    return db.partner.findMany({ orderBy: [{ order: "asc" }, { createdAt: "desc" }] });
+  },
+  ["getPartnersListCached"],
+  {
+    tags: [tag.partnerList()],
+  }
+);
+
+export function getPartnerBySlugCached(slug: string) {
+  const cached = unstable_cache(
+    async () => {
+      return db.partner.findUnique({ where: { slug } });
+    },
+    ["getPartnerBySlugCached", slug],
+    { tags: [tag.partnerSlug(slug), tag.partnerList()] }
+  );
+  return cached();
+}

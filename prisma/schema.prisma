@@ -106,3 +106,13 @@ enum FooterCategory {
   NAVIGATION
   CONTACTS
 }
+
+model Partner {
+  id        Int      @id @default(autoincrement())
+  name      String
+  slug      String   @unique
+  industry  String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

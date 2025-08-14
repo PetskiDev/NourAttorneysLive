@@ -93,3 +93,29 @@ export const footerUpdateSchema = footerCreateSchema.partial();
 export const footerReorderSchema = z.object({
   updates: z.array(z.object({ id: z.number().int(), order: z.number().int() })),
 });
+
+// Partners
+export const partnerCreateSchema = z.object({
+  name: z.string().min(1),
+  slug: slugSchema,
+  industry: z.string().min(1),
+});
+
+// slug is immutable
+export const partnerUpdateSchema = partnerCreateSchema.partial().omit({ slug: true });
+
+export const partnerResponseSchema = z.object({
+  id: z.number().int(),
+  name: z.string(),
+  slug: slugSchema,
+  industry: z.string(),
+  order: z.number().int().optional().default(0),
+  createdAt: z.union([z.string(), z.date()]),
+  updatedAt: z.union([z.string(), z.date()]),
+});
+
+export const partnerArraySchema = z.array(partnerResponseSchema);
+
+export const partnerReorderSchema = z.object({
+  updates: z.array(z.object({ id: z.number().int(), order: z.number().int() })),
+});
