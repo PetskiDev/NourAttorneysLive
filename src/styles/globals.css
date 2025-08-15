@@ -173,22 +173,23 @@ body {
 }
 
 .title_1 {
-  font-size: 20px;
+  font-size: 1.05vw;
   font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   color: #101010;
   letter-spacing: -4%;
+  text-transform: uppercase;
 }
 
 .subtitle_1 {
   color: #545454;
   font-family: var(--font-inter), sans-serif;
-  font-size: 18px;
+  font-size: 1vw;
   letter-spacing: -4%;
 }
 
 .accent_text_2 {
-  font-size: 1.7vw;
+  font-size: 1.23vw;
   font-family: var(--font-inter);
   font-weight: 400;
   text-transform: uppercase;
@@ -219,6 +220,7 @@ body {
   text-transform: uppercase;
   letter-spacing: -4%;
   line-height: 1;
+  font-family: var(--font-manrope);
 }
 
 .subtitle_4 {
@@ -340,13 +342,26 @@ body {
   line-height: 100%;
 }
 
-.headline_1_4{
+.headline_1_4 {
   font-size: 3.4vw;
   font-family: var(--font-manrope);
   font-weight: 700;
   line-height: 90%;
 }
 
+.headline_1_1 {
+  font-size: 8vw;
+  font-weight: 500;
+  line-height: 90%;
+  font-family: var(--font-manrope);
+}
+
+.subheadline_4 {
+  font-size: 1.4vw;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  line-height: 105%;
+}
 
 
 @media only screen and (min-width: 1930px) {
@@ -369,7 +384,7 @@ body {
   .accent_text_2 {
     font-family: var(--font-inter);
     font-weight: 400;
-    font-size: 34px;
+    font-size: 24px;
   }
 
   .headline_1_2 {
@@ -512,12 +527,26 @@ body {
     line-height: 100%;
   }
 
-  .headline_1_4{
-  font-size: 66px;
-  font-family: var(--font-manrope);
-  font-weight: 700;
-  line-height: 90%;
-}
+  .headline_1_4 {
+    font-size: 66px;
+    font-family: var(--font-manrope);
+    font-weight: 700;
+    line-height: 90%;
+  }
+
+  .headline_1_1 {
+    font-size: 160px;
+    font-weight: 500;
+    line-height: 90%;
+    font-family: var(--font-manrope);
+  }
+
+  .subheadline_4 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: var(--font-inter);
+    line-height: 105%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
