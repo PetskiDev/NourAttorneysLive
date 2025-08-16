@@ -4,6 +4,7 @@ import InsightsListClient from "~/components/InsightsListClient";
 import { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import LatestInsightsServer from "~/components/LatestInsightsServer";
 
 export const revalidate = false;
 
@@ -28,6 +29,13 @@ export default async function InsightsPage() {
             width={30}
             height={30}
           />
+        </div>
+      </section>
+      <section>
+        <div className="containerr" style={{ marginBottom: 32 }}>
+          {/* Latest 4 insights - first expanded by default */}
+          {/* Exact layout/styling handled in the client module to match design */}
+          <LatestInsightsServer />
         </div>
       </section>
       <section>

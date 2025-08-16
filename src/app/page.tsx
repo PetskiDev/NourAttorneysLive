@@ -1,6 +1,7 @@
 import { EditableText } from "~/components/EditableText";
 import { EditableImage } from "~/components/EditableImage";
 import PartnersList from "~/components/PartnersList";
+import LatestInsightsServer from "~/components/LatestInsightsServer";
 
 export default async function Home() {
   return (
@@ -23,6 +24,7 @@ export default async function Home() {
         <EditableImage relUrl="/" blockKey="image1" />
       </div>
       <PartnersList />
+      <LatestInsightsServer />
     </main>
   );
 }

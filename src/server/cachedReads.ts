@@ -78,6 +78,17 @@ export const getInsightsListCached = unstable_cache(
   }
 ) ;
 
+// Latest 4 insights for homepage/sections
+export const getLatestInsightsCached = unstable_cache(
+  async () => {
+    return db.insight.findMany({ orderBy: { publishedAt: "desc" }, take: 4 });
+  },
+  ["getLatestInsightsCached"],
+  {
+    tags: [tag.insightsList()],
+  }
+);
+
 export function getInsightBySlugCached(slug: string): Promise<Insight | null> {
   const cached = unstable_cache(
     async () => {
