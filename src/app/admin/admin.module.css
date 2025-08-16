@@ -28,6 +28,23 @@
   min-width: 32px;
 }
 
+.btnSm {
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.btnIconOnly {
+  padding: 6px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid #e1e4ea;
+  background: #fff;
+}
+
 .btnSubtle {
   background: #f6f7f9;
 }
@@ -85,6 +102,22 @@
 .table {
   width: 100%;
   border-collapse: collapse;
+}
+
+.btnBlock {
+  width: 100%;
+}
+
+.actions3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.actions2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
 }
 
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { UploadButton } from "@uploadthing/react";
 import type { OurFileRouter } from "~/app/api/uploadthing/core";
 import "@uploadthing/react/styles.css";
+import s from "../admin.module.css";
 
 type FileItem = {
   key: string;
@@ -69,7 +70,7 @@ export default function MediaAdminPage() {
           }}
         >
           {files.map((f) => (
-            <div key={f.key} style={{ border: "1px solid #ddd", padding: 8, borderRadius: 6 }}>
+            <div key={f.key} className={s.card} style={{ padding: 8 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={f.url}
@@ -82,11 +83,10 @@ export default function MediaAdminPage() {
                 </div>
                 {f.size ? <div>{(f.size / 1024).toFixed(1)} KB</div> : null}
               </div>
-              <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
-                <button onClick={() => void copy(f.url)}>Copy link</button>
-                <button onClick={() => void handleDelete(f.key)} style={{ color: "#b00020" }}>
-                  Delete
-                </button>
+              <div className={s.actions3} style={{ marginTop: 8 }}>
+                <button onClick={() => void copy(f.url)} className={`${s.btn} ${s.btnSm} ${s.btnBlock}`} title="Copy link">📋 Copy</button>
+                <a href={f.url} target="_blank" rel="noreferrer" className={`${s.btn} ${s.btnSm} ${s.btnBlock}`} title="Open in new tab">🔗 Open</a>
+                <button onClick={() => void handleDelete(f.key)} className={`${s.btn} ${s.btnDanger} ${s.btnSm} ${s.btnBlock}`} title="Delete">🗑️ Delete</button>
               </div>
             </div>
           ))}

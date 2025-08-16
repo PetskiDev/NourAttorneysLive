@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import s from "../admin.module.css";
 import MediaLibraryModal from "~/components/MediaLibraryModal";
 import type { InsightResponseDTO } from "~/lib/validators";
 // import { insightArraySchema } from "~/lib/validators";
@@ -146,9 +147,9 @@ export default function AdminInsightsPage() {
         <h1 style={{ margin: 0 }}>Admin · Insights</h1>
         <div style={{ display: "flex", gap: 8 }}>
           {builderOpen && (
-            <button type="button" onClick={() => setBuilderOpen(false)}>Close</button>
+            <button type="button" onClick={() => setBuilderOpen(false)} className={s.btn}>Close</button>
           )}
-          <button onClick={() => openCreate()}>New</button>
+          <button onClick={() => openCreate()} className={`${s.btn} ${s.btnPrimary}`}>New</button>
         </div>
       </div>
       <p style={{ color: "#666", marginTop: 0, marginBottom: 24 }}>
@@ -272,15 +273,8 @@ export default function AdminInsightsPage() {
                 <button
                   type="button"
                   onClick={() => setShowMedia(true)}
-                  style={{
-                    position: "absolute",
-                    right: 12,
-                    bottom: 12,
-                    padding: "8px 12px",
-                    borderRadius: 8,
-                    background: "#fff",
-                    border: "1px solid #ddd",
-                  }}
+                  className={s.btn}
+                  style={{ position: "absolute", right: 12, bottom: 12 }}
                 >
                   Choose image…
                 </button>
@@ -297,16 +291,16 @@ export default function AdminInsightsPage() {
                 value={form.slug}
                 onChange={(e) => setForm((f) => ({ ...f, slug: e.target.value }))}
                 required
-                style={{ border: "1px solid #ddd", borderRadius: 6, padding: "6px 8px" }}
+                className={s.input}
                 disabled={builderMode === "edit"}
                 title={builderMode === "edit" ? "Slug cannot be changed after creation" : undefined}
               />
             </div>
-            <button type="submit" disabled={submitting}>
+            <button type="submit" disabled={submitting} className={`${s.btn} ${s.btnPrimary}`}>
               {submitting ? "Saving…" : builderMode === "create" ? "Create insight" : "Save changes"}
             </button>
             {builderMode === "edit" && (
-              <button type="button" onClick={() => setBuilderOpen(false)}>Cancel</button>
+              <button type="button" onClick={() => setBuilderOpen(false)} className={s.btn}>Cancel</button>
             )}
           </div>
         </form>
@@ -322,48 +316,49 @@ export default function AdminInsightsPage() {
       />
 
       <div style={{ overflowX: "auto" }}>
-        <table style={{ borderCollapse: "collapse", width: "100%", minWidth: 1000 }}>
+        <div className={s.tableWrap}>
+        <table className={s.table} style={{ minWidth: 1000 }}>
           <thead>
             <tr>
-              <th style={th}>ID</th>
-              <th style={th}>Category</th>
-              <th style={th}>Slug</th>
-              <th style={th}>Title</th>
-              <th style={th}>Publisher</th>
-              <th style={th}>Image</th>
-              <th style={th}>Actions</th>
+              <th className={s.th}>ID</th>
+              <th className={s.th}>Category</th>
+              <th className={s.th}>Slug</th>
+              <th className={s.th}>Title</th>
+              <th className={s.th}>Publisher</th>
+              <th className={s.th}>Image</th>
+              <th className={s.th}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {isLoading ? (
               <tr>
-                <td style={td} colSpan={7}>
+                <td className={s.td} colSpan={7}>
                   Loading…
                 </td>
               </tr>
             ) : insights.length === 0 ? (
               <tr>
-                <td style={td} colSpan={7}>
+                <td className={s.td} colSpan={7}>
                   No insights yet
                 </td>
               </tr>
             ) : (
               insights.map((i) => (
                 <tr key={i.id}>
-                  <td style={td}>{i.id}</td>
-                  <td style={td}>
+                  <td className={s.td}>{i.id}</td>
+                  <td className={s.td}>
                     {i.category}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {i.slug}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {i.title}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {i.publisher}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {i.imageUrl ? (
                       <a href={i.imageUrl} target="_blank" rel="noreferrer">
                         View
@@ -372,13 +367,13 @@ export default function AdminInsightsPage() {
                       <span style={{ color: "#999" }}>None</span>
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     <div style={{ display: "flex", gap: 8 }}>
                         <Link href={`/insights/${i.slug}`}>
-                          <button type="button">View</button>
+                          <button type="button" className={s.btn}>View</button>
                         </Link>
-                        <button onClick={() => openEdit(i)}>Edit</button>
-                        <button onClick={() => void deleteInsight(i.id)}>Delete</button>
+                        <button onClick={() => openEdit(i)} className={s.btn}>Edit</button>
+                        <button onClick={() => void deleteInsight(i.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                     </div>
                   </td>
                 </tr>
@@ -386,6 +381,7 @@ export default function AdminInsightsPage() {
             )}
           </tbody>
         </table>
+        </div>
       </div>
 
       {/* Row image chooser modal */}
@@ -402,18 +398,7 @@ export default function AdminInsightsPage() {
   );
 }
 
-const th: React.CSSProperties = {
-  textAlign: "left",
-  borderBottom: "1px solid #ddd",
-  padding: "8px 6px",
-  fontWeight: 600,
-};
-
-const td: React.CSSProperties = {
-  borderBottom: "1px solid #eee",
-  padding: "8px 6px",
-  verticalAlign: "top",
-};
+// Table cell styles provided via CSS module classes
 
 
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { UploadButton } from "@uploadthing/react";
 import type { OurFileRouter } from "~/app/api/uploadthing/core";
 import "@uploadthing/react/styles.css";
+import s from "~/app/admin/admin.module.css";
 
 type FileItem = {
   key: string;
@@ -57,7 +58,7 @@ export default function MediaLibraryModal({
       <div style={{ background: "#fff", width: 900, maxWidth: "95vw", padding: 16, borderRadius: 8 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
           <strong>Media library</strong>
-          <button onClick={onClose}>Close</button>
+          <button onClick={onClose} className={`${s.btn} ${s.btnSm}`} title="Close">✕</button>
         </div>
 
         <div style={{ marginBottom: 12 }}>
@@ -71,18 +72,18 @@ export default function MediaLibraryModal({
         {loading ? (
           <div>Loading…</div>
         ) : (
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 12, maxHeight: "60vh", overflow: "auto" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 14, maxHeight: "60vh", overflow: "auto" }}>
             {files.map((m) => (
-              <div key={m.key} style={{ border: "1px solid #ddd", padding: 8, borderRadius: 6 }}>
+              <div key={m.key} className={s.card} style={{ padding: 10 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={m.url} alt={m.name ?? m.key} style={{ width: "100%", height: 100, objectFit: "cover", borderRadius: 4 }} />
-                <div style={{ fontSize: 12, marginTop: 6, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <img src={m.url} alt={m.name ?? m.key} style={{ width: "100%", height: 140, objectFit: "cover", borderRadius: 6 }} />
+                <div style={{ fontSize: 12, marginTop: 8, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {m.name ?? m.key}
                 </div>
-                <div style={{ display: "flex", gap: 8, marginTop: 6 }}>
-                  <button onClick={() => onSelect(m.url)}>Select</button>
-                  <button onClick={() => void navigator.clipboard.writeText(m.url)}>Copy link</button>
-                  <button onClick={() => void handleDelete(m.key)} style={{ color: "#b00020" }}>Delete</button>
+                <div className={s.actions3} style={{ marginTop: 8 }}>
+                  <button onClick={() => onSelect(m.url)} className={`${s.btn} ${s.btnPrimary} ${s.btnSm} ${s.btnBlock}`} title="Select">✔ Select</button>
+                  <button onClick={() => void navigator.clipboard.writeText(m.url)} className={`${s.btn} ${s.btnSm} ${s.btnBlock}`} title="Copy link">📋 Copy</button>
+                  <button onClick={() => void handleDelete(m.key)} className={`${s.btn} ${s.btnDanger} ${s.btnSm} ${s.btnBlock}`} title="Delete">🗑️ Delete</button>
                 </div>
               </div>
             ))}
