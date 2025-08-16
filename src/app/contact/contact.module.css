@@ -141,12 +141,12 @@
     flex-direction: column;
     gap: 7px;
     width: 60%;
-    margin-top: 30px;
+    margin-top: 35px;
     align-items: flex-start;
 }
 
 .contactElement>* {
-    padding-left: 15px;
+    padding-left: 8px;
 }
 
 .contactRight a {
@@ -177,12 +177,13 @@
 .contactElement::before {
     content: "";
     width: 100%;
-    top: -20px;
+    top: -1vw;
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
-    height: 20px;
+    height: 1vw;
     left: -5px;
+    position: absolute;
 }
 
 .contactGrid {
@@ -234,6 +235,17 @@
     .contactRight a {
         font-size: 18px;
     }
+
+    .contactElement::before {
+    content: "";
+    width: 100%;
+    top: -20px;
+    border-top: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    height: 20px;
+    left: -5px;
+}
 }
 
 @media only screen and (max-width: 1440px){
@@ -320,11 +332,12 @@
     }
 
     .contactElement{
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .contactElement::before{
         height: 10px;
+        top: -10px;
     }
 
     .contactLeft{
@@ -514,6 +527,12 @@
 
     .contactRight a::after{
         bottom: 0;
+        left: 5px;
+    }
+
+    .contactGrid a::after{
+        bottom: 0;
+        left: 0!important;
     }
 
     .contactRow :global(.footnote_2){
