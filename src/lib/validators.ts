@@ -119,3 +119,8 @@ export const partnerArraySchema = z.array(partnerResponseSchema);
 export const partnerReorderSchema = z.object({
   updates: z.array(z.object({ id: z.number().int(), order: z.number().int() })),
 });
+
+// People
+export const peopleReorderSchema = z.object({
+  updates: z.array(z.object({ id: z.number().int(), order: z.number().int() })),
+});

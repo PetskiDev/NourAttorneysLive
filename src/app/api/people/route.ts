@@ -8,13 +8,13 @@ const PersonSchema = z.object({
   name: z.string().min(1),
   role: z.string().min(1),
   imageUrl: z.string().url().optional(),
-  featured: z.boolean().optional().default(false),
+  order: z.number().int().optional(),
 });
 
 export async function GET() {
   try {
     const people = await db.people.findMany({
-      orderBy: { createdAt: "desc" },
+      orderBy: [{ order: "asc" }],
     });
     return NextResponse.json(people, { status: 200 });
   } catch (err: unknown) {
@@ -28,12 +28,13 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const data = PersonSchema.parse(await req.json());
+    const count = await db.people.count();
     const newPerson = await db.people.create({
       data: {
         name: data.name,
         role: data.role,
         imageUrl: data.imageUrl,
-        featured: data.featured,
+        order: typeof data.order === "number" ? data.order : count,
       },
     });
     revalidateTag(tag.peopleList());

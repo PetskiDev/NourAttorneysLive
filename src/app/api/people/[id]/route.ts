@@ -8,7 +8,7 @@ const UpdatePersonSchema = z.object({
   name: z.string().min(1).optional(),
   role: z.string().min(1).optional(),
   imageUrl: z.string().url().nullable().optional(),
-  featured: z.boolean().optional(),
+  order: z.number().int().optional(),
 });
 
 function parseId(param: string | string[] | undefined): number | null {

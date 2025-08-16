@@ -5,7 +5,7 @@ import type { Insight } from "@prisma/client";
 
 export const getPeopleCached = unstable_cache(
   async () => {
-    return db.people.findMany({ orderBy: { createdAt: "desc" } });
+    return db.people.findMany({ orderBy: [{ order: "asc" }] });
   },
   ["getPeopleCached"],
   {
@@ -16,7 +16,7 @@ export const getPeopleCached = unstable_cache(
 // First 6 people for homepage/sections
 export const getFirstSixPeopleCached = unstable_cache(
   async () => {
-    return db.people.findMany({ where: { featured: true },orderBy: { createdAt: "desc" }, take: 6 });
+    return db.people.findMany({ orderBy: [{ order: "asc" }], take: 6 });
   },
   ["getFirstSixPeopleCached"],
   {

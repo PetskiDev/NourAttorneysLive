@@ -11,13 +11,13 @@ const PersonSchema = z.object({
   name: z.string(),
   role: z.string(),
   imageUrl: z.string().url().nullable().optional(),
-  featured: z.boolean(),
+  order: z.number().int().optional().default(0),
   createdAt: z.string(),
 });
 
 type Person = z.infer<typeof PersonSchema>;
 
-type EditablePerson = Pick<Person, "name" | "role" | "imageUrl" | "featured">;
+type EditablePerson = Pick<Person, "name" | "role" | "imageUrl">;
 
 const PeopleArraySchema = z.array(PersonSchema);
 
@@ -31,12 +31,13 @@ export default function AdminPeoplePage() {
     name: "",
     role: "",
     imageUrl: "",
-    featured: false,
   });
   const [showCreateMedia, setShowCreateMedia] = useState(false);
 
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editForm, setEditForm] = useState<EditablePerson | null>(null);
+  const [local, setLocal] = useState<Person[]>([]);
+  const [reordering, setReordering] = useState(false);
   const isEditing = useMemo(
     () => editingId !== null && editForm !== null,
     [editingId, editForm],
@@ -51,6 +52,7 @@ export default function AdminPeoplePage() {
       const raw = (await res.json()) as unknown;
       const parsed = PeopleArraySchema.parse(raw);
       setPeople(parsed);
+      setLocal(parsed);
     } catch (e: unknown) {
       const message = e instanceof Error ? e.message : "Unknown error";
       setError(message);
@@ -62,6 +64,10 @@ export default function AdminPeoplePage() {
   useEffect(() => {
     void loadPeople();
   }, []);
+
+  useEffect(() => {
+    setLocal(people);
+  }, [people]);
 
   async function handleCreate(e: React.FormEvent) {
     e.preventDefault();
@@ -76,11 +82,10 @@ export default function AdminPeoplePage() {
           name: createForm.name.trim(),
           role: createForm.role.trim(),
           imageUrl: imageUrlValue === "" ? undefined : imageUrlValue,
-          featured: Boolean(createForm.featured),
         }),
       });
       if (!res.ok) throw new Error(`Create failed: ${res.status}`);
-      setCreateForm({ name: "", role: "", imageUrl: "", featured: false });
+      setCreateForm({ name: "", role: "", imageUrl: "" });
       setShowCreateMedia(false);
       await loadPeople();
     } catch (e: unknown) {
@@ -97,7 +102,6 @@ export default function AdminPeoplePage() {
       name: person.name,
       role: person.role,
       imageUrl: person.imageUrl ?? "",
-      featured: person.featured,
     });
   }
 
@@ -118,7 +122,6 @@ export default function AdminPeoplePage() {
           name: editForm.name.trim(),
           role: editForm.role.trim(),
           imageUrl: editImageValue === "" ? null : editImageValue,
-          featured: Boolean(editForm.featured),
         }),
       });
       if (!res.ok) throw new Error(`Update failed: ${res.status}`);
@@ -142,32 +145,7 @@ export default function AdminPeoplePage() {
     }
   }
 
-  async function toggleFeatured(person: Person) {
-    setError(null);
-    // optimistic update
-    setPeople((prev) =>
-      prev.map((p) =>
-        p.id === person.id ? { ...p, featured: !p.featured } : p,
-      ),
-    );
-    try {
-      const res = await fetch(`/api/people/${person.id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ featured: !person.featured }),
-      });
-      if (!res.ok) throw new Error(`Toggle failed: ${res.status}`);
-    } catch (e: unknown) {
-      // rollback
-      setPeople((prev) =>
-        prev.map((p) =>
-          p.id === person.id ? { ...p, featured: person.featured } : p,
-        ),
-      );
-      const message = e instanceof Error ? e.message : "Unknown error";
-      setError(message);
-    }
-  }
+  // Reorder helpers
 
   return (
     <div style={{ padding: 24 }}>
@@ -242,17 +220,7 @@ export default function AdminPeoplePage() {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <input
-            id="featured"
-            type="checkbox"
-            checked={!!createForm.featured}
-            onChange={(e) =>
-              setCreateForm((f) => ({ ...f, featured: e.target.checked }))
-            }
-          />
-          <label htmlFor="featured">Featured</label>
-        </div>
+        
         <div>
           <button type="submit" disabled={creating}>
             {creating ? "Adding..." : "Add Person"}
@@ -278,25 +246,24 @@ export default function AdminPeoplePage() {
               <th style={th}>Name</th>
               <th style={th}>Role</th>
               <th style={th}>Image</th>
-              <th style={th}>Featured</th>
               <th style={th}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {isLoading ? (
               <tr>
-                <td colSpan={5} style={td}>
+                <td colSpan={4} style={td}>
                   Loading...
                 </td>
               </tr>
-            ) : people.length === 0 ? (
+            ) : local.length === 0 ? (
               <tr>
-                <td colSpan={5} style={td}>
+                <td colSpan={4} style={td}>
                   No people yet.
                 </td>
               </tr>
             ) : (
-              people.map((p) => (
+              local.map((p, idx) => (
                 <tr key={p.id}>
                   <td style={td}>
                     {isEditing && editingId === p.id ? (
@@ -346,31 +313,64 @@ export default function AdminPeoplePage() {
                   </td>
                   <td style={td}>
                     {isEditing && editingId === p.id ? (
-                      <input
-                        type="checkbox"
-                        checked={!!editForm?.featured}
-                        onChange={(e) =>
-                          setEditForm((f) =>
-                            f ? { ...f, featured: e.target.checked } : f,
-                          )
-                        }
-                      />
-                    ) : (
-                      <input
-                        type="checkbox"
-                        checked={p.featured}
-                        onChange={() => void toggleFeatured(p)}
-                      />
-                    )}
-                  </td>
-                  <td style={td}>
-                    {isEditing && editingId === p.id ? (
                       <div style={{ display: "flex", gap: 8 }}>
                         <button onClick={() => void saveEdit()}>Save</button>
                         <button onClick={cancelEdit}>Cancel</button>
                       </div>
                     ) : (
-                      <div style={{ display: "flex", gap: 8 }}>
+                      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                        <button
+                          aria-label="Move up"
+                          disabled={idx === 0 || reordering}
+                          onClick={async () => {
+                            if (idx <= 0) return;
+                            const next = (() => {
+                              const arr = local.slice();
+                              const [moved] = arr.splice(idx, 1);
+                              if (!moved) return arr;
+                              arr.splice(idx - 1, 0, moved);
+                              return arr;
+                            })();
+                            setReordering(true);
+                            setLocal(next);
+                            const updates = next.map((row, index) => ({ id: row.id, order: index }));
+                            await fetch(`/api/people/reorder`, {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({ updates }),
+                            });
+                            setReordering(false);
+                            await loadPeople();
+                          }}
+                        >
+                          ↑
+                        </button>
+                        <button
+                          aria-label="Move down"
+                          disabled={idx === local.length - 1 || reordering}
+                          onClick={async () => {
+                            if (idx >= local.length - 1) return;
+                            const next = (() => {
+                              const arr = local.slice();
+                              const [moved] = arr.splice(idx, 1);
+                              if (!moved) return arr;
+                              arr.splice(idx + 1, 0, moved);
+                              return arr;
+                            })();
+                            setReordering(true);
+                            setLocal(next);
+                            const updates = next.map((row, index) => ({ id: row.id, order: index }));
+                            await fetch(`/api/people/reorder`, {
+                              method: "POST",
+                              headers: { "Content-Type": "application/json" },
+                              body: JSON.stringify({ updates }),
+                            });
+                            setReordering(false);
+                            await loadPeople();
+                          }}
+                        >
+                          ↓
+                        </button>
                         <button onClick={() => startEdit(p)}>Edit</button>
                         <button onClick={() => void deletePerson(p.id)}>
                           Delete
