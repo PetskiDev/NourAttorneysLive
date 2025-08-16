@@ -38,7 +38,7 @@ export default function LatestInsightsClient({
               <>
                 <div className={styles.left}>
                   <div className={styles.categoryOutlineBlue}>{i.category}</div>
-                  <h3 className={`${styles.title}`}>{i.title}</h3>
+                  <p className={`${styles.title}`}>{i.title}</p>
                   <p className={`${styles.description}`}>{i.description}</p>
                   <div className={styles.metaRow}>
                     <span className={`${styles.authorBlack}`}>
@@ -64,7 +64,7 @@ export default function LatestInsightsClient({
             ) : (
               <>
                 <div className={styles.categoryOutline}>{i.category}</div>
-                <h3 className={`${styles.title}`}>{i.title}</h3>
+                <p className={`${styles.title}`}>{i.title}</p>
                 <div className={styles.metaRow}>
                   <span className={`${styles.authorWhite}`}>
                     By {i.publisher}

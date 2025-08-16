@@ -9,8 +9,8 @@
   border: 15px solid #0b0b0b;
   height: 420px;
   transition:
-    flex-basis 250ms linear,
-    background-color 150ms linear;
+    flex-basis 250ms ease,
+    background-color 150ms ease;
 }
 
 /* Expanded card (left, white) */
@@ -73,7 +73,8 @@
   cursor: pointer;
   border-width: 2px;
   overflow: hidden;
-  flex: 1 1 0;
+  /* 4 cards visible: 3 gaps (3*24px) and 45% expanded; remaining space divided by 3 */
+  flex: 0 0 calc((100% - 45% - 72px) / 3);
 }
 .compact .title {
   flex-grow: 1;
@@ -108,6 +109,10 @@
 @media (max-width: 1440px) {
   .wrap .card:nth-child(4) {
     display: none;
+  }
+  /* 3 cards visible: 2 gaps (2*24px) and 45% expanded; remaining space divided by 2 */
+  .wrap .compact {
+    flex-basis: calc((100% - 45% - 48px) / 2);
   }
 }
 
