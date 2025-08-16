@@ -13,6 +13,12 @@ export default async function AboutUsPage() {
       <section className={styles.frameworksHero}>
         <div className="containerr">
           <h1 className="headline_1">LEGAL FRAMEWORKS</h1>
+                    <Image
+            src={"./esg-mobile.svg"}
+            width={100}
+            height={20}
+            alt="element"
+          />
           <div className="subheadline_1">Exceptional success</div>
           <p>
             The most successful{" "}
@@ -29,6 +35,7 @@ export default async function AboutUsPage() {
             height={20}
             alt="element"
           />
+
         </div>
       </section>
 
@@ -183,14 +190,19 @@ export default async function AboutUsPage() {
             </div>
           </div>
 
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 mobnot">
             Dive deeper into each component of our
           </h4>
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 mobnot">
             <span className="blue-text">[comprehensive legal framework]</span>{" "}
             approach. Each section provides detailed insights into how we
             transform legal uncertainty into your competitive advantage.
           </h4>
+          <h2 className="subheadline_2 mob">
+Dive deeper into each component of our <span className="blue-text">[comprehensive legal framework]</span>{" "}
+            approach. Each section provides detailed insights into how we
+            transform legal uncertainty into your competitive advantage.
+          </h2>
 
           <div className={styles.frameworksRowThree}>
             <div>
