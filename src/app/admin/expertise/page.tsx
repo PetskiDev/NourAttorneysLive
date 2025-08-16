@@ -5,6 +5,7 @@ export const dynamic = "force-dynamic";
 import { useEffect, useState } from "react";
 import { z } from "zod";
 import Link from "next/link";
+import s from "../admin.module.css";
 
 const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -167,35 +168,38 @@ export default function AdminExpertisePage() {
         </div>
       )}
 
-      <form
-        onSubmit={handleCreate}
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 160px",
-          gap: 8,
-          alignItems: "end",
-          marginBottom: 24,
-          maxWidth: 900,
-        }}
-      >
-        <div>
-          <label htmlFor="title" style={{ display: "block", fontWeight: 600 }}>
-            Title
-          </label>
-          <input
-            id="title"
-            required
-            value={createForm.title}
-            onChange={(e) => setCreateForm((f) => ({ ...f, title: e.target.value }))}
-            style={{ width: "100%" }}
-          />
-        </div>
-        <div>
-          <button type="submit" disabled={creating}>
-            {creating ? "Adding..." : "Add Expertise"}
-          </button>
-        </div>
-      </form>
+      <div className={s.card}>
+        <div className={s.cardHeader}>Add expertise</div>
+        <form
+          onSubmit={handleCreate}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 160px",
+            gap: 8,
+            alignItems: "end",
+            padding: 12,
+            maxWidth: 900,
+          }}
+        >
+          <div>
+            <label htmlFor="title" style={{ display: "block", fontWeight: 600 }}>
+              Title
+            </label>
+            <input
+              id="title"
+              required
+              value={createForm.title}
+              onChange={(e) => setCreateForm((f) => ({ ...f, title: e.target.value }))}
+              className={s.input}
+            />
+          </div>
+          <div>
+            <button type="submit" disabled={creating} className={`${s.btn} ${s.btnPrimary}`}>
+              {creating ? "Adding..." : "Add Expertise"}
+            </button>
+          </div>
+        </form>
+      </div>
 
       <div style={{ display: "grid", gap: 12 }}>
         {isLoading ? (
@@ -204,27 +208,19 @@ export default function AdminExpertisePage() {
           <div>No expertise yet.</div>
         ) : (
           expertise.map((e) => (
-            <div key={e.id} style={{ border: "1px solid #ddd", borderRadius: 8, overflow: "hidden" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "10px 12px",
-                  background: "#fafafa",
-                }}
-              >
+            <div key={e.id} className={s.card}>
+              <div className={s.cardHeader} style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", gap: 8, alignItems: "baseline" }}>
-                  <button onClick={() => startEdit(e)}>Edit</button>
+                  <button onClick={() => startEdit(e)} className={s.btn}>Edit</button>
                   {editingId === e.id ? (
                     <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
                       <input
                         value={editTitle}
                         onChange={(ev) => setEditTitle(ev.target.value)}
-                        style={{ minWidth: 220 }}
+                        className={s.inputSmall}
                       />
-                      <button onClick={() => void saveEdit(e.id)}>Save</button>
-                      <button onClick={cancelEdit}>Cancel</button>
+                      <button onClick={() => void saveEdit(e.id)} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
+                      <button onClick={cancelEdit} className={s.btn}>Cancel</button>
                     </div>
                   ) : (
                     <strong>
@@ -233,10 +229,10 @@ export default function AdminExpertisePage() {
                   )}
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>
-                  <button onClick={() => setExpandedId((id) => (id === e.id ? null : e.id))}>
+                  <button onClick={() => setExpandedId((id) => (id === e.id ? null : e.id))} className={s.btn}>
                     {expandedId === e.id ? "Hide services" : "Show services"}
                   </button>
-                  <button onClick={() => void deleteExpertise(e.id)}>Delete</button>
+                  <button onClick={() => void deleteExpertise(e.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                 </div>
               </div>
 
@@ -288,6 +284,7 @@ function ServicesPanel({
             required
             value={form.title}
             onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
+            className={s.input}
           />
         </div>
         <div>
@@ -297,55 +294,48 @@ function ServicesPanel({
             pattern={slugRegex.source}
             value={form.slug}
             onChange={(e) => setForm((f) => ({ ...f, slug: e.target.value }))}
+            className={s.input}
           />
         </div>
         <div>
-          <button type="submit">Add Service</button>
+          <button type="submit" className={`${s.btn} ${s.btnPrimary}`}>Add Service</button>
         </div>
       </form>
 
-      <table style={{ width: "100%", borderCollapse: "collapse" }}>
+      <div className={s.tableWrap}>
+      <table className={s.table}>
         <thead>
           <tr>
-            <th style={th}>Title</th>
-            <th style={th}>Slug</th>
-            <th style={th}>Actions</th>
+            <th className={s.th}>Title</th>
+            <th className={s.th}>Slug</th>
+            <th className={s.th}>Actions</th>
           </tr>
         </thead>
         <tbody>
           {expertise.services.length === 0 ? (
             <tr>
-              <td colSpan={3} style={td}>No services yet.</td>
+              <td colSpan={3} className={s.td}>No services yet.</td>
             </tr>
           ) : (
-            expertise.services.map((s) => (
-              <tr key={s.id}>
-                <td style={td}>
-                  <Link href={`/services/${s.slug}`} target="_blank">{s.title}</Link>
+            expertise.services.map((svc) => (
+              <tr key={svc.id}>
+                <td className={s.td}>
+                  <Link href={`/services/${svc.slug}`} target="_blank">{svc.title}</Link>
                 </td>
-                <td style={td}>{s.slug}</td>
-                <td style={td}>
-                  <button onClick={() => onDelete(s.id)}>Delete</button>
+                <td className={s.td}>{svc.slug}</td>
+                <td className={s.td}>
+                  <button onClick={() => onDelete(svc.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                 </td>
               </tr>
             ))
           )}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
 
-const th: React.CSSProperties = {
-  textAlign: "left",
-  borderBottom: "1px solid #ddd",
-  padding: "8px 12px",
-};
-
-const td: React.CSSProperties = {
-  borderBottom: "1px solid #eee",
-  padding: "8px 12px",
-  verticalAlign: "middle",
-};
+// Table cell styles are provided by CSS module classes
 
 

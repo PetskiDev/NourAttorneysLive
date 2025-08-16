@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 import { useEffect, useMemo, useState } from "react";
 import MediaLibraryModal from "~/components/MediaLibraryModal";
+import s from "../admin.module.css";
 import { z } from "zod";
 
 const PersonSchema = z.object({
@@ -42,6 +43,8 @@ export default function AdminPeoplePage() {
     () => editingId !== null && editForm !== null,
     [editingId, editForm],
   );
+
+  // Visual styles shared via CSS module classes in ../admin.module.css
 
   async function loadPeople() {
     setIsLoading(true);
@@ -160,15 +163,17 @@ export default function AdminPeoplePage() {
         </div>
       )}
 
-      <form
+      <div className={s.card}>
+        <div className={s.cardHeader}>Add person</div>
+        <form
         onSubmit={handleCreate}
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr 1.5fr 120px 120px",
           gap: 8,
           alignItems: "end",
-          marginBottom: 24,
-          maxWidth: 1000,
+          padding: 12,
+          maxWidth: 1100,
         }}
       >
         <div>
@@ -182,7 +187,7 @@ export default function AdminPeoplePage() {
             onChange={(e) =>
               setCreateForm((f) => ({ ...f, name: e.target.value }))
             }
-            style={{ width: "100%" }}
+            className={s.input}
           />
         </div>
         <div>
@@ -196,7 +201,7 @@ export default function AdminPeoplePage() {
             onChange={(e) =>
               setCreateForm((f) => ({ ...f, role: e.target.value }))
             }
-            style={{ width: "100%" }}
+            className={s.input}
           />
         </div>
         <div>
@@ -213,20 +218,21 @@ export default function AdminPeoplePage() {
               )}
             </div>
             <div style={{ display: "flex", gap: 8 }}>
-              <button type="button" onClick={() => setShowCreateMedia(true)}>Select image</button>
+              <button type="button" onClick={() => setShowCreateMedia(true)} className={`${s.btn} ${s.btnSubtle}`}>Choose image…</button>
               {createForm.imageUrl ? (
-                <button type="button" onClick={() => setCreateForm((f) => ({ ...f, imageUrl: "" }))}>Clear</button>
+                <button type="button" onClick={() => setCreateForm((f) => ({ ...f, imageUrl: "" }))} className={s.btn}>Clear</button>
               ) : null}
             </div>
           </div>
         </div>
         
         <div>
-          <button type="submit" disabled={creating}>
+          <button type="submit" disabled={creating} className={`${s.btn} ${s.btnPrimary}`}>
             {creating ? "Adding..." : "Add Person"}
           </button>
         </div>
       </form>
+      </div>
 
       <MediaLibraryModal
         open={showCreateMedia}
@@ -243,29 +249,29 @@ export default function AdminPeoplePage() {
         >
           <thead>
             <tr>
-              <th style={th}>Name</th>
-              <th style={th}>Role</th>
-              <th style={th}>Image</th>
-              <th style={th}>Actions</th>
+              <th className={s.th}>Name</th>
+              <th className={s.th}>Role</th>
+              <th className={s.th}>Image</th>
+              <th className={s.th}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {isLoading ? (
               <tr>
-                <td colSpan={4} style={td}>
+                <td colSpan={4} className={s.td}>
                   Loading...
                 </td>
               </tr>
             ) : local.length === 0 ? (
               <tr>
-                <td colSpan={4} style={td}>
+                <td colSpan={4} className={s.td}>
                   No people yet.
                 </td>
               </tr>
             ) : (
               local.map((p, idx) => (
                 <tr key={p.id}>
-                  <td style={td}>
+                  <td className={s.td}>
                     {isEditing && editingId === p.id ? (
                       <input
                         value={editForm?.name ?? ""}
@@ -274,12 +280,13 @@ export default function AdminPeoplePage() {
                             f ? { ...f, name: e.target.value } : f,
                           )
                         }
+                        className={s.inputSmall}
                       />
                     ) : (
                       p.name
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {isEditing && editingId === p.id ? (
                       <input
                         value={editForm?.role ?? ""}
@@ -288,12 +295,13 @@ export default function AdminPeoplePage() {
                             f ? { ...f, role: e.target.value } : f,
                           )
                         }
+                        className={s.inputSmall}
                       />
                     ) : (
                       p.role
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {isEditing && editingId === p.id ? (
                       <input
                         value={editForm?.imageUrl ?? ""}
@@ -302,6 +310,7 @@ export default function AdminPeoplePage() {
                             f ? { ...f, imageUrl: e.target.value } : f,
                           )
                         }
+                        className={s.inputSmall}
                       />
                     ) : p.imageUrl ? (
                       <a href={p.imageUrl} target="_blank" rel="noreferrer">
@@ -311,17 +320,18 @@ export default function AdminPeoplePage() {
                       <span style={{ color: "#666" }}>-</span>
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {isEditing && editingId === p.id ? (
                       <div style={{ display: "flex", gap: 8 }}>
-                        <button onClick={() => void saveEdit()}>Save</button>
-                        <button onClick={cancelEdit}>Cancel</button>
+                        <button onClick={() => void saveEdit()} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
+                        <button onClick={cancelEdit} className={s.btn}>Cancel</button>
                       </div>
                     ) : (
                       <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
                         <button
                           aria-label="Move up"
                           disabled={idx === 0 || reordering}
+                          className={`${s.btn} ${s.btnIcon}`}
                           onClick={async () => {
                             if (idx <= 0) return;
                             const next = (() => {
@@ -343,11 +353,12 @@ export default function AdminPeoplePage() {
                             await loadPeople();
                           }}
                         >
-                          ↑
+                          <span style={{ opacity: 0.9 }}>↑</span>
                         </button>
                         <button
                           aria-label="Move down"
                           disabled={idx === local.length - 1 || reordering}
+                          className={`${s.btn} ${s.btnIcon}`}
                           onClick={async () => {
                             if (idx >= local.length - 1) return;
                             const next = (() => {
@@ -369,12 +380,10 @@ export default function AdminPeoplePage() {
                             await loadPeople();
                           }}
                         >
-                          ↓
+                          <span style={{ opacity: 0.9 }}>↓</span>
                         </button>
-                        <button onClick={() => startEdit(p)}>Edit</button>
-                        <button onClick={() => void deletePerson(p.id)}>
-                          Delete
-                        </button>
+                        <button onClick={() => startEdit(p)} className={s.btn}>Edit</button>
+                        <button onClick={() => void deletePerson(p.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                       </div>
                     )}
                   </td>
@@ -388,14 +397,4 @@ export default function AdminPeoplePage() {
   );
 }
 
-const th: React.CSSProperties = {
-  textAlign: "left",
-  borderBottom: "1px solid #ddd",
-  padding: "8px 12px",
-};
-
-const td: React.CSSProperties = {
-  borderBottom: "1px solid #eee",
-  padding: "8px 12px",
-  verticalAlign: "middle",
-};
+// Table cell styles are provided by CSS module classes

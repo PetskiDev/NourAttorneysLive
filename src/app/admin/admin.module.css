@@ -1,0 +1,90 @@
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e1e4ea;
+  background: #fff;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: #2F6BFF;
+  color: #fff;
+  border-color: #2F6BFF;
+  font-weight: 600;
+}
+
+.btnDanger {
+  border-color: #ffdde0;
+  background: #fff5f6;
+  color: #b00020;
+  font-weight: 600;
+}
+
+.btnIcon {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #e1e4ea;
+  background: #fff;
+  min-width: 32px;
+}
+
+.btnSubtle {
+  background: #f6f7f9;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e1e4ea;
+  background: #fff;
+}
+
+.inputSmall {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #e1e4ea;
+  background: #fff;
+}
+
+.card {
+  border: 1px solid #eaecef;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.cardHeader {
+  background: #fafafa;
+  padding: 12px 14px;
+  font-weight: 700;
+}
+
+.th {
+  text-align: left;
+  border-bottom: 1px solid #e6e8ef;
+  padding: 10px 12px;
+  background: #fafafa;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.td {
+  border-bottom: 1px solid #f0f1f4;
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+.tableWrap {
+  border: 1px solid #eaecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+

@@ -3,6 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useMemo, useState } from "react";
+import s from "../admin.module.css";
 import { z } from "zod";
 
 const FooterLinkSchema = z.object({
@@ -121,22 +122,22 @@ function TextsPanel({ texts, onChanged }: { texts: { LOCATION?: string; WORKING_
     if (typeof window !== "undefined") window.location.reload();
   }
   return (
-    <div style={{ border: "1px solid #ddd", borderRadius: 8, overflow: "hidden" }}>
-      <div style={{ background: "#fafafa", padding: "10px 12px", fontWeight: 600 }}>Footer texts</div>
-      <div style={{ padding: 12, display: "grid", gap: 12, gridTemplateColumns: "1fr 140px" }}>
+    <div className={s.card}>
+      <div className={s.cardHeader}>Footer texts</div>
+      <div style={{ padding: 12, display: "grid", gap: 12, gridTemplateColumns: "1fr 160px" }}>
         <div style={{ display: "grid", gap: 6 }}>
           <label style={{ fontWeight: 600 }}>Location</label>
-          <textarea value={form.LOCATION} onChange={(e) => setForm((f) => ({ ...f, LOCATION: e.target.value }))} rows={3} />
+          <textarea value={form.LOCATION} onChange={(e) => setForm((f) => ({ ...f, LOCATION: e.target.value }))} rows={3} className={s.input} />
         </div>
         <div style={{ display: "flex", alignItems: "end" }}>
-          <button onClick={() => void save("LOCATION")}>Save</button>
+          <button onClick={() => void save("LOCATION")} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
         </div>
         <div style={{ display: "grid", gap: 6 }}>
           <label style={{ fontWeight: 600 }}>Working hours</label>
-          <input value={form.WORKING_HOURS} onChange={(e) => setForm((f) => ({ ...f, WORKING_HOURS: e.target.value }))} />
+          <input value={form.WORKING_HOURS} onChange={(e) => setForm((f) => ({ ...f, WORKING_HOURS: e.target.value }))} className={s.input} />
         </div>
         <div style={{ display: "flex", alignItems: "end" }}>
-          <button onClick={() => void save("WORKING_HOURS")}>Save</button>
+          <button onClick={() => void save("WORKING_HOURS")} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
         </div>
       </div>
     </div>
@@ -204,43 +205,44 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
   }
 
   return (
-    <div style={{ border: "1px solid #ddd", borderRadius: 8, overflow: "hidden" }}>
-      <div style={{ background: "#fafafa", padding: "10px 12px", fontWeight: 600 }}>{title}</div>
+    <div className={s.card}>
+      <div className={s.cardHeader}>{title}</div>
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th style={th}>Label</th>
-            <th style={th}>URL</th>
-            <th style={th}>Actions</th>
+            <th className={s.th}>Label</th>
+            <th className={s.th}>URL</th>
+            <th className={s.th}>Actions</th>
           </tr>
         </thead>
         <tbody>
           {local.length === 0 ? (
             <tr>
-              <td colSpan={3} style={td}>No links yet.</td>
+              <td colSpan={3} className={s.td}>No links yet.</td>
             </tr>
           ) : (
             local.map((l, idx) => (
               <tr key={l.id}>
-                <td style={td}>
+                <td className={s.td}>
                   {editingId === l.id ? (
-                    <input value={editDraft.label} onChange={(e) => setEditDraft((d) => ({ ...d, label: e.target.value }))} />
+                    <input value={editDraft.label} onChange={(e) => setEditDraft((d) => ({ ...d, label: e.target.value }))} className={s.inputSmall} />
                   ) : (
                     <span>{l.label}</span>
                   )}
                 </td>
-                <td style={td}>
+                <td className={s.td}>
                   {editingId === l.id ? (
-                    <input value={editDraft.href} onChange={(e) => setEditDraft((d) => ({ ...d, href: e.target.value }))} />
+                    <input value={editDraft.href} onChange={(e) => setEditDraft((d) => ({ ...d, href: e.target.value }))} className={s.inputSmall} />
                   ) : (
                     <a href={l.href} target="_blank" rel="noreferrer">{l.href}</a>
                   )}
                 </td>
-                <td style={td}>
+                <td className={s.td}>
                   <div style={{ display: "flex", gap: 8 }}>
                     <button
                       aria-label="Move up"
                       disabled={idx === 0 || reordering}
+                      className={`${s.btn} ${s.btnIcon}`}
                       onClick={async () => {
                         if (idx <= 0) return;
                         const next = (() => {
@@ -262,11 +264,12 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
                         onChanged();
                       }}
                     >
-                      ↑
+                      <span style={{ opacity: 0.9 }}>↑</span>
                     </button>
                     <button
                       aria-label="Move down"
                       disabled={idx === local.length - 1 || reordering}
+                      className={`${s.btn} ${s.btnIcon}`}
                       onClick={async () => {
                         if (idx >= local.length - 1) return;
                         const next = (() => {
@@ -288,17 +291,17 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
                         onChanged();
                       }}
                     >
-                      ↓
+                      <span style={{ opacity: 0.9 }}>↓</span>
                     </button>
                     {editingId === l.id ? (
                       <>
-                        <button onClick={() => void saveEdit(l.id)}>Save</button>
-                        <button onClick={cancelEdit}>Cancel</button>
+                        <button onClick={() => void saveEdit(l.id)} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
+                        <button onClick={cancelEdit} className={s.btn}>Cancel</button>
                       </>
                     ) : (
                       <>
-                        <button onClick={() => startEdit(l)}>Edit</button>
-                        <button onClick={() => void remove(l.id)}>Delete</button>
+                        <button onClick={() => startEdit(l)} className={s.btn}>Edit</button>
+                        <button onClick={() => void remove(l.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                       </>
                     )}
                   </div>
@@ -308,16 +311,16 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
           )}
           {showNew ? (
             <tr>
-              <td style={td}>
-                <input value={newForm.label} onChange={(e) => setNewForm((f) => ({ ...f, label: e.target.value }))} />
+              <td className={s.td}>
+                <input value={newForm.label} onChange={(e) => setNewForm((f) => ({ ...f, label: e.target.value }))} className={s.inputSmall} />
               </td>
-              <td style={td}>
-                <input value={newForm.href} onChange={(e) => setNewForm((f) => ({ ...f, href: e.target.value }))} />
+              <td className={s.td}>
+                <input value={newForm.href} onChange={(e) => setNewForm((f) => ({ ...f, href: e.target.value }))} className={s.inputSmall} />
               </td>
-              <td style={td}>
+              <td className={s.td}>
                 <div style={{ display: "flex", gap: 8 }}>
-                  <button onClick={() => void createNew()} disabled={creating}>{creating ? "Saving..." : "Save"}</button>
-                  <button onClick={() => { setShowNew(false); setNewForm({ label: "", href: "" }); }}>Cancel</button>
+                  <button onClick={() => void createNew()} disabled={creating} className={`${s.btn} ${s.btnPrimary}`}>{creating ? "Saving..." : "Save"}</button>
+                  <button onClick={() => { setShowNew(false); setNewForm({ label: "", href: "" }); }} className={s.btn}>Cancel</button>
                 </div>
               </td>
             </tr>
@@ -325,23 +328,13 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
         </tbody>
       </table>
       <div style={{ padding: 12, display: "flex", gap: 8, alignItems: "center" }}>
-        <button aria-label="Add link" title="Add link" onClick={() => setShowNew(true)}>+</button>
+        <button aria-label="Add link" title="Add link" onClick={() => setShowNew(true)} className={s.btn}>+ Add link</button>
       </div>
     </div>
   );
 }
 
-const th: React.CSSProperties = {
-  textAlign: "left",
-  borderBottom: "1px solid #ddd",
-  padding: "8px 12px",
-};
-
-const td: React.CSSProperties = {
-  borderBottom: "1px solid #eee",
-  padding: "8px 12px",
-  verticalAlign: "middle",
-};
+// Visual styles are imported from ../admin.module.css
 
 
 

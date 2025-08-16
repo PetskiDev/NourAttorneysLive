@@ -3,6 +3,7 @@
 export const dynamic = "force-dynamic";
 
 import { useEffect, useState } from "react";
+import s from "../admin.module.css";
 import { z } from "zod";
 
 const PartnerSchema = z.object({
@@ -32,6 +33,8 @@ export default function AdminPartnersPage() {
   const [editForm, setEditForm] = useState<EditablePartner>({ name: "", industry: "" });
   const [local, setLocal] = useState<Partner[]>([]);
   const [reordering, setReordering] = useState(false);
+
+  // Visual styles provided by CSS module ../admin.module.css
 
   async function loadAll() {
     setIsLoading(true);
@@ -133,72 +136,76 @@ export default function AdminPartnersPage() {
         </div>
       )}
 
-      <form onSubmit={handleCreate} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 160px", gap: 8, alignItems: "end", marginBottom: 24, maxWidth: 900 }}>
-        <div>
-          <label htmlFor="name" style={{ display: "block", fontWeight: 600 }}>Name</label>
-          <input id="name" required value={createForm.name} onChange={(e) => setCreateForm((f) => ({ ...f, name: e.target.value }))} style={{ width: "100%" }} />
-        </div>
-        <div>
-          <label htmlFor="industry" style={{ display: "block", fontWeight: 600 }}>Industry</label>
-          <input id="industry" required value={createForm.industry} onChange={(e) => setCreateForm((f) => ({ ...f, industry: e.target.value }))} style={{ width: "100%" }} />
-        </div>
-        <div>
-          <button type="submit" disabled={creating}>{creating ? "Adding..." : "Add Partner"}</button>
-        </div>
-      </form>
+      <div className={s.card}>
+        <div className={s.cardHeader}>Add partner</div>
+        <form onSubmit={handleCreate} style={{ display: "grid", gridTemplateColumns: "1fr 1fr 160px", gap: 8, alignItems: "end", padding: 12, maxWidth: 1000 }}>
+          <div>
+            <label htmlFor="name" style={{ display: "block", fontWeight: 600 }}>Name</label>
+            <input id="name" required value={createForm.name} onChange={(e) => setCreateForm((f) => ({ ...f, name: e.target.value }))} className={s.input} />
+          </div>
+          <div>
+            <label htmlFor="industry" style={{ display: "block", fontWeight: 600 }}>Industry</label>
+            <input id="industry" required value={createForm.industry} onChange={(e) => setCreateForm((f) => ({ ...f, industry: e.target.value }))} className={s.input} />
+          </div>
+          <div>
+            <button type="submit" disabled={creating} className={`${s.btn} ${s.btnPrimary}`}>{creating ? "Adding..." : "Add Partner"}</button>
+          </div>
+        </form>
+      </div>
 
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", maxWidth: 900 }}>
           <thead>
             <tr>
-              <th style={th}>Name</th>
-              <th style={th}>Industry</th>
-              <th style={th}>Slug</th>
-              <th style={th}>Actions</th>
+              <th className={s.th}>Name</th>
+              <th className={s.th}>Industry</th>
+              <th className={s.th}>Slug</th>
+              <th className={s.th}>Actions</th>
             </tr>
           </thead>
           <tbody>
             {isLoading ? (
               <tr>
-                <td colSpan={4} style={td}>Loading...</td>
+                <td colSpan={4} className={s.td}>Loading...</td>
               </tr>
             ) : items.length === 0 ? (
               <tr>
-                <td colSpan={4} style={td}>No partners yet.</td>
+                <td colSpan={4} className={s.td}>No partners yet.</td>
               </tr>
             ) : (
               local.map((p, idx) => (
                 <tr key={p.id}>
-                  <td style={td}>
+                  <td className={s.td}>
                     {editingId === p.id ? (
-                      <input value={editForm.name} onChange={(e) => setEditForm((f) => ({ ...f, name: e.target.value }))} />
+                      <input value={editForm.name} onChange={(e) => setEditForm((f) => ({ ...f, name: e.target.value }))} className={s.inputSmall} />
                     ) : (
                       p.name
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {editingId === p.id ? (
-                      <input value={editForm.industry} onChange={(e) => setEditForm((f) => ({ ...f, industry: e.target.value }))} />
+                      <input value={editForm.industry} onChange={(e) => setEditForm((f) => ({ ...f, industry: e.target.value }))} className={s.inputSmall} />
                     ) : (
                       p.industry
                     )}
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     <a href={`/partners/${p.slug}`} target="_blank" rel="noreferrer">
                       <code>{p.slug}</code>
                     </a>
                   </td>
-                  <td style={td}>
+                  <td className={s.td}>
                     {editingId === p.id ? (
                       <div style={{ display: "flex", gap: 8 }}>
-                        <button onClick={() => void saveEdit(p.id)}>Save</button>
-                        <button onClick={cancelEdit}>Cancel</button>
+                        <button onClick={() => void saveEdit(p.id)} className={`${s.btn} ${s.btnPrimary}`}>Save</button>
+                        <button onClick={cancelEdit} className={s.btn}>Cancel</button>
                       </div>
                     ) : (
                       <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
                         <button
                           aria-label="Move up"
                           disabled={idx === 0 || reordering}
+                          className={`${s.btn} ${s.btnIcon}`}
                           onClick={async () => {
                             if (idx <= 0) return;
                             const next = (() => {
@@ -220,11 +227,12 @@ export default function AdminPartnersPage() {
                             await loadAll();
                           }}
                         >
-                          ↑
+                          <span style={{ opacity: 0.9 }}>↑</span>
                         </button>
                         <button
                           aria-label="Move down"
                           disabled={idx === local.length - 1 || reordering}
+                          className={`${s.btn} ${s.btnIcon}`}
                           onClick={async () => {
                             if (idx >= local.length - 1) return;
                             const next = (() => {
@@ -246,10 +254,10 @@ export default function AdminPartnersPage() {
                             await loadAll();
                           }}
                         >
-                          ↓
+                          <span style={{ opacity: 0.9 }}>↓</span>
                         </button>
-                        <button onClick={() => startEdit(p)}>Edit</button>
-                        <button onClick={() => void deleteItem(p.id)}>Delete</button>
+                        <button onClick={() => startEdit(p)} className={s.btn}>Edit</button>
+                        <button onClick={() => void deleteItem(p.id)} className={`${s.btn} ${s.btnDanger}`}>Delete</button>
                       </div>
                     )}
                   </td>
@@ -263,17 +271,7 @@ export default function AdminPartnersPage() {
   );
 }
 
-const th: React.CSSProperties = {
-  textAlign: "left",
-  borderBottom: "1px solid #ddd",
-  padding: "8px 12px",
-};
-
-const td: React.CSSProperties = {
-  borderBottom: "1px solid #eee",
-  padding: "8px 12px",
-  verticalAlign: "middle",
-};
+// Table cell styles are provided by CSS module classes
 
 
 
