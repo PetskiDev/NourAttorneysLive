@@ -6,16 +6,17 @@
 
 .card {
   box-sizing: border-box;
-  border: 15px solid #0B0B0B;
+  border: 15px solid #0b0b0b;
   height: 420px;
-  min-height: 420px;
-  transition: flex-basis 250ms linear, background-color 150ms linear;
+  transition:
+    flex-basis 250ms linear,
+    background-color 150ms linear;
 }
 
 /* Expanded card (left, white) */
 .expanded {
   background: #ffffff;
-  color: #0B0B0B;
+  color: #0b0b0b;
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex: 0 0 45%; /* fixed 45% */
@@ -24,7 +25,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 20px;
   overflow: hidden;
   align-items: flex-start;
 }
@@ -36,41 +37,46 @@
 }
 
 .categoryOutlineBlue {
-  border: 2px solid #1E5EE8;
-  color: #1E5EE8;
+  border: 2px solid #1e5ee8;
+  color: #1e5ee8;
   padding: 8px 12px;
   display: inline-block;
   font-weight: 600;
 }
 
 .title {
+  font-size: 18px;
   margin: 16px 0 10px 0;
 }
 
 .description {
-  color: #3C3C3C;
+  color: #3c3c3c;
   overflow: hidden;
   flex-grow: 1;
   display: -webkit-box;
+  line-clamp: 6;
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
 
 .metaDark {
-  color: #6A6A6A;
+  color: #6a6a6a;
 }
 
 /* Compact cards (right, black) */
 .compact {
-  background: #0B0B0B;
+  background: #0b0b0b;
   color: #fff;
-  padding: 24px;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
   border-width: 2px;
   overflow: hidden;
-  flex: 1 1 0; /* share remaining space equally */
+  flex: 1 1 0;
+}
+.compact .title {
+  flex-grow: 1;
 }
 
 .categoryOutline {
@@ -81,21 +87,60 @@
 }
 
 .metaLight {
-  color: #B7B7B7;
+  color: #b7b7b7;
 }
-.metaRow { display: flex; gap: 4px; }
-.authorBlack { color: #0B0B0B; }
-.authorWhite { color: #FFFFFF; }
-.dateGray { color: #B7B7B7; }
+.metaRow {
+  display: flex;
+  gap: 4px;
+  font-size: 12px;
+}
+.authorBlack {
+  color: #0b0b0b;
+}
+.authorWhite {
+  color: #ffffff;
+}
+.dateGray {
+  color: #b7b7b7;
+}
 
 /* Below 1440px show only 3 cards */
 @media (max-width: 1440px) {
-  .wrap .card:nth-child(4) { display: none; }
+  .wrap .card:nth-child(4) {
+    display: none;
+  }
 }
 
-@media (max-width: 900px) {
-  .wrap { flex-direction: column; }
-  .compact { flex-basis: auto; height: auto; min-height: 240px; }
+@media (max-width: 1000px) {
+  .left {
+    padding: 18px;
+  }
+  .wrap {
+    flex-direction: column;
+  }
+  .compact {
+    flex-basis: auto;
+    height: 200px;
+    min-height: 200px;
+  }
+  .expanded {
+    height: 350px;
+    max-height: 350px;
+  }
 }
 
-
+@media (max-width: 550px) {
+  .left {
+    padding: 12px;
+  }
+  .title {
+    min-height: 50px;
+  }
+  .expanded {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .expanded .description {
+    display: none;
+  }
+}

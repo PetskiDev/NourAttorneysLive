@@ -13,6 +13,17 @@ export const getPeopleCached = unstable_cache(
   }
 );
 
+// First 6 people for homepage/sections
+export const getFirstSixPeopleCached = unstable_cache(
+  async () => {
+    return db.people.findMany({ where: { featured: true },orderBy: { createdAt: "desc" }, take: 6 });
+  },
+  ["getFirstSixPeopleCached"],
+  {
+    tags: [tag.peopleList()],
+  }
+);
+
 export const getExpertiseListCached = unstable_cache(
   async () => {
     return db.expertise.findMany({ orderBy: { createdAt: "desc" }, include: { services: true } });

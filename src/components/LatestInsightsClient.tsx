@@ -15,7 +15,11 @@ function formatDate(value: string | Date): string {
   }).format(d);
 }
 
-export default function LatestInsightsClient({ insights }: { insights: Insight[] }) {
+export default function LatestInsightsClient({
+  insights,
+}: {
+  insights: Insight[];
+}) {
   const ordered: Insight[] = useMemo(() => insights.slice(0, 4), [insights]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   if (ordered.length === 0) return null;
@@ -37,25 +41,38 @@ export default function LatestInsightsClient({ insights }: { insights: Insight[]
                   <h3 className={`${styles.title}`}>{i.title}</h3>
                   <p className={`${styles.description}`}>{i.description}</p>
                   <div className={styles.metaRow}>
-                    <span className={`${styles.authorBlack}`}>By {i.publisher}</span>
-                    <span className={`${styles.dateGray}`}> / {formatDate(i.publishedAt)}</span>
+                    <span className={`${styles.authorBlack}`}>
+                      By {i.publisher}
+                    </span>
+                    <span className={`${styles.dateGray}`}>
+                      {" "}
+                      / {formatDate(i.publishedAt)}
+                    </span>
                   </div>
                 </div>
                 {i.imageUrl ? (
                   <div className={styles.media}>
-                    <Image src={i.imageUrl} alt={i.title} fill style={{ objectFit: "cover" }} />
+                    <Image
+                      src={i.imageUrl}
+                      alt={i.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
                   </div>
                 ) : null}
               </>
             ) : (
               <>
-                <div>
-                  <div className={styles.categoryOutline}>{i.category}</div>
-                  <h3 className={`${styles.title}`}>{i.title}</h3>
-                </div>
+                <div className={styles.categoryOutline}>{i.category}</div>
+                <h3 className={`${styles.title}`}>{i.title}</h3>
                 <div className={styles.metaRow}>
-                  <span className={`${styles.authorWhite}`}>By {i.publisher}</span>
-                  <span className={`${styles.dateGray}`}> / {formatDate(i.publishedAt)}</span>
+                  <span className={`${styles.authorWhite}`}>
+                    By {i.publisher}
+                  </span>
+                  <span className={`${styles.dateGray}`}>
+                    {" "}
+                    / {formatDate(i.publishedAt)}
+                  </span>
                 </div>
               </>
             )}
@@ -65,5 +82,3 @@ export default function LatestInsightsClient({ insights }: { insights: Insight[]
     </div>
   );
 }
-
-

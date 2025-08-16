@@ -1,0 +1,77 @@
+.section {
+  padding: 64px 0;
+}
+.ourPeople{
+  font-size: 22px;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  container-type: inline-size;
+}
+
+.title {
+  margin-top: 12px;
+}
+
+.subtitle {
+  color: #666;
+}
+
+.empty {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.viewAllCard { display: block; }
+
+.viewAll {
+  position: absolute;
+  font-size: 2vw; /* fallback */
+  font-size: 12cqi; /* scales with 5% of the card's inline size */
+  bottom: 0;
+  color: #0a58ca;
+  text-decoration: underline;
+  left: 0;
+}
+
+.desktop { display: block; }
+.tablet { display: none; }
+.mobile { display: none; }
+
+@media (max-width: 899px) {
+  .desktop { display: none; }
+  .tablet { display: block; }
+}
+
+@media (max-width: 449px) {
+  .tablet { display: none; }
+  .mobile { display: block; }
+}
+
+.viewAllBelow {
+  text-align: center;
+  margin-top: 12px;
+  color: #0a58ca;
+  text-decoration: underline;
+  display: block;
+  width: 100%;
+}
+
