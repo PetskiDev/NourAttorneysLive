@@ -50,13 +50,15 @@
 }
 
 .description {
+  width: 100%;
   color: #3c3c3c;
-  overflow: hidden;
-  flex-grow: 1;
   display: -webkit-box;
+  -webkit-box-orient: vertical;
   line-clamp: 6;
   -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .metaDark {
@@ -92,6 +94,8 @@
 }
 .metaRow {
   display: flex;
+  flex-grow: 1;
+  align-items: flex-end;
   gap: 4px;
   font-size: 12px;
 }
@@ -123,15 +127,28 @@
   .wrap {
     flex-direction: column;
   }
+  /* Switch to vertical animation on small screens */
+  .card {
+    overflow: hidden;
+    height: auto;
+    transition:
+      height 300ms ease-in-out,
+      background-color 150ms ease;
+    will-change: height;
+  }
+  /* Remove width-based flex sizing that relies on row axis */
+  .expanded,
   .compact {
-    flex-basis: auto;
+    flex: none;
+  }
+  .compact {
     height: 200px;
-    min-height: 200px;
+    overflow: hidden;
   }
   .expanded {
-    height: 350px;
-    max-height: 350px;
+    height: 340px; /* ample to show media + text */
   }
+
 }
 
 @media (max-width: 550px) {
