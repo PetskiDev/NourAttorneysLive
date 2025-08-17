@@ -162,6 +162,7 @@ body {
   font-weight: 700;
   letter-spacing: -5%;
   line-height: 90%;
+  text-transform: uppercase;
 }
 
 .subheadline_2 {
@@ -198,6 +199,7 @@ body {
 .headline_1_2 {
   font-size: 15vw;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .headline_5 {
@@ -299,10 +301,11 @@ body {
 }
 
 .headline_1_3 {
-  font-size: 6vw;
+  font-size: 5.3vw;
   font-weight: 700;
   line-height: 90%;
   font-family: var(--font-manrope);
+  text-transform: uppercase;
 }
 
 .headline_3 {
@@ -372,7 +375,17 @@ body {
 }
 
 .descriptor_1{
-  
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  line-height: 105%;
+  text-transform: uppercase;
+}
+
+.title_4{
+  font-size: 0.9vw;
+  font-family: var(--font-inter);
+  line-height: 120%;
 }
 
 
@@ -566,6 +579,20 @@ body {
   font-size: 36px;
   line-height: 110%;
   text-transform: uppercase;
+}
+
+.descriptor_1{
+  font-size: 18px;
+  font-weight: 400;
+  font-family: var(--font-inter);
+  line-height: 105%;
+  text-transform: uppercase;
+}
+
+.title_4{
+  font-size: 18px;
+  font-family: var(--font-inter);
+  line-height: 120%;
 }
 }
 

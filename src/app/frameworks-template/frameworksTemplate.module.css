@@ -1,0 +1,503 @@
+.frameworksHero{
+    background-color: #0033A0;
+    color: white;
+    padding: 3% 0;
+}
+
+.frameworksHero>div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heroRow{
+    display: flex;
+    align-items: flex-end;
+}
+
+.heroRow>div{
+    width: 50%;
+}
+
+.heroRight>div{
+    width: 65%;
+    margin-left: 1%;
+    color: #B7B7B7;
+}
+
+.heroLeft>h1{
+    text-align: right;
+}
+
+.frameworksOne>div{
+    display: flex;
+    padding: 2% 0;
+}
+
+.frameworksOne>div>div{
+    width: 50%;
+}
+
+.oneLeft>div{
+    width: 40%;
+    color: #545454;
+}
+
+.oneRight{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.oneRight>*{
+    width: 55%;
+}
+
+.oneRight p{
+    color: #545454;
+}
+
+.frameworksTwo>div{
+    display: flex;
+}
+
+.frameworksTwo ul{
+    margin-left: 18px;
+    margin-top: 5px;
+}
+
+.frameworksTwo>div>div{
+    width: 50%;
+}
+
+.twoRight>img{
+    width: 100%;
+    height: auto;
+}
+
+.frameworksThree>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0;
+    gap: 10px;
+}
+
+.frameworksThree h4{
+    width: 65%;
+    text-align: center;
+}
+
+.threeRow{
+    display: flex;
+    position: relative;
+    padding-top: 30px;
+}
+
+.threeRow::before{
+    height: 1vw;
+    width: 75%;
+    content: "";
+    border-top: 1px solid #C4C4C4;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    position: absolute;
+    top: 15px;
+}
+
+.threeLeft{
+    width: 50%;
+    display: flex;
+}
+
+.threeLeft>div{
+    width: 50%;
+}
+
+.threeLeft>div:nth-child(1){
+    padding-left: 10px;
+    color: #545454;
+}
+
+.threeRight{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.threeRight>*{
+    width: 50%;
+}
+
+.frameworksFour>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.frameworksFour>div>h4:nth-child(2){
+    margin-left: 50%;
+    width: 50%;
+}
+
+.frameworksFour :global(.studies-boxes){
+    position: relative;
+}
+
+.studyAbs{
+    position: absolute;
+    left: 25%;
+    top: 30px;
+    color: #545454;
+}
+
+
+.frameworksFive>div{
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0;
+}
+
+.frameworksFive>div>h4:first-of-type{
+    width: 50%;
+    margin-left: 50%;
+}
+
+.fiveRow{
+    display: flex;
+    margin-top: 10px;
+}
+
+.fiveRow>div{
+    width: 50%;
+}
+
+.fiveLeft img{
+    width: 30%;
+    height: auto;
+}
+
+.fiveRight{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.fiveRight>*{
+    width: 50%;
+}
+
+.fiveRight a {
+    border-bottom: 1px solid #0033A0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2vw;
+    width: auto;
+}
+
+.fiveRight a span {
+    color: #0033A0;
+}
+
+.fiveRight a img {
+    height: 4vw;
+    width: 4vw;
+}
+
+.fiveRight img{
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1920px){
+    .fiveRight a img {
+        height: 68px;
+        width: 68px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 1024px){
+    .heroRow{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .heroRow>div{
+        width: 100%;
+        text-align: center;
+    }
+
+    .heroRow h1{
+        width: 70%;
+        text-align: center;
+    }
+
+    .heroRow>div{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .heroRow>div>div{
+        margin-left: 0;
+        width: 50%;
+        color: white;
+        font-size: 2.1vw;
+        line-height: 100%;
+        font-weight: 500;
+        font-family: var(--font-manrope);
+    }
+
+    .heroRow:nth-child(2){
+        display: none;
+    }
+
+    .oneRight > *{
+        width: 100%;
+    }
+
+    .threeRow{
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .threeRow::before{
+        width: 100%;
+    }
+
+    .threeRow>div{
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .threeLeft{
+        gap: 4px;
+    }
+
+    .threeLeft>div{
+        width: auto;
+        margin: 0;
+        font-size: 18px;
+        color: black!important;
+    }
+
+    .threeRight>*{
+        width: 100%;
+    }
+
+    .threeLeft>div:first-child{
+        padding-left: 0;
+    }
+
+    .threeRight>p{
+        font-size: 16px;
+    }
+
+    .studyAbs{
+        display: none;
+    }
+
+    .frameworksFour h4{
+        font-size: 3.4vw;
+    }
+
+    .frameworksFour > div > h4:nth-child(2){
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .fiveRight > * {
+        width: 100%;
+    }
+
+    .fiveLeft img{
+        width: 70%;
+    }
+
+    .frameworksFive h4{
+        margin-left: 0!important;
+        width: 100%!important;
+        font-size: 3.4vw;
+    }
+
+    .fiveRight p{
+        font-size: 18px;
+    }
+
+    .fiveRight div{
+        font-size: 20px;
+    }
+
+    .oneRight>p{
+        font-size: 2vw;
+    }
+
+    .oneRight>Div{
+        font-size: 2.2vw;
+    }
+
+    .oneLeft>div{
+        font-size: 2vw;
+        width: 60%;
+    }
+
+    .frameworksTwo>div>div:first-child>div{
+        font-size: 2vw;
+    }
+
+    .frameworksTwo ul li{
+        font-size: 2vw;
+        color: black;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .frameworksHero h1{
+        font-weight: 600;
+        font-size: 7vw;
+        width: 75%;
+    }
+
+    .heroRow > div > div{
+        width: 70%;
+        font-size: 3vw;
+    }
+
+    .heroRow{
+        padding: 4% 0;
+    }
+
+    .heroRow img{
+        width: 6px;
+        margin: 10px 0;
+        height: auto;
+    }
+
+    .frameworksOne>div{
+        flex-direction: column;
+    }
+    
+    .frameworksOne > div > div{
+        width: 100%;
+    }
+
+    .frameworksTwo>div{
+        flex-direction: column;
+    }
+
+    .frameworksTwo> div > div{
+        width: 100%;
+    }
+
+    .threeLeft > div:first-child{
+        display: none;
+    }
+
+    .threeRow::before{
+        display: none;
+    }
+
+    .frameworksFour h4{
+        font-size: 5vw;
+    }
+
+    .threeRow > div{
+        padding: 0;
+    }
+
+    .frameworksFive h4{
+        font-size: 5.8vw;
+    }
+
+    .fiveLeft{
+        display: none;
+    }
+
+    .fiveRow > div{
+        width: 100%;
+    }
+
+    .fiveRight a>span{
+        font-size:34px;
+    }
+
+    .fiveRight img{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+
+    .fiveRight a{
+        margin: 0 auto;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+
+    .fiveRight a img{
+        height: 36px;
+        width: 36px;
+    }
+
+        .oneRight>p{
+        font-size: 4vw;
+    }
+
+    .oneRight>Div{
+        font-size: 4.2vw;
+    }
+
+    .oneRight{
+        gap: 10px;
+    }
+
+    .oneLeft{
+        display: flex;
+        justify-content: center;
+    }
+
+    .oneLeft>div{
+        font-size: 4vw;
+        width: 60%;
+        text-align: center;
+        width: 60%;
+        color: black;
+        margin:  10px 0;
+    }
+
+    .frameworksTwo>div>div:first-child>div{
+        font-size: 4.3vw;
+    }
+
+    .frameworksTwo ul li{
+        font-size: 4.1vw;
+        color: black;
+    }
+
+    .frameworksTwo > div > div:first-child{
+        order: 3;
+    }
+
+    .frameworksThree h4{
+        font-size: 5vw;
+        letter-spacing: 0;
+        margin-top: 30px;
+    }
+}
