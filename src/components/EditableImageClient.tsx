@@ -5,6 +5,7 @@ import styles from "./EditableBlock.module.css";
 import type { BlockType } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import MediaLibraryModal from "./MediaLibraryModal";
+import { useIsAdmin } from "./useIsAdmin";
 
 export default function EditableImageClient({
   relUrl,
@@ -15,6 +16,7 @@ export default function EditableImageClient({
 }) {
   const [showMedia, setShowMedia] = useState(false);
   const router = useRouter();
+  const isAdmin = useIsAdmin();
 
   const saveBlock = async (selectedUrl: string) => {
     try {
@@ -42,9 +44,11 @@ export default function EditableImageClient({
 
   return (
     <>
-      <button className={styles.editBtn} onClick={() => setShowMedia(true)}>
-        ✏️
-      </button>
+      {isAdmin && (
+        <button className={styles.editBtn} onClick={() => setShowMedia(true)}>
+          ✏️
+        </button>
+      )}
       <MediaLibraryModal
         open={showMedia}
         onClose={() => setShowMedia(false)}

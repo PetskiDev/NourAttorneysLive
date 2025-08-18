@@ -4,6 +4,7 @@ import { useState } from "react";
 import styles from "./EditableBlock.module.css";
 import type { BlockType } from "@prisma/client";
 import { useRouter } from "next/navigation";
+import { useIsAdmin } from "./useIsAdmin";
 
 const TAGS = [
   "p",
@@ -39,6 +40,7 @@ export default function EditableTextClient({
   const [newContent, setNewContent] = useState(initialContent ?? "");
   const [tag, setTag] = useState<Tag>(initialTag ?? "p");
   const router = useRouter();
+  const isAdmin = useIsAdmin();
 
   const saveBlock = async () => {
     try {
@@ -87,7 +89,7 @@ export default function EditableTextClient({
 
   return (
     <>
-      {!editing && (
+      {!editing && isAdmin && (
         <button
           className={styles.editBtn}
           style={{ left: -10, right: "auto", top: -15, zIndex: 1000000000000 }}

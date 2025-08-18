@@ -5,21 +5,21 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import MediaLibraryModal from "./MediaLibraryModal";
 import styles from "./EditablePersonImage.module.css"
+import { useIsAdmin } from "./useIsAdmin";
 
 export default function EditablePersonImage({
   personId,
   initialUrl,
-  isAdmin = false,
   alt,
 }: {
   personId: number;
   initialUrl?: string | null;
-  isAdmin?: boolean;
   alt?: string;
 }) {
   const [url, setUrl] = useState<string | null>(initialUrl ?? null);
   const [showMedia, setShowMedia] = useState(false);
   const router = useRouter();
+  const isAdmin = useIsAdmin();
 
   async function save(selectedUrl: string) {
     try {

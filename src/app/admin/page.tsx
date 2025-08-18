@@ -1,9 +1,59 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import s from "./admin.module.css";
 
 export const dynamic = "force-dynamic";
 
+type SessionResp = { loggedIn: boolean; remainingSec?: number };
+
 export default function AdminDashboardPage() {
+  const router = useRouter();
+  const [remainingSec, setRemainingSec] = useState<number | null>(null);
+  const intervalRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        const res = await fetch("/api/admin/login", { cache: "no-store" });
+        const json = (await res.json()) as SessionResp;
+        if (!cancelled) {
+          if (json.loggedIn && typeof json.remainingSec === "number") {
+            setRemainingSec(json.remainingSec);
+          } else {
+            setRemainingSec(null);
+          }
+        }
+      } catch {
+        if (!cancelled) setRemainingSec(null);
+      }
+    }
+    void load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (intervalRef.current !== null) {
+      window.clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+    if (typeof remainingSec === "number") {
+      intervalRef.current = window.setInterval(() => {
+        setRemainingSec((prev) => (typeof prev === "number" ? Math.max(0, prev - 1) : prev));
+      }, 1000);
+    }
+    return () => {
+      if (intervalRef.current !== null) {
+        window.clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [remainingSec !== null]);
   const sections: Array<{
     href: string;
     title: string;
@@ -61,11 +111,24 @@ export default function AdminDashboardPage() {
         <div>
           <h1 style={{ margin: 0 }}>Admin · Dashboard</h1>
           <p style={{ color: "#666", marginTop: 6, marginBottom: 0 }}>Quick links to manage your site content and configuration.</p>
+          {typeof remainingSec === "number" ? (
+            <p style={{ color: "#444", marginTop: 6, marginBottom: 0 }}>Session remaining (sec): {remainingSec}</p>
+          ) : null}
         </div>
         <div style={{ display: "flex", gap: 8 }}>
           <Link href="/">
             <button type="button" className={s.btn}>View site</button>
           </Link>
+          <button
+            type="button"
+            className={`${s.btn} ${s.btnDanger}`}
+            onClick={async () => {
+              await fetch("/api/admin/logout", { method: "POST" });
+              router.replace("/admin/login");
+            }}
+          >
+            Log out
+          </button>
         </div>
       </header>
 

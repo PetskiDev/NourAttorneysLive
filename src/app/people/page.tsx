@@ -20,7 +20,6 @@ export default async function PeoplePage() {
         <EditablePersonImage
           personId={person.id}
           initialUrl={person.imageUrl ?? null}
-          isAdmin={true}
           alt={person.name}
         />
       </div>
