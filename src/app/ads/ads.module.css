@@ -1,0 +1,551 @@
+.adsHero {
+    background-color: #0033A0;
+    color: white;
+    position: relative;
+}
+
+.adsHero>div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1920 / 900;
+    z-index: 10;
+}
+
+.adsHero>div p {
+    color: white;
+    width: 25%;
+    text-align: center;
+}
+
+.adsHero>div>img:first-of-type {
+    width: 45%;
+    height: auto;
+    border: 1px dashed #8F91AF;
+    height: auto;
+    aspect-ratio: 850 / 419;
+    padding: 10px;
+}
+
+.heroAbs {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    top: 0;
+}
+
+.adsOne>div {
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    padding: 4% 0;
+    align-items: center;
+}
+
+.adsOne h4 {
+    width: 51%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.approachBox {
+    display: flex;
+    flex-direction: column;
+    width: 51%;
+}
+
+.approachBox>h3 {
+    background-color: #101010;
+    width: 100%;
+    height: 44px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.approachRow {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #C4C4C4;
+    padding: 10px 0;
+}
+
+.approachRow>div {
+    width: 50%;
+}
+
+.benefits>div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.benefits>div>h4 {
+    width: 40%;
+    text-align: center;
+}
+
+.benefitsBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.benefitBox {
+    width: calc((100% - 60px) / 4);
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 415 / 375;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1.5% 2%;
+}
+
+.benefitBox::before {
+    position: absolute;
+    top: 0;
+    content: "";
+    left: 0;
+    border-top: 5px solid #0033A0;
+    border-left: 5px solid #0033A0;
+    height: 40px;
+    width: 40px;
+}
+
+.benefitBox::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    border-right: 5px solid #0033A0;
+    border-bottom: 5px solid #0033A0;
+    height: 40px;
+    width: 40px;
+}
+
+.benefitBox>* {}
+
+.benefitBoxTop {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.benefitBox>div:nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    color: #0033A0;
+    width: 100%;
+}
+
+.experts>div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4% 0;
+    align-items: center;
+}
+
+.expertsRow {
+    display: flex;
+    gap: 10px;
+}
+
+.expertsRight a {
+    border-bottom: 1px solid #0033A0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 2vw;
+}
+
+.expertsRight a span {
+    color: #0033A0;
+}
+
+.expertsRight a img {
+    height: 4vw;
+    width: 4vw;
+}
+
+.expertsLeft {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.expertsLeft img {
+    width: 45%;
+    height: auto;
+}
+
+.expertsRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.expertsRight>* {
+    width: 50%;
+}
+
+.reviews>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews>div h4:nth-of-type(2) {
+    margin-left: 50%;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.reviews h5 {
+    margin-bottom: 20px;
+}
+
+.reviewsBoxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: stretch;
+}
+
+.reviewBox {
+    width: calc((100% - 45px) / 4);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+    padding-top: 20px;
+    aspect-ratio: 415 / 218;
+    align-items: flex-start;
+}
+
+.reviewBox>* {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.reviewBox p{
+    color: #545454;
+}
+
+.reviewBox::before {
+    position: absolute;
+    top: 0;
+    border-left: 1px solid #C4C4C4;
+    border-right: 1px solid #C4C4C4;
+    border-top: 1px solid #C4C4C4;
+    width: 100%;
+    content: "";
+    height: 20px;
+}
+
+.reviewBox:nth-child(1)::before, .reviewBox:nth-child(3)::before, .reviewBox:nth-child(6)::before, .reviewBox:nth-child(8)::before, .reviewBox:nth-child(9)::before, .reviewBox:nth-child(12)::before, .reviewBox:nth-child(13)::before, .reviewBox:nth-child(15)::before, .reviewBox:nth-child(15)::before {
+    opacity: 0;
+}
+
+.reviewBox a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    color: #0033A0;
+    border-bottom: 1px solid #0033A0;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.reviewBox a span{
+    font-size: 3vw;
+}
+
+.reviewBox:has(a){
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reviewBox img{
+    height: 3vw;
+    width: auto;
+}
+
+.benefitBox:nth-child(3), .benefitBox:nth-child(5){
+    opacity: 0;
+    pointer-events: none;
+}
+
+.expertsRight>div>img{
+    display: none;
+}
+
+@media only screen and (max-width: 1024px){
+
+    .adsOne h4{
+        width: 90%;
+        font-size: 3vw;
+    }
+
+    .approachBox{
+        width: 100%;
+    }
+
+    .approachBox h3{
+        height: 36px;
+    }
+
+    .approachRow>div:nth-child(2) p{
+        font-size: 1.5vw;
+    }
+
+    .approachRow>div:nth-child(1){
+        font-size: 1.5vw;
+    }
+
+    .benefits h5{
+        font-size: 3vw;
+    }
+
+    .benefits h4{
+        font-size: 2.7vw;
+        width: 85%!important;
+        margin-bottom: 20px;
+    }
+
+    .benefitBox{
+        width: calc((100% - 20px) / 2);
+        aspect-ratio: 359 / 325;
+        padding: 4.5% 6%;
+    }
+
+    .benefitBoxTop h2{
+        font-size: 3vw;
+    }
+
+    .benefitBoxTop p{
+        font-size: 2.5vw;
+    }
+
+    .benefitBox>div:nth-child(2) h3{
+        font-size: 10vw;
+    }
+
+    .benefitBox:nth-child(3), .benefitBox:nth-child(5){
+        display: none;
+    }
+
+    .expertsRight > *:not(a) {
+        width: 100%;
+    }
+
+    .expertsLeft img{
+        width: 100%;
+    }
+
+    .expertsRight p{
+        font-size: 2vw;
+    }
+
+    .reviewBox:nth-child(1), .reviewBox:nth-child(3), .reviewBox:nth-child(6), .reviewBox:nth-child(8), .reviewBox:nth-child(9), .reviewBox:nth-child(12), .reviewBox:nth-child(13), .reviewBox:nth-child(15){
+        display: none;
+    }
+
+    .reviewBox{
+        width: calc((100% - 15px) / 2);
+        aspect-ratio: auto;
+        gap: 10px;
+    }
+
+    .reviewBox div{
+        font-size: 2vw;
+    }
+
+    .reviewBox p{
+        font-size: 1.5vw;
+    }
+
+    .reviewsBoxes{
+        padding-bottom: 50px;
+    }
+
+    .reviews>div h4:last-of-type{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .reviews h4{
+        font-size: 3.5vw;
+    }
+
+    .reviews h5, .experts h5{
+        font-size: 3vw;
+    }
+
+    .adsHero > div p{
+        width: 35%;
+        font-size: 1.5vw;
+    }
+
+    .adsHero>div{
+        aspect-ratio: 1920 / 1050;
+    }
+
+    .heroAbs{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .heroAbs{
+        display: none;
+    }
+
+    .adsHero>div h1{
+        font-size: 11vw;
+        text-align: center;
+        width: 85%;
+    }
+
+    .adsHero>div p{
+        font-size: 3.7vw;
+        width: 85%;
+        line-height: 100%;
+    }
+
+    .adsHero>div img{
+        width: 85%!important;
+        height: auto!important;
+        margin-top: 15px;
+    }
+
+    .adsHero>div{
+        padding: 30px 0;
+    }
+
+    .adsOne h4{
+        width: 100%;
+        font-size: 5.5vw;
+        text-align: left;
+    }
+
+    .approachBox h3{
+        font-size: 3vw;
+    }
+
+    .approachRow{
+        flex-direction: column;
+        padding-bottom: 10px;
+        gap: 5px;
+    }
+
+    .approachRow>div{
+        width: 100%;
+    }
+
+    .approachRow>div:first-child{
+        font-size: 18px;
+    }
+
+    .approachRow >div p{
+        font-size: 18px!important;
+    }
+
+    .benefitBox{
+        width: 100%;
+        aspect-ratio: 370 / 250;
+    }
+
+    .benefitBoxTop h2 {
+        font-size: 5vw;
+    }
+
+    .benefitBoxTop p {
+        font-size: 4vw;
+    }
+
+    .benefitBox > div:nth-child(2) h3 {
+        font-size: 15vw;
+    }
+
+    .benefits > div > h4{
+        width: 100%!important;
+        text-align: left;
+        font-size: 3.8vw;
+    }
+
+    .benefits h5{
+        font-size: 4vw;
+        margin-top: 30px;
+    }
+
+    .expertsLeft{
+        display: none;
+    }
+
+    .expertsRight{
+        width: 100%;
+    }
+
+    .expertsRight>div>img{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+
+    .expertsRight p{
+        font-size: 18px;
+    }
+
+    .expertsRight>a{
+        margin: 0 auto;
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .expertsRight>a>span{
+        font-size: 44px;
+    }
+
+    .expertsRight>a>img{
+        height: 48px;
+        width: 48px;
+    }
+
+    .reviewBox{
+        width: 100%;
+    }
+
+    .reviewBox div{
+        font-size: 18px;
+    }
+
+    .reviewBox p{
+        font-size: 18px;
+    }
+
+    .reviews h4 {
+        font-size: 5.5vw;
+    }
+
+    .reviews h5{
+        font-size: 22px;
+    }
+
+}

@@ -388,6 +388,13 @@ body {
   line-height: 120%;
 }
 
+.headline_1_5{
+  font-weight: 700;
+  font-family: var(--font-manrope);
+  font-size: 5.5vw;
+  line-height: 90%;
+  letter-spacing: -3;
+}
 
 @media only screen and (min-width: 1930px) {
   .headline_1 {
@@ -593,6 +600,14 @@ body {
   font-size: 18px;
   font-family: var(--font-inter);
   line-height: 120%;
+}
+
+.headline_1_5{
+  font-weight: 700;
+  font-family: var(--font-manrope);
+  font-size: 110px;
+  line-height: 90%;
+  letter-spacing: -3;
 }
 }
 
