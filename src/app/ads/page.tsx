@@ -309,7 +309,7 @@ export default async function Advertisement() {
               <div className="title_2">Business protection & legal victory</div>
               <p className="body_text">
                 When a client dispute threatened my business, Nour Attorneys
-                didn't just win my case - they secured full reimbursement for
+                didn&apos;t just win my case - they secured full reimbursement for
                 all legal fees and expenses as outlined in our contract. Their
                 meticulous attention to detail and unwavering courtroom support
                 delivered the favorable outcome I needed to protect my venture
@@ -341,7 +341,7 @@ export default async function Advertisement() {
                 For my UAE business needs, Nour Attorneys exceeded expectations
                 through their strategic thinking and keen understanding of UAE
                 law. Nour crafts and executes effective strategies tailored to
-                each case, proving to be a game-changer. They don't just
+                each case, proving to be a game-changer. They don&apos;t just
                 represent your interests - they advocate passionately as if your
                 business were their own.
               </p>
@@ -397,7 +397,7 @@ export default async function Advertisement() {
               <div className="title_2">Business professional excellence</div>
               <p className="body_text">
                 Nour Attorneys helped me obtain the best possible case outcome.
-                Mr. Nour's kindness, patience, and professionalism demonstrate
+                Mr. Nour&apos;s kindness, patience, and professionalism demonstrate
                 he is a great asset to the firm, delivering results that exceed
                 expectations.
               </p>

@@ -250,7 +250,7 @@
 }
 
 @media only screen and (max-width: 1440px) {
-    frameworksRowThree>div:nth-child(2)>* {
+    .frameworksRowThree>div:nth-child(2)>* {
         width: 65%;
     }
 
