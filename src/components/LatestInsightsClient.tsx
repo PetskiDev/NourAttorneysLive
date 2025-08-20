@@ -37,14 +37,14 @@ export default function LatestInsightsClient({
             {expanded ? (
               <>
                 <div className={styles.left}>
-                  <div className={styles.categoryOutlineBlue}>{i.category}</div>
-                  <p className={`${styles.title}`}>{i.title}</p>
-                  <p className={`${styles.description}`}>{i.description}</p>
+                  <div className={`${styles.categoryOutlineBlue} descriptor_1`}>{i.category}</div>
+                  <p className={`${styles.title} title_2`}>{i.title}</p>
+                  <p className={`${styles.description} subtitle_2`}>{i.description}</p>
                   <div className={styles.metaRow}>
-                    <span className={`${styles.authorBlack}`}>
+                    <span className={`${styles.authorBlack} footnote_1`}>
                       By {i.publisher}
                     </span>
-                    <span className={`${styles.dateGray}`}>
+                    <span className={`${styles.dateGray} footnote_2`}>
                       {" "}
                       / {formatDate(i.publishedAt)}
                     </span>

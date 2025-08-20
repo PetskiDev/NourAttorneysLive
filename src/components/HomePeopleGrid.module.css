@@ -1,18 +1,12 @@
 .section {
-  padding: 64px 0;
 }
 .ourPeople{
   font-size: 22px;
 }
 
-.heading {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
 .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
 .card {
   display: flex;
@@ -22,7 +16,7 @@
 .imageWrap {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+  aspect-ratio: 415 / 432;
   container-type: inline-size;
 }
 
@@ -44,34 +38,109 @@
 
 .viewAll {
   position: absolute;
-  font-size: 2vw; /* fallback */
-  font-size: 12cqi; /* scales with 5% of the card's inline size */
+  font-size: 1.5vw;
   bottom: 0;
-  color: #0a58ca;
-  text-decoration: underline;
+  color: #0033A0;
+  border-bottom: #0033A0 solid 1px;
   left: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+.viewAll img{
+  height: 2.5vw;
+  width: 2.5vw;
+}
+
+.viewAll span{
+  font-size: 2vw!important;
 }
 
 .desktop { display: block; }
 .tablet { display: none; }
 .mobile { display: none; }
 
-@media (max-width: 899px) {
+@media (max-width: 1024px) {
   .desktop { display: none; }
   .tablet { display: block; }
+  .title{
+    font-size: 2vw;
+  }
+  .subtitle{
+    font-size: 1.8vw;
+  }
+
+  .viewAll {
+  position: absolute;
+  font-size: 3.5vw;
+  bottom: 0;
+  color: #0033A0;
+  border-bottom: #0033A0 solid 1px;
+  left: 0;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 449px) {
+.viewAll img{
+  height: 5vw;
+  width: 5vw;
+}
+
+.viewAll span{
+  font-size: 4.5vw!important;
+}
+}
+
+@media (max-width: 768px) {
   .tablet { display: none; }
-  .mobile { display: block; }
+  .mobile { display: flex;
+  flex-direction: column;
+align-items: center; }
+.mobile .grid2{
+  width: 100%;
+}
 }
 
 .viewAllBelow {
   text-align: center;
   margin-top: 12px;
-  color: #0a58ca;
+  color: #0033A0;
   text-decoration: underline;
   display: block;
   width: 100%;
 }
 
+@media only screen and (min-width: 1920px){
+  .viewAll img{
+  height: 36px;
+  width: 36px;
+}
+.viewAll span{
+  font-size: 36px!important;
+}
+}
+
+@media only screen and (max-width: 768px){
+  .viewAllBelow{
+    text-decoration: none;
+    border-bottom: 1px solid #0033A0;
+    width: auto;
+  }
+  .viewAllBelow span {
+        font-size: 40px;
+    }
+
+    .viewAllBelow img {
+        height: 42px;
+        width: 42px;
+    }
+
+    .grid2 .title{
+      font-size: 16px;
+    }
+
+    .grid2 .subtitle{
+      font-size: 14px;
+    }
+}

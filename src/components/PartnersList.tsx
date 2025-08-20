@@ -9,27 +9,21 @@ export default async function PartnersList() {
   if (!partners || partners.length === 0) return null;
   return (
     <section className={styles.section}>
-      <div className={styles.headerTag}>PARTNERSHIP</div>
-      <h2 className={styles.headline}>
-        WE BUILD EVERY PARTNERSHIP FOR YOUR SUCCESS AND COLLABORATE WITH TOTAL
-        DEDICATION
-      </h2>
-
       <div className={styles.list}>
         {partners.map((p) => (
           <div key={p.id} className={styles.item}>
-            <div className={styles.itemTag}>PARTNER</div>
+            <div className={`${styles.itemTag} descriptor_1`}>PARTNER</div>
             <div className={styles.row}>
               <div className={styles.leftCell}>
                 <Link href={`/partners/${p.slug}`} className={styles.nameLink}>
                   <span className={styles.bracketed}>
-                    <span className={styles.bracketedText}>{p.name}</span>
+                    <span className={`${styles.bracketedText} title_3`}>{p.name}</span>
                   </span>
                 </Link>
               </div>
               <div className={styles.rightCell}>
-                <span className={styles.industryLabel}>Industry:</span>
-                <span className={styles.industryText}>{p.industry}</span>
+                <span className={`${styles.industryLabel} title_2`}>Industry:</span>
+                <span className={`${styles.industryText} subtitle_2`}>{p.industry}</span>
               </div>
             </div>
           </div>
@@ -41,11 +35,10 @@ export default async function PartnersList() {
           <div className={styles.row}>
             <div className={styles.leftCell}>
               <span className={styles.bracketed}>
-                <span className={styles.bracketedText}>OTHER COMPANIES</span>
+                <span className={`${styles.bracketedText} title_3`}>OTHER COMPANIES</span>
               </span>
             </div>
             <div className={styles.rightCell}>
-              <span className={styles.industryLabel}>Industry:</span>
               <span className={styles.industryText}>
                 We introduce our client to our their wide network of clients and global partners to
                 collaborate with our client to achieve our their desired outcomes.

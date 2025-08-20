@@ -23,7 +23,13 @@ export default async function HomePeopleGrid() {
           <div key="d-view" className={`${styles.card} ${styles.viewAllCard}`}>
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
-                View All ↗
+                <span className="button_link">View All</span>
+          <Image
+            src={"/diagonal-arrow.svg"}
+            alt="arrow"
+            width={30}
+            height={30}
+          />
               </Link>
             </div>
           </div>,
@@ -45,7 +51,13 @@ export default async function HomePeopleGrid() {
           <div key="t-view" className={`${styles.card} ${styles.viewAllCard}`}>
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
-                View All ↗
+                <span className="button_link">View All</span>
+          <Image
+            src={"/diagonal-arrow.svg"}
+            alt="arrow"
+            width={30}
+            height={30}
+          />
               </Link>
             </div>
           </div>,
@@ -67,10 +79,6 @@ export default async function HomePeopleGrid() {
 
   return (
     <section className={styles.section}>
-      <div className={styles.heading}>
-        <h3 className={styles.ourPeople}>OUR PEOPLE</h3>
-      </div>
-
       <div className={styles.desktop}>
         <div className={styles.grid4}>{desktopSlots}</div>
       </div>
@@ -82,7 +90,13 @@ export default async function HomePeopleGrid() {
       <div className={styles.mobile}>
         <div className={styles.grid2}>{mobileSlots}</div>
         <Link href="/people" className={styles.viewAllBelow}>
-          View All ↗
+          <span className="button_link">View All</span>
+          <Image
+            src={"/diagonal-arrow.svg"}
+            alt="arrow"
+            width={30}
+            height={30}
+          />
         </Link>
       </div>
     </section>

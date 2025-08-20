@@ -1,0 +1,582 @@
+.hero{
+    background-color: #0033A0;
+    color: white;
+    position: relative;
+}
+
+.hero>div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 1%;
+}
+
+.hero>div>h1:first-of-type{
+    margin-left: 5%;
+}
+
+.hero>div>h1:nth-of-type(2){
+    margin-left: 5%;
+}
+
+.hero>div>h1:nth-of-type(3){
+    margin-left: 31%;
+}
+
+.absText{
+    position: absolute;
+    left: 50%;
+    top: 2.8vw;
+    width: 30%;
+}
+
+.absText>h4{
+    text-transform: none;
+    color: white;
+}
+
+.absText>h4>span{
+    color: #7D7D7D;
+    margin: 0 3px;
+}
+
+.hero>div>a{
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 170px;
+    color: #0033A0;
+    font-size: 18px;
+    margin-top: 24%;
+    margin-bottom: 5%;
+}
+
+.line1{
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: auto;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.line2{
+    position: absolute;
+    top: 16vw;
+    width: 60%;
+    height: auto;
+    z-index: 5;
+    left: 7.5%;
+    transform: translateX(-0%);
+    pointer-events: none;
+}
+
+.line3{
+    position: absolute;
+    top: 16.5vw;
+    width: 47%;
+    height: auto;
+    z-index: 5;
+    right: 3%;
+    pointer-events: none;
+    transform: translateX(-0%);
+}
+
+.line4{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 43%;
+    pointer-events: none;
+    height: auto;
+    z-index: 5;
+}
+
+.line5{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 43%;
+    pointer-events: none;
+    height: auto;
+    z-index: 5;
+}
+
+.about{
+
+}
+
+.about>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4% 0;
+}
+
+.about>div h2{
+}
+
+.about>div h4{
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.about>div>img{
+    max-height: 258px;
+    width: auto;
+    height: 30vh;
+    margin: 30px 0;
+}
+
+.aboutBoxes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutBox{
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    position: relative;
+    aspect-ratio: 415 / 202;
+}
+
+.aboutBox::before{
+    left: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+    border-top: 5px solid #0033A0;
+    border-left: 5px solid #0033A0;
+    content: "";
+    position: absolute;
+}
+
+.aboutBox::after{
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    width: 40px;
+    border-bottom: 5px solid #0033A0;
+    border-right: 5px solid #0033A0;
+    content: "";
+    position: absolute;
+}
+
+.aboutBox h3{
+    color: #0033A0;
+}
+
+.people>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.expertise>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 0;
+}
+
+.expertise>div h2{
+    margin-bottom: 30px;
+}
+
+.expertiseBlackRow{
+    display: flex;
+    background-color: #101010;
+    height: 44px;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+
+.expertiseBlackRow>div{
+    width: 50%;
+}
+
+.expertiseBlackRowLeft{
+    padding-left: 10px;
+}
+
+.expertiseBlackRowRight{
+    position: relative;
+}
+
+.expertiseBlackRowRight::after{
+    height: 14px;
+    width: 14px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    z-index: 5;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.expertiseRow{
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.expertiseRow>div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.expertiseRow>div>div>span:first-of-type{
+    font-weight: 600;
+    margin-right: 3px;
+}
+
+.expertiseRow>div>div>span:last-of-type{
+    font-weight: 400;
+    color: #545454;
+}
+
+.expertiseRow>Div:has(a){
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.expertiseRow a {
+    border-bottom: 1px solid #0033A0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 2vw;
+    width: auto;
+}
+
+.expertiseRow a span {
+    color: #0033A0;
+}
+
+.expertiseRow a img {
+    height: 4vw;
+    width: 4vw;
+}
+
+.caseStudies>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caseStudies>div h6:nth-of-type(1){
+    margin-top: 2%;
+}
+
+.caseStudies>div h6:nth-of-type(2){
+    margin-left: 25%;
+    width: 75%;
+}
+
+.partners>div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 120px;
+}
+
+.partners>div h4{
+    max-width: 750px;
+    text-align: center;
+}
+
+.insights>div{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px 0;
+    align-items: center;
+}
+
+.hero h2{
+    display: none;
+}
+
+.line6{
+    display: none;
+}
+
+@media only screen and (max-width: 1024px){
+    .hero>div> a{
+        margin-top: 55%;
+    }
+
+    .absText{
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .absText::after{
+        position: absolute;
+        bottom: -110%;
+        height: 200px;
+        width: 5px;
+        background-image: url("/home-mobile.svg");
+        background-size: 100% 100%;
+        content: "";
+    }
+
+    .absText h4{
+        font-size: 1.8vw;
+    }
+
+    .about h2{
+        font-size: 3vw;
+    }
+
+    .about h4{
+        font-size: 2.5vw;
+        width: 85%!important;
+    }
+
+    .aboutBoxes{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .aboutBox{
+        width: calc(50% - 5px);
+    }
+
+    .aboutBox :global(.subheadline_2){
+        font-size: 3.5vw;
+        max-width: 85%;
+    }
+
+    .aboutBox p{
+        font-size: 2vw;
+    }
+
+    .people h2{
+        font-size: 3vw;
+    }
+
+    .expertise h2{
+        font-size: 3vw;
+    }
+
+    .expertiseBlackRowLeft{
+        display: none;
+    }
+
+    .expertiseBlackRowRight{
+        width: 100%!important;
+        padding-left: 10px;
+        font-size: 26px;
+    }
+
+    .expertiseBlackRowRight>*{
+        font-size: 18px;
+    }
+
+    .expertiseRow>div{
+        width: 100%;
+        padding-left: 10px;
+        font-size: 16px;
+    }
+
+    .expertiseRow>div:first-child{
+        display: none;
+    }
+
+    .expertiseRow a{
+        margin: 30px auto 0px auto;
+    }
+
+    .expertiseRow a span{
+        font-size: 54px;
+    }
+
+    .expertiseRow a img{
+        height: 56px;
+        width: 56px;
+    }
+
+    .caseStudies h2{
+        font-size: 3vw;
+    }
+
+    .caseStudies h6{
+        margin-left: 0!important;
+        width: 100%!important;
+        font-size: 2.5vw;
+    }
+
+    .caseStudies :global(.study-box)>div:first-child{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .caseStudies :global(.study-box)>div:first-child>*:last-child{
+        order: -1;
+        height: 35px!important;
+        width: auto!important;
+    }
+
+    .partners h2{
+        font-size: 3vw;
+    }
+
+    .partners h4{
+        font-size: 3vw;
+        width: 90%;
+    }
+
+    .partners>div{
+        padding: 50px 0;
+    }
+
+    .insights h2{
+        font-size: 3vw;
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    .hero h1{
+        display: none;
+    }
+
+    .hero h2{
+        font-size: 16vw;
+        display: block;
+        text-align: center;
+        width: 90%;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: var(--font-manrope);
+        line-height: 90%;
+        margin: 0 auto;
+    }
+
+    .absText h4{
+        font-size: 3.8vw;
+    }
+
+    .absText{
+        width: 85%;
+        top: 55%;
+    }
+
+    .hero>div>a{
+        margin-top: 105%;
+        height: 55px;
+        width: 263px;
+        font-size: 20px;
+        margin-bottom: 15%;
+    }
+
+    .absText:after {
+        bottom: -180%;
+        width: 1.5vw;
+        height: 50vw;
+    }
+
+    .line4{
+        display: none;
+    }
+
+    .line5{
+        display: none;
+    }
+
+    .line3{
+        top: 69.5vw;
+    }
+
+    .line1{
+        display: none;
+    }
+
+    .line2{
+        top: 72vw;
+        left: -50px;
+        display: none;
+    }
+
+    .line6{
+        position: absolute;
+        top: 65vw;
+        width: 45%;
+        z-index: 5;
+        left: 9%;
+        display: block;
+        pointer-events: none;
+        height: auto;
+    }
+
+    .about h2, .people h2, .insights h2, .expertise h2, .caseStudies h2, .partners h2{
+        font-size: 7vw;
+    }
+
+    .about>div h4{
+        font-size: 4.5vw!important;
+        width: 100%!important;
+    }
+
+    .aboutBox{
+        width: 100%;
+    }
+
+    .aboutBox :global(.subheadline_2){
+        font-size: 7vw;
+        max-width: 85%;
+    }
+
+    .aboutBox p{
+        font-size: 4.5vw;
+    }
+
+    .expertiseRow a span {
+        font-size: 40px;
+    }
+
+    .expertiseRow a img {
+        height: 42px;
+        width: 42px;
+    }
+
+    .caseStudies h6{
+        font-size: 6vw;
+    }
+
+    .expertiseBlackRowRight > *{
+        font-size: 4.8vw;
+    }
+
+    .caseStudies :global(.study-box){
+        gap: 10px;
+    }
+
+    .expertise>div{
+        padding: 60px 0;
+    }
+
+}
