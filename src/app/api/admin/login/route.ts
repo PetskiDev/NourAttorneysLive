@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { SignJWT, jwtVerify } from "jose";
 import { env } from "~/env.js";
@@ -44,7 +44,7 @@ async function verifyToken(token: string | undefined): Promise<
     const exp = typeof payload.exp === "number" ? payload.exp : 0;
     if (!exp) return { valid: false, reason: "noexp" };
     return { valid: true, iat, exp };
-  } catch (e) {
+  } catch {
     return { valid: false, reason: "invalid" };
   }
 }

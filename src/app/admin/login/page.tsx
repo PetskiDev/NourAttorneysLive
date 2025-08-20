@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import s from "../admin.module.css";
 
@@ -26,11 +26,6 @@ export default function AdminLoginPage() {
   useEffect(() => {
     void loadSession();
   }, []);
-
-  const remainingMinutes = useMemo(() => {
-    if (!session.loggedIn || !session.remainingSec) return null;
-    return Math.floor(session.remainingSec / 60);
-  }, [session]);
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();

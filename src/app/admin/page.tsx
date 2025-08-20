@@ -37,12 +37,14 @@ export default function AdminDashboardPage() {
     };
   }, []);
 
+  const countdownActive = typeof remainingSec === "number";
+
   useEffect(() => {
     if (intervalRef.current !== null) {
       window.clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-    if (typeof remainingSec === "number") {
+    if (countdownActive) {
       intervalRef.current = window.setInterval(() => {
         setRemainingSec((prev) => (typeof prev === "number" ? Math.max(0, prev - 1) : prev));
       }, 1000);
@@ -53,7 +55,7 @@ export default function AdminDashboardPage() {
         intervalRef.current = null;
       }
     };
-  }, [remainingSec !== null]);
+  }, [countdownActive]);
   const sections: Array<{
     href: string;
     title: string;
