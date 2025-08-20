@@ -7,6 +7,8 @@ import { EditableImage } from "~/components/EditableImage";
 import Link from "next/link";
 
 export const revalidate = false;
+export const dynamic = "force-static";
+
 
 export default async function ServicePage({
   params,
