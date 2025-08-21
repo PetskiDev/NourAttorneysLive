@@ -10,16 +10,20 @@
     gap: 0px;
     justify-content: center;
     align-items: center;
-        padding: 5% 0;
+        padding: 2% 0;
 }
 
 .aboutHero img {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40vw;
+    width: 45vw;
     height: auto;
+}
+
+.aboutHero>div h1{
+    margin-bottom: -30px;
 }
 
 .aboutHero *:not(img) {
@@ -37,8 +41,8 @@
     gap: 0;
 }
 
-.aboutHero>div>div:nth-child(2)>*:nth-child(1) {
-    margin-bottom: -20px;
+.aboutHero>div>div:nth-child(2)>*:nth-child(2) {
+    margin-bottom: 20px;
 }
 
 .aboutOne>div {
@@ -264,6 +268,8 @@
 
 .caseStudies>*>h2 {
     text-align: center;
+    margin-bottom: 20px;
+    margin-top: 6%;
 }
 
 .caseStudies>*>h6:nth-child(2) {
@@ -278,6 +284,7 @@
 .founder>:global(.containerr) {
     display: flex;
     flex-direction: column;
+    padding: 4% 0;
 }
 
 .founderTop {
@@ -578,7 +585,7 @@
     .founderTop :global(.descriptor_2) {
         width: 100%;
         text-align: center;
-        font-size: 2.5vw;
+        font-size: 2vw;
         margin-bottom: 20px;
     }
 
@@ -636,6 +643,18 @@
     .threePartTwo>p{
         width: 100%;
     }
+
+    .aboutHero>div h1{
+    margin-bottom: -0px;
+}
+
+.aboutHero h6{
+    font-size: 2vw!important;
+}
+
+.aboutHero>div{
+    padding: 2% 0;
+}
 }
 
 @media only screen and (max-width: 768px) {
@@ -697,13 +716,13 @@
         margin-left: 0%;
         width: 100%;
         text-align: left;
-        font-size: 3vw;
+        font-size: 4.5vw;
     }
 
     .history>:global(.containerr)>:global(.accent_text_2):nth-child(3) {
         margin-left: 0%;
         text-align: left;
-        font-size: 3vw;
+        font-size: 4.5vw;
         width: 100%;
     }
 
@@ -725,14 +744,14 @@
     }
 
     .timelineDiv>Div:nth-child(1) {
-        text-align: center;
+        text-align: left;
     }
 
     .timelineDiv img {
         height: auto;
-        width: 50%;
+        width: 85%;
         margin-right: auto;
-        margin-left: auto;
+        margin-left: 0;
     }
 
     .timelineDiv>div:nth-child(2) {
@@ -744,7 +763,7 @@
     .timelineDiv>div:nth-child(2)>p {
         width: 100%;
         color: #545454;
-        font-size: 2.5vw !important;
+        font-size: 3vw !important;
     }
 
     .aboutOne > div{
@@ -840,5 +859,56 @@
 
     .threePartTwo>p{
         width: 100%;
+    }
+
+    .caseStudies h2{
+        font-size: 4vw;
+    }
+
+    .caseStudies>*> h6:nth-child(2){
+        font-size: 4.1vw!important;
+    }
+
+    .caseStudies>*> h6:nth-child(3){
+        font-size: 4.1vw!important;
+    }
+
+    .numbersInner :global(.body_text){
+        font-size: 4vw;
+    }
+
+    .aboutTwoLine :global(.body_text){
+        font-size: 3.3vw!important;
+    }
+
+    .aboutTwoLine :global(.title_5){
+        font-size: 3.3vw!important;
+    }
+
+    .aboutHero h6{
+    font-size: 3.5vw!important;
+}
+
+.numbersAbs {
+        top: 5%;
+        transform: translate(-50%, 0);
+        width: 100%;
+    }
+
+    .numbersAbs :global(.title_3) {
+        font-size: 5vw;
+    }
+
+    .numbersAbs :global(.subtitle_4) {
+        font-size: 4vw;
+    }
+
+    .aboutTwoLine > div:first-child {
+        margin-bottom: 2px;
+    }
+
+    .aboutOne>div h4{
+        font-size: 5vw;
+        margin-top: 40px;
     }
 }

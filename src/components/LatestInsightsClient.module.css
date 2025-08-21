@@ -73,10 +73,11 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  border-width: 2px;
+  border-width: 1px;
   overflow: hidden;
   /* 4 cards visible: 3 gaps (3*24px) and 45% expanded; remaining space divided by 3 */
   flex: 0 0 calc((100% - 45% - 72px) / 3);
+  align-items: flex-start;
 }
 .compact .title {
   flex-grow: 1;

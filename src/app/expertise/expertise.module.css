@@ -19,6 +19,7 @@
     width: 14%;
     position: relative;
     z-index: 5;
+    margin-top: 2%;
 }
 
 .expertiseHero h1{
@@ -29,9 +30,9 @@
 .expertiseHero img{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 28%;
     height: auto;
 }
 

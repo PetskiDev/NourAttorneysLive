@@ -233,8 +233,8 @@ export default async function AboutUsPage() {
               <Image
                 alt="timeline"
                 src={"/timeline.png"}
-                height={100}
-                width={85}
+                height={400}
+                width={385}
               />
             </div>
 

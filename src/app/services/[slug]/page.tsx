@@ -5,6 +5,7 @@ import styles from "./servicesSlug.module.css";
 import Image from "next/image";
 import { EditableImage } from "~/components/EditableImage";
 import Link from "next/link";
+import LatestInsightsServer from "~/components/LatestInsightsServer";
 
 export const revalidate = false;
 export const dynamic = "force-static";
@@ -160,6 +161,13 @@ export default async function ServicePage({
 
         </div>
 
+      </section>
+
+      <section className={styles.insights}>
+        <div className="containerr">
+          <h2 className="subheadline_2">Explore our <span className="blue-text">related insights/articles</span> that explain more about our process</h2>
+          <LatestInsightsServer />
+        </div>
       </section>
     </main>
   );

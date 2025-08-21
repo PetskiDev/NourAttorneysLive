@@ -298,6 +298,7 @@
     gap: 20px;
     align-items: center;
     padding: 120px;
+    padding-bottom: 0;
 }
 
 .partners>div h4{
