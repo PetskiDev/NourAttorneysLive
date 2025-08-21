@@ -322,9 +322,24 @@
     display: none;
 }
 
+.studyAbs{
+    position: absolute;
+    left: 25%;
+    top: 30px;
+    width: 170px;
+}
+
+.caseStudies :global(.studies-boxes){
+    position: relative;
+}
+
 @media only screen and (max-width: 1024px){
     .hero>div> a{
         margin-top: 55%;
+    }
+
+    .studyAbs{
+        display: none;
     }
 
     .absText{
@@ -456,6 +471,10 @@
 
     .insights h2{
         font-size: 3vw;
+    }
+
+    .caseStudies :global(.study-box){
+        gap: 10px;
     }
 
 }

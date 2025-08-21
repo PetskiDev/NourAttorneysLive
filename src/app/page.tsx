@@ -373,6 +373,9 @@ export default async function Home() {
           </h6>
 
           <div className="studies-boxes">
+            <div className={styles.studyAbs}>
+              <div className="descriptor_1">Proving that law can be sustainable</div>
+            </div>
             <div className="studies-boxes-top">
               <div className="study-box">
                 <div>

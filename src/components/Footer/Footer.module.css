@@ -159,4 +159,8 @@
       "social social"
       "bottom bottom";
   }
+
+  .email {
+    font-size: 18px;
+  }
 }

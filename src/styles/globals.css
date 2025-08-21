@@ -194,6 +194,7 @@ body {
   font-family: var(--font-inter);
   font-weight: 400;
   text-transform: uppercase;
+  line-height: 105%;
 }
 
 .headline_1_2 {

@@ -25,6 +25,7 @@
   display: grid;
   max-width: 960px;
   margin: 0 auto;
+  gap: 15px;
 }
 
 
@@ -34,8 +35,7 @@
   background: #111;
   color: #fff;
   font-size: 11px;
-  font-weight: 600;
-  padding: 6px 20px;
+  padding: 8px 20px;
   border-radius: 2px;
   letter-spacing: 0.05em;
 }

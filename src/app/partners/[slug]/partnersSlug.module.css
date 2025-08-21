@@ -17,7 +17,7 @@
     width: 50%;
 }
 
-.partnerMain>div>h5:nth-of-type(1) {
+.partnerMain>div>div:nth-child(3)>h5 {
     width: 50%;
     margin-left: 50%;
 }
@@ -172,12 +172,39 @@
     .partnerTwo h3{
         font-size: 18px;
     }
+
+    .partnerMain>div>div:nth-child(3)>h5 {
+    width: 100%;
+    margin-left: 0%;
+}
+
+.partnerMain>div>div>h5 {
+    width: 100%;
+    font-size: 3vw;
+    margin-left: 0%;
+}
+
+.partnerOneLeft>div:first-child>*{
+    font-size: 2vw;
+    margin-top: 0;
+}
 }
 
 @media only screen and (max-width: 768px) {
     .partnerMain h5{
         font-size: 24px;
     }
+
+    .partnerMain>div>div>h5 {
+    width: 100%;
+    font-size: 5.2vw;
+    margin-left: 0%;
+}
+
+.partnerOneLeft>div:first-child>*{
+    font-size: 3.5vw;
+    margin-top: 0;
+}
 
     .partnerThreeLeft{
         flex-direction: column;

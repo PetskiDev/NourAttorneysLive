@@ -234,6 +234,7 @@
 .panel{
   width: calc(95vw);
 }
+
 }
 
 @media only screen and (max-width:768px){
@@ -243,6 +244,10 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
+}
+
+.grid{
+  width: 100%;
 }
 
 .insightsHero h1{

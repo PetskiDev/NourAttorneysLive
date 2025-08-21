@@ -195,7 +195,7 @@
 
 }
 
-.mobileCategoryCurrent { line-height: 1; }
+.mobileCategoryCurrent { line-height: 1; font-weight: 600;}
 
 .chevron {
   position: absolute;
@@ -225,8 +225,8 @@
 .mobileDropdownItem {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 0px;
   align-items: center;
   padding: 10px 12px;
   background: transparent;
@@ -243,6 +243,10 @@
 .mobileDropdownItemActive {
   background-color: white!important;
   color: black!important;
+}
+
+.mobileDropdownItem sup{
+  padding-bottom: 10px;
 }
 
 .topRow sup{
@@ -292,7 +296,7 @@
   }
 
   .serviceItem{
-    font-size: 18px;
+    font-size: 18px!important;
   }
 
   .topRow h6{

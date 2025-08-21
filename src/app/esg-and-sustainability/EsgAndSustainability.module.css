@@ -352,7 +352,7 @@
     .esgHero img:nth-of-type(2){
         display: block;
         position: absolute;
-        top: 15vw;
+        top: 32vw;
         left: 50%;
         transform: translate(-50%, -0%);
         height: 80px;
@@ -389,7 +389,11 @@
         background-size: 100% 100%;
         width: 7px;
         background-image: url("/esg-mobile.svg");
-        top: -110px;
+        top: -100px;
         position: absolute;
+    }
+
+    .esgHero>*>h1{
+        font-size: 12vw;
     }
 }

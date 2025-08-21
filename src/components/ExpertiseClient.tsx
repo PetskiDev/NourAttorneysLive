@@ -136,9 +136,10 @@ export default function ExpertiseClient({
                 onClick={() => setIsMobileOpen((v) => !v)}
               >
                 <span className={styles.mobileCategoryCurrent}>
-                  {activeCategory?.title}
+                  {`Category: ${activeCategory?.title}`}
                   <sup className={styles.counts}>{activeCategory?.count}</sup>
                 </span>
+
                 <span className={styles.chevron} aria-hidden="true" />
               </button>
             </div>

@@ -76,24 +76,24 @@
 }
 
 .title{
-  font-size: 16px;
+  font-size: 16px!important;
   font-weight: 600;
 }
 
 .description{
-  font-size: 16px;
+  font-size: 16px!important;
 }
 
 .categoryPill{
-  font-size: 18px;
+  font-size: 18px!important;
 }
 
 .date{
-  font-size: 14px;
+  font-size: 14px!important;
 }
 
 .readMore{
-  font-size: 18px;
+  font-size: 18px!important;
 }
 }
 
