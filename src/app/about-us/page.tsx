@@ -15,6 +15,7 @@ export default async function AboutUsPage() {
             relUrl="/about-us"
             blockKey="headline"
             placeholderContent="ABOUT FIRM"
+            placeholderTag="h1"
             className="headline_1_2"
           />
 
@@ -24,12 +25,14 @@ export default async function AboutUsPage() {
               relUrl="/about-us"
               blockKey="accent_1"
               placeholderContent="EXISTS TO PROVIDE"
+              placeholderTag="h5"
             />
             <EditableText
               className="accent_text_2"
               relUrl="/about-us"
               blockKey="accent_2"
               placeholderContent="ELITE, human-centric legal services"
+              placeholderTag="h5"
             />
           </div>
 
@@ -55,6 +58,7 @@ export default async function AboutUsPage() {
                 relUrl="/about-us"
                 blockKey="about-one"
                 placeholderContent="Nour Attorneys aims to redefine the experience by offering strategic, ethical, and client-focused solutions"
+                placeholderTag="h5"
               />
             </div>
 

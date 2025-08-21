@@ -39,6 +39,7 @@ export default async function PeoplePage() {
                 relUrl="/people"
                 blockKey="headline"
                 placeholderContent="OUR PEOPLE"
+                placeholderTag="h1"
               />
             </div>
             <div className={styles.circles}>
