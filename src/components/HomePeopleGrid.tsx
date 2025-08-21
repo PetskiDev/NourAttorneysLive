@@ -24,12 +24,13 @@ export default async function HomePeopleGrid() {
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
                 <span className="button_link">View All</span>
-          <Image
-            src={"/diagonal-arrow.svg"}
-            alt="arrow"
-            width={30}
-            height={30}
-          />
+                <Image
+                  src={"/diagonal-arrow.svg"}
+                  alt="arrow"
+                  width={30}
+                  height={30}
+                  objectPosition="top"
+                />
               </Link>
             </div>
           </div>,
@@ -52,12 +53,13 @@ export default async function HomePeopleGrid() {
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
                 <span className="button_link">View All</span>
-          <Image
-            src={"/diagonal-arrow.svg"}
-            alt="arrow"
-            width={30}
-            height={30}
-          />
+                <Image
+                  src={"/diagonal-arrow.svg"}
+                  alt="arrow"
+                  width={30}
+                  height={30}
+                  objectPosition="top"
+                />
               </Link>
             </div>
           </div>,

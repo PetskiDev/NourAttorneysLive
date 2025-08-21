@@ -14,6 +14,7 @@ export default async function AboutUsPage() {
           <EditableText
             relUrl="/about-us"
             blockKey="headline"
+            placeholderContent="ABOUT FIRM"
             className="headline_1_2"
           />
 
@@ -22,11 +23,13 @@ export default async function AboutUsPage() {
               className="accent_text_2"
               relUrl="/about-us"
               blockKey="accent_1"
+              placeholderContent="EXISTS TO PROVIDE"
             />
             <EditableText
               className="accent_text_2"
               relUrl="/about-us"
               blockKey="accent_2"
+              placeholderContent="ELITE, human-centric legal services"
             />
           </div>
 
@@ -51,6 +54,7 @@ export default async function AboutUsPage() {
                 className="subheadline_2"
                 relUrl="/about-us"
                 blockKey="about-one"
+                placeholderContent="Nour Attorneys aims to redefine the experience by offering strategic, ethical, and client-focused solutions"
               />
             </div>
 
@@ -71,6 +75,7 @@ export default async function AboutUsPage() {
                   className="title_5"
                   relUrl="/about-us"
                   blockKey="about-approach"
+                  placeholderContent="our Approach"
                 />
               </div>
             </div>
@@ -78,6 +83,7 @@ export default async function AboutUsPage() {
               className="body_text"
               relUrl="/about-us"
               blockKey="about-ap-1"
+              placeholderContent="Nour Attorneys is not just another law firm, it’s a framework for success. It doesn’t see its clients as just another revenue stream but as a partnership. For Nour Attorneys every assigned mission by a client is a commitment, and every solution is designed not"
             />
             <div>
               <p className="body_text">
