@@ -24,13 +24,12 @@ export default async function HomePeopleGrid() {
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
                 <span className="button_link">View All</span>
-                <Image
-                  src={"/diagonal-arrow.svg"}
-                  alt="arrow"
-                  width={30}
-                  height={30}
-                  objectPosition="top"
-                />
+          <Image
+            src={"/diagonal-arrow.svg"}
+            alt="arrow"
+            width={30}
+            height={30}
+          />
               </Link>
             </div>
           </div>,
@@ -53,13 +52,12 @@ export default async function HomePeopleGrid() {
             <div className={styles.imageWrap}>
               <Link href="/people" className={styles.viewAll}>
                 <span className="button_link">View All</span>
-                <Image
-                  src={"/diagonal-arrow.svg"}
-                  alt="arrow"
-                  width={30}
-                  height={30}
-                  objectPosition="top"
-                />
+          <Image
+            src={"/diagonal-arrow.svg"}
+            alt="arrow"
+            width={30}
+            height={30}
+          />
               </Link>
             </div>
           </div>,
@@ -121,7 +119,7 @@ function renderPersonCard(
             alt={person.name}
             fill
             sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, 50vw"
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "top" }}
           />
         ) : null}
       </div>
