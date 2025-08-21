@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useCallback } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 type Props = {
   children: React.ReactNode;
@@ -35,32 +36,27 @@ type Props = {
 const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
 
 /**
- * SmoothScrollProvider (slower-response tuning + mobile-only sensitivity)
- * - Locks native page scroll; uses virtual scroll with transform3d.
- * - Time-corrected easing so 20/90 feels consistent across refresh rates.
- * - Input is throttled and low-passed for a slower, cinematic feel.
+ * SmoothScrollProvider
+ * - Virtual smooth scroll with time-corrected easing.
+ * - Can be *locked* to ignore inputs (used by NavBar mobile menu).
+ * - Resets to top on route change; honors #hash anchors.
  */
 export default function SmoothScrollProvider({
   children,
   headerOffset = 0,
 
-  // Spec constants (motion layer)
-  easing = 20 / 90, // ≈0.2222 per 60fps frame
+  easing = 20 / 90,
   framesHint = 45,
 
-  // Extra silkiness
-  microSteps = 4, // split alpha across small passes
+  microSteps = 4,
 
-  // Slowness & control (gentle defaults)
   inputScale = 0.28,
   maxDeltaPerEvent = 60,
   keyStepPx = 20,
   pageStepFactor = 0.6,
 
-  // Low-pass the target intent (input), not the motion
   inputSmoothing = 0.2,
 
-  // NEW: touch-only sensitivity
   touchSensitivityMultiplier = 10.5,
 }: Props) {
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -78,6 +74,12 @@ export default function SmoothScrollProvider({
   const lastTimeRef = useRef<number | null>(null);
   const isTouchDeviceRef = useRef(false);
 
+  // NEW: gate inputs while something (e.g., mobile menu) wants scroll locked
+  const inputLockedRef = useRef(false); // ← ADDED
+
+  const pathname = usePathname();
+  const search = useSearchParams();
+
   // Touch/mobile detection (robust)
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -89,7 +91,7 @@ export default function SmoothScrollProvider({
     isTouchDeviceRef.current = hasTouchPoints || onTouchCapable || uaMobile;
   }, []);
 
-  // Lock page scroll
+  // Lock page scroll (native)
   useEffect(() => {
     if (typeof document === "undefined") return;
     const prevHtmlOverflow = document.documentElement.style.overflow;
@@ -107,11 +109,37 @@ export default function SmoothScrollProvider({
     };
   }, []);
 
+  // Disable native scroll restoration so it doesn’t fight virtual scroll
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const prev = window.history.scrollRestoration;
+    try {
+      window.history.scrollRestoration = "manual";
+    } catch {}
+    return () => {
+      try {
+        window.history.scrollRestoration = prev;
+      } catch {}
+    };
+  }, []);
+
+  // Listen for external lock/unlock events (from NavBar)
+  useEffect(() => {
+    const onLock = (e: Event) => {
+      const detail = (e as CustomEvent).detail as { locked?: boolean } | undefined;
+      inputLockedRef.current = !!detail?.locked;
+      if (inputLockedRef.current && rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+    window.addEventListener("virtualscroll:lock", onLock as EventListener);
+    return () => window.removeEventListener("virtualscroll:lock", onLock as EventListener);
+  }, []);
+
   // Helper: broadcast virtual scroll
   const dispatchVirtualScroll = useCallback((y: number) => {
-    // Optional: expose CSS var for debugging or other consumers
     rootRef.current?.style.setProperty("--virtual-scroll-y", String(y));
-    // Fire a window-level event so any controller can listen
     const evt = new CustomEvent("virtualscroll", { detail: { y } });
     window.dispatchEvent(evt);
   }, []);
@@ -119,9 +147,7 @@ export default function SmoothScrollProvider({
   const applyTransform = useCallback(
     (y: number) => {
       if (!contentRef.current) return;
-      // No rounding: preserves smooth sub-pixel motion
       contentRef.current.style.transform = `translate3d(0, ${-y}px, 0)`;
-      // Notify listeners (RevealController, etc.)
       dispatchVirtualScroll(y);
     },
     [dispatchVirtualScroll]
@@ -129,12 +155,12 @@ export default function SmoothScrollProvider({
 
   const computeBounds = useCallback(() => {
     if (!contentRef.current) return;
-    const contentHeight = contentRef.current.getBoundingClientRect().height;
+    const contentRect = contentRef.current.getBoundingClientRect();
+    const contentHeight = contentRect.height;
     const viewport = window.innerHeight;
     const maxScroll = Math.max(0, contentHeight - (viewport - headerOffset));
     maxScrollRef.current = maxScroll;
 
-    // Clamp all positions against new bounds
     desiredTargetRef.current = clamp(desiredTargetRef.current, 0, maxScrollRef.current);
     targetRef.current = clamp(targetRef.current, 0, maxScrollRef.current);
     currentRef.current = clamp(currentRef.current, 0, maxScrollRef.current);
@@ -143,7 +169,6 @@ export default function SmoothScrollProvider({
   }, [headerOffset, applyTransform]);
 
   // Convert per-60fps alpha (a60) to time-corrected alpha for dt seconds
-  // alpha(dt) = 1 - (1 - a60)^(dt * 60)
   const alphaTimeCorrected = useCallback((a60: number, dtSeconds: number) => {
     const base = Math.max(0, Math.min(1, a60));
     const frames = dtSeconds * 60;
@@ -172,7 +197,6 @@ export default function SmoothScrollProvider({
         const current = currentRef.current;
         const target = targetRef.current;
         const next = current + (target - current) * stepAlpha;
-        // Smaller snap threshold to avoid “instant” completion
         currentRef.current = Math.abs(target - next) < 0.01 ? target : next;
       }
 
@@ -202,6 +226,23 @@ export default function SmoothScrollProvider({
     [requestTick]
   );
 
+  // Immediate hard jump to Y (used on navigation/hash)
+  const hardSetY = useCallback(
+    (y: number) => {
+      const yy = clamp(y, 0, maxScrollRef.current);
+      desiredTargetRef.current = yy;
+      targetRef.current = yy;
+      currentRef.current = yy;
+      if (rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+      applyTransform(yy);
+      dispatchVirtualScroll(yy);
+    },
+    [applyTransform, dispatchVirtualScroll]
+  );
+
   // Normalize wheel delta to px
   function normalizeDelta(e: WheelEvent) {
     const lineHeight = 16;
@@ -215,9 +256,10 @@ export default function SmoothScrollProvider({
   // Wheel (desktop/mouse)
   const onWheel = useCallback(
     (e: WheelEvent) => {
+      if (inputLockedRef.current) return; // ← guard
       e.preventDefault();
       const raw = normalizeDelta(e);
-      let delta = raw * inputScale; // desktop sensitivity unchanged
+      let delta = raw * inputScale;
       delta = clamp(delta, -maxDeltaPerEvent, maxDeltaPerEvent);
       setDesiredTarget(desiredTargetRef.current + delta * 2);
     },
@@ -227,6 +269,8 @@ export default function SmoothScrollProvider({
   // Keyboard
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
+      if (inputLockedRef.current) return; // ← guard
+
       const targetEl = e.target as HTMLElement | null;
       const tag = (targetEl?.tagName ?? "").toLowerCase();
       if (tag === "input" || tag === "textarea" || targetEl?.isContentEditable) return;
@@ -270,6 +314,7 @@ export default function SmoothScrollProvider({
 
   // Touch
   const onTouchStart = useCallback((e: TouchEvent) => {
+    if (inputLockedRef.current) return; // ← guard
     if (e.touches.length > 0) {
       const firstTouch = e.touches.item(0);
       if (!firstTouch) return;
@@ -279,6 +324,7 @@ export default function SmoothScrollProvider({
 
   const onTouchMove = useCallback(
     (e: TouchEvent) => {
+      if (inputLockedRef.current) return; // ← guard
       if (touchStartYRef.current == null) return;
       if (e.touches.length === 0) return;
       e.preventDefault();
@@ -288,7 +334,6 @@ export default function SmoothScrollProvider({
       const dy = touchStartYRef.current - y;
       touchStartYRef.current = y;
 
-      // Apply extra sensitivity only on touch-capable devices
       const multiplier = isTouchDeviceRef.current ? touchSensitivityMultiplier : 1;
       let delta = dy * inputScale * multiplier;
       delta = clamp(delta, -maxDeltaPerEvent, maxDeltaPerEvent);
@@ -298,8 +343,22 @@ export default function SmoothScrollProvider({
   );
 
   const onTouchEnd = useCallback(() => {
+    if (inputLockedRef.current) return; // ← guard
     touchStartYRef.current = null;
   }, []);
+
+  // If URL has #hash, jump to that element within virtual space
+  const scrollToHashIfAny = useCallback(() => {
+    if (!contentRef.current) return false;
+    const hash = (typeof window !== "undefined" ? window.location.hash : "").slice(1);
+    if (!hash) return false;
+    const sel = `#${(window as any).CSS?.escape ? (window as any).CSS.escape(hash) : hash}`;
+    const el = contentRef.current.querySelector(sel) as HTMLElement | null;
+    if (!el) return false;
+    const y = Math.max(0, el.offsetTop - headerOffset);
+    hardSetY(y);
+    return true;
+  }, [hardSetY, headerOffset]);
 
   // Mount / teardown
   useEffect(() => {
@@ -317,7 +376,6 @@ export default function SmoothScrollProvider({
     computeBounds();
     window.addEventListener("resize", recalc);
 
-    // Wrap handlers to satisfy EventListener typing for add/remove symmetry
     const wheelHandler: EventListener = (evt) => onWheel(evt as WheelEvent);
     const keydownHandler: EventListener = (evt) => onKeyDown(evt as KeyboardEvent);
     const touchStartHandler: EventListener = (evt) => onTouchStart(evt as TouchEvent);
@@ -355,6 +413,18 @@ export default function SmoothScrollProvider({
     };
   }, [computeBounds, onWheel, onKeyDown, onTouchStart, onTouchMove, onTouchEnd, requestTick, dispatchVirtualScroll]);
 
+  // Reset virtual scroll on route (and query) change
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    requestAnimationFrame(() => {
+      computeBounds();
+      if (!scrollToHashIfAny()) {
+        hardSetY(0); // top of page if no hash
+      }
+      requestTick();
+    });
+  }, [pathname, search, computeBounds, scrollToHashIfAny, hardSetY, requestTick]);
+
   const contentStyle: React.CSSProperties = {
     willChange: "transform",
     transition: "transform 0s",
@@ -372,7 +442,7 @@ export default function SmoothScrollProvider({
     <div
       ref={rootRef}
       style={rootStyle}
-      data-reveal-root=""             // ← expose a stable root for RevealController
+      data-reveal-root=""
       aria-description={`Virtual smooth scroll (~${framesHint} frames, easing ${easing.toFixed(
         4
       )}, micro-steps ${microSteps}, inputScale ${inputScale}, inputSmoothing ${inputSmoothing}, touch x${touchSensitivityMultiplier})`}

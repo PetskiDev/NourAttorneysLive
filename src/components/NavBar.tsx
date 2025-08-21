@@ -18,9 +18,7 @@ const navbarPages: SearchItem[] = [
   { title: "Contacts", link: "/contact", type: "page" },
 ];
 
-// Single source of truth for pages (avoid duplicating arrays to keep SSR props stable)
-
-/** Helper to join class names without leaving trailing spaces */
+// Helper
 const cx = (...cls: Array<string | false | undefined>) =>
   cls.filter(Boolean).join(" ");
 
@@ -38,6 +36,9 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
   const [activeCount, setActiveCount] = useState(0);
   const [menuAnimating, setMenuAnimating] = useState(false);
   const timersRef = useRef<number[]>([]);
+
+  // --- Mobile menu state ---
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const clearTimers = () => {
     timersRef.current.forEach((t) => clearTimeout(t));
@@ -82,16 +83,33 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
 
   const toggleMenu = () => (menuOpen ? closeMenu() : openMenu());
 
-  // --- Mobile menu state ---
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // Lock body scroll when the menu is open
+  // Tell SmoothScrollProvider to ignore input while menu is open
   useEffect(() => {
-    if (menuOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
-    return () => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent("virtualscroll:lock", { detail: { locked: menuOpen } }),
+      );
+    }
+  }, [menuOpen]);
+
+  // Hard body lock to kill iOS background bounce
+  useEffect(() => {
+    if (!menuOpen) {
+      const top = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
-    };
+      if (top) window.scrollTo(0, -parseInt(top, 10) || 0);
+      return;
+    }
+    const y = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${y}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.overflow = "hidden";
   }, [menuOpen]);
 
   // Esc closes search/menu
@@ -132,7 +150,6 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
 
   const openSearch = () => {
     setActive(true);
-    // focus after styles toggle so the caret appears right where you expect
     setTimeout(() => inputRef.current?.focus(), 0);
     void ensureServicesLoaded();
   };
@@ -161,7 +178,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     else setHighlightIdx(0);
   }, [filteredPages.length]);
 
-  // Cleanup any pending animation timers on unmount to avoid leaks
+  // Cleanup timers
   useEffect(() => {
     return () => {
       clearTimers();
@@ -240,26 +257,24 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
             aria-controls="navbar-search-listbox"
             aria-owns="navbar-search-listbox"
           >
-            {/* Label that turns into placeholder */}
             <button
               type="button"
               className={styles.searchLabelBtn}
               onClick={openSearch}
               aria-label="Open search"
             >
-                <Image
-                  src="/search.svg"
-                  alt=""
-                  aria-hidden="true"
-                  width={20}
-                  height={20}
-                  style={{ width: 20, height: 20 }}
-                  className="mob"
-                />
-                <div className="mobnot">Search</div>
+              <Image
+                src="/search.svg"
+                alt=""
+                aria-hidden="true"
+                width={20}
+                height={20}
+                style={{ width: 20, height: 20 }}
+                className="mob"
+              />
+              <div className="mobnot">Search</div>
             </button>
 
-            {/* Input is always in the DOM so we can animate width/placeholder */}
             <div className={styles.searchBoxInner}>
               <input
                 ref={inputRef}
@@ -280,7 +295,6 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                 tabIndex={active ? 0 : -1}
               />
 
-              {/* Clear */}
               {active && (
                 <>
                   <button
@@ -300,7 +314,6 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
                     />
                   </button>
 
-                  {/* (Optional) search icon as submit — navigates to first match */}
                   <button
                     type="button"
                     className={styles.iconBtn}
@@ -329,7 +342,6 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
               )}
             </div>
 
-            {/* Dropdown */}
             {active && query.trim() !== "" && (
               <div
                 id="navbar-search-listbox"
@@ -339,8 +351,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
               >
                 {filteredPages.length > 0 ? (
                   filteredPages.map((p, i) => (
-                  <Link
-                    key={`${p.type}-${p.link}`}
+                    <Link
+                      key={`${p.type}-${p.link}`}
                       href={p.link}
                       role="option"
                       id={`navbar-search-option-${i}`}
@@ -367,7 +379,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
             )}
           </div>
 
-          {/* Burger / X trigger (CSS lines -> animated X) */}
+          {/* Burger / X trigger */}
           <button
             type="button"
             className={cx(styles.burgerBtn, menuOpen && styles.open)}
@@ -385,7 +397,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
         </div>
       </div>
 
-      {/* Mobile overlay + TOP SHEET panel — starts BELOW header, so header stays visible */}
+      {/* Mobile overlay + TOP SHEET panel */}
       <div
         className={cx(styles.mobileOverlay, menuOpen && styles.open)}
         onClick={() => setMenuOpen(false)}
