@@ -352,8 +352,12 @@ export default function SmoothScrollProvider({
     if (!contentRef.current) return false;
     const hash = (typeof window !== "undefined" ? window.location.hash : "").slice(1);
     if (!hash) return false;
-    const sel = `#${(window as any).CSS?.escape ? (window as any).CSS.escape(hash) : hash}`;
-    const el = contentRef.current.querySelector(sel) as HTMLElement | null;
+    const escapedId =
+      typeof CSS !== "undefined" && typeof CSS.escape === "function"
+        ? CSS.escape(hash)
+        : hash;
+    const sel = `#${escapedId}`;
+    const el = contentRef.current.querySelector<HTMLElement>(sel);
     if (!el) return false;
     const y = Math.max(0, el.offsetTop - headerOffset);
     hardSetY(y);

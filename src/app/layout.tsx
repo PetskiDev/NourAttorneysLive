@@ -1,5 +1,6 @@
 import "~/styles/globals.css";
 import ClientShell from "../components/ClientShell";
+import { Suspense } from "react";
 import { Manrope } from "next/font/google";
 import { Inter } from "next/font/google";
 import Footer from "~/components/Footer/Footer";
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
       <body>
-        <ClientShell>
-          {children}
-          <Footer />
-        </ClientShell>
+        <Suspense fallback={null}>
+          <ClientShell>
+            {children}
+            <Footer />
+          </ClientShell>
+        </Suspense>
       </body>
     </html>
   );
