@@ -10,7 +10,7 @@ import RevealController from "./RevealController";
 
 type Mode = "light" | "dark";
 
-const WHITE_NAVBAR = [  "/insights", "/people"];
+const WHITE_NAVBAR = [  "/insights", "/people", "/partners"];
 const BLUE_NAVBAR = ["/expertise", "/about-us", "/frameworks", "/contact"];
 
 function pickMode(pathname: string): Mode {
