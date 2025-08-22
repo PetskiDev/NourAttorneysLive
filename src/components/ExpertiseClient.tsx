@@ -91,15 +91,27 @@ export default function ExpertiseClient({
             aria-controls={query.trim() !== "" ? listboxId : undefined}
           >
             <div className={styles.searchBoxInner}>
-              <input
-                type="text"
-                placeholder="Service name"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className={`${styles.searchInput} body_text`}
-                aria-autocomplete="list"
-              />
-            </div>
+  <input
+    type="text"
+    placeholder="Service name"
+    value={query}
+    onChange={(e) => setQuery(e.target.value)}
+    className={`${styles.searchInput} body_text`}
+    aria-autocomplete="list"
+  />
+
+  {query && (
+    <button
+      type="button"
+      onClick={() => setQuery("")}
+      className={styles.clearButton}
+      aria-label="Clear search"
+    >
+      <img src="/x.svg" alt="" />
+    </button>
+  )}
+</div>
+
 
             {query.trim() !== "" && (
               <div
