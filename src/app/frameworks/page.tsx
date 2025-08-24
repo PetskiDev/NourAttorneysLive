@@ -13,7 +13,7 @@ export default async function AboutUsPage() {
       <section className={styles.frameworksHero}>
         <div className="containerr">
           <h1 className="headline_1">LEGAL FRAMEWORKS</h1>
-                    <Image
+          <Image
             src={"./esg-mobile.svg"}
             width={100}
             height={20}
@@ -35,7 +35,6 @@ export default async function AboutUsPage() {
             height={20}
             alt="element"
           />
-
         </div>
       </section>
 
@@ -199,7 +198,8 @@ export default async function AboutUsPage() {
             transform legal uncertainty into your competitive advantage.
           </h4>
           <h2 className="subheadline_2 mob">
-Dive deeper into each component of our <span className="blue-text">[comprehensive legal framework]</span>{" "}
+            Dive deeper into each component of our{" "}
+            <span className="blue-text">[comprehensive legal framework]</span>{" "}
             approach. Each section provides detailed insights into how we
             transform legal uncertainty into your competitive advantage.
           </h2>
@@ -373,7 +373,7 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Corporate defense: neutralizing a hostile takeover
+                    Proactive protection that prevents costly surprises
                   </div>
                   <Image
                     alt="balls"
@@ -383,16 +383,17 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
                   />
                 </div>
                 <p className="subtitle_2">
-                  A technology startup faced a forced buyout - we drafted a
-                  shareholder agreement with strategic veto power. The offer
-                  failed and the client received $20 million in growth
-                  financing.
+                  You&apos;ll sleep better knowing that potential legal issues are
+                  identified and addressed before they become expensive
+                  problems. Your framework acts as an early warning system,
+                  catching issues while they&apos;re still manageable and inexpensive
+                  to resolve.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    ESG breakthrough: from greenwashing to industry leader
+                    Dramatic cost savings that improve your bottom line
                   </div>
                   <Image
                     alt="balls"
@@ -402,10 +403,11 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
                   />
                 </div>
                 <p className="subtitle_2">
-                  The manufacturer faced reputational damage due to
-                  environmental claims - we rewrote the contracts to include
-                  verifiable metrics. In a year the company was ranked 3rd in
-                  the ESG rating.
+                  By handling routine legal matters through your framework
+                  instead of hiring lawyers for every decision, you&apos;ll reduce
+                  your legal expenses significantly while actually improving
+                  your legal protection. The framework pays for itself many
+                  times over through the problems it prevents.
                 </p>
               </div>
             </div>
@@ -414,7 +416,7 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Arbitration win: turning the tables on a $50M Default
+                    Operational efficiency that accelerates growth
                   </div>
                   <Image
                     alt="balls"
@@ -424,16 +426,17 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
                   />
                 </div>
                 <p className="subtitle_2">
-                  A contractor refused payment, citing &quot;breach of
-                  contract&quot; - we exposed flawed arbitration clauses and
-                  shifted the forum. The client recovered every dollar, plus 12%
-                  penalties.
+                  Your team will operate more efficiently because they have
+                  clear guidelines and proven processes. Deals close faster
+                  because your legal position is clear and strong. Negotiations
+                  proceed smoothly because counterparties recognize they&apos;re
+                  dealing with a professionally managed organization.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Tax revival: resurrecting a cross-border deal
+                    Strategic growth foundation that scales with success
                   </div>
                   <Image
                     alt="balls"
@@ -443,9 +446,11 @@ Dive deeper into each component of our <span className="blue-text">[comprehensiv
                   />
                 </div>
                 <p className="subtitle_2">
-                  A European holding company bled €2M yearly from double
-                  taxation - we restructured its entity chain via treaty
-                  jurisdictions. Now, they save €1.8M annually, compliantly.
+                  As your business grows, your investments expand, or your
+                  professional activities become more complex, your framework
+                  grows with you. You&apos;re not constantly rebuilding legal
+                  protections - you&apos;re building on a foundation that becomes
+                  stronger and more valuable over time.
                 </p>
               </div>
             </div>

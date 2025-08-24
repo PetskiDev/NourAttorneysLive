@@ -21,10 +21,10 @@ function isElement(n: Node): n is Element {
 }
 
 export default function RevealController({
-  selector = "h1,h2,h3,h4,h5,h6,.accent-text",
+  selector = "h1,h2,h3,h4,h5,h6,.accent-text,.animated",
   bottomZoneStartPx = 100,
   fadeZonePx = 200,
-  initialFadeMs = 600,
+  initialFadeMs = 1500,
 }: Props) {
   const pathname = usePathname();
 
@@ -54,34 +54,45 @@ export default function RevealController({
   }, [selector]);
 
   const styleInitialStates = useCallback(() => {
-    const vh = window.innerHeight;
-    elementsRef.current.forEach((el) => {
-      const htmlEl = el as HTMLElement;
-      const r = htmlEl.getBoundingClientRect();
-      const visibleNow = r.top < vh && r.bottom > 0 && r.width > 0 && r.height > 0;
+  const vh = window.innerHeight;
+  elementsRef.current.forEach((el) => {
+    const htmlEl = el as HTMLElement;
+    const r = htmlEl.getBoundingClientRect();
+    const elementHeight = r.height;
+const threshold = elementHeight * 0.1; // 20% must be visible (adjust this)
 
-      // Start with opacity 0 for everyone
-      htmlEl.style.opacity = "0";
-      htmlEl.style.willChange = "opacity";
-      htmlEl.style.transition = "opacity 0s";
+const visibleNow =
+  r.top < vh - threshold &&
+  r.bottom > threshold &&
+  r.width > 0 &&
+  elementHeight > 0;
 
-      if (visibleNow) {
-        // Fade in over initialFadeMs for elements on the initial viewport
-        // Use a double RAF to guarantee transition applies
+
+    // Start hidden
+    htmlEl.style.opacity = "0";
+    htmlEl.style.willChange = "opacity";
+    htmlEl.style.transition = "opacity 0.6s ease";
+
+    if (visibleNow) {
+      // Ensure fade-in runs from 0 → 1, not snap
+      requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            htmlEl.style.transition = `opacity ${initialFadeMs}ms ease`;
-            htmlEl.style.opacity = "1";
-            initiallyAnimatedRef.current.add(htmlEl);
-            // After the initial fade, remove transition so scroll mapping is instant
-            window.setTimeout(() => {
-              if (htmlEl.isConnected) htmlEl.style.transition = "opacity 0s";
-            }, initialFadeMs + 50);
-          });
+          htmlEl.style.transition = `opacity ${initialFadeMs}ms ease`;
+          htmlEl.style.opacity = "1";
+          initiallyAnimatedRef.current.add(htmlEl);
+
+          // After animation ends, remove transition so scroll updates are instant
+          window.setTimeout(() => {
+            if (htmlEl.isConnected) {
+              htmlEl.style.transition = "opacity 0s";
+            }
+          }, initialFadeMs + 50);
         });
-      }
-    });
-  }, [initialFadeMs]);
+      });
+    }
+  });
+}, [initialFadeMs]);
+
 
   const updateOnScroll = useCallback(() => {
     if (isBootingRef.current) return;

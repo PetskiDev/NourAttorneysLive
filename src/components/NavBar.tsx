@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import styles from "./NavBar.module.css";
 
 type Mode = "light" | "dark";
@@ -133,8 +133,17 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     try {
       const cached = sessionStorage.getItem("all-services");
       if (cached) {
-        const parsed = JSON.parse(cached) as Array<{ title: string; slug: string }>;
-        setServices(parsed.map((s) => ({ title: s.title, link: `/services/${s.slug}`, type: "service" })));
+        const parsed = JSON.parse(cached) as Array<{
+          title: string;
+          slug: string;
+        }>;
+        setServices(
+          parsed.map((s) => ({
+            title: s.title,
+            link: `/services/${s.slug}`,
+            type: "service",
+          })),
+        );
         return;
       }
     } catch {}
@@ -142,9 +151,15 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
       const res = await fetch("/api/services", { cache: "no-store" });
       if (!res.ok) return;
       const list = (await res.json()) as Array<{ title: string; slug: string }>;
-      const mapped = list.map((s) => ({ title: s.title, link: `/services/${s.slug}`, type: "service" as const }));
+      const mapped = list.map((s) => ({
+        title: s.title,
+        link: `/services/${s.slug}`,
+        type: "service" as const,
+      }));
       setServices(mapped);
-      try { sessionStorage.setItem("all-services", JSON.stringify(list)); } catch {}
+      try {
+        sessionStorage.setItem("all-services", JSON.stringify(list));
+      } catch {}
     } catch {}
   };
 
@@ -219,6 +234,8 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
     }
   };
 
+  const pathname = usePathname();
+
   return (
     <header className={`${styles.header} ${styles[mode]}`}>
       <div
@@ -240,11 +257,18 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
 
         {/* Hidden on mobile via CSS */}
         <nav className={styles.midHeader}>
-          {navbarPages.map((page) => (
-            <Link key={page.link} className={styles.link} href={page.link}>
-              {page.title}
-            </Link>
-          ))}
+          {navbarPages.map((page) => {
+            const isActive = pathname === page.link;
+            return (
+              <Link
+                key={page.link}
+                className={cx(styles.link, isActive && styles.activeLink)}
+                href={page.link}
+              >
+                {page.title}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className={styles.rightHeader}>

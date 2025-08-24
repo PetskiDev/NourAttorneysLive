@@ -102,6 +102,7 @@
 .esgOneRight>p {
     width: 70%;
     margin-bottom: 1%;
+    color: #545454;
 }
 
 .esgOneRight>div {
@@ -170,6 +171,10 @@
     width: 35%;
 }
 
+.esgTwoRowRight strong{
+    color: #101010;
+}
+
 .line1, .line2{
     display: none;
 }
@@ -192,6 +197,10 @@
     }
 
     .esgOneRight>p, .esgOneRight>div {
+        width: 100%;
+    }
+
+    .esgOneRight > *{
         width: 100%;
     }
 }

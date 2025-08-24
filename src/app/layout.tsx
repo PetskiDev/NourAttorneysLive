@@ -7,11 +7,13 @@ import Footer from "~/components/Footer/Footer";
 
 const manrope = Manrope({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-manrope",
 });
 
 const inter = Inter({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
 });
 

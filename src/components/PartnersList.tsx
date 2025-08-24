@@ -13,7 +13,7 @@ export default async function PartnersList() {
         {partners.map((p) => (
           <div key={p.id} className={styles.item}>
             <div className={`${styles.itemTag} descriptor_1`}>PARTNER</div>
-            <div className={styles.row}>
+            <div className={`aelement ${styles.row}`}>
               <div className={styles.leftCell}>
                 <Link href={`/partners/${p.slug}`} className={styles.nameLink}>
                   <span className={styles.bracketed}>
@@ -32,7 +32,7 @@ export default async function PartnersList() {
         {/* Static last item */}
         <div className={styles.item}>
           <div className={styles.itemTag}>PARTNER</div>
-          <div className={styles.row}>
+          <div className={`aelement ${styles.row}`}>
             <div className={styles.leftCell}>
               <span className={styles.bracketed}>
                 <span className={`${styles.bracketedText} title_3`}>OTHER COMPANIES</span>

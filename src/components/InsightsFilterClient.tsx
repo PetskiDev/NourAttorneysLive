@@ -98,11 +98,11 @@ export default function InsightsFilterClient({
 
   return (
     <div className={styles.topBar}>
-      <span className={styles.categoryLabel}>CATEGORY:</span>
+      <span className={`headline_3 ${styles.categoryLabel}`}>CATEGORY:</span>
       <div className={styles.panelWrap} ref={panelRef}>
         <button
           type="button"
-          className={styles.categoryCurrentBtn}
+          className={`headline_3 ${styles.categoryCurrentBtn}`}
           onClick={() => setOpen((v) => !v)}
         >
           {currentLabel} <span className={styles.chevron} />

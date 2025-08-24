@@ -46,7 +46,7 @@
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2vw;
   width: 100%;
   justify-content: center;
 }
@@ -56,7 +56,7 @@
 }
 
 .midHeader a {
-  font-size: 20px;
+  font-size: 1.1vw;
   font-weight: 400;
 }
 
@@ -130,6 +130,11 @@
     opacity 260ms ease;
 }
 
+.searchLabelBtn>div{
+  font-size: 1.1vw;
+
+}
+
 /* when active, nudge right & fade out to simulate moving into placeholder */
 .active .searchLabelBtn {
   transform: translateX(8px);
@@ -155,7 +160,7 @@
   outline: 0;
   background: transparent;
   color: inherit;
-  font-size: 20px;
+  font-size: 1.1vw;
   font-weight: 400;
   opacity: 0;
   /* hidden until active */
@@ -177,14 +182,6 @@
   opacity: 1;
 }
 
-@media only screen and (min-width: 1250px) {
-  .active .searchInput {
-    width: 220px;
-    /* desktop default width; adjust as needed */
-    opacity: 1;
-  }
-}
-
 @media only screen and (max-width: 1250px) {
   .midHeader a{
     font-size: 16px;
@@ -193,7 +190,7 @@
 
 @media only screen and (min-width: 1024px) {
   .active .searchInput {
-    width: 160px;
+    width: calc(32vw - 200px);
     /* desktop default width; adjust as needed */
     opacity: 1;
   }
@@ -247,6 +244,7 @@
   border-top: none;
   z-index: 1000;
   max-height: 200px;
+  font-size: 1.1vw;
   overflow-y: auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
@@ -269,8 +267,10 @@
   color: #888;
 }
 
-@media only screen and (max-width: 1250px){
-
+@media only screen and (min-width: 1920px){
+  .active .searchInput{
+    width: 400px;
+  }
 }
 
 /* ----- Responsive tweaks / variables ----- */
@@ -707,6 +707,10 @@
   transform: translateY(-50%) translateX(8px);
 }
 
+.activeLink{
+  border-bottom: 1px solid currentColor;
+}
+
 /* Mobile: keep collapse anchored left; delay label padding until collapse ends */
 @media (max-width: 1024px) {
 
@@ -772,4 +776,19 @@
     transition: visibility 0s linear 420ms, opacity 0s linear 420ms;
     /* appears instantly, but only after 420ms delay */
   }
+}
+
+@media only screen and (min-width: 1920px){
+  .midHeader a {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.searchLabelBtn>div,.searchInput{
+  font-size: 20px;
+}
+
+.searchResults{
+  font-size: 20px;
+}
 }

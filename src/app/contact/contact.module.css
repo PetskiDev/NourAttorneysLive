@@ -7,6 +7,16 @@
 
 .contactHero>div {
     display: flex;
+    position: relative;
+}
+
+.contactAbs{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: auto;
 }
 
 .leftHero {
@@ -14,40 +24,81 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    position: relative;
+    z-index: 5;
+    gap: 5px;
 }
 
 .leftHero h5 {
-    width: 85%;
+    width: 90%;
     margin-top: 5px;
+    font-weight: 300;
+    animation: appearing 1.5s forwards ease;
+}
+
+@keyframes appearing{
+    from{
+        opacity: 0;
+    }
+    15%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .rightHero {
     width: 45%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     align-items: flex-end;
 }
 
 .rightHeroBox>img {
-    height: 40px;
-    width: 40px;
-    margin-top: 10px;
+    height: 45px;
+    width: 45px;
+    margin-top: 20px;
 }
 
 .rightHeroBox {
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 25px 25px;
     background-color: white;
     color: #101010;
-    gap: 7px;
-    width: 85%;
+    gap: 10px;
+    width: 69%;
+    animation: boxAnimation 2s ease forwards;
+}
+
+@keyframes boxAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.rightHeroBox *{
+    opacity: 1!important;
+}
+
+.rightHeroBox :global(.body_text){
+    color: #545454;
 }
 
 .rightHeroBox>h4 {
     width: 100%;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     border-bottom: 1px solid #C4C4C4;
 }
 
@@ -63,15 +114,17 @@
 
 .boxLinkDiv a {
     color: #0033A0;
-    text-decoration: underline;
     display: flex;
     gap: 0px;
     align-items: center;
     position: relative;
+    padding-bottom: 1px;
+    border-bottom: 1.5px solid #0033A0;
 }
 
 .boxLinkDiv a:has(img) {
     text-decoration: none;
+    border-bottom: none;
 }
 
 .boxLinkDiv a:has(img)::after {
@@ -85,8 +138,9 @@
 }
 
 .boxLinkDiv a img {
-    height: 2.1vw;
-    width: 2.1vw;
+    height: 1.9vw;
+    width: 1.9vw;
+    margin-bottom: 0.2vw;
 }
 
 .aiContactBox {
@@ -114,6 +168,7 @@
 .contactMain>div>h5:nth-child(3) {
     width: 50%;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 .contactMain>div>h5:nth-child(4) {
@@ -218,8 +273,20 @@
     gap: 10px;
 }
 
+.contactRightThree>div:last-child{
+    color: #545454;
+}
+
 .contactMain :global(.line) {
     margin: 40px 0;
+}
+
+.contactElement a::after{
+    left: 5px;
+}
+
+.contactLeft :global(.title_3){
+    color: #545454;
 }
 
 @media only screen and (min-width: 1920px) {
@@ -372,6 +439,10 @@
     .contactRow>div:nth-child(1)>div{
         font-size: 24px!important;
         font-weight: 600!important;
+    }
+
+    .contactAbs{
+        display: none;
     }
 
     .contactRow :global(.title_1){

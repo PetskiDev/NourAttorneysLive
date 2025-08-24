@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import NavBar from "~/components/NavBar";
 import SmoothScrollProvider from "~/components/SmoothScrollProvider";
 import RevealController from "./RevealController";
+import LineRevealController from "~/components/LineRevealController";
 
 
 
@@ -32,6 +33,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   return (
     <SmoothScrollProvider headerOffset={0}>
       <RevealController/>
+      <LineRevealController selector=".linee, .line, .aelement"/>
       <NavBar key={pathname} mode={mode} />
       {children}
     </SmoothScrollProvider>

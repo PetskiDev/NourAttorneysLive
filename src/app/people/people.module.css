@@ -4,16 +4,22 @@
     max-width: 68.5%;
 }
 
-.peopleTopContainer{
-    gap: 10px;
+.peopleTopContainer {
+    gap: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .peopleTopTop {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    padding-top: 15px;
+}
+
+.peopleTopContainer>div:nth-child(2){
+    width: 70%;
+    margin-bottom: 20px;
 }
 
 .memberCard {
@@ -86,9 +92,39 @@
     display: none;
 }
 
+.memberCard {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: membercardappear ease 1s forwards;
+}
+
+
+
+@keyframes membercardappear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .desktop {
         display: none;
+    }
+
+    .peopleTopContainer img {
+        height: 70px;
+        width: auto;
+    }
+
+    .peopleTopContainer {
+        gap: 5px;
     }
 
     .mobile {
@@ -121,20 +157,21 @@
         font-size: 2.4vw;
     }
 
-    .memberCard :global(.title_1){
+    .memberCard :global(.title_1) {
         font-size: 2.2vw;
     }
 
-    .memberCard :global(.subtitle_1){
+    .memberCard :global(.subtitle_1) {
         font-size: 2.2vw;
     }
-    
+
 }
 
 @media (max-width: 768px) {
     .peopleTopContainer h1 {
-        font-size: 14vw!important;
+        font-size: 14vw !important;
     }
+
     .desktop {
         display: none;
     }
@@ -170,11 +207,19 @@
         display: none;
     }
 
-    .memberCard :global(.title_1){
+    .memberCard :global(.title_1) {
         font-size: 3.2vw;
     }
 
-    .memberCard :global(.subtitle_1){
+    .memberCard :global(.subtitle_1) {
         font-size: 3.2vw;
+    }
+
+    .peopleTopContainer h4{
+        font-size: 3.5vw;
+    }
+
+    .peopleTopTop{
+        padding-top: 0;
     }
 }

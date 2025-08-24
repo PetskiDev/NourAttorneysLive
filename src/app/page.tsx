@@ -10,14 +10,14 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <main>
-      <section className={styles.hero}>
+      <section style={{paddingTop: 60}} className={styles.hero}>
         <div className="containerr">
           <h1 className="headline_1_1">YOUR</h1>
           <h1 className="headline_1_1">TRUSTED PARTNER IN</h1>
           <h1 className="headline_1_1">LEGAL MATTERS</h1>
           <h2>your trusted partner in legal matters</h2>
           <div className={styles.absText}>
-            <h4 className="body_text">
+            <h4>
               Nour Attorneys transforms legal risks into strategic advantages,
               through our integrity, we treat every client matter as a duty with
               <span>honesty, devotion, and sincerity,</span> guided by a deep
@@ -68,7 +68,6 @@ export default async function Home() {
           width={40}
           height={40}
         />
-        
       </section>
 
       <section className={styles.about}>
@@ -86,7 +85,7 @@ export default async function Home() {
             THROUGH PERSONALIZED LEGAL INTELLIGENCE
           </h4>
 
-          <Image src={"/home-element.svg"} alt="line" width={40} height={40} />
+          <Image src={"/home-element.svg"} className="linee" alt="line" width={40} height={40} />
 
           <div className={styles.aboutBoxes}>
             <div className={styles.aboutBox}>
@@ -137,7 +136,7 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2">
-              <div>
+              <div className="animated">
                 <span>Shareholder Agreement:</span>
                 <span>
                   it clearly define the rights, responsibilities, and
@@ -145,14 +144,14 @@ export default async function Home() {
                   preventing future disputes
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Complex Agreement:</span>
                 <span>
                   we helps you expand your business by letting others use your
                   brand and system, ensuring everyone follows the rules
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Employment & Executive Compensation Contracts:</span>
                 <span>
                   sets clear terms for hiring key people, ensuring they&apos;re
@@ -173,21 +172,21 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2">
-              <div>
+              <div className="animated">
                 <span>Commercial & Civil litigation:</span>
                 <span>
                   representing client in court disputes such as: employment,
                   rental, property & commercial cases
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Debt Recovery:</span>
                 <span>
                   through Civil cases and Criminal actions in order to collect
                   and recover monetary claims{" "}
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Compensation claims:</span>
                 <span>
                   litigated through Civil, Criminal, Labour, Commercial and
@@ -208,7 +207,7 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2">
-              <div>
+              <div className="animated">
                 <span>Mergers and Acquisitions:</span>
                 <span>
                   our documented procedures guarantee adherence to all relevant
@@ -216,14 +215,14 @@ export default async function Home() {
                   operations
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Corporate Restructuring Services:</span>
                 <span>
                   addressing debt, optimizing capital structure, and securing
                   new financing and etc.{" "}
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Trademark and patent Registration services:</span>
                 <span>
                   local & WIPO (World Intellectual Property Organization) under
@@ -244,14 +243,14 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div>
-              <div>
+              <div className="animated">
                 <span>Company Formation:</span>
                 <span>
                   incorporating offshore, freezone, mainland with most strategic
                   structure
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Bank account opening:</span>
                 <span>
                   preparation of documents and taxation consultancies,
@@ -259,7 +258,7 @@ export default async function Home() {
                   operation{" "}
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Compliance:</span>
                 <span>
                   advising on regulatory obligations, drafting internal
@@ -280,21 +279,21 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2">
-              <div>
+              <div className="animated">
                 <span>True copy attestation:</span>
                 <span>
                   birth certificates, passport attestation, marriage
                   certificates, educational certificates and etc.
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Public & private notary:</span>
                 <span>
                   including drafting and notarizing POA, shareholder
                   resolutions, agreements and etc.{" "}
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Private lawyer notarization:</span>
                 <span>
                   drafting and notarizing affidavits and private agreements,
@@ -315,21 +314,21 @@ export default async function Home() {
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2">
-              <div>
+              <div className="animated">
                 <span>SPL Trustee Services:</span>
                 <span>
                   Special Purpose Legal (SPL) structures, ensuring compliance,
                   asset protection, and fiduciary oversight
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Pre-Dispute Management:</span>
                 <span>
                   we help with conflicts through early risk assessment,
                   strategic communication, and contract clarity{" "}
                 </span>
               </div>
-              <div>
+              <div className="animated">
                 <span>Travel Ban verification:</span>
                 <span>
                   providing travel ban verification services to the clients for

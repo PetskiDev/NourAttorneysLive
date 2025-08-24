@@ -3,6 +3,7 @@ import { EditableText } from "~/components/EditableText";
 import styles from "./about-us.module.css";
 import Image from "next/image";
 import { EditableImage } from "~/components/EditableImage";
+import CountUpOnView from "~/components/CountUpOnView";
 
 export default async function AboutUsPage() {
   const blockMap = await getBlocksForPage("/about-us");
@@ -155,73 +156,50 @@ export default async function AboutUsPage() {
       </section>
 
       <section className={styles.aboutNumbers}>
-        <div className="containerr">
-          <div className={styles.numbersLeft}>
-            <div className={styles.numbersLeftTop}>
-              <div className={styles.numbersInner}>
-                <EditableText
-                  relUrl="/about-us"
-                  blockKey="consulatitons-provided"
-                  placeholderContent="12466"
-                  placeholderTag="h4"
-                  className="headline_5"
-                />
-                <p className="body_text">legal consulatitons were probided</p>
-              </div>
-            </div>
-
-            <div className={styles.numbersLeftBottom}>
-              <div className={styles.numbersInner}>
-                <EditableText
-                  relUrl="/about-us"
-                  blockKey="contract-drafted"
-                  placeholderContent="14680"
-                  placeholderTag="h4"
-                  className="headline_5"
-                />
-                <p className="body_text">contract drafted</p>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.numbersRight}>
-            <div className={styles.numbersRightTop}>
-              <div className={styles.numbersInner}>
-                <EditableText
-                  relUrl="/about-us"
-                  blockKey="transaction-completed"
-                  placeholderContent="3455"
-                  placeholderTag="h4"
-                  className="headline_5"
-                />
-                <p className="body_text">commercial transactions completed</p>
-              </div>
-            </div>
-
-            <div className={styles.numbersRightBottom}>
-              <div className={styles.numbersInner}>
-                <EditableText
-                  relUrl="/about-us"
-                  blockKey="win-rate"
-                  placeholderContent="93.7 %"
-                  placeholderTag="h4"
-                  className="headline_5"
-                />
-                <p className="body_text">case win rate</p>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.numbersAbs}>
-            <p className="title_3">
-              At Nour Attorneys, we see our role as more than just providing
-              legal services, we protect your interests and secure your future
-            </p>
-
-            <p className="subtitle_4">Do not settle for average</p>
-          </div>
+  <div className="containerr">
+    <div className={styles.numbersLeft}>
+      <div className={styles.numbersLeftTop}>
+        <div className={styles.numbersInner}>
+          <CountUpOnView end={12466} />
+          <p className="body_text">legal consultations were provided</p>
         </div>
-      </section>
+      </div>
+
+      <div className={styles.numbersLeftBottom}>
+        <div className={styles.numbersInner}>
+          <CountUpOnView end={14680} />
+          <p className="body_text">contracts drafted</p>
+        </div>
+      </div>
+    </div>
+
+    <div className={styles.numbersRight}>
+      <div className={styles.numbersRightTop}>
+        <div className={styles.numbersInner}>
+          <CountUpOnView end={3455} />
+          <p className="body_text">commercial transactions completed</p>
+        </div>
+      </div>
+
+      <div className={styles.numbersRightBottom}>
+        <div className={styles.numbersInner}>
+          <CountUpOnView end={93.7} suffix="%" />
+          <p className="body_text">case win rate</p>
+        </div>
+      </div>
+    </div>
+
+    <div className={styles.numbersAbs}>
+      <p className="title_3">
+        At Nour Attorneys, we see our role as more than just providing
+        legal services, we protect your interests and secure your future
+      </p>
+
+      <p className="subtitle_4">Do not settle for average</p>
+    </div>
+  </div>
+</section>
+
 
       <section className={styles.history}>
         <div className="containerr">

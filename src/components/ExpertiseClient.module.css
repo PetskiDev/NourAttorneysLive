@@ -38,12 +38,13 @@
 
 .tabButtonActive {
   color: #111;
+  font-weight: 500!important;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px 40px;
+  gap: 17px 30px;
   padding-top: 3vw;
   width: 100%;
 }

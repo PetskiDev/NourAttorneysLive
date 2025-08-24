@@ -15,6 +15,7 @@
 
 .partnerOne>div {
     width: 50%;
+    padding-top: 50px;
 }
 
 .partnerMain>div>div:nth-child(3)>h5 {
@@ -38,6 +39,7 @@
 .partnerTwo p {
     width: 60%;
     margin-bottom: 20px;
+    color: #545454;
 }
 
 .partnerVideo {

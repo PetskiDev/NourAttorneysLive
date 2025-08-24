@@ -59,18 +59,22 @@
 .aboutOneLeft img {
     width: 33%;
     height: auto;
-    margin-top: 17%;
+    margin-top: 19%;
 }
 
 .aboutOneRight {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
 }
 
 .aboutOneRight img {
     width: 66%;
     height: auto;
+}
+
+.aboutOneRight h5{
+    width: 90%;
 }
 
 .aboutTwo {
@@ -119,6 +123,14 @@
 .aboutTwoLine>div:nth-child(3) {
     width: 32%;
     margin-left: 50%;
+}
+
+.aboutTwoLine p{
+    color: #545454;
+}
+
+.aboutTwoLine :global(.title_5){
+    color: #101010;
 }
 
 .aboutNumbers>* {
@@ -198,6 +210,13 @@
     gap: 20px;
     align-items: center;
     text-align: center;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1024px){
+    .numbersAbs>p:first-child{
+        width: 45%;
+    }
 }
 
 .history>:global(.containerr) {
@@ -305,7 +324,7 @@
 
 .founderMid {
     padding-left: 25%;
-
+    margin-bottom: 10px;
 }
 
 .founderBottom {
@@ -322,6 +341,10 @@
     gap: 5px;
 }
 
+.founderBottomRight :global(.body_text){
+    color: #545454;
+}
+
 .founderBottomRight>*:nth-child(1) {
     width: 50%;
 }
@@ -335,7 +358,7 @@
 
 .threePart {
     display: flex;
-    gap: 5px;
+    gap: 15px;
     align-items: stretch;
 }
 
@@ -347,7 +370,13 @@
 
 .threePartTwo {
     display: flex;
-    gap: 5px;
+    color: #545454;
+        gap: 15px;
+}
+
+.threePartTwo p{
+    color: #545454;
+
 }
 
 @media only screen and (max-width: 1440px) {
@@ -356,7 +385,7 @@
     }
 
     .threePartTwo>p {
-        width: 40%;
+        width: 45%;
     }
 }
 
@@ -396,6 +425,9 @@
         padding: 5% 0;
     }
 
+    .aboutHero h5{
+        font-size: 2vw;
+    }
 
     .aboutTwoLine>div:nth-child(1)>div:nth-child(1) {
         width: 100%;
@@ -630,8 +662,9 @@
 
     .threePart {
         display: flex;
-        gap: 5px;
+        gap: 15px;
         align-items: stretch;
+        margin-top: 10px;
     }
 
     .threePart>div:nth-child(1) {
@@ -655,11 +688,23 @@
 .aboutHero>div{
     padding: 2% 0;
 }
+
+.aboutHero img{
+    top: 41%;
+}
 }
 
 @media only screen and (max-width: 768px) {
     .aboutOneLeft{
         display: none;
+    }
+
+    .aboutHero img{
+    top: 38%;
+}
+
+    .aboutHero h5{
+        font-size: 3vw;
     }
 
     .aboutOneRight{

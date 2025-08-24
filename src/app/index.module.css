@@ -4,7 +4,7 @@
     position: relative;
 }
 
-.hero>div{
+.hero :global(.containerr){
     display: flex;
     flex-direction: column;
     position: relative;
@@ -26,13 +26,18 @@
 .absText{
     position: absolute;
     left: 50%;
-    top: 2.8vw;
+    top: 3vw;
     width: 30%;
 }
 
 .absText>h4{
     text-transform: none;
     color: white;
+    font-size: 1vw;
+    font-family: var(--font-manrope);
+    line-height: 100%;
+    letter-spacing: -0.1;
+    font-weight: 400;
 }
 
 .absText>h4>span{
@@ -46,10 +51,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 55px;
-    width: 170px;
+    height: 4vw;
+    width: 11.5vw;
     color: #0033A0;
-    font-size: 18px;
+    font-size: 1.1vw;
     margin-top: 24%;
     margin-bottom: 5%;
 }
@@ -63,6 +68,7 @@
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
+    animation: lineOne 2s forwards ease;
 }
 
 .line2{
@@ -74,6 +80,7 @@
     left: 7.5%;
     transform: translateX(-0%);
     pointer-events: none;
+    animation: lineTwo 2.5s forwards ease;
 }
 
 .line3{
@@ -85,6 +92,7 @@
     right: 3%;
     pointer-events: none;
     transform: translateX(-0%);
+    animation: lineThree 3s forwards ease;
 }
 
 .line4{
@@ -95,6 +103,7 @@
     pointer-events: none;
     height: auto;
     z-index: 5;
+    animation: lineFour 3.5s forwards ease;
 }
 
 .line5{
@@ -105,6 +114,87 @@
     pointer-events: none;
     height: auto;
     z-index: 5;
+    animation: lineFive 3.5s forwards ease;
+}
+
+@keyframes lineOne{
+    0%{
+        transform: translateX(calc(50% - 100px));
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(calc(50% - 100px));
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes lineTwo{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    66%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes lineThree{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    75%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes lineFour{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    80%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes lineFive{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    80%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
 }
 
 .about{
@@ -181,6 +271,7 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    margin-top: 50px;
 }
 
 .expertise>div{
@@ -283,6 +374,18 @@
     align-items: center;
 }
 
+.caseStudies :global(.study-box){
+    gap: 10px;
+}
+
+.caseStudies :global(.study-box)>div:first-child{
+    flex-direction: column;
+}
+
+.caseStudies :global(.study-box)>div:first-child>div:first-child{
+    order: 5;
+}
+
 .caseStudies>div h6:nth-of-type(1){
     margin-top: 2%;
 }
@@ -326,16 +429,34 @@
     position: absolute;
     left: 25%;
     top: 30px;
-    width: 170px;
+    width: 11.5vw;
 }
 
 .caseStudies :global(.studies-boxes){
     position: relative;
 }
 
+@media only screen and (min-width: 1920px){
+    .hero>div>a{
+        height: 55px;
+        width: 170px;
+    }
+
+    .studyAbs{
+        width: 220px;
+    }
+
+    .absText>h4{
+        font-size: 18px;
+    }
+}
+
 @media only screen and (max-width: 1024px){
     .hero>div> a{
         margin-top: 55%;
+        height: 55px;
+        width: 170px;
+        font-size: 18px;
     }
 
     .studyAbs{
@@ -351,13 +472,31 @@
 
     .absText::after{
         position: absolute;
-        bottom: -110%;
-        height: 200px;
-        width: 5px;
+        bottom: -135%;
+        height: 180px;
+        width: 4.5px;
         background-image: url("/home-mobile.svg");
         background-size: 100% 100%;
         content: "";
+        animation: lineSeven 3.5s ease forwards;
     }
+
+
+    @keyframes lineSeven{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    75%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
 
     .absText h4{
         font-size: 1.8vw;
@@ -514,10 +653,11 @@
     }
 
     .absText:after {
-        bottom: -180%;
-        width: 1.5vw;
+        bottom: -210%;
+        width: 1.2vw;
         height: 50vw;
     }
+
 
     .line4{
         display: none;
@@ -550,7 +690,25 @@
         display: block;
         pointer-events: none;
         height: auto;
+        animation: lineSix 2s ease forwards;
     }
+
+
+@keyframes lineSix{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
 
     .about h2, .people h2, .insights h2, .expertise h2, .caseStudies h2, .partners h2{
         font-size: 7vw;

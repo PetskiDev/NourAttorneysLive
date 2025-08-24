@@ -18,7 +18,7 @@ a {
   transition: 0.2s all ease;
 }
 
-a:hover{
+a:hover {
   opacity: 0.8;
 }
 
@@ -134,9 +134,9 @@ body {
   width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #c4c4c4;
 }
 
@@ -153,7 +153,13 @@ body {
   background-color: #878787;
 }
 
+.aelement::before{
+  opacity: 0!important;
+}
 
+.aelement.revealed::before{
+  opacity: 1!important;
+}
 
 
 
@@ -172,10 +178,11 @@ body {
 
 .subheadline_2 {
   font-size: 1.84vw;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 110%;
   text-transform: uppercase;
   letter-spacing: -4%;
+  font-family: var(--font-manrope);
 }
 
 .title_1 {
@@ -195,7 +202,7 @@ body {
 }
 
 .accent_text_2 {
-  font-size: 1.23vw;
+  font-size: 1.22vw;
   font-family: var(--font-inter);
   font-weight: 400;
   text-transform: uppercase;
@@ -206,11 +213,13 @@ body {
   font-size: 15vw;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: -15.1;
 }
 
 .headline_5 {
   font-size: 6vw;
   font-weight: 600;
+  letter-spacing: -5.4;
 }
 
 .body_text {
@@ -223,33 +232,34 @@ body {
 }
 
 .title_3 {
-  font-size: 1.4vw;
-  font-weight: 600;
+  font-size: 1.7vw;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: -4%;
+  letter-spacing: -0.4;
   line-height: 1;
   font-family: var(--font-manrope);
 }
 
 .subtitle_4 {
   color: #545454;
-  font-size: 1.21vw;
+  font-size: 1.51vw;
   text-transform: uppercase;
   font-family: var(--font-inter);
-  font-weight: 500;
-  letter-spacing: -4%;
+  font-weight: 400;
+  letter-spacing: -0.4;
 }
 
 .headline_2 {
-  font-size: 1.3vw;
-  font-weight: 600;
+  font-size: 1.6vw;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: -4%;
+  letter-spacing: -0.4;
+  font-family: var(--font-manrope);
 }
 
 .accent_text_1 {
-  font-size: 1.785vw;
-  font-weight: 700;
+  font-size: 1.77vw;
+  font-weight: 600;
   text-transform: uppercase;
   line-height: 110%;
   letter-spacing: -0.04;
@@ -280,7 +290,7 @@ body {
 
 .accent_text_3 {
   font-family: var(--font-inter);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.49vw;
   line-height: 120%;
   letter-spacing: -1.2;
@@ -289,7 +299,7 @@ body {
 .title_5 {
   text-transform: uppercase;
   font-size: 1vw;
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--font-inter);
 }
 
@@ -367,12 +377,12 @@ body {
 
 .subheadline_4 {
   font-size: 1.4vw;
-  font-weight: 400;
+  font-weight: 300;
   font-family: var(--font-inter);
   line-height: 105%;
 }
 
-.subheadline_1{
+.subheadline_1 {
   font-family: var(--font-manrope);
   font-weight: 500;
   font-size: 2vw;
@@ -380,7 +390,7 @@ body {
   text-transform: uppercase;
 }
 
-.descriptor_1{
+.descriptor_1 {
   font-size: 1vw;
   font-weight: 400;
   font-family: var(--font-inter);
@@ -388,18 +398,31 @@ body {
   text-transform: uppercase;
 }
 
-.title_4{
+.title_4 {
   font-size: 0.9vw;
   font-family: var(--font-inter);
   line-height: 120%;
 }
 
-.headline_1_5{
+.headline_1_5 {
   font-weight: 700;
   font-family: var(--font-manrope);
   font-size: 5.5vw;
   line-height: 90%;
   letter-spacing: -3;
+}
+
+.title_4 {
+  font-size: 1vw;
+  font-weight: 400;
+  line-height: 120%;
+  font-family: var(--font-inter);
+}
+
+.subtitle_3 {
+  font-size: 1vw;
+  font-weight: 400;
+  font-family: var(--font-inter);
 }
 
 @media only screen and (min-width: 1930px) {
@@ -586,35 +609,48 @@ body {
     line-height: 105%;
   }
 
-  .subheadline_1{
-  font-family: var(--font-manrope);
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 110%;
-  text-transform: uppercase;
-}
+  .subheadline_1 {
+    font-family: var(--font-manrope);
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
 
-.descriptor_1{
-  font-size: 18px;
-  font-weight: 400;
-  font-family: var(--font-inter);
-  line-height: 105%;
-  text-transform: uppercase;
-}
+  .descriptor_1 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-inter);
+    line-height: 105%;
+    text-transform: uppercase;
+  }
 
-.title_4{
-  font-size: 18px;
-  font-family: var(--font-inter);
-  line-height: 120%;
-}
+  .title_4 {
+    font-size: 18px;
+    font-family: var(--font-inter);
+    line-height: 120%;
+  }
 
-.headline_1_5{
-  font-weight: 700;
-  font-family: var(--font-manrope);
-  font-size: 110px;
-  line-height: 90%;
-  letter-spacing: -3;
-}
+  .headline_1_5 {
+    font-weight: 700;
+    font-family: var(--font-manrope);
+    font-size: 110px;
+    line-height: 90%;
+    letter-spacing: -3;
+  }
+
+  .title_4 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    font-family: var(--font-inter);
+  }
+
+  .subtitle_3 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--font-inter);
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -645,7 +681,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
     justify-content: space-between;
     padding: 10px;
     border: 1px solid #c4c4c4;
@@ -658,12 +694,23 @@ body {
     width: 100%;
   }
 
+  .headline_1_2 {
+    font-size: 15vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -5.1;
+  }
+
   .study-box .title_2 {
     font-size: 2vw;
   }
 
   .study-box .subtitle_2 {
     font-size: 1.8vw;
+  }
+
+  .headline_4{
+    letter-spacing: -1px;
   }
 }
 

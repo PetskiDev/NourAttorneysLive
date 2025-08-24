@@ -115,6 +115,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 
 .card {
@@ -235,6 +236,15 @@
   width: calc(95vw);
 }
 
+.categoryLabel{
+  font-size: 2.2vw!important;
+}
+
+.categoryCurrentBtn{
+  font-size: 2.2vw!important;
+}
+
+
 }
 
 @media only screen and (max-width:768px){
@@ -274,4 +284,17 @@
   height: 44px;
   width: 44px;
 }
+
+.categoryLabel{
+  font-size: 18px!important;
+}
+
+.categoryCurrentBtn{
+  font-size: 18px!important;
+}
+
+.insightsHero img{
+  top: 10%;
+}
+
 }
