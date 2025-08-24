@@ -147,8 +147,9 @@ export default function ExpertiseClient({
                 aria-expanded={isMobileOpen}
                 onClick={() => setIsMobileOpen((v) => !v)}
               >
-                <span className={styles.mobileCategoryCurrent}>
-                  {`Category: ${activeCategory?.title}`}
+                <span style={{color:"#545454"}} className={styles.mobileCategoryCurrent}>
+                  {`CATEGORY:`}
+                  <span style={{color:"#101010", marginLeft: 4}}>{activeCategory?.title}</span>
                   <sup className={styles.counts}>{activeCategory?.count}</sup>
                 </span>
 

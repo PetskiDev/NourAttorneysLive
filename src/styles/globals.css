@@ -153,6 +153,7 @@ body {
   background-color: #878787;
 }
 
+@media only screen and (min-width: 1024px){
 .aelement::before{
   opacity: 0!important;
 }
@@ -160,6 +161,9 @@ body {
 .aelement.revealed::before{
   opacity: 1!important;
 }
+}
+
+
 
 
 

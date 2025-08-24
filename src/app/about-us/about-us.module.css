@@ -429,6 +429,15 @@
         font-size: 2vw;
     }
 
+    .aboutOneRight h5{
+        font-size: 2.5vw;
+        width: 100%;
+    }
+
+    .aboutOneLeft img{
+        margin-top: 35%;
+    }
+
     .aboutTwoLine>div:nth-child(1)>div:nth-child(1) {
         width: 100%;
         font-size: 2.2vw;
@@ -697,6 +706,16 @@
 @media only screen and (max-width: 768px) {
     .aboutOneLeft{
         display: none;
+    }
+
+    .aboutOneRight h5{
+        font-size: 4.8vw;
+        width: 100%;
+    }
+
+    .aboutOneRight{
+        gap: 10px;
+        padding-top: 20px;
     }
 
     .aboutHero img{
