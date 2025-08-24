@@ -267,4 +267,8 @@
     .partnerMain h5{
         font-size: 6vw;
     }
+
+    .partnerOne > div{
+        padding-top: 10px;
+    }
 }
