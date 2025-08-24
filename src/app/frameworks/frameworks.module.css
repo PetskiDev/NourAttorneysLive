@@ -426,4 +426,8 @@
         margin-top: 30px;
         margin-bottom: 15px;
     }
+
+    .frameworksRow p{
+        font-size: 2.5vw;
+    }
 }
