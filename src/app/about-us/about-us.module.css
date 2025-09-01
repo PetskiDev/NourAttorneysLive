@@ -10,19 +10,19 @@
     gap: 0px;
     justify-content: center;
     align-items: center;
-        padding: 2% 0;
+    padding: 2% 0;
 }
 
 .aboutHero img {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 45vw;
     height: auto;
 }
 
-.aboutHero>div h1{
+.aboutHero>div h1 {
     margin-bottom: -30px;
 }
 
@@ -59,7 +59,7 @@
 .aboutOneLeft img {
     width: 33%;
     height: auto;
-    margin-top: 19%;
+    margin-top: 22%;
 }
 
 .aboutOneRight {
@@ -68,12 +68,16 @@
     gap: 40px;
 }
 
+.aboutOneRight>div{
+    width: 85%;
+}
+
 .aboutOneRight img {
     width: 66%;
     height: auto;
 }
 
-.aboutOneRight h5{
+.aboutOneRight h5 {
     width: 90%;
 }
 
@@ -104,8 +108,34 @@
 
 .aboutTwoLine>div:nth-child(1)>div:nth-child(1)>span {
     width: 50%;
-    margin-left: 50%;
+    margin-left: 51%;
+    position: relative;
 }
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(1)>span::before{
+    content: "";
+    left: -5px;
+    height: 80%;
+    width: 2px;
+    border-left: 2px solid #101010;
+    position: relative;
+    border-top: 2px solid #101010;
+    border-bottom: 2px solid #101010;
+    position: absolute;
+}
+
+.aboutTwoLine>div:nth-child(1)>div:nth-child(1)>span::after{
+    content: "";
+    right: -5px;
+    height: 80%;
+    width: 2px;
+    border-right: 2px solid #101010;
+    position: relative;
+    border-top: 2px solid #101010;
+    border-bottom: 2px solid #101010;
+    position: absolute;
+}
+
 
 .aboutTwoLine>div:nth-child(1)>div:nth-child(2) {
     width: 50%;
@@ -125,11 +155,11 @@
     margin-left: 50%;
 }
 
-.aboutTwoLine p{
+.aboutTwoLine p {
     color: #545454;
 }
 
-.aboutTwoLine :global(.title_5){
+.aboutTwoLine :global(.title_5) {
     color: #101010;
 }
 
@@ -213,9 +243,9 @@
     width: 100%;
 }
 
-@media only screen and (min-width: 1024px){
-    .numbersAbs>p:first-child{
-        width: 45%;
+@media only screen and (min-width: 1024px) {
+    .numbersAbs>p:first-child {
+        width: 39%;
     }
 }
 
@@ -240,7 +270,7 @@
 .history>:global(.containerr)>:global(.accent_text_2):nth-child(3) {
     margin-left: 50%;
     text-align: left;
-    width: 31%;
+    width: 32%;
 }
 
 .timelineDiv {
@@ -341,7 +371,7 @@
     gap: 5px;
 }
 
-.founderBottomRight :global(.body_text){
+.founderBottomRight :global(.body_text) {
     color: #545454;
 }
 
@@ -364,6 +394,7 @@
 
 .threePart>div:nth-child(1) {
     width: 1px;
+    min-width: 1px;
     height: 100%;
     background-color: #C4C4C4;
 }
@@ -371,10 +402,10 @@
 .threePartTwo {
     display: flex;
     color: #545454;
-        gap: 15px;
+    gap: 15px;
 }
 
-.threePartTwo p{
+.threePartTwo p {
     color: #545454;
 
 }
@@ -401,7 +432,7 @@
 
     .aboutHero img {
         position: absolute;
-        top: 40%;
+        top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 800px;
@@ -417,6 +448,12 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    .threePart>div:nth-child(1) {
+    width: 1px;
+    min-width: 0px;
+    height: 100%;
+    background-color: #C4C4C4;
+}
     .aboutOneLeft img {
         width: 50%;
     }
@@ -425,16 +462,16 @@
         padding: 5% 0;
     }
 
-    .aboutHero h5{
+    .aboutHero h5 {
         font-size: 2vw;
     }
 
-    .aboutOneRight h5{
+    .aboutOneRight h5 {
         font-size: 2.5vw;
         width: 100%;
     }
 
-    .aboutOneLeft img{
+    .aboutOneLeft img {
         margin-top: 35%;
     }
 
@@ -580,9 +617,6 @@
         font-size: 2vw !important;
     }
 
-
-
-
     .caseStudies>*>h2 {
         text-align: center;
         font-size: 2vw;
@@ -602,7 +636,7 @@
 
 
 
-    .founder :global(.body_text){
+    .founder :global(.body_text) {
         font-size: 2vw;
     }
 
@@ -617,10 +651,10 @@
         display: flex;
     }
 
-    .founderTop>div{
+    .founderTop>div {
         display: flex;
         flex-direction: column;
-        margin-left: 0!important;
+        margin-left: 0 !important;
     }
 
     .founderTop :global(.descriptor_2) {
@@ -640,7 +674,7 @@
 
     }
 
-    .founderMid h5{
+    .founderMid h5 {
         font-size: 2.9vw;
     }
 
@@ -682,77 +716,77 @@
         background-color: #C4C4C4;
     }
 
-    .threePartTwo>p{
+    .threePartTwo>p {
         width: 100%;
     }
 
-    .aboutHero>div h1{
-    margin-bottom: -0px;
-}
+    .aboutHero>div h1 {
+        margin-bottom: -0px;
+    }
 
-.aboutHero h6{
-    font-size: 2vw!important;
-}
+    .aboutHero h6 {
+        font-size: 2vw !important;
+    }
 
-.aboutHero>div{
-    padding: 2% 0;
-}
+    .aboutHero>div {
+        padding: 2% 0;
+    }
 
-.aboutHero img{
-    top: 41%;
-}
+    .aboutHero img {
+        top: 41%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    .aboutOneLeft{
+    .aboutOneLeft {
         display: none;
     }
 
-    .aboutOneRight h5{
+    .aboutOneRight h5 {
         font-size: 4.8vw;
         width: 100%;
     }
 
-    .aboutOneRight{
+    .aboutOneRight {
         gap: 10px;
         padding-top: 20px;
     }
 
-    .aboutHero img{
-    top: 38%;
-}
+    .aboutHero img {
+        top: 38%;
+    }
 
-    .aboutHero h5{
+    .aboutHero h5 {
         font-size: 3vw;
     }
 
-    .aboutOneRight{
-        width: 100%!important;
+    .aboutOneRight {
+        width: 100% !important;
     }
 
-    .aboutOneRight img{
+    .aboutOneRight img {
         width: 100%;
     }
 
-    .aboutTwoLine>div:first-child>div:first-child{
+    .aboutTwoLine>div:first-child>div:first-child {
         display: none;
     }
 
-    .aboutTwoLine > div:nth-child(3){
+    .aboutTwoLine>div:nth-child(3) {
         width: 100%;
         margin-left: 0;
     }
 
-    .aboutNumbers>*{
+    .aboutNumbers>* {
         flex-direction: column;
         gap: 0;
     }
 
-    .numbersLeft, .numbersRight{
+    .numbersLeft, .numbersRight {
         width: 100%;
     }
 
-    .numbersRight{
+    .numbersRight {
         height: auto;
     }
 
@@ -763,7 +797,7 @@
 
 
 
-        .history>:global(.containerr) {
+    .history>:global(.containerr) {
         display: flex;
         flex-direction: column;
         gap: 0px;
@@ -830,11 +864,11 @@
         font-size: 3.5vw !important;
     }
 
-    .aboutOne > div{
+    .aboutOne>div {
         padding-top: 20px;
     }
 
-    .aboutOne>div h4{
+    .aboutOne>div h4 {
         font-size: 4vw;
     }
 
@@ -842,7 +876,7 @@
 
 
 
-       .founder :global(.body_text){
+    .founder :global(.body_text) {
         font-size: 3.5vw;
     }
 
@@ -857,10 +891,10 @@
         display: flex;
     }
 
-    .founderTop>div{
+    .founderTop>div {
         display: flex;
         flex-direction: column;
-        margin-left: 0!important;
+        margin-left: 0 !important;
     }
 
     .founderTop :global(.descriptor_2) {
@@ -879,7 +913,7 @@
 
     }
 
-    .founderMid h5{
+    .founderMid h5 {
         font-size: 4.6vw;
     }
 
@@ -921,39 +955,39 @@
         background-color: #C4C4C4;
     }
 
-    .threePartTwo>p{
+    .threePartTwo>p {
         width: 100%;
     }
 
-    .caseStudies h2{
+    .caseStudies h2 {
         font-size: 4vw;
     }
 
-    .caseStudies>*> h6:nth-child(2){
-        font-size: 4.1vw!important;
+    .caseStudies>*>h6:nth-child(2) {
+        font-size: 4.1vw !important;
     }
 
-    .caseStudies>*> h6:nth-child(3){
-        font-size: 4.1vw!important;
+    .caseStudies>*>h6:nth-child(3) {
+        font-size: 4.1vw !important;
     }
 
-    .numbersInner :global(.body_text){
+    .numbersInner :global(.body_text) {
         font-size: 4vw;
     }
 
-    .aboutTwoLine :global(.body_text){
-        font-size: 3.3vw!important;
+    .aboutTwoLine :global(.body_text) {
+        font-size: 3.3vw !important;
     }
 
-    .aboutTwoLine :global(.title_5){
-        font-size: 3.3vw!important;
+    .aboutTwoLine :global(.title_5) {
+        font-size: 3.3vw !important;
     }
 
-    .aboutHero h6{
-    font-size: 3.5vw!important;
-}
+    .aboutHero h6 {
+        font-size: 3.5vw !important;
+    }
 
-.numbersAbs {
+    .numbersAbs {
         top: 5%;
         transform: translate(-50%, 0);
         width: 100%;
@@ -967,16 +1001,16 @@
         font-size: 4vw;
     }
 
-    .aboutTwoLine > div:first-child {
+    .aboutTwoLine>div:first-child {
         margin-bottom: 2px;
     }
 
-    .aboutOne>div h4{
+    .aboutOne>div h4 {
         font-size: 5vw;
         margin-top: 40px;
     }
 
-    .aboutTwoLine{
+    .aboutTwoLine {
         margin-top: 10px;
     }
 }

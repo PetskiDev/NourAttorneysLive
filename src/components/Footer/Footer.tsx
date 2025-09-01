@@ -18,7 +18,7 @@ export default async function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.loc}>
-          <h3 className="title_4">Location</h3>
+          <h3 className="title_4 antiselector">Location</h3>
           {texts.LOCATION ? (
             <div className="subtitle_3" style={{ whiteSpace: "pre-line" }}>{texts.LOCATION}</div>
           ) : (
@@ -27,11 +27,11 @@ export default async function Footer() {
               <li className="subtitle_3">Business Bay, Dubai, UAE</li>
             </ul>
           )}
-          <div className="title_4">Working hours</div>
+          <div className="title_4 antiselector">Working hours</div>
           <div className="subtitle_3">{texts.WORKING_HOURS ?? "Mon–Fri: 9am — 6pm"}</div>
         </div>
         <div className={styles.nav}>
-          <h3 className="title_4">Navigation</h3>
+          <h3 className="title_4 antiselector">Navigation</h3>
           <ul className={styles.list}>
             {navigation.map((item) => (
               <li className="subtitle_3" key={item.id}>
@@ -41,7 +41,7 @@ export default async function Footer() {
           </ul>
         </div>
         <div className={styles.social}>
-          <h3 className="title_4">Social media</h3>
+          <h3 className="title_4 antiselector">Social media</h3>
           <ul className={styles.socialList}>
             {social.map((item) => (
               <li className="subtitle_3" key={item.id}>
@@ -51,7 +51,7 @@ export default async function Footer() {
           </ul>
         </div>
         <div className={styles.contacts}>
-            <h3 className="title_4">Contacts</h3>
+            <h3 className="title_4 antiselector">Contacts</h3>
             <ul className={styles.list}>
               <li className="subtitle_3">
                 <span>Telephone: </span>

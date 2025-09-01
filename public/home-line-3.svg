@@ -1,11 +1,54 @@
-<svg width="802" height="376" viewBox="0 0 802 376" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.31932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z" fill="#8F91AF"/>
-<path d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.31932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z" stroke="#8F91AF"/>
-<rect width="82" height="5" transform="matrix(0 1 1 0 797 0)" fill="url(#paint0_linear_107237_8873)"/>
-<defs>
-<linearGradient id="paint0_linear_107237_8873" x1="0" y1="2.5" x2="82" y2="2.5" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0033A0"/>
-<stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
-</linearGradient>
-</defs>
+<svg width="802" height="386" viewBox="-10 -10 822 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 1. Right side -->
+  <path d="M800 0.611572V147.446"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="147" stroke-dashoffset="147">
+    <animate attributeName="stroke-dashoffset"
+             from="147" to="0"
+             dur="1.2s" begin="0s" fill="freeze"/>
+  </path>
+
+  <!-- 2. Bottom -->
+  <path d="M800 147.446H4.67969"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="796" stroke-dashoffset="796">
+    <animate attributeName="stroke-dashoffset"
+             from="796" to="0"
+             dur="2s" begin="1.2s" fill="freeze"/>
+  </path>
+
+  <!-- 3. Left side -->
+  <path d="M4.67969 147.446V366.831"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="220"
+        stroke-dashoffset="220">
+    <animate attributeName="stroke-dashoffset"
+             from="220" to="0"
+             dur="1.2s" begin="3.2s" fill="freeze"/>
+  </path>
+
+  <!-- 4. Perfect filled circle aligned with left line (smaller) -->
+  <circle cx="4.68" cy="371" r="6"
+          fill="#8F91AF" opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             begin="4.4s" dur="0.3s" fill="freeze"/>
+  </circle>
+
+  <!-- Gradient cap -->
+  <rect width="82" height="5"
+        transform="matrix(0 1 1 0 797 0)"
+        fill="url(#paint0_linear_107237_8873)"
+        opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             begin="0s" dur="0.3s" fill="freeze"/>
+  </rect>
+
+  <defs>
+    <linearGradient id="paint0_linear_107237_8873" x1="0" y1="2.5" x2="82" y2="2.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0033A0"/>
+      <stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
 </svg>

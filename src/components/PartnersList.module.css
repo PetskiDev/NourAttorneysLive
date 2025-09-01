@@ -34,10 +34,8 @@
   display: inline-block;
   background: #111;
   color: #fff;
-  font-size: 11px;
   padding: 8px 20px;
   border-radius: 2px;
-  letter-spacing: 0.05em;
 }
 
 .row {
@@ -47,17 +45,13 @@
   position: relative;
 }
 
-.row::before{
-  top: 0;
-  left: 0;
-  content: "";
-  position: absolute;
+.item>div:nth-child(2){
+  width: 100%;
   border-top: 1px solid #101010;
   border-right: 1px solid #101010;
   height: 10px;
-  z-index: 5;
-  height: 20px;
-  width: 100%;
+  background-color: transparent;
+  margin-bottom: -10px;
 }
 
 .leftCell {
@@ -68,6 +62,7 @@
   font-size: 22px;
   line-height: 1;
   padding-left: 0;
+  padding-top: 0;
 }
 
 .nameLink {
@@ -77,7 +72,7 @@
 
 .bracketed {
   position: relative;
-  padding: 6px 14px;
+  padding: 4px 8px;
 }
 
 .bracketed::before,
@@ -87,7 +82,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 10px;
+  width: 4px;
 }
 
 .bracketed::before {
@@ -139,6 +134,10 @@
     font-size: 16px;
   }
 
+  .item > div:nth-child(2){
+    margin-bottom: 0;
+  }
+
 }
 
 @media only screen and (max-width: 768px){
@@ -156,5 +155,9 @@
     padding-left: 0;
     padding-top: 0;
     padding-bottom: 25px;
+  }
+
+  .itemTag{
+    font-size: 12px;
   }
 }

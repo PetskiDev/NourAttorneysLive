@@ -3,10 +3,16 @@
   font-family: var(--font-inter);
 }
 
+html{
+  font-size: 12px;
+}
+
 body {
   padding: 0;
   margin: 0;
-
+-webkit-font-smoothing: antialiased;  /* makes text lighter on macOS */
+  -moz-osx-font-smoothing: grayscale;   /* Firefox on macOS */
+  font-smooth: always;  
   background-color: white;
   color: #101010;
 }
@@ -55,9 +61,7 @@ main {
 }
 
 header {
-  font-family: "Manrope", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: var(--font-manrope);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -153,14 +157,16 @@ body {
   background-color: #878787;
 }
 
-@media only screen and (min-width: 1024px){
-.aelement::before{
-  opacity: 0!important;
+.line {
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease-out, opacity 0.4s ease-out;
 }
 
-.aelement.revealed::before{
+.line-visible {
   opacity: 1!important;
-}
+  transform: scaleX(1);
 }
 
 
@@ -173,194 +179,201 @@ body {
 }
 
 .headline_1 {
-  font-size: 10.9vw;
-  font-weight: 700;
-  letter-spacing: -5%;
+  font-size: 11.8vw;
+  font-weight: 700; /* updated */
+  letter-spacing: -0.5vw;
   line-height: 90%;
   text-transform: uppercase;
 }
 
 .subheadline_2 {
   font-size: 1.84vw;
-  font-weight: 600;
+  font-weight: 700; /* updated */
   line-height: 110%;
   text-transform: uppercase;
-  letter-spacing: -4%;
+  letter-spacing: -0.07vw;
   font-family: var(--font-manrope);
 }
 
 .title_1 {
   font-size: 1.05vw;
   font-family: var(--font-inter), sans-serif;
-  font-weight: 600;
+  font-weight: 600; /* updated */
   color: #101010;
-  letter-spacing: -4%;
+  letter-spacing: -0.035vw;
   text-transform: uppercase;
 }
 
 .subtitle_1 {
+  font-size: 1vw;
+  font-weight: 400; /* updated */
   color: #545454;
   font-family: var(--font-inter), sans-serif;
-  font-size: 1vw;
-  letter-spacing: -4%;
+  letter-spacing: 0;
 }
 
 .accent_text_2 {
-  font-size: 1.22vw;
+  font-size: 1.33vw;
   font-family: var(--font-inter);
-  font-weight: 400;
+  font-weight: 400; /* updated */
   text-transform: uppercase;
+  letter-spacing: -0.07vw;
   line-height: 105%;
 }
 
 .headline_1_2 {
   font-size: 15vw;
-  font-weight: 700;
+  font-weight: 700; /* updated */
   text-transform: uppercase;
-  letter-spacing: -15.1;
+  letter-spacing: -0.8vw;
 }
 
 .headline_5 {
   font-size: 6vw;
-  font-weight: 600;
+  font-weight: 600; /* updated */
   letter-spacing: -5.4;
 }
 
 .body_text {
   font-size: 0.9vw;
-  font-weight: 400;
+  font-weight: 400; /* updated */
   font-family: var(--font-inter);
   color: #101010;
   line-height: 120%;
-  letter-spacing: -0.04;
+  letter-spacing: -0.04vw;
 }
 
 .title_3 {
-  font-size: 1.7vw;
-  font-weight: 500;
+  font-size: 1.5vw;
+  font-weight: 600; /* updated */
   text-transform: uppercase;
-  letter-spacing: -0.4;
+  letter-spacing: -0.04vw;
   line-height: 1;
   font-family: var(--font-manrope);
 }
 
 .subtitle_4 {
-  color: #545454;
   font-size: 1.51vw;
+  color: #545454;
   text-transform: uppercase;
   font-family: var(--font-inter);
-  font-weight: 400;
-  letter-spacing: -0.4;
+  font-weight: 500; /* updated */
+  letter-spacing: -0.07vw;
 }
 
 .headline_2 {
   font-size: 1.6vw;
-  font-weight: 500;
+  font-weight: 600; /* updated */
   text-transform: uppercase;
   letter-spacing: -0.4;
   font-family: var(--font-manrope);
 }
 
 .accent_text_1 {
-  font-size: 1.77vw;
-  font-weight: 600;
+  font-size: 1.91vw;
+  font-weight: 700; /* updated */
   text-transform: uppercase;
   line-height: 110%;
-  letter-spacing: -0.04;
+  letter-spacing: -0.08vw;
 }
 
 .title_2 {
   font-size: 1vw;
   font-family: var(--font-inter);
-  font-weight: 600;
+  font-weight: 600; /* updated */
   line-height: 120%;
-  letter-spacing: -4%;
+  letter-spacing: -0.04vw;
 }
 
 .subtitle_2 {
-  font-size: 0.9vw;
-  font-weight: 400;
+  font-size: 1vw;
+  font-weight: 400; /* updated */
   font-family: var(--font-inter);
   color: #545454;
   line-height: 120%;
+  letter-spacing: -0.04vw;
 }
 
 .descriptor_2 {
   font-size: 1vw;
-  font-weight: 500;
+  font-weight: 500; /* updated */
   font-family: var(--font-inter);
-  letter-spacing: -5%;
+  letter-spacing: -0.05vw;
 }
 
 .accent_text_3 {
+  font-size: 1.51vw;
   font-family: var(--font-inter);
-  font-weight: 400;
-  font-size: 1.49vw;
+  font-weight: 500; /* updated */
   line-height: 120%;
-  letter-spacing: -1.2;
+  letter-spacing: -0.11vw;
 }
 
 .title_5 {
-  text-transform: uppercase;
   font-size: 1vw;
-  font-weight: 500;
+  font-weight: 600; /* updated */
   font-family: var(--font-inter);
+  text-transform: uppercase;
+  letter-spacing: -0.04vw;
 }
 
 .headline_6 {
   font-size: 3.6vw;
-  font-weight: 500;
+  font-weight: 500; /* updated */
   font-family: "Manrope";
 }
 
 .headline_3_1 {
   font-size: 1.5vw;
-  font-weight: 400;
+  font-weight: 600; /* updated */
   font-family: var(--font-inter);
   line-height: 100%;
 }
 
 .headline_1_3 {
-  font-size: 5.3vw;
-  font-weight: 700;
+  font-size: 5.5vw;
+  font-weight: 700; /* updated */
   line-height: 90%;
   font-family: var(--font-manrope);
   text-transform: uppercase;
+  letter-spacing: -0.2vw;
 }
 
 .headline_3 {
-  font-size: 1.3vw;
-  font-weight: 600;
-  font-family: var(--font-manrope);
+  font-size: 1.4vw;
+  font-weight: 600; /* updated */
+  font-family: var(--font-inter);
   text-transform: uppercase;
-  letter-spacing: -0.4;
+  letter-spacing: -0.07vw;
 }
 
 .button_link {
+  font-size: 3.3vw;
   font-family: var(--font-inter);
-  font-size: 3.5vw;
-  font-weight: 400;
+  font-weight: 400; /* updated */
+  letter-spacing: -0.17vw;
 }
 
 .descriptor_1 {
   font-size: 0.9vw;
   font-family: var(--font-inter);
   line-height: 105%;
-  font-weight: 400;
+  font-weight: 400; /* updated */
+  letter-spacing: -0.05vw;
 }
 
 .footnote_2 {
   font-size: 0.8vw;
-  font-weight: 400;
+  font-weight: 400; /* updated */
   line-height: 120%;
   font-family: var(--font-inter);
 }
 
 .headline_4 {
-  font-weight: 600;
   font-size: 3.4vw;
+  font-weight: 600; /* updated */
   font-family: var(--font-manrope);
-  letter-spacing: -2.2;
+  letter-spacing: -0.2vw;
   text-transform: uppercase;
   line-height: 100%;
 }
@@ -368,98 +381,96 @@ body {
 .headline_1_4 {
   font-size: 3.4vw;
   font-family: var(--font-manrope);
-  font-weight: 700;
+  font-weight: 700; /* updated */
   line-height: 90%;
 }
 
 .headline_1_1 {
-  font-size: 8vw;
-  font-weight: 500;
+  font-size: 9vw;
+  font-weight: 500; /* updated */
   line-height: 90%;
   font-family: var(--font-manrope);
+  letter-spacing: -0.35vw;
 }
 
 .subheadline_4 {
   font-size: 1.4vw;
-  font-weight: 300;
+  font-weight: 400; /* updated */
   font-family: var(--font-inter);
   line-height: 105%;
+  letter-spacing: -0.08vw;
 }
 
 .subheadline_1 {
-  font-family: var(--font-manrope);
-  font-weight: 500;
   font-size: 2vw;
+  font-weight: 500; /* updated */
+  font-family: var(--font-manrope);
   line-height: 110%;
   text-transform: uppercase;
 }
 
-.descriptor_1 {
-  font-size: 1vw;
-  font-weight: 400;
-  font-family: var(--font-inter);
-  line-height: 105%;
-  text-transform: uppercase;
-}
-
-.title_4 {
-  font-size: 0.9vw;
-  font-family: var(--font-inter);
-  line-height: 120%;
-}
-
-.headline_1_5 {
-  font-weight: 700;
-  font-family: var(--font-manrope);
-  font-size: 5.5vw;
-  line-height: 90%;
-  letter-spacing: -3;
-}
-
-.title_4 {
-  font-size: 1vw;
-  font-weight: 400;
-  line-height: 120%;
-  font-family: var(--font-inter);
-}
-
 .subtitle_3 {
-  font-size: 1vw;
-  font-weight: 400;
-  font-family: var(--font-inter);
-}
+    font-size: 1vw;
+    font-weight: 400;
+    font-family: var(--font-inter);
+  }
+
+    .title_4 {
+    font-weight: 400;
+    font-size: 1vw;
+    font-family: var(--font-inter);
+    line-height: 120%;
+    letter-spacing: -0.06vw;
+  }
+
+  .headline_1_5 {
+    font-weight: 700;
+    font-family: var(--font-manrope);
+    font-size: 6vw;
+    line-height: 90%;
+    letter-spacing: -3;
+  }
+
+
 
 @media only screen and (min-width: 1930px) {
   .headline_1 {
     font-size: 219px;
+    letter-spacing: -0.04em;
   }
 
   .subheadline_2 {
     font-size: 36px;
+    letter-spacing: -0.04em;
   }
 
   .title_1 {
     font-size: 20px;
+    letter-spacing: -0.04em;
   }
 
   .subtitle_1 {
     font-size: 18px;
+    letter-spacing: -0.04em;
   }
 
   .accent_text_2 {
-    font-family: var(--font-inter);
-    font-weight: 400;
     font-size: 24px;
+    font-weight: 400;
+    font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .headline_1_2 {
     font-size: 280px;
     font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   .headline_5 {
     font-size: 100px;
     font-weight: 600;
+    letter-spacing: -0.04em;
   }
 
   .body_text {
@@ -467,29 +478,27 @@ body {
     font-weight: 400;
     font-family: var(--font-inter);
     color: #101010;
+    letter-spacing: -0.04em;
   }
 
   .title_3 {
-    font-size: #101010;
     font-size: 28px;
     font-weight: 600;
-    letter-spacing: -4%;
+    letter-spacing: -0.04em;
   }
 
   .subtitle_4 {
-    color: #545454;
     font-size: 24px;
-    text-transform: uppercase;
-    font-family: var(--font-inter);
     font-weight: 500;
-    letter-spacing: -4%;
+    font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .headline_2 {
     font-size: 26px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: -4%;
+    letter-spacing: -0.04em;
   }
 
   .accent_text_1 {
@@ -497,15 +506,15 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     line-height: 110%;
-    letter-spacing: -0.04;
+    letter-spacing: -0.04em;
   }
 
   .title_2 {
     font-size: 18px;
-    font-family: var(--font-inter);
     font-weight: 600;
     line-height: 120%;
-    letter-spacing: -4%;
+    font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .subtitle_2 {
@@ -513,34 +522,37 @@ body {
     font-weight: 400;
     font-family: var(--font-inter);
     color: #545454;
+    letter-spacing: -0.04em;
   }
 
   .descriptor_2 {
     font-size: 18px;
     font-weight: 500;
     font-family: var(--font-inter);
-    letter-spacing: -5%;
+    letter-spacing: -0.04em;
   }
 
   .accent_text_3 {
-    font-family: var(--font-inter);
-    font-weight: 500;
     font-size: 28px;
+    font-weight: 500;
+    font-family: var(--font-inter);
     line-height: 120%;
-    letter-spacing: -7%;
+    letter-spacing: -0.04em;
   }
 
   .title_5 {
-    text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
     font-family: var(--font-inter);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
   }
 
   .headline_6 {
     font-size: 66px;
     font-weight: 500;
     font-family: "Manrope";
+    letter-spacing: -0.04em;
   }
 
   .headline_3_1 {
@@ -548,32 +560,38 @@ body {
     font-weight: 400;
     font-family: var(--font-inter);
     line-height: 100%;
+    letter-spacing: -0.04em;
   }
 
   .headline_1_3 {
     font-size: 100px;
     font-weight: 700;
-    line-height: 90%;
     font-family: var(--font-manrope);
+    line-height: 90%;
+    letter-spacing: -0.04em;
   }
 
   .headline_3 {
     font-size: 24px;
     font-weight: 600;
     font-family: var(--font-manrope);
+    letter-spacing: -0.04em;
   }
 
   .button_link {
-    font-family: var(--font-inter);
     font-size: 66px;
     font-weight: 400;
+    font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .descriptor_1 {
     font-size: 18px;
+    font-weight: 400;
     font-family: var(--font-inter);
     line-height: 105%;
-    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
   }
 
   .footnote_2 {
@@ -581,29 +599,32 @@ body {
     font-weight: 400;
     line-height: 120%;
     font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .headline_4 {
-    font-weight: 600;
     font-size: 66px;
+    font-weight: 600;
     font-family: var(--font-manrope);
-    letter-spacing: -2.2;
-    text-transform: uppercase;
     line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
   }
 
   .headline_1_4 {
     font-size: 66px;
-    font-family: var(--font-manrope);
     font-weight: 700;
+    font-family: var(--font-manrope);
     line-height: 90%;
+    letter-spacing: -0.04em;
   }
 
   .headline_1_1 {
-    font-size: 160px;
+    font-size: 180px;
     font-weight: 500;
-    line-height: 90%;
     font-family: var(--font-manrope);
+    line-height: 90%;
+    letter-spacing: -0.04em;
   }
 
   .subheadline_4 {
@@ -611,51 +632,42 @@ body {
     font-weight: 400;
     font-family: var(--font-inter);
     line-height: 105%;
+    letter-spacing: -0.04em;
   }
 
   .subheadline_1 {
-    font-family: var(--font-manrope);
-    font-weight: 500;
     font-size: 36px;
+    font-weight: 500;
+    font-family: var(--font-manrope);
     line-height: 110%;
     text-transform: uppercase;
-  }
-
-  .descriptor_1 {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: var(--font-inter);
-    line-height: 105%;
-    text-transform: uppercase;
+    letter-spacing: -0.04em;
   }
 
   .title_4 {
     font-size: 18px;
+    font-weight: 400;
     font-family: var(--font-inter);
     line-height: 120%;
+    letter-spacing: -0.04em;
   }
 
   .headline_1_5 {
+    font-size: 110px;
     font-weight: 700;
     font-family: var(--font-manrope);
-    font-size: 110px;
     line-height: 90%;
-    letter-spacing: -3;
-  }
-
-  .title_4 {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 120%;
-    font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 
   .subtitle_3 {
     font-size: 18px;
     font-weight: 400;
     font-family: var(--font-inter);
+    letter-spacing: -0.04em;
   }
 }
+
 
 @media only screen and (max-width: 1024px) {
   .studies-boxes {
@@ -741,3 +753,29 @@ body {
     font-size: 3.8vw;
   }
 }
+
+.line-svg path {
+  transition: stroke-dashoffset 2s ease-out;
+}
+
+.line-svg.revealed path {
+  stroke-dashoffset: 0;
+}
+
+/* main>section:not(:first-child){
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}main>section:not(:first-child)>.containerr{
+  padding-top: 75px!important;
+  padding-bottom: 75px!important;
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+main>section:nth-child(2)>.containerr{
+  padding-top: 150px!important;
+  padding-bottom: 75px!important;
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+} */

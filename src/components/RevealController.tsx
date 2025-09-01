@@ -1,185 +1,77 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 type Props = {
   /** CSS selector for targets to reveal */
   selector?: string;
-  /** Distance above the bottom of the viewport where fade begins (px) */
-  bottomZoneStartPx?: number;
-  /** Vertical size of the fade zone (px) going upward from start */
-  fadeZonePx?: number;
-  /** Duration for initial on-load fade for elements in viewport (ms) */
-  initialFadeMs?: number;
+  /** Intersection threshold */
+  threshold?: number;
+  /** Animation duration (ms) */
+  durationMs?: number;
+  /** Offset margin for earlier/later reveal */
+  rootMargin?: string;
 };
 
-// Note: SmoothScrollProvider dispatches a 'virtualscroll' event; we don't need the type here.
-
-function isElement(n: Node): n is Element {
+function isElement(n: Node): n is HTMLElement {
   return n.nodeType === 1;
 }
 
 export default function RevealController({
-  selector = "h1,h2,h3,h4,h5,h6,.accent-text,.animated",
-  bottomZoneStartPx = 100,
-  fadeZonePx = 200,
-  initialFadeMs = 1500,
+  selector = "h1,h2,h3,h4,h5,h6,.accent-text,.animated,.body_text,.title_1,.title_2,.title_3,.title_4,.title_5,.study-box,.subtitle_2,.subheadline_1,p",
+  threshold = 0.15,
+  durationMs = 600,
+  rootMargin = "0px 0px -10% 0px",
 }: Props) {
   const pathname = usePathname();
-
-  const contentRootRef = useRef<HTMLElement | null>(null);
-  const mutationObserverRef = useRef<MutationObserver | null>(null);
-  const elementsRef = useRef<Set<Element>>(new Set());
-  const initiallyAnimatedRef = useRef<WeakSet<Element>>(new WeakSet());
-  const isBootingRef = useRef<boolean>(true);
-
-  const zoneParams = useMemo(() => ({ bottomZoneStartPx, fadeZonePx }), [bottomZoneStartPx, fadeZonePx]);
-
-  // Map element top to opacity using only the bottom-of-screen zone
-  const computeOpacityForTop = useCallback((elTop: number, viewportH: number, params: { bottomZoneStartPx: number; fadeZonePx: number }) => {
-    const zoneStartY = viewportH - params.bottomZoneStartPx; // just above bottom
-    const zoneEndY = zoneStartY - params.fadeZonePx;         // farther up from bottom
-
-    if (elTop >= zoneStartY) return 0; // below/at zone start: invisible
-    if (elTop <= zoneEndY) return 1;   // past end: fully visible
-    const t = (zoneStartY - elTop) / (zoneStartY - zoneEndY); // 0..1
-    return Math.max(0, Math.min(1, t));
-  }, []);
-
-  const ensureTargetsListed = useCallback(() => {
-    const root = contentRootRef.current;
-    if (!root) return;
-    root.querySelectorAll(selector).forEach((el) => elementsRef.current.add(el));
-  }, [selector]);
-
-  const styleInitialStates = useCallback(() => {
-  const vh = window.innerHeight;
-  elementsRef.current.forEach((el) => {
-    const htmlEl = el as HTMLElement;
-    const r = htmlEl.getBoundingClientRect();
-    const elementHeight = r.height;
-const threshold = elementHeight * 0.1; // 20% must be visible (adjust this)
-
-const visibleNow =
-  r.top < vh - threshold &&
-  r.bottom > threshold &&
-  r.width > 0 &&
-  elementHeight > 0;
-
-
-    // Start hidden
-    htmlEl.style.opacity = "0";
-    htmlEl.style.willChange = "opacity";
-    htmlEl.style.transition = "opacity 0.6s ease";
-
-    if (visibleNow) {
-      // Ensure fade-in runs from 0 → 1, not snap
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          htmlEl.style.transition = `opacity ${initialFadeMs}ms ease`;
-          htmlEl.style.opacity = "1";
-          initiallyAnimatedRef.current.add(htmlEl);
-
-          // After animation ends, remove transition so scroll updates are instant
-          window.setTimeout(() => {
-            if (htmlEl.isConnected) {
-              htmlEl.style.transition = "opacity 0s";
-            }
-          }, initialFadeMs + 50);
-        });
-      });
-    }
-  });
-}, [initialFadeMs]);
-
-
-  const updateOnScroll = useCallback(() => {
-    if (isBootingRef.current) return;
-    const vh = window.innerHeight;
-    const params = zoneParams;
-    elementsRef.current.forEach((el) => {
-      const htmlEl = el as HTMLElement;
-      if (!htmlEl.isConnected) return;
-      const r = htmlEl.getBoundingClientRect();
-      if (r.width <= 0 || r.height <= 0) return;
-
-      const top = r.top;
-      const opacity = computeOpacityForTop(top, vh, params);
-      htmlEl.style.opacity = String(opacity);
-    });
-  }, [zoneParams, computeOpacityForTop]);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const contentRoot = document.querySelector<HTMLElement>("[data-reveal-content]");
-    if (!contentRoot) return;
-    contentRootRef.current = contentRoot;
+    const root = document.querySelector<HTMLElement>("[data-reveal-content]");
+    if (!root) return;
 
-    // Collect initial targets and set styles
-    isBootingRef.current = true;
-    ensureTargetsListed();
-    styleInitialStates();
-    // Defer the first mapping until after initial transitions are applied
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        isBootingRef.current = false;
-        updateOnScroll();
-      });
-    });
+    // Reset any old observer
+    observerRef.current?.disconnect();
 
-    // Listen to virtual scroll events from SmoothScrollProvider
-    const onVirtualScroll = () => updateOnScroll();
-    window.addEventListener("virtualscroll", onVirtualScroll as EventListener);
-
-    // Resize should also re-map opacities
-    const onResize = () => updateOnScroll();
-    window.addEventListener("resize", onResize);
-
-    // Track DOM changes inside content
-    const mo = new MutationObserver((mutations) => {
-      let needsStyle = false;
-      for (const m of mutations) {
-        m.addedNodes.forEach((n) => {
-          if (!isElement(n)) return;
-          if (n.matches(selector)) {
-            elementsRef.current.add(n);
-            needsStyle = true;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+            el.style.transition = `opacity ${durationMs}ms ease-out, transform ${durationMs}ms ease-out`;
+            observer.unobserve(el); // animate once
           }
-          n.querySelectorAll?.(selector).forEach((child) => {
-            elementsRef.current.add(child);
-            needsStyle = true;
-          });
         });
-        m.removedNodes.forEach((n) => {
-          if (!isElement(n)) return;
-          if (elementsRef.current.has(n)) elementsRef.current.delete(n);
-          n.querySelectorAll?.(selector).forEach((child) => elementsRef.current.delete(child));
-        });
-      }
-      if (needsStyle) {
-        // Apply initial style to any newly added nodes
-        styleInitialStates();
-        // Defer mapping to let transitions attach
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            updateOnScroll();
-          });
-        });
-      }
-    });
-    mo.observe(contentRoot, { childList: true, subtree: true });
-    mutationObserverRef.current = mo;
+      },
+      { threshold, rootMargin }
+    );
 
-    const elementsSet = elementsRef.current;
+    // Classes to skip
+    const antiClasses = ["antiselector"];
+
+    // Apply initial hidden state to all matches
+    root.querySelectorAll(selector).forEach((n) => {
+      if (!isElement(n)) return;
+
+      // Skip if element has any anti class
+      if (antiClasses.some((cls) => n.classList.contains(cls))) return;
+
+      n.style.opacity = "0";
+      n.style.transform = "translateY(30px)";
+      n.style.willChange = "opacity, transform";
+      observer.observe(n);
+    });
+
+    observerRef.current = observer;
+
     return () => {
-      window.removeEventListener("virtualscroll", onVirtualScroll as EventListener);
-      window.removeEventListener("resize", onResize);
-      mutationObserverRef.current?.disconnect();
-      mutationObserverRef.current = null;
-      elementsSet.clear();
-      contentRootRef.current = null;
+      observer.disconnect();
+      observerRef.current = null;
     };
-  }, [selector, zoneParams, pathname, initialFadeMs, ensureTargetsListed, styleInitialStates, updateOnScroll]);
+  }, [pathname, selector, threshold, rootMargin, durationMs]);
 
   return null;
 }

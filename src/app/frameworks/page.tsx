@@ -85,6 +85,7 @@ export default async function AboutUsPage() {
               </p>
             </div>
           </div>
+          <div className="line"></div>
           <div className={styles.frameworksRowTwo}>
             <div>
               <p className="descriptor_1">
@@ -131,6 +132,7 @@ export default async function AboutUsPage() {
             </div>
           </div>
 
+          <div className="line"></div>
           <div className={styles.frameworksRowTwo}>
             <div>
               <p className="descriptor_1">
@@ -383,11 +385,11 @@ export default async function AboutUsPage() {
                   />
                 </div>
                 <p className="subtitle_2">
-                  You&apos;ll sleep better knowing that potential legal issues are
-                  identified and addressed before they become expensive
+                  You&apos;ll sleep better knowing that potential legal issues
+                  are identified and addressed before they become expensive
                   problems. Your framework acts as an early warning system,
-                  catching issues while they&apos;re still manageable and inexpensive
-                  to resolve.
+                  catching issues while they&apos;re still manageable and
+                  inexpensive to resolve.
                 </p>
               </div>
               <div className="study-box">
@@ -404,10 +406,10 @@ export default async function AboutUsPage() {
                 </div>
                 <p className="subtitle_2">
                   By handling routine legal matters through your framework
-                  instead of hiring lawyers for every decision, you&apos;ll reduce
-                  your legal expenses significantly while actually improving
-                  your legal protection. The framework pays for itself many
-                  times over through the problems it prevents.
+                  instead of hiring lawyers for every decision, you&apos;ll
+                  reduce your legal expenses significantly while actually
+                  improving your legal protection. The framework pays for itself
+                  many times over through the problems it prevents.
                 </p>
               </div>
             </div>
@@ -449,8 +451,8 @@ export default async function AboutUsPage() {
                   As your business grows, your investments expand, or your
                   professional activities become more complex, your framework
                   grows with you. You&apos;re not constantly rebuilding legal
-                  protections - you&apos;re building on a foundation that becomes
-                  stronger and more valuable over time.
+                  protections - you&apos;re building on a foundation that
+                  becomes stronger and more valuable over time.
                 </p>
               </div>
             </div>

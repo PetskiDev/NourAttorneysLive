@@ -151,6 +151,7 @@ export default async function ServicePage({
             You
           </h4>
 
+<div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
               <div className="title_5">[01]</div>
@@ -183,6 +184,7 @@ export default async function ServicePage({
             </div>
           </div>
 
+<div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
               <div className="title_5">[02]</div>
@@ -212,6 +214,7 @@ export default async function ServicePage({
             </div>
           </div>
 
+<div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
               <div className="title_5">[03]</div>
@@ -239,6 +242,7 @@ export default async function ServicePage({
             </div>
           </div>
 
+<div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
               <div className="title_5">[04]</div>
@@ -287,7 +291,7 @@ export default async function ServicePage({
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Corporate defense: neutralizing a hostile takeover
+                    Growing businesses facing complexity
                   </div>
                   <Image
                     alt="balls"
@@ -297,16 +301,17 @@ export default async function ServicePage({
                   />
                 </div>
                 <p className="subtitle_2">
-                  A technology startup faced a forced buyout - we drafted a
-                  shareholder agreement with strategic veto power. The offer
-                  failed and the client received $20 million in growth
-                  financing.
+                  If your business is expanding rapidly, entering new markets,
+                  or dealing with increasingly sophisticated clients and
+                  suppliers, you need a legal framework that can scale with your
+                  growth. The informal approaches that worked when you were
+                  small become dangerous liabilities as you grow.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    ESG breakthrough: from greenwashing to industry leader
+                    Investment and transaction-heavy operations
                   </div>
                   <Image
                     alt="balls"
@@ -316,10 +321,11 @@ export default async function ServicePage({
                   />
                 </div>
                 <p className="subtitle_2">
-                  The manufacturer faced reputational damage due to
-                  environmental claims - we rewrote the contracts to include
-                  verifiable metrics. In a year the company was ranked 3rd in
-                  the ESG rating.
+                  Whether you are an active investor, a business that engages in
+                  multiple transactions on a daily basis, or an individual with
+                  significant ongoing contractual relationships, having a
+                  standardized framework saves you from having to invent new
+                  remedies for each transaction.
                 </p>
               </div>
             </div>
@@ -328,7 +334,7 @@ export default async function ServicePage({
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Arbitration win: turning the tables on a $50M Default
+                    Regulated industries and compliance-heavy environments
                   </div>
                   <Image
                     alt="balls"
@@ -338,16 +344,17 @@ export default async function ServicePage({
                   />
                 </div>
                 <p className="subtitle_2">
-                  A contractor refused payment, citing &quot;breach of
-                  contract&quot; - we exposed flawed arbitration clauses and
-                  shifted the forum. The client recovered every dollar, plus 12%
-                  penalties.
+                  If your business operates in an environment with significant
+                  regulatory requirements, a framework ensures you stay
+                  compliant while maintaining operational efficiency. This is
+                  crucial in finance, healthcare, technology, international
+                  trade.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Tax revival: resurrecting a cross-border deal
+                    Businesses seeking competitive advantage
                   </div>
                   <Image
                     alt="balls"
@@ -357,9 +364,11 @@ export default async function ServicePage({
                   />
                 </div>
                 <p className="subtitle_2">
-                  A European holding company bled €2M yearly from double
-                  taxation - we restructured its entity chain via treaty
-                  jurisdictions. Now, they save €1.8M annually, compliantly.
+                  Companies that can move quickly and confidently on legal
+                  matters have a significant competitive advantage. While
+                  competitors are consulting lawyers for routine decisions,
+                  you&apos;re executing with confidence based on your established
+                  framework.
                 </p>
               </div>
             </div>

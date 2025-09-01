@@ -20,7 +20,7 @@
 }
 
 .heroRight>div{
-    width: 65%;
+    width: 72%;
     margin-left: 1%;
     color: #B7B7B7;
 }
@@ -39,7 +39,7 @@
 }
 
 .oneLeft>div{
-    width: 40%;
+    width: 50%;
     color: #545454;
 }
 
@@ -47,6 +47,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.oneRight div{
+    margin: 5px 0;
+    margin-top: 10px;
 }
 
 .oneRight>*{
@@ -78,14 +83,19 @@
 .frameworksThree>div{
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 2% 0;
+    padding-top: 130px;
     gap: 10px;
+}
+
+.frameworksTwo ::marker{
+    color: #101010;
 }
 
 .frameworksThree h4{
     width: 65%;
     text-align: center;
+    margin: 0 auto;
 }
 
 .threeRow{
@@ -94,15 +104,15 @@
     padding-top: 30px;
 }
 
-.threeRow::before{
+.frameworksThree :global(.line){
     height: 1vw;
     width: 75%;
-    content: "";
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
-    position: absolute;
-    top: 15px;
+    background-color: transparent;
+    margin-bottom: -40px;
+    margin-top: 20px;
 }
 
 .threeLeft{
@@ -119,6 +129,10 @@
     color: #545454;
 }
 
+.threeLeft>div:nth-child(2){
+    width: 31.39%;
+}
+
 .threeRight{
     width: 50%;
     display: flex;
@@ -128,6 +142,7 @@
 
 .threeRight>*{
     width: 50%;
+    color: #545454;
 }
 
 .frameworksFour>div{
@@ -209,15 +224,41 @@
     width: 4vw;
 }
 
-.fiveRight img{
+.fiveRight>img{
     display: none;
+}
+
+.fiveRight p{
+    color: #545454;
+}
+
+.fiveRight :global(.title_3){
+    margin-top: 10px;
 }
 
 .frameworksHero img{
     display: none;
 }
 
+.frameworksFive :global(.study-box){
+    gap: 10px;
+}
 
+.frameworksFive :global(.study-box)>div:first-child{
+    flex-direction: column;
+}
+
+.frameworksFive :global(.study-box)>div:first-child>div:first-child{
+    order: 5;
+}
+
+.frameworksFive>div h6:nth-of-type(1){
+    margin-top: 2%;
+}
+.frameworksFive>div h6:nth-of-type(2){
+    margin-left: 25%;
+    width: 75%;
+}
 
 
 
@@ -239,6 +280,15 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+    }
+
+    .frameworksThree :global(.line){
+        width: 100%;
+        height: 20px;
+    }
+
+    .threeLeft > div:nth-child(2){
+        width: 100%;
     }
 
     .heroRow>div{

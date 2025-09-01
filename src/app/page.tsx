@@ -10,7 +10,7 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <main>
-      <section style={{paddingTop: 60}} className={styles.hero}>
+      <section style={{ paddingTop: 10 }} className={styles.hero}>
         <div className="containerr">
           <h1 className="headline_1_1">YOUR</h1>
           <h1 className="headline_1_1">TRUSTED PARTNER IN</h1>
@@ -24,6 +24,13 @@ export default async function Home() {
               sense of self-accountability: “All for one, one for all.”
             </h4>
           </div>
+          <Image
+            src={"/home-mobile.svg"}
+            alt="line"
+            className={`${styles.homeMobile} mob`}
+            width={40}
+            height={40}
+          />
           <Link href={"/contact"}>contact us</Link>
           <Image
             src={"/home-line-1.svg"}
@@ -47,12 +54,12 @@ export default async function Home() {
             height={40}
           />
           <Image
-          src={"/home-line-6.svg"}
-          alt="line"
-          className={styles.line6}
-          width={40}
-          height={40}
-        />
+            src={"/home-line-6.svg"}
+            alt="line"
+            className={styles.line6}
+            width={40}
+            height={40}
+          />
         </div>
         <Image
           src={"/home-line-4.svg"}
@@ -85,7 +92,13 @@ export default async function Home() {
             THROUGH PERSONALIZED LEGAL INTELLIGENCE
           </h4>
 
-          <Image src={"/home-element.svg"} className="linee" alt="line" width={40} height={40} />
+          <Image
+            src={"/home-element.svg"}
+            className="line-svg"
+            alt="line"
+            width={40}
+            height={40}
+          />
 
           <div className={styles.aboutBoxes}>
             <div className={styles.aboutBox}>
@@ -102,13 +115,17 @@ export default async function Home() {
 
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.03</h3>
-              <h5 className="subheadline_2">Win More Deals</h5>
+              <h5 className="subheadline_2">
+                Win More<br></br>Deals
+              </h5>
               <p className="body_text">through superior legal strategy</p>
             </div>
 
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.04</h3>
-              <h5 className="subheadline_2">through superior legal strategy</h5>
+              <h5 className="subheadline_2">
+                Eliminate<br></br>contract risks
+              </h5>
               <p className="body_text">while creating competitive advantages</p>
             </div>
           </div>
@@ -373,13 +390,15 @@ export default async function Home() {
 
           <div className="studies-boxes">
             <div className={styles.studyAbs}>
-              <div className="descriptor_1">Proving that law can be sustainable</div>
+              <div className="descriptor_1">
+                Proving that law can be sustainable
+              </div>
             </div>
             <div className="studies-boxes-top">
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Corporate defense: neutralizing a hostile takeover
+                    Build Your Business with Unshakeable Legal Confidence{" "}
                   </div>
                   <Image
                     alt="balls"
@@ -389,16 +408,17 @@ export default async function Home() {
                   />
                 </div>
                 <p className="subtitle_2">
-                  A technology startup faced a forced buyout - we drafted a
-                  shareholder agreement with strategic veto power. The offer
-                  failed and the client received $20 million in growth
-                  financing.
+                  Growing your business creates complex legal challenges. We
+                  build a comprehensive legal framework — your business&apos;s legal
+                  operating system. This provides smart contracts and clear
+                  policies, giving you the confidence to operate, make bold
+                  decisions and grow without constant legal.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    ESG breakthrough: from greenwashing to industry leader
+                    The Strategic Components That Power Your Legal Success{" "}
                   </div>
                   <Image
                     alt="balls"
@@ -408,10 +428,11 @@ export default async function Home() {
                   />
                 </div>
                 <p className="subtitle_2">
-                  The manufacturer faced reputational damage due to
-                  environmental claims - we rewrote the contracts to include
-                  verifiable metrics. In a year the company was ranked 3rd in
-                  the ESG rating.
+                  Transforming scattered legal documents into integrated systems
+                  that enable reliant growth. We build 5 strategic components:
+                  compliance systems, master agreements, operational policies,
+                  document templates, and industry standards that turn legal
+                  requirements into competitive advantages.{" "}
                 </p>
               </div>
             </div>
@@ -420,7 +441,7 @@ export default async function Home() {
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Arbitration win: turning the tables on a $50M Default
+                    The Life-Changing Benefits That Transform Your Success{" "}
                   </div>
                   <Image
                     alt="balls"
@@ -430,16 +451,17 @@ export default async function Home() {
                   />
                 </div>
                 <p className="subtitle_2">
-                  A contractor refused payment, citing &quot;breach of
-                  contract&quot; - we exposed flawed arbitration clauses and
-                  shifted the forum. The client recovered every dollar, plus 12%
-                  penalties.
+                  We deliver five benefits: risk transformation enabling growth,
+                  proactive protection preventing surprises, financial freedom
+                  through cost control, operational excellence accelerating
+                  everything, and knowledge empowerment building lasting
+                  capabilities.
                 </p>
               </div>
               <div className="study-box">
                 <div>
                   <div className="title_2">
-                    Tax revival: resurrecting a cross-border deal
+                    Our Proven Process for Building Your Legal Foundation{" "}
                   </div>
                   <Image
                     alt="balls"
@@ -449,9 +471,10 @@ export default async function Home() {
                   />
                 </div>
                 <p className="subtitle_2">
-                  A European holding company bled €2M yearly from double
-                  taxation - we restructured its entity chain via treaty
-                  jurisdictions. Now, they save €1.8M annually, compliantly.
+                  We use a proven seven-step transformation process: strategic
+                  discovery, proposal development, stakeholder engagement, risk
+                  assessment, transparent investment planning, meticulous
+                  framework development, and implementation support.
                 </p>
               </div>
             </div>

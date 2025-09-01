@@ -135,24 +135,28 @@ export default async function PartnerPage({
                 blockKey="partnerStoryParagraph1"
                 placeholderContent="Transaction for Me was founded in 2010 with a clear vision to revolutionize how businesses conduct financial transactions. The company began by developing simple digital payment solutions but soon recognized the need for more sophisticated corporate transaction services. Early on, Transaction for Me established strategic partnerships with leading legal firms to integrate professional legal oversight into its technological platform. This unique combination of fintech innovation and legal expertise became the company&apos;s distinguishing feature in the market."
                 placeholderTag="p"
+                className="body_text"
               />
               <EditableText
                 relUrl={relUrl}
                 blockKey="partnerStoryParagraph2"
                 placeholderContent="The core of Transaction for Me&apos;s service is its proprietary automated transaction platform, which handles everything from initial due diligence to final contract execution. By implementing blockchain technology, the company ensured enhanced security and transparency for all transactions processed through its system. Transaction for Me&apos;s platform also introduced smart contract capabilities, allowing for self-executing agreements under predefined conditions. These technological advancements significantly reduced processing times while minimizing human error and operational costs for clients."
                 placeholderTag="p"
+                className="body_text"
               />
               <EditableText
                 relUrl={relUrl}
                 blockKey="partnerStoryParagraph3"
                 placeholderContent="Over the years, Transaction for Me expanded its services to cater to both small businesses and large corporations across various industries. The company developed specialized solutions for cross-border transactions, mergers and acquisitions, and high-volume payment processing. Transaction for Me&apos;s ability to adapt to different regulatory environments and business needs contributed to its rapid growth and international expansion. By 2015, the company had established itself as a reliable partner for complex financial operations in multiple jurisdictions."
                 placeholderTag="p"
+                className="body_text"
               />
               <EditableText
                 relUrl={relUrl}
                 blockKey="partnerStoryParagraph4"
                 placeholderContent="Looking ahead, Transaction for Me plans to further develop its decentralized finance capabilities and expand into new global markets. The company remains focused on its mission to make financial transactions more efficient, secure, and accessible for businesses worldwide. With its strong foundation and forward-thinking strategy, Transaction for Me continues to set new standards in the fintech industry while maintaining its reputation for excellence and reliability. The company&apos;s journey from a startup to an industry leader demonstrates the transformative power of combining technology with professional financial and legal expertise"
                 placeholderTag="p"
+                className="body_text"
               />
             </div>
           </div>

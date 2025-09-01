@@ -17,12 +17,17 @@
     color: #B7B7B7;
 }
 
+.frameworksHero h1{
+    margin-bottom: 20px;
+}
+
 .frameworksHero>div>p {
-    width: 42%;
-    font-size: 1.5vw;
+    width: 38.5%;
+    font-size: 1.05vw;
     font-weight: 500;
     font-family: var(--font-manrope);
     line-height: 100%;
+    letter-spacing: 0.04vw;
 }
 
 .frameworksHero>div>* {
@@ -33,7 +38,7 @@
 .frameworksHero img {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     width: 120%;
     height: auto;
@@ -64,7 +69,7 @@
 }
 
 .frameworksRow p {
-    width: 55%;
+    width: 45%;
 }
 
 .frameworksMain p {
@@ -77,17 +82,16 @@
     margin-top: 4vw;
 }
 
-.frameworksRowTwo::before {
-    content: "";
-    position: absolute;
+.frameworksMain :global(.line){
     height: 2vw;
     width: 60%;
-    left: 50%;
-    top: -2vw;
-    transform: translateX(-50%);
+    margin: 0 auto;
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
+    background-color: transparent;
+    margin-bottom: -50px;
+    margin-top: 40px;
 }
 
 .frameworksRowTwo>div:nth-child(1) {
@@ -109,6 +113,7 @@
 
 .frameworksRowTwo>div:nth-child(2)>p {
     width: 45%;
+    margin-top: 0.2vw;
     margin-bottom: 1vw;
 }
 
@@ -379,7 +384,16 @@
     .frameworksRowTwo > div:first-child > p{
         text-align: center;
         font-size: 16px;
-        margin: 10px 0;
+        margin: 10px auto;
+        padding: 0;
+        width: 100%;
+        max-width: 230px;
+        margin-bottom: 20px;
+    }
+
+    .frameworksMain :global(.line){
+        width: 100%;
+        margin-bottom: -40px;
     }
 
     .frameworksRowTwo > div:nth-child(2) > *{

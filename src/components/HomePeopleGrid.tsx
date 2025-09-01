@@ -144,7 +144,7 @@ function renderPersonCard(
           />
         ) : null}
       </div>
-      <div className={styles.title + " title_1"}>{person.name}</div>
+      <div className={styles.title + " title_1" + " antiselector"}>{person.name}</div>
       <div className={styles.subtitle + " subtitle_1"}>{person.role}</div>
     </div>
   );

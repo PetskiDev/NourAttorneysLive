@@ -51,6 +51,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">Compliance and Reportin</div>
               <div>
@@ -63,6 +64,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">Tax Advisory for Businesses</div>
               <div>
@@ -75,6 +77,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">Individual Tax Services</div>
               <div>
@@ -87,6 +90,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">Tax Dispute Resolution</div>
               <div>
@@ -99,6 +103,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">International Taxation</div>
               <div>
@@ -111,6 +116,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
             <div className={styles.approachRow}>
               <div className="title_1">VAT and Indirect Taxes</div>
               <div>
@@ -122,6 +128,7 @@ export default async function Advertisement() {
                 </p>
               </div>
             </div>
+            <div className="line"></div>
           </div>
         </div>
       </section>

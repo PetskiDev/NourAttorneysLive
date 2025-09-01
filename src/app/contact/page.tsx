@@ -22,7 +22,7 @@ export default async function ContactPage() {
             <div className={styles.rightHeroBox}>
               <h4 className="subheadline_2">Book a consultation</h4>
               <h6 className="subheadline_4">
-                To book a consulattion, use <Link style={{textDecoration: "underline"}} href={"/."}>the link</Link>
+                To book a consultation, use <Link style={{borderBottom: "1px solid #101010;"}} href={"/."}>the link</Link>
               </h6>
               <p className="body_text">
                 Office visits are by appointment only and subject to office
@@ -129,7 +129,8 @@ export default async function ContactPage() {
               <div className="title_3">STAY CONNECTED</div>
             </div>
             <div className={styles.contactRight}>
-              <div className={`${styles.contactElement} aelement`}>
+              <div className="line"></div>
+              <div className={`${styles.contactElement}`}>
                 <div className="title_1">NEED QUICK HELP?</div>
                 <p className="body_text">Use our smart legal assistant.</p>
                 <Link href={"tel:+971 58 555 2999"}>
@@ -143,7 +144,8 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className={`${styles.contactElement} aelement`}>
+              <div className="line"></div>
+              <div className={`${styles.contactElement}`}>
                 <div className="title_1">Join Our Mailing List</div>
                 <p className="body_text">
                   Get insights, events, and legal updates straight to your
@@ -160,7 +162,8 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className={`${styles.contactElement} aelement`}>
+              <div className="line"></div>
+              <div className={`${styles.contactElement}`}>
                 <div className="title_1">Events & Webinars</div>
                 <p className="body_text">
                   Discover how we&apos;re redefining legal practice - attend our
@@ -177,7 +180,8 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className={`${styles.contactElement} aelement`}>
+              <div className="line"></div>
+              <div className={`${styles.contactElement}`}>
                 <div className="title_1">Careers & Internships</div>
                 <p className="body_text">
                   Connect your passion to a bigger mission - join our team.
@@ -193,7 +197,8 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className={`${styles.contactElement} aelement`}>
+              <div className="line"></div>
+              <div className={`${styles.contactElement}`}>
                 <div className="title_1">Visit Us</div>
                 <p className="body_text">Find our office location.</p>
                 <Link href={"tel:+971 58 555 2999"}>

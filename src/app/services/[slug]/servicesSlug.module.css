@@ -18,7 +18,7 @@
 }
 
 .servicesHero p{
-    width: 35%;
+    width: 36%;
     position: relative;
     z-index: 5;
     margin-left: 50%;
@@ -134,7 +134,6 @@
 
 @media only screen and (max-width: 1440px){
     .servicesHero p{
-        font-weight: 400;
         font-size: 1.4vw;
     }
 }

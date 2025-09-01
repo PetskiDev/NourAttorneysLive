@@ -12,10 +12,10 @@
 
 .contactAbs{
     position: absolute;
-    top: 50%;
-    left: 30%;
+    top: 44%;
+    left: 35%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 55%;
     height: auto;
 }
 
@@ -32,7 +32,6 @@
 .leftHero h5 {
     width: 90%;
     margin-top: 5px;
-    font-weight: 300;
     animation: appearing 1.5s forwards ease;
 }
 
@@ -65,20 +64,66 @@
 .rightHeroBox {
     display: flex;
     flex-direction: column;
-    padding: 25px 25px;
+    padding: 20px 15px;
     background-color: white;
     color: #101010;
     gap: 10px;
-    width: 69%;
-    animation: boxAnimation 2s ease forwards;
+    width: 75%;
 }
 
-@keyframes boxAnimation{
+.rightHeroBox:nth-child(1){
+    animation: boxAnimation1 2s ease forwards;
+}
+
+.rightHeroBox:nth-child(2){
+    animation: boxAnimation2 2s ease forwards;
+
+}
+.rightHeroBox:nth-child(3){
+    animation: boxAnimation3 2s ease forwards;
+
+}
+
+.boxLinkDiv:has(img){
+    margin-top: -5px;
+}
+
+@keyframes boxAnimation1{
     from{
         opacity: 0;
         transform: translateY(50px);
     }
     50%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes boxAnimation2{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    60%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes boxAnimation3{
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    70%{
         opacity: 0;
         transform: translateY(50px);
     }
@@ -98,12 +143,8 @@
 
 .rightHeroBox>h4 {
     width: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 25px;
     border-bottom: 1px solid #C4C4C4;
-}
-
-.rightHeroBox:first-child>a {
-    text-decoration: underline;
 }
 
 .rightHeroBox .boxLinkDiv {
@@ -150,7 +191,7 @@
 }
 
 .aiContactBox a {
-    text-decoration: underline;
+    border-bottom: 1px solid #101010;
 }
 
 .contactMain>div {
@@ -230,17 +271,17 @@
     height: 2.1vw;
 }
 
-.contactElement::before {
-    content: "";
+.contactRight :global(.line){
     width: 100%;
-    top: -1vw;
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
     height: 1vw;
-    left: -5px;
-    position: absolute;
+    background-color: transparent;
+    margin-top: 20px!important;
+    margin-bottom: -40px!important;
 }
+
 
 .contactGrid {
     display: flex;
@@ -470,6 +511,10 @@
 
     .contactRow :global(.footnote_2){
         font-size: 14px;
+    }
+
+    .contactRight :global(.line) {
+        margin-bottom: -20px!important;
     }
 }
 

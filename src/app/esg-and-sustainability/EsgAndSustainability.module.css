@@ -57,7 +57,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 5px;
+    gap: px;
     margin: 0 auto;
     opacity: 0.7;
     position: relative;
@@ -138,16 +138,16 @@
     width: 100%;
 }
 
-.esgTwoRow::before {
-    content: "";
-    position: absolute;
-    top: -20px;
+.esgTwo :global(.line){
     width: 85%;
     left: 0;
     height: 20px;
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
     border-right: 1px solid #C4C4C4;
+    background-color: transparent;
+    margin-bottom: -40px;
+    margin-top: 20px;
 }
 
 .esgTwoRowLeft {
@@ -192,7 +192,7 @@
         width: 50%;
     }
 
-    .esgTwoRow::before {
+    .esgTwo :global(.line){
         width: 100%;
     }
 

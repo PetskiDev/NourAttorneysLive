@@ -155,6 +155,7 @@ export default async function esgPage() {
             business practices for{" "}
             <span className="blue-text">[lasting success]</span>
           </h4>
+          <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
               <div className="title_5">[01]</div>
@@ -188,6 +189,7 @@ export default async function esgPage() {
               </p>
             </div>
           </div>
+          <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
               <div className="title_5">[02]</div>
@@ -217,6 +219,7 @@ export default async function esgPage() {
               </p>
             </div>
           </div>
+          <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
               <div className="title_5">[03]</div>

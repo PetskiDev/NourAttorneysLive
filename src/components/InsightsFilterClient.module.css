@@ -147,7 +147,7 @@
   width: auto;
   margin-left: 50%;
   margin-top: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 160px;
 }
 
 .wrap>section>div{
@@ -179,15 +179,16 @@
   left: 50%;
   top: 0%;
   transform: translate(-50%, 0);
-  width: 23%;
+  width:23%;
   height: auto;
 }
 
 .insightsHero p{
   margin-left: 50%;
-  width: 23%;
+  width: 22%;
   position: relative;
   z-index: 5;
+  color: #101010;
 }
 
 .insightsHero h1{
@@ -197,10 +198,17 @@
   z-index: 5;
 }
 
+
+
 @media only screen and (min-width: 1920px) {
   .wrap a img {
-    height: 68px;
-    width: 68px;
+    height: 48px;
+    width: 48px;
+  }
+
+  .wrap > section > div > a img{
+    height: 78px;
+    width: 78px;
   }
 }
 

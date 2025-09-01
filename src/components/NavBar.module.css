@@ -46,7 +46,7 @@
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
-  gap: 2vw;
+  gap: 2.2vw;
   width: 100%;
   justify-content: center;
 }
@@ -171,7 +171,7 @@
 
 /* Placeholder starts invisible; fades in after a short delay */
 .searchInput::placeholder {
-  color: currentColor;
+  color: #7d7d7d;
   opacity: 0;
   transition: opacity 260ms ease 180ms;
 }
@@ -591,7 +591,7 @@
 
   .leftHeader {
     position: absolute;
-    left: 12px;
+    left: 0px;
     /* tweak to taste */
     top: 50%;
     transform: translateY(-50%);

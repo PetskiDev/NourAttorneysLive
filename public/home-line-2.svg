@@ -1,15 +1,43 @@
 <svg width="1164" height="158" viewBox="0 0 1164 158" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 3H434.259V155H1164" stroke="#8F91AF"/>
-<rect width="82" height="6" fill="url(#paint0_linear_107238_8875)"/>
-<rect x="1164" y="158" width="82" height="6" transform="rotate(-180 1164 158)" fill="url(#paint1_linear_107238_8875)"/>
-<defs>
-<linearGradient id="paint0_linear_107238_8875" x1="0" y1="3" x2="82" y2="3" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0033A0"/>
-<stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
-</linearGradient>
-<linearGradient id="paint1_linear_107238_8875" x1="1164" y1="161" x2="1246" y2="161" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0033A0"/>
-<stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
-</linearGradient>
-</defs>
+  <!-- main path -->
+  <path d="M0 3H434.259V155H1164"
+        stroke="#8F91AF"
+        stroke-width="3"
+        fill="none"
+        stroke-dasharray="1330"
+        stroke-dashoffset="1330">
+    <animate attributeName="stroke-dashoffset"
+             from="1330" to="0"
+             dur="3s"
+             fill="freeze" />
+  </path>
+
+  <!-- start cap -->
+  <rect width="82" height="6" fill="url(#paint0_linear_107238_8875)" opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             dur="0.3s"
+             begin="0s"
+             fill="freeze" />
+  </rect>
+
+  <!-- end cap -->
+  <rect x="1164" y="158" width="82" height="6" transform="rotate(-180 1164 158)" fill="url(#paint1_linear_107238_8875)" opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             dur="0.3s"
+             begin="2.7s"
+             fill="freeze" />
+  </rect>
+
+  <defs>
+    <linearGradient id="paint0_linear_107238_8875" x1="0" y1="3" x2="82" y2="3" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0033A0"/>
+      <stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_107238_8875" x1="1164" y1="161" x2="1246" y2="161" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0033A0"/>
+      <stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
 </svg>

@@ -73,7 +73,7 @@ export default async function AboutUsPage() {
           <div className={styles.aboutTwoLine}>
             <div>
               <div>
-                <span>[01]</span>
+                <span>01</span>
               </div>
               <div>
                 <EditableText
@@ -101,7 +101,7 @@ export default async function AboutUsPage() {
           <div className={styles.aboutTwoLine}>
             <div>
               <div>
-                <span>[02]</span>
+                <span>02</span>
               </div>
               <div>
                 <EditableText
@@ -128,7 +128,7 @@ export default async function AboutUsPage() {
           <div className={styles.aboutTwoLine}>
             <div>
               <div>
-                <span>[03]</span>
+                <span>03</span>
               </div>
               <div>
                 <EditableText
@@ -149,7 +149,7 @@ export default async function AboutUsPage() {
               className="body_text"
               relUrl="/about-us"
               blockKey="about-mi-2"
-              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients' legal risks management, establishing a partnership based on trust, strategy, and discretion."
+              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients&apos; legal risks management, establishing a partnership based on trust, strategy, and discretion."
             />
           </div>
         </div>

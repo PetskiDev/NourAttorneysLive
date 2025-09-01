@@ -13,6 +13,7 @@ export default async function PartnersList() {
         {partners.map((p) => (
           <div key={p.id} className={styles.item}>
             <div className={`${styles.itemTag} descriptor_1`}>PARTNER</div>
+          <div className="line"></div>
             <div className={`aelement ${styles.row}`}>
               <div className={styles.leftCell}>
                 <Link href={`/partners/${p.slug}`} className={styles.nameLink}>
@@ -32,6 +33,7 @@ export default async function PartnersList() {
         {/* Static last item */}
         <div className={styles.item}>
           <div className={styles.itemTag}>PARTNER</div>
+          <div className="line"></div>
           <div className={`aelement ${styles.row}`}>
             <div className={styles.leftCell}>
               <span className={styles.bracketed}>
@@ -39,7 +41,7 @@ export default async function PartnersList() {
               </span>
             </div>
             <div className={styles.rightCell}>
-              <span className={styles.industryText}>
+              <span className={`${styles.industryText} subtitle_2`}>
                 We introduce our client to our their wide network of clients and global partners to
                 collaborate with our client to achieve our their desired outcomes.
               </span>

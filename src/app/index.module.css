@@ -12,32 +12,32 @@
 }
 
 .hero>div>h1:first-of-type{
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 .hero>div>h1:nth-of-type(2){
-    margin-left: 5%;
+    margin-left: 3%;
 }
 
 .hero>div>h1:nth-of-type(3){
-    margin-left: 31%;
+    margin-left: 28%;
 }
 
 .absText{
     position: absolute;
     left: 50%;
-    top: 3vw;
-    width: 30%;
+    top: 4.5%;
+    width: 531px;
 }
 
 .absText>h4{
     text-transform: none;
     color: white;
-    font-size: 1vw;
     font-family: var(--font-manrope);
     line-height: 100%;
-    letter-spacing: -0.1;
-    font-weight: 400;
+    letter-spacing: -0.05vw;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .absText>h4>span{
@@ -51,33 +51,33 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4vw;
-    width: 11.5vw;
+    height: 55px;
+    width: 170px;
     color: #0033A0;
-    font-size: 1.1vw;
+    font-size: 18px;
+    letter-spacing: -0.045vw;
     margin-top: 24%;
     margin-bottom: 5%;
 }
 
 .line1{
     position: absolute;
-    top: 0;
+    top: 0.5vw;
     width: 90%;
     height: auto;
     z-index: 5;
     left: 50%;
     transform: translateX(-50%);
     pointer-events: none;
-    animation: lineOne 2s forwards ease;
 }
 
 .line2{
     position: absolute;
-    top: 16vw;
+    top: 18.5vw;
     width: 60%;
     height: auto;
     z-index: 5;
-    left: 7.5%;
+    left: 4%;
     transform: translateX(-0%);
     pointer-events: none;
     animation: lineTwo 2.5s forwards ease;
@@ -85,14 +85,13 @@
 
 .line3{
     position: absolute;
-    top: 16.5vw;
+    top: 19vw;
     width: 47%;
     height: auto;
     z-index: 5;
-    right: 3%;
+    right: 3.5%;
     pointer-events: none;
     transform: translateX(-0%);
-    animation: lineThree 3s forwards ease;
 }
 
 .line4{
@@ -103,7 +102,6 @@
     pointer-events: none;
     height: auto;
     z-index: 5;
-    animation: lineFour 3.5s forwards ease;
 }
 
 .line5{
@@ -114,88 +112,8 @@
     pointer-events: none;
     height: auto;
     z-index: 5;
-    animation: lineFive 3.5s forwards ease;
 }
 
-@keyframes lineOne{
-    0%{
-        transform: translateX(calc(50% - 100px));
-        opacity: 0;
-    }
-    50%{
-        transform: translateX(calc(50% - 100px));
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateX(-50%);
-        opacity: 1;
-    }
-}
-
-@keyframes lineTwo{
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    66%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes lineThree{
-    0%{
-        transform: translateX(100px);
-        opacity: 0;
-    }
-    75%{
-        transform: translateX(100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes lineFour{
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    80%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes lineFive{
-    0%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    80%{
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
 
 .about{
 
@@ -212,9 +130,13 @@
 }
 
 .about>div h4{
-    width: 70%;
+    width: 58%;
     margin-top: 30px;
     text-align: center;
+}
+
+.about>div h4 span:last-of-type{
+    display: block;
 }
 
 .about>div>img{
@@ -238,6 +160,10 @@
     justify-content: space-evenly;
     position: relative;
     aspect-ratio: 415 / 202;
+}
+
+.aboutBox h5{
+    width: 88%;
 }
 
 .aboutBox::before{
@@ -429,17 +355,22 @@
     position: absolute;
     left: 25%;
     top: 30px;
-    width: 11.5vw;
+    width: 10.5vw;
+}
+
+.studyAbs>div{
+    text-transform: uppercase;
 }
 
 .caseStudies :global(.studies-boxes){
     position: relative;
 }
 
-@media only screen and (min-width: 1920px){
+@media only screen and (min-width: 1921px){
     .hero>div>a{
         height: 55px;
         width: 170px;
+        font-size: 20px;
     }
 
     .studyAbs{
@@ -449,11 +380,38 @@
     .absText>h4{
         font-size: 18px;
     }
+
+    .line4, .line5{
+        height: 350px;
+        width: auto;
+    }
+
+    .line2{
+        top: 400px;
+    }
+
+    .line3{
+        top: 400px;
+        right: 70px;
+    }
+
+    .line1{
+        top: 20px;
+    }
+
+    .absText{
+        top: 90px;
+        width: 25%;
+    }
+
+    .hero>div a{
+        font-size: 24px;
+    }
 }
 
 @media only screen and (max-width: 1024px){
     .hero>div> a{
-        margin-top: 55%;
+        margin-top: 0%;
         height: 55px;
         width: 170px;
         font-size: 18px;
@@ -464,21 +422,21 @@
     }
 
     .absText{
-        top: 57%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: unset;
+        left: unset;
+        transform: none;
         text-align: center;
+        position: relative;
+        margin-top: 200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .absText::after{
-        position: absolute;
-        bottom: -135%;
-        height: 180px;
-        width: 4.5px;
-        background-image: url("/home-mobile.svg");
-        background-size: 100% 100%;
-        content: "";
+    .homeMobile{
+        height: 200px;
+        width: 5.5px;
         animation: lineSeven 3.5s ease forwards;
+        margin: 0 auto;
     }
 
 
@@ -641,11 +599,11 @@
 
     .absText{
         width: 85%;
-        top: 55%;
+        margin-top: 25%;
     }
 
     .hero>div>a{
-        margin-top: 105%;
+        margin-top: 5%;
         height: 55px;
         width: 263px;
         font-size: 20px;
@@ -746,7 +704,7 @@
     }
 
     .expertiseBlackRowRight > *{
-        font-size: 4.8vw;
+        font-size: 18px;
     }
 
     .caseStudies :global(.study-box){

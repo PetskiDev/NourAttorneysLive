@@ -55,6 +55,7 @@
 
 .viewAll span{
   font-size: 2vw!important;
+  letter-spacing: -0.1vw;
 }
 
 .desktop { display: block; }
