@@ -1,55 +1,38 @@
-<svg width="802" height="386" viewBox="-10 -10 822 396" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- 1) Right side -->
-  <path d="M800 0.611572V147.446"
+<svg width="805" height="376" viewBox="0 0 805 376" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Animated stroke path -->
+  <path d="M803 0.611572 
+           V147.446 
+           H7.67969 
+           V366.831 
+           C9.73169 367.087 11.31934 368.838 11.31934 370.96 
+           C11.31932 373.258 9.45745 375.121 7.16016 375.121 
+           C4.86273 375.121 3 373.258 3 370.96 
+           C3 368.838 4.58775 367.087 6.63965 366.831 
+           V146.406 
+           H801 
+           V0.611572 
+           H803Z"
         stroke="#8F91AF"
         stroke-width="3"
-        stroke-linecap="round"
-        pathLength="1"
-        stroke-dasharray="1"
-        stroke-dashoffset="1">
+        fill="none"
+        stroke-dasharray="2360"
+        stroke-dashoffset="2360">
     <animate attributeName="stroke-dashoffset"
-             from="1" to="0"
-             dur="1.2s" begin="0s" fill="freeze"/>
+             from="2360" to="0"
+             dur="3s"
+             fill="freeze" />
   </path>
 
-  <!-- 2) Bottom -->
-  <path d="M800 147.446H4.67969"
-        stroke="#8F91AF"
-        stroke-width="3"
-        stroke-linecap="round"
-        pathLength="1"
-        stroke-dasharray="1"
-        stroke-dashoffset="1">
-    <animate attributeName="stroke-dashoffset"
-             from="1" to="0"
-             dur="2s" begin="1.2s" fill="freeze"/>
-  </path>
-
-  <!-- 3) Left side -->
-  <path d="M4.67969 147.446V366.831"
-        stroke="#8F91AF"
-        stroke-width="3"
-        stroke-linecap="round"
-        pathLength="1"
-        stroke-dasharray="1"
-        stroke-dashoffset="1">
-    <animate attributeName="stroke-dashoffset"
-             from="1" to="0"
-             dur="1.2s" begin="3.2s" fill="freeze"/>
-  </path>
-
-  <!-- 4) Circle -->
-  <circle cx="4.68" cy="371" r="6" fill="#8F91AF" opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.3s" fill="freeze"/>
+  <!-- Circle appears last -->
+  <circle cx="7.16" cy="371" r="6" fill="#8F91AF" opacity="0">
+    <animate attributeName="opacity"
+             from="0" to="1"
+             begin="3s" dur="0.3s"
+             fill="freeze" />
   </circle>
 
-  <!-- 5) Gradient cap (kept as-is) -->
-  <rect width="82" height="5"
-        transform="matrix(0 1 1 0 797 0)"
-        fill="url(#paint0_linear_107237_8873)"
-        opacity="0">
-    <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.3s" fill="freeze"/>
-  </rect>
+  <!-- Gradient bar -->
+  <rect width="82" height="5" transform="matrix(0 1 1 0 800 0)" fill="url(#paint0_linear_107237_8873)"/>
 
   <defs>
     <linearGradient id="paint0_linear_107237_8873" x1="0" y1="2.5" x2="82" y2="2.5" gradientUnits="userSpaceOnUse">
