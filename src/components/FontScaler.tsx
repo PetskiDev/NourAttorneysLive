@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const fontMap: Record<string, number> = {
   headline_1: 11.8,
@@ -36,9 +37,6 @@ const fontMap: Record<string, number> = {
   headline_1_5: 6,
 };
 
-
-
-
 // detect Safari
 const isSafari = () => {
   if (typeof navigator === "undefined") return false;
@@ -46,6 +44,8 @@ const isSafari = () => {
 };
 
 export default function FontScaler() {
+  const pathname = usePathname(); // 👈 reruns on navigation
+
   useEffect(() => {
     if (!isSafari()) return;
 
@@ -85,10 +85,13 @@ export default function FontScaler() {
       }
     };
 
+    // apply immediately on mount + on navigation
     applySizes();
+
+    // keep updating on resize
     window.addEventListener("resize", applySizes);
     return () => window.removeEventListener("resize", applySizes);
-  }, []);
+  }, [pathname]); // 👈 dependency ensures re-run after navigation
 
   return null; // invisible helper
 }

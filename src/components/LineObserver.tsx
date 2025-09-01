@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function LineObserver() {
+  const pathname = usePathname(); // 👈 will update on every navigation
+
   useEffect(() => {
     const lines = document.querySelectorAll<HTMLElement>(".custom-line");
 
@@ -11,7 +14,7 @@ export default function LineObserver() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("revealed");
-            observer.unobserve(entry.target); // play once
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -21,7 +24,7 @@ export default function LineObserver() {
     lines.forEach((line) => observer.observe(line));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]); // 👈 rerun whenever route changes
 
   return null;
 }

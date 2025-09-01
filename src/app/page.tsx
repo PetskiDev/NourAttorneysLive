@@ -6,6 +6,7 @@ import HomePeopleGrid from "~/components/HomePeopleGrid";
 import styles from "./index.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import SvgResetter from "~/components/SvgResetter";
 
 export default async function Home() {
   return (
@@ -32,44 +33,47 @@ export default async function Home() {
             height={40}
           />
           <Link href={"/contact"}>contact us</Link>
-          <Image
-            src={"/home-line-1.svg"}
+
+          {/* Updated to SvgResetter */}
+          <SvgResetter
+            src="/home-line-1.svg"
             alt="line"
             className={styles.line1}
             width={40}
             height={40}
           />
-          <Image
-            src={"/home-line-2.svg"}
+          <SvgResetter
+            src="/home-line-2.svg"
             alt="line"
             className={styles.line2}
             width={40}
             height={40}
           />
-          <Image
-            src={"/home-line-3.svg"}
+          <SvgResetter
+            src="/home-line-3.svg"
             alt="line"
             className={styles.line3}
             width={40}
             height={40}
           />
-          <Image
-            src={"/home-line-6.svg"}
+          <SvgResetter
+            src="/home-line-6.svg"
             alt="line"
             className={styles.line6}
             width={40}
             height={40}
           />
         </div>
-        <Image
-          src={"/home-line-4.svg"}
+
+        <SvgResetter
+          src="/home-line-4.svg"
           alt="line"
           className={styles.line4}
           width={40}
           height={40}
         />
-        <Image
-          src={"/home-line-5.svg"}
+        <SvgResetter
+          src="/home-line-5.svg"
           alt="line"
           className={styles.line5}
           width={40}
@@ -114,7 +118,7 @@ export default async function Home() {
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.03</h3>
               <h5 className="subheadline_2">
-                Win More<br></br>Deals
+                Win More<br />Deals
               </h5>
               <p className="body_text">through superior legal strategy</p>
             </div>
@@ -122,7 +126,7 @@ export default async function Home() {
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.04</h3>
               <h5 className="subheadline_2">
-                Eliminate<br></br>contract risks
+                Eliminate<br />contract risks
               </h5>
               <p className="body_text">while creating competitive advantages</p>
             </div>
@@ -226,7 +230,7 @@ export default async function Home() {
                 <span>Mergers and Acquisitions:</span>
                 <span>
                   our documented procedures guarantee adherence to all relevant
-                  legislation and regulations across our local & international
+                  legislation and regulations across our local & international
                   operations
                 </span>
               </div>
@@ -407,7 +411,7 @@ export default async function Home() {
                 </div>
                 <p className="subtitle_2">
                   Growing your business creates complex legal challenges. We
-                  build a comprehensive legal framework — your business&apos;s legal
+                  build a comprehensive legal framework — your business&apos;s legal
                   operating system. This provides smart contracts and clear
                   policies, giving you the confidence to operate, make bold
                   decisions and grow without constant legal.

@@ -1,48 +1,54 @@
 <svg width="802" height="386" viewBox="-10 -10 822 396" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- 1. Right side -->
+  <!-- 1) Right side -->
   <path d="M800 0.611572V147.446"
-        stroke="#8F91AF" stroke-width="3"
-        stroke-dasharray="147" stroke-dashoffset="147">
+        stroke="#8F91AF"
+        stroke-width="3"
+        stroke-linecap="round"
+        pathLength="1"
+        stroke-dasharray="1"
+        stroke-dashoffset="1">
     <animate attributeName="stroke-dashoffset"
-             from="147" to="0"
+             from="1" to="0"
              dur="1.2s" begin="0s" fill="freeze"/>
   </path>
 
-  <!-- 2. Bottom -->
+  <!-- 2) Bottom -->
   <path d="M800 147.446H4.67969"
-        stroke="#8F91AF" stroke-width="3"
-        stroke-dasharray="796" stroke-dashoffset="796">
+        stroke="#8F91AF"
+        stroke-width="3"
+        stroke-linecap="round"
+        pathLength="1"
+        stroke-dasharray="1"
+        stroke-dashoffset="1">
     <animate attributeName="stroke-dashoffset"
-             from="796" to="0"
+             from="1" to="0"
              dur="2s" begin="1.2s" fill="freeze"/>
   </path>
 
-  <!-- 3. Left side -->
+  <!-- 3) Left side -->
   <path d="M4.67969 147.446V366.831"
-        stroke="#8F91AF" stroke-width="3"
-        stroke-dasharray="220"
-        stroke-dashoffset="220">
+        stroke="#8F91AF"
+        stroke-width="3"
+        stroke-linecap="round"
+        pathLength="1"
+        stroke-dasharray="1"
+        stroke-dashoffset="1">
     <animate attributeName="stroke-dashoffset"
-             from="220" to="0"
+             from="1" to="0"
              dur="1.2s" begin="3.2s" fill="freeze"/>
   </path>
 
-  <!-- 4. Perfect filled circle aligned with left line (smaller) -->
-  <circle cx="4.68" cy="371" r="6"
-          fill="#8F91AF" opacity="0">
-    <animate attributeName="opacity"
-             values="0;1"
-             begin="4.4s" dur="0.3s" fill="freeze"/>
+  <!-- 4) Circle -->
+  <circle cx="4.68" cy="371" r="6" fill="#8F91AF" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="4.4s" dur="0.3s" fill="freeze"/>
   </circle>
 
-  <!-- Gradient cap -->
+  <!-- 5) Gradient cap (kept as-is) -->
   <rect width="82" height="5"
         transform="matrix(0 1 1 0 797 0)"
         fill="url(#paint0_linear_107237_8873)"
         opacity="0">
-    <animate attributeName="opacity"
-             values="0;1"
-             begin="0s" dur="0.3s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" begin="0s" dur="0.3s" fill="freeze"/>
   </rect>
 
   <defs>

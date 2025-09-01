@@ -22,7 +22,7 @@ export default async function ContactPage() {
             <div className={styles.rightHeroBox}>
               <h4 className="subheadline_2">Book a consultation</h4>
               <h6 className="subheadline_4">
-                To book a consultation, use <Link style={{borderBottom: "1px solid #101010;"}} href={"/."}>the link</Link>
+                To book a consultation, use <Link style={{borderBottom: "1px solid #101010"}} href={"/."}>the link</Link>
               </h6>
               <p className="body_text">
                 Office visits are by appointment only and subject to office

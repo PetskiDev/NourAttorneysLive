@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function LineRevealer() {
+  const pathname = usePathname(); // updates on client-side navigation
+
   useEffect(() => {
     const lines = document.querySelectorAll<HTMLElement>(".line");
 
@@ -23,13 +26,13 @@ export default function LineRevealer() {
           }
         });
       },
-      { threshold: 0.2 } // reveal when 20% visible
+      { threshold: 0.2 }
     );
 
     lines.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]); // 👈 runs again every time route changes
 
-  return null; // renders no DOM, only behavior
+  return null;
 }
