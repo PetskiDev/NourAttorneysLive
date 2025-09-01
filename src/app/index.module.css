@@ -648,25 +648,7 @@
         display: block;
         pointer-events: none;
         height: auto;
-        animation: lineSix 2s ease forwards;
     }
-
-
-@keyframes lineSix{
-    0%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-    50%{
-        transform: translateX(-100px);
-        opacity: 0;
-    }
-
-    100%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
 
     .about h2, .people h2, .insights h2, .expertise h2, .caseStudies h2, .partners h2{
         font-size: 7vw;

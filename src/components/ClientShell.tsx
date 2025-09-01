@@ -7,6 +7,7 @@ import SmoothScrollProvider from "~/components/SmoothScrollProvider";
 import RevealController from "./RevealController";
 import LineRevealer from "~/components/LineRevealer";
 import FontScaler from "./FontScaler";
+import LineObserver from "./LineObserver";
 
 
 type Mode = "light" | "dark";
@@ -33,6 +34,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
   return (
     <SmoothScrollProvider headerOffset={0}>
       <RevealController/>
+      <LineObserver/>
       <LineRevealer/>
       <FontScaler/>
       <NavBar key={pathname} mode={mode} />

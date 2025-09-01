@@ -450,7 +450,6 @@
 @media only screen and (max-width: 1024px) {
     .threePart>div:nth-child(1) {
     width: 1px;
-    min-width: 0px;
     height: 100%;
     background-color: #C4C4C4;
 }

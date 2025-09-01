@@ -92,13 +92,11 @@ export default async function Home() {
             THROUGH PERSONALIZED LEGAL INTELLIGENCE
           </h4>
 
-          <Image
-            src={"/home-element.svg"}
-            className="line-svg"
-            alt="line"
-            width={40}
-            height={40}
-          />
+          <div className="custom-line">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
 
           <div className={styles.aboutBoxes}>
             <div className={styles.aboutBox}>
