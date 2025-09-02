@@ -44,7 +44,7 @@ const isSafari = () => {
 };
 
 export default function FontScaler() {
-  const pathname = usePathname(); // 👈 reruns on navigation
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isSafari()) return;
@@ -57,10 +57,10 @@ export default function FontScaler() {
         ".index-module__ifV0vq__hero h2"
       );
       if (heroH2 && width < 768) {
-        const pxSize = (width * 16) / 100; // 16vw → px
+        const pxSize = (width * 16) / 100;
         heroH2.style.fontSize = `${pxSize}px`;
       } else if (heroH2) {
-        heroH2.style.fontSize = ""; // reset to CSS when not in range
+        heroH2.style.fontSize = "";
       }
 
       // --- Safari fix for mapped classes (1024px–1930px) ---
@@ -73,6 +73,15 @@ export default function FontScaler() {
             el.style.fontSize = `${pxSize}px`;
           });
         });
+
+        // --- Safari fix for frameworksHero paragraph ---
+        const frameworksP = document.querySelectorAll<HTMLElement>(
+          ".frameworks-module__Dh8X6q__frameworksHero > div > p"
+        );
+        frameworksP.forEach((el) => {
+          const pxSize = (width * 1.05) / 100; // 1.05vw
+          el.style.fontSize = `${pxSize}px`;
+        });
       } else {
         // reset outside range
         Object.keys(fontMap).forEach((className) => {
@@ -82,16 +91,20 @@ export default function FontScaler() {
             el.style.fontSize = "";
           });
         });
+
+        const frameworksP = document.querySelectorAll<HTMLElement>(
+          ".frameworks-module__Dh8X6q__frameworksHero > div > p"
+        );
+        frameworksP.forEach((el) => {
+          el.style.fontSize = "";
+        });
       }
     };
 
-    // apply immediately on mount + on navigation
     applySizes();
-
-    // keep updating on resize
     window.addEventListener("resize", applySizes);
     return () => window.removeEventListener("resize", applySizes);
-  }, [pathname]); // 👈 dependency ensures re-run after navigation
+  }, [pathname]);
 
-  return null; // invisible helper
+  return null;
 }

@@ -3,31 +3,31 @@
      fill="none"
      xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Mirrored stroke path -->
-  <path d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543C798.636 5.41636 800.016 6.64453 801.682 6.64453C803.514 6.6444 805 5.15695 805 3.32227C805 1.48755 803.514 0.000132083 801.682 0C800.009 0 798.626 1.23819 798.396 2.84863C504.347 3.10886 221.257 128.825 0 355Z"
-        stroke="#8F91AF"
-        stroke-width="3"
-        fill="none"
-        stroke-dasharray="3000"
-        stroke-dashoffset="3000"
-        opacity="1"
-        transform="translate(835,10) scale(-1,1)">
-    <animate attributeName="stroke-dashoffset"
-             from="3000" to="0"
-             dur="3s"
-             begin="2s"
-             fill="freeze"/>
-  </path>
+  <!-- Group to handle transform -->
+  <g transform="translate(835,10) scale(-1,1)">
+    <!-- Stroke path -->
+    <path d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543C798.636 5.41636 800.016 6.64453 801.682 6.64453C803.514 6.6444 805 5.15695 805 3.32227C805 1.48755 803.514 0.000132083 801.682 0C800.009 0 798.626 1.23819 798.396 2.84863C504.347 3.10886 221.257 128.825 0 355Z"
+          stroke="#8F91AF"
+          stroke-width="3"
+          fill="none"
+          stroke-dasharray="3000"
+          stroke-dashoffset="3000">
+      <animate attributeName="stroke-dashoffset"
+               from="3000" to="0"
+               dur="3s"
+               begin="2s"
+               fill="freeze"/>
+    </path>
 
-  <!-- Mirrored fill fade-in -->
-  <path d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543C798.636 5.41636 800.016 6.64453 801.682 6.64453C803.514 6.6444 805 5.15695 805 3.32227C805 1.48755 803.514 0.000132083 801.682 0C800.009 0 798.626 1.23819 798.396 2.84863C504.347 3.10886 221.257 128.825 0 355Z"
-        fill="#8F91AF"
-        opacity="0"
-        transform="translate(835,10) scale(-1,1)">
-    <animate attributeName="opacity"
-             values="0;1"
-             begin="5s"
-             dur="0.3s"
-             fill="freeze"/>
-  </path>
+    <!-- Fill path fade-in -->
+    <path d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543C798.636 5.41636 800.016 6.64453 801.682 6.64453C803.514 6.6444 805 5.15695 805 3.32227C805 1.48755 803.514 0.000132083 801.682 0C800.009 0 798.626 1.23819 798.396 2.84863C504.347 3.10886 221.257 128.825 0 355Z"
+          fill="#8F91AF"
+          opacity="0">
+      <animate attributeName="opacity"
+               values="0;1"
+               begin="5s"
+               dur="0.3s"
+               fill="freeze"/>
+    </path>
+  </g>
 </svg>
