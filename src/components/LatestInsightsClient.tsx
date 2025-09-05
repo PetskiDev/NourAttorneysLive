@@ -37,14 +37,14 @@ export default function LatestInsightsClient({
             {expanded ? (
               <>
                 <div className={styles.left}>
-                  <div className={`${styles.categoryOutlineBlue} descriptor_1`}>{i.category}</div>
-                  <p className={`${styles.title} title_2`}>{i.title}</p>
-                  <p className={`${styles.description} subtitle_2`}>{i.description}</p>
+                  <div className={`${styles.categoryOutlineBlue} descriptor_1 antiselector`}>{i.category}</div>
+                  <p className={`${styles.title} title_2 antiselector`}>{i.title}</p>
+                  <p className={`${styles.description} subtitle_2 antiselector`}>{i.description}</p>
                   <div className={styles.metaRow}>
-                    <span className={`${styles.authorBlack} footnote_1`}>
+                    <span className={`${styles.authorBlack} footnote_1 antiselector`}>
                       By {i.publisher}
                     </span>
-                    <span className={`${styles.dateGray} footnote_2`}>
+                    <span className={`${styles.dateGray} footnote_2 antiselector`}>
                       {" "}
                       / {formatDate(i.publishedAt)}
                     </span>
@@ -64,7 +64,7 @@ export default function LatestInsightsClient({
             ) : (
               <>
                 <div className={styles.categoryOutline}>{i.category}</div>
-                <p className={`${styles.title}`}>{i.title}</p>
+                <p className={`${styles.title} antiselector`}>{i.title}</p>
                 <div className={styles.metaRow}>
                   <span className={`${styles.authorWhite}`}>
                     By {i.publisher}

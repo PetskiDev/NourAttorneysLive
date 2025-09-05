@@ -72,15 +72,15 @@
 }
 
 .rightHeroBox:nth-child(1){
-    animation: boxAnimation1 2s ease forwards;
+    animation: boxAnimation1 1s ease forwards;
 }
 
 .rightHeroBox:nth-child(2){
-    animation: boxAnimation2 2s ease forwards;
+    animation: boxAnimation2 1s ease forwards;
 
 }
 .rightHeroBox:nth-child(3){
-    animation: boxAnimation3 2s ease forwards;
+    animation: boxAnimation3 1s ease forwards;
 
 }
 
@@ -90,10 +90,6 @@
 
 @keyframes boxAnimation1{
     from{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    50%{
         opacity: 0;
         transform: translateY(50px);
     }
@@ -108,10 +104,6 @@
         opacity: 0;
         transform: translateY(50px);
     }
-    60%{
-        opacity: 0;
-        transform: translateY(50px);
-    }
     to{
         opacity: 1;
         transform: none;
@@ -120,10 +112,6 @@
 
 @keyframes boxAnimation3{
     from{
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    70%{
         opacity: 0;
         transform: translateY(50px);
     }

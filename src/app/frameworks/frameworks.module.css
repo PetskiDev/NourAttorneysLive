@@ -332,6 +332,21 @@
         width: 100%;
         font-size: 3vw;
     }
+
+    .frameworksMain :global(.line){
+        width: 100%;
+        margin-bottom: -25px;
+
+    }
+
+    .frameworksHero>div>p{
+        font-size: 1.7vw;
+        width: 50%;
+    }
+
+    .frameworksHero>div>div{
+        font-size: 3vw;
+    }
 }
 
 @media only screen and (max-width: 768px){

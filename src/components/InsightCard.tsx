@@ -38,7 +38,7 @@ export default function InsightCard({
   return (
     <article
       ref={ref}
-      className={`${styles.card} ${isVisible ? styles.visible : ""}`}
+      className={`${styles.card} ${styles.visible}`}
     >
       <div>
         <div className={styles.headerRow}>

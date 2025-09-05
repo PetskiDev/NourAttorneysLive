@@ -409,6 +409,8 @@
     .adsHero > div p{
         width: 35%;
         font-size: 1.5vw;
+        margin-bottom: 0;
+margin-top: 0;
     }
 
     .adsHero>div{
@@ -425,6 +427,10 @@
 @media only screen and (max-width: 768px){
     .heroAbs{
         display: none;
+    }
+
+    .reviews h5, .experts h5{
+        font-size: 4vw;
     }
 
     .adsHero>div h1{

@@ -19,8 +19,8 @@ export default async function ServicePage({
         <div className="containerr">
           <div className={styles.heroRow}>
             <div className={styles.heroLeft}>
-              <h1 className="headline_1_3 mobnot">WE REMOVE LEGAL BARRIERS</h1>
-              <h1 className="headline_1_3 mob">
+              <h1 className="headline_1_3 mobnot antiselector">WE REMOVE LEGAL BARRIERS</h1>
+              <h1 className="headline_1_3 mob antiselector">
                 We remove legal barriers to your growth and success
               </h1>
             </div>
@@ -31,7 +31,7 @@ export default async function ServicePage({
               alt="element"
             />
             <div className={styles.heroRight}>
-              <div className="title_4">
+              <div className="title_4 antiselector">
                 Build your business with unshakeable legal confidence. Discover
                 how comprehensive legal frameworks transform uncertainty into
                 competitive advantage and provide the foundation for sustainable
@@ -42,7 +42,7 @@ export default async function ServicePage({
           <div className={styles.heroRow}>
             <div className={styles.heroLeft}></div>
             <div className={styles.heroRight}>
-              <h1 className="headline_1_3 mobnot">
+              <h1 className="headline_1_3 mobnot antiselector">
                 TO YOUR GROWTH AND SUCCESS
               </h1>
             </div>
@@ -53,13 +53,13 @@ export default async function ServicePage({
       <section className={styles.frameworksOne}>
         <div className="containerr">
           <div className={styles.oneLeft}>
-            <div className="subtitle_4">
+            <div className="subtitle_4 antiselector">
               The Challenge Every Growing Business Faces
             </div>
           </div>
 
           <div className={styles.oneRight}>
-            <p className="body_text">
+            <p className="body_text antiselector">
               You started your business with a vision and the determination to
               make it succeed. But as your company grows, you&apos;re
               discovering that every decision seems to have legal implications
@@ -71,7 +71,7 @@ export default async function ServicePage({
               didn&apos;t know existed.
             </p>
 
-            <p className="body_text">
+            <p className="body_text antiselector">
               You want to move fast and seize opportunities, but you&apos;re
               afraid that one legal misstep could jeopardize everything
               you&apos;ve worked so hard to build. You know you need legal
@@ -82,7 +82,7 @@ export default async function ServicePage({
               you&apos;re seeking.
             </p>
 
-            <p className="body_text">
+            <p className="body_text antiselector">
               This isn&apos;t just about avoiding problems. It&apos;s about
               building a business that can thrive in today&apos;s complex legal
               environment. You want to make bold decisions, pursue ambitious
@@ -90,11 +90,11 @@ export default async function ServicePage({
               business - without constantly worrying about legal landmines.
             </p>
 
-            <div className="title_3">
+            <div className="title_3 antiselector">
               The Legal Foundation That Transforms How You Do Business
             </div>
 
-            <p className="body_text">
+            <p className="body_text antiselector">
               We don&apos;t just provide legal services - we build comprehensive
               legal frameworks that give you the confidence to operate and grow
               your business without fear. Think of it as creating a legal
@@ -102,7 +102,7 @@ export default async function ServicePage({
               automatically while flagging when you need specialized attention.
             </p>
 
-            <p className="body_text">
+            <p className="body_text antiselector">
               A legal framework isn&apos;t just a collection of documents or
               policies. It&apos;s a comprehensive system that becomes the
               backbone of how you operate, protecting your interests while
@@ -118,16 +118,16 @@ export default async function ServicePage({
       <section className={styles.frameworksTwo}>
         <div className="containerr">
           <div className={styles.twoLeft}>
-            <div className="title_5">We stay ahead of legal changes:</div>
+            <div className="title_5 antiselector">We stay ahead of legal changes:</div>
             <ul>
-              <li className="subtitle_2">
+              <li className="subtitle_2 antiselector">
                 Legislative monitoring and adaptation
               </li>
-              <li className="subtitle_2">
+              <li className="subtitle_2 antiselector">
                 Regulatory Intelligence and Implementation
               </li>
-              <li className="subtitle_2">Judicial decision integration</li>
-              <li className="subtitle_2">
+              <li className="subtitle_2 antiselector">Judicial decision integration</li>
+              <li className="subtitle_2 antiselector">
                 International standards and best practices
               </li>
             </ul>
@@ -154,13 +154,13 @@ export default async function ServicePage({
 <div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
-              <div className="title_5">[01]</div>
-              <div className="title_5">
+              <div className="title_5 antiselector">[01]</div>
+              <div className="title_5 antiselector">
                 Smart Contract Systems That Work in Your Favor
               </div>
             </div>
             <div className={styles.threeRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Instead of starting from scratch with every agreement,
                 you&apos;ll have master contracts developed over years of
                 practice that cover every scenario we&apos;ve encountered. These
@@ -172,7 +172,7 @@ export default async function ServicePage({
                 seek favorable settlements because your legal position is
                 unassailable.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 These master agreements become your competitive advantage. While
                 your competitors are spending time and money negotiating basic
                 terms, you&apos;re moving quickly with proven frameworks that
@@ -187,13 +187,13 @@ export default async function ServicePage({
 <div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
-              <div className="title_5">[02]</div>
-              <div className="title_5">
+              <div className="title_5 antiselector">[02]</div>
+              <div className="title_5 antiselector">
                 Clear Policies That Protect and Empower
               </div>
             </div>
             <div className={styles.threeRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 You&apos;ll have straightforward guidelines that help you and
                 your team make compliant decisions every day. No more guessing
                 whether you&apos;re following the rules - you&apos;ll have clear
@@ -203,7 +203,7 @@ export default async function ServicePage({
                 proper procedures, and they demonstrate to external parties that
                 you operate professionally and responsibly.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 These aren&apos;t bureaucratic obstacles that slow down your
                 business. They&apos;re enablers that allow you to move faster
                 because everyone knows the rules and can operate within them
@@ -217,13 +217,13 @@ export default async function ServicePage({
 <div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
-              <div className="title_5">[03]</div>
-              <div className="title_5">
+              <div className="title_5 antiselector">[03]</div>
+              <div className="title_5 antiselector">
                 Proactive Risk Management That Keeps You Ahead
               </div>
             </div>
             <div className={styles.threeRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Legal landscapes change constantly. New regulations emerge,
                 court decisions create new precedents, and industry standards
                 evolve. We monitor these changes continuously and update your
@@ -231,7 +231,7 @@ export default async function ServicePage({
                 requirements instead of scrambling to catch up after
                 they&apos;re implemented.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 This proactive approach means you&apos;re never caught off guard
                 by legal changes. While your competitors are reacting to new
                 regulations, you&apos;re already compliant and positioned to
@@ -245,13 +245,13 @@ export default async function ServicePage({
 <div className="line"></div>
           <div className={styles.threeRow}>
             <div className={styles.threeLeft}>
-              <div className="title_5">[04]</div>
-              <div className="title_5">
+              <div className="title_5 antiselector">[04]</div>
+              <div className="title_5 antiselector">
                 Training That Empowers Your Entire Team
               </div>
             </div>
             <div className={styles.threeRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Your staff will understand how to use your legal framework
                 effectively, making smart decisions that protect the business
                 while serving customers and growing revenue. This isn&apos;t
@@ -259,7 +259,7 @@ export default async function ServicePage({
                 team to operate confidently within legal boundaries while
                 maximizing business opportunities.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 When your team understands the legal framework, they become
                 force multipliers for your business. They can handle routine
                 legal matters without escalation, they can spot potential issues
@@ -274,23 +274,23 @@ export default async function ServicePage({
 
       <section className={styles.frameworksFour}>
         <div className="containerr">
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 antiselector">
             This framework proves essential across diverse industries. It
             delivers critical solutions in
           </h4>
 
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 antiselector">
             key situations, ensuring stability and growth
           </h4>
 
           <div className="studies-boxes">
             <div className={styles.studyAbs}>
-              <div className="descriptor_1">Essential for any industry</div>
+              <div className="descriptor_1 antiselector">Essential for any industry</div>
             </div>
             <div className="studies-boxes-top">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Growing businesses facing complexity
                   </div>
                   <Image
@@ -300,7 +300,7 @@ export default async function ServicePage({
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   If your business is expanding rapidly, entering new markets,
                   or dealing with increasingly sophisticated clients and
                   suppliers, you need a legal framework that can scale with your
@@ -308,9 +308,9 @@ export default async function ServicePage({
                   small become dangerous liabilities as you grow.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Investment and transaction-heavy operations
                   </div>
                   <Image
@@ -320,7 +320,7 @@ export default async function ServicePage({
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   Whether you are an active investor, a business that engages in
                   multiple transactions on a daily basis, or an individual with
                   significant ongoing contractual relationships, having a
@@ -331,9 +331,9 @@ export default async function ServicePage({
             </div>
 
             <div className="studies-boxes-bottom">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Regulated industries and compliance-heavy environments
                   </div>
                   <Image
@@ -343,7 +343,7 @@ export default async function ServicePage({
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   If your business operates in an environment with significant
                   regulatory requirements, a framework ensures you stay
                   compliant while maintaining operational efficiency. This is
@@ -351,9 +351,9 @@ export default async function ServicePage({
                   trade.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Businesses seeking competitive advantage
                   </div>
                   <Image
@@ -363,7 +363,7 @@ export default async function ServicePage({
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   Companies that can move quickly and confidently on legal
                   matters have a significant competitive advantage. While
                   competitors are consulting lawyers for routine decisions,
@@ -378,10 +378,10 @@ export default async function ServicePage({
 
       <section className={styles.frameworksFive}>
         <div className="containerr">
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 antiselector">
             When you know you&apos;re legally protected, you
           </h4>
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 antiselector">
             can focus on <span className="blue-text">[what you do best]:</span>{" "}
             pursue ambitious goals, enter new markets, and build strategic
             partnerships with confidence because you know your legal foundation
@@ -398,7 +398,7 @@ export default async function ServicePage({
               />
             </div>
             <div className={styles.fiveRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Our clients consistently report that having a comprehensive
                 legal framework transforms their relationship with their
                 business. They sleep better because they&apos;re not worried
@@ -407,7 +407,7 @@ export default async function ServicePage({
                 because they&apos;re confident in their protection.
               </p>
 
-              <p className="body_text">
+              <p className="body_text antiselector">
                 More importantly, they find that their legal framework becomes a
                 competitive advantage. They can move faster than competitors who
                 are still figuring out legal issues case by case. They can offer
@@ -424,11 +424,11 @@ export default async function ServicePage({
                 height={230}
               />
 
-              <div className="title_3">
+              <div className="title_3 antiselector">
                 Your Path to Legal Confidence and Business Growth
               </div>
 
-              <p className="body_text">
+              <p className="body_text antiselector">
                 The investment you make in creating a robust legal framework
                 pays dividends every day through the confidence it provides and
                 the problems it prevents. More importantly, it enables the kind
@@ -436,7 +436,7 @@ export default async function ServicePage({
                 success.
               </p>
 
-              <p className="body_text">
+              <p className="body_text antiselector">
                 If you&apos;re ready to transform your relationship with legal
                 risk and build your business with complete confidence,
                 we&apos;re here to help you create the legal foundation that

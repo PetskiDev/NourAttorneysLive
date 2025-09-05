@@ -23,8 +23,8 @@ export default async function PeoplePage() {
           alt={person.name}
         />
       </div>
-      <div className="title_1 antiselector">{person.name}</div>
-      <div className="subtitle_1">{person.role}</div>
+      <div className="title_1">{person.name}</div>
+      <div className="subtitle_1 animselector">{person.role}</div>
     </div>
   );
 

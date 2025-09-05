@@ -20,11 +20,11 @@ export default async function ContactPage() {
 
           <div className={styles.rightHero}>
             <div className={styles.rightHeroBox}>
-              <h4 className="subheadline_2">Book a consultation</h4>
-              <h6 className="subheadline_4">
+              <h4 className="subheadline_2 antiselector">Book a consultation</h4>
+              <h6 className="subheadline_4 antiselector">
                 To book a consultation, use <Link style={{borderBottom: "1px solid #101010"}} href={"/."}>the link</Link>
               </h6>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Office visits are by appointment only and subject to office
                 policy.
               </p>
@@ -37,30 +37,30 @@ export default async function ContactPage() {
             </div>
 
             <div className={styles.rightHeroBox}>
-              <h4 className="subheadline_2">contact us</h4>
+              <h4 className="subheadline_2 antiselector">contact us</h4>
               <div className={styles.boxLinkDiv}>
-                <h6 className="subheadline_4">Telephone:</h6>
-                <Link className="subheadline_4" href={"tel:+971 58 555 2999"}>
+                <h6 className="subheadline_4 antiselector">Telephone:</h6>
+                <Link className="subheadline_4 antiselector" href={"tel:+971 58 555 2999"}>
                   +971 58 555 2999
                 </Link>
               </div>
               <div className={styles.boxLinkDiv}>
-                <h6 className="subheadline_4">WhatsApp:</h6>
-                <Link className="subheadline_4" href={"tel:+971 58 555 2999"}>
+                <h6 className="subheadline_4 antiselector">WhatsApp:</h6>
+                <Link className="subheadline_4 antiselector" href={"tel:+971 58 555 2999"}>
                   +971 58 555 2999
                 </Link>
               </div>
               <div className={styles.boxLinkDiv}>
-                <h6 className="subheadline_4">Email:</h6>
+                <h6 className="subheadline_4 antiselector">Email:</h6>
                 <Link
-                  className="subheadline_4"
+                  className="subheadline_4 antiselector"
                   href={"mailto:info@nourattorneys.com"}
                 >
                   info@nourattorneys.com
                 </Link>
               </div>
               <div className={styles.boxLinkDiv}>
-                <Link className="subheadline_4" href={"tel:+971 58 555 2999"}>
+                <Link className="subheadline_4 antiselector" href={"tel:+971 58 555 2999"}>
                   <div>Emergency legal support</div>
                   <Image
                     src={"/diagonal-arrow.svg"}
@@ -79,12 +79,12 @@ export default async function ContactPage() {
             </div>
 
             <div className={styles.rightHeroBox}>
-              <h4 className="subheadline_2">AI assistant</h4>
+              <h4 className="subheadline_2 antiselector">AI assistant</h4>
               <div className={styles.aiContactBox}>
-                <Link className="subheadline_4" href={"./"}>
+                <Link className="subheadline_4 antiselector" href={"./"}>
                   Open.
                 </Link>
-                <div className="subheadline_4">Chat.Solved.</div>
+                <div className="subheadline_4 antiselector">Chat.Solved.</div>
               </div>
               <Image
                 src={"/contact-small-element-3.svg"}
@@ -101,24 +101,24 @@ export default async function ContactPage() {
 
       <section className={styles.contactMain}>
         <div className="containerr">
-          <h3 className="subheadline_2">
+          <h3 className="subheadline_2 antiselector">
             At Nour Attorneys Law Firm, we believe that the foundation of a
             successful legal practice
           </h3>
-          <h3 className="subheadline_2">
+          <h3 className="subheadline_2 antiselector">
             lies in cultivating strong, lasting relationships with our clients.
           </h3>
-          <h5 className="accent_text_2 mobnot">
+          <h5 className="accent_text_2 mobnot antiselector">
             we provide bespoke legal services characterized by the highest
             levels of quality, professionalism, and strategic insight. Our
           </h5>
-          <h5 className="accent_text_2 mobnot">
+          <h5 className="accent_text_2 mobno antiselector">
             commitment to these principles is not merely aspirational; it is
             embedded in our core service standards, which guide every
             interaction and every mandate we undertake.
           </h5>
 
-          <h5 className="accent_text_2 mob">
+          <h5 className="accent_text_2 mob antiselector">
             we provide bespoke legal services characterized by the highest
             levels of quality, professionalism, and strategic insight. Our commitment to these principles is not merely aspirational; it is
             embedded in our core service standards, which guide every
@@ -129,10 +129,10 @@ export default async function ContactPage() {
               <div className="title_3">STAY CONNECTED</div>
             </div>
             <div className={styles.contactRight}>
-              <div className="line"></div>
+              <div className="line antiline"></div>
               <div className={`${styles.contactElement}`}>
-                <div className="title_1">NEED QUICK HELP?</div>
-                <p className="body_text">Use our smart legal assistant.</p>
+                <div className="title_1 antiselector">NEED QUICK HELP?</div>
+                <p className="body_text antiselector">Use our smart legal assistant.</p>
                 <Link href={"tel:+971 58 555 2999"}>
                   <div>Contact us</div>
                   <Image
@@ -144,10 +144,10 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className="line"></div>
+              <div className="line antiline"></div>
               <div className={`${styles.contactElement}`}>
-                <div className="title_1">Join Our Mailing List</div>
-                <p className="body_text">
+                <div className="title_1 antiselector">Join Our Mailing List</div>
+                <p className="body_text antiselector">
                   Get insights, events, and legal updates straight to your
                   inbox. We respect your privacy. No spam. Ever.
                 </p>
@@ -162,10 +162,10 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className="line"></div>
+              <div className="line antiline"></div>
               <div className={`${styles.contactElement}`}>
-                <div className="title_1">Events & Webinars</div>
-                <p className="body_text">
+                <div className="title_1 antiselector">Events & Webinars</div>
+                <p className="body_text antiselector">
                   Discover how we&apos;re redefining legal practice - attend our
                   events.
                 </p>
@@ -180,10 +180,10 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className="line"></div>
+              <div className="line antiline"></div>
               <div className={`${styles.contactElement}`}>
-                <div className="title_1">Careers & Internships</div>
-                <p className="body_text">
+                <div className="title_1 antiselector">Careers & Internships</div>
+                <p className="body_text antiselector">
                   Connect your passion to a bigger mission - join our team.
                 </p>
                 <Link href={"tel:+971 58 555 2999"}>
@@ -197,10 +197,10 @@ export default async function ContactPage() {
                 </Link>
               </div>
 
-              <div className="line"></div>
+              <div className="line antiline"></div>
               <div className={`${styles.contactElement}`}>
-                <div className="title_1">Visit Us</div>
-                <p className="body_text">Find our office location.</p>
+                <div className="title_1 antiselector">Visit Us</div>
+                <p className="body_text antiselector">Find our office location.</p>
                 <Link href={"tel:+971 58 555 2999"}>
                   <div>Go to map</div>
                   <Image
@@ -223,7 +223,7 @@ export default async function ContactPage() {
             <div className={styles.contactRight}>
               <div className={styles.contactGrid}>
                 <div>
-                  <div className="title_1">LinkedIn</div>
+                  <div className="title_1 antiselector">LinkedIn</div>
                   <Link href={"tel:+971 58 555 2999"}>
                     <div>Legal updates</div>
                     <Image
@@ -236,7 +236,7 @@ export default async function ContactPage() {
                 </div>
 
                 <div>
-                  <div className="title_1">instagram</div>
+                  <div className="title_1 antiselector">instagram</div>
                   <Link href={"tel:+971 58 555 2999"}>
                     <div>Behind the scenes</div>
                     <Image
@@ -249,7 +249,7 @@ export default async function ContactPage() {
                 </div>
 
                 <div>
-                  <div className="title_1">Twitter/X</div>
+                  <div className="title_1 antiselector">Twitter/X</div>
                   <Link href={"tel:+971 58 555 2999"}>
                     <div>Quick news</div>
                     <Image
@@ -262,7 +262,7 @@ export default async function ContactPage() {
                 </div>
 
                 <div>
-                  <div className="title_1">YouTube</div>
+                  <div className="title_1 antiselector">YouTube</div>
                   <Link href={"tel:+971 58 555 2999"}>
                     <div>Legal knowledge</div>
                     <Image
@@ -286,31 +286,31 @@ export default async function ContactPage() {
             <div className={styles.contactRight}>
               <div className={styles.contactRightThree}>
                 <div className={styles.contactRightThreeRow}>
-                  <div className="title_1">UAE</div>
-                  <p className="body_text">
+                  <div className="title_1 antiselector">UAE</div>
+                  <p className="body_text antiselector">
                     Dubai- Ajman - Fujairah - Ras Al Khaimah
                   </p>
                 </div>
                 <div className={styles.contactRightThreeRow}>
-                  <div className="title_1">Egypt</div>
-                  <p className="body_text">Cairo - El Mansoura</p>
+                  <div className="title_1 antiselector">Egypt</div>
+                  <p className="body_text antiselector">Cairo - El Mansoura</p>
                 </div>
                 <div className={styles.contactRightThreeRow}>
-                  <div className="title_1">Associated Partners</div>
-                  <p className="body_text">
+                  <div className="title_1 antiselector">Associated Partners</div>
+                  <p className="body_text antiselector">
                     KSA - India - Bangladesh - Sri Lanka - Turkey - Syria
                   </p>
                 </div>
                 <div className={styles.contactRightThreeRow}>
-                  <div className="title_1 mobnot">
+                  <div className="title_1 mobnot antiselector">
                     Working hours<br></br>(offices in UAE and Egypt)
                   </div>
-                  <div className="title_1 mob">
+                  <div className="title_1 mob antiselector">
                     Working hours (offices in UAE and Egypt)
                   </div>
-                  <p className="body_text">Mon-Fri: 9am - 6pm</p>
+                  <p className="body_text antiselector">Mon-Fri: 9am - 6pm</p>
                 </div>
-                <div className="footnote_2">
+                <div className="footnote_2 antiselector">
                   * Nour Attorneys is trademark for Nour Attorneys Law Firm
                   entities, each of which may be independent.
                 </div>

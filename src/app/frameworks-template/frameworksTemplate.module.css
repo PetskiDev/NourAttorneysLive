@@ -429,6 +429,10 @@
         width: 75%;
     }
 
+    .frameworksThree>div{
+        padding-top: 30px;
+    }
+
     .heroRow > div > div{
         width: 70%;
         font-size: 3vw;

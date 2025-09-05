@@ -19,7 +19,7 @@ function isElement(n: Node): n is HTMLElement {
 }
 
 export default function RevealController({
-  selector = "h1,h2,h3,h4,h5,h6,.accent-text,.animated,.body_text,.title_1,.title_2,.title_3,.title_4,.title_5,.study-box,.subtitle_2,.subheadline_1,p",
+  selector = "h1,h2,h3,h4,h5,h6,.accent-text,.animated,.body_text,.title_1,.title_2,.title_3,.title_4,.title_5,.subtitle_2,.subheadline_1,p,.animselector",
   threshold = 0.15,
   durationMs = 600,
   rootMargin = "0px 0px -10% 0px",
@@ -49,16 +49,22 @@ export default function RevealController({
       { threshold, rootMargin }
     );
 
-    // Classes to skip
+    // Classes to skip animation
     const antiClasses = ["antiselector"];
 
     // Apply initial hidden state to all matches
     root.querySelectorAll(selector).forEach((n) => {
       if (!isElement(n)) return;
 
-      // Skip if element has any anti class
-      if (antiClasses.some((cls) => n.classList.contains(cls))) return;
+      if (antiClasses.some((cls) => n.classList.contains(cls))) {
+        // Always visible for anti-classes
+        n.style.opacity = "1";
+        n.style.transform = "none";
+        n.style.transition = "none";
+        return;
+      }
 
+      // Animate these normally
       n.style.opacity = "0";
       n.style.transform = "translateY(30px)";
       n.style.willChange = "opacity, transform";

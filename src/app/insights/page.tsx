@@ -14,9 +14,9 @@ export default async function InsightsPage() {
     <main className={styles.wrap}>
       <section className={styles.insightsHero}>
         <div className="containerr">
-          <h1 className="headline_1">INSIGHTS</h1>
+          <h1 className="headline_1 antiselector">INSIGHTS</h1>
 
-          <p className="subtitle_2">
+          <p className="subtitle_2 antiselector">
             Where deep legal expertise meets foresight. Explore our insights to
             turn legislative changes into competitive advantages for your
             enterprise

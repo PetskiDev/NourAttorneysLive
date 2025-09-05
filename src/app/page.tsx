@@ -146,16 +146,16 @@ export default async function Home() {
           <h2 className="headline_2">EXPERTISE</h2>
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[01]</h3>
+              <h3 className="headline_3 antiselector">[01]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">DRAFTING CONTRACTS</h3>
+              <h3 className="headline_3 antiselector">DRAFTING CONTRACTS</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
-            <div className="title_2">
-              <div className="animated">
+            <div className="title_2 antiselector">
+              <div className="antiselector">
                 <span>Shareholder Agreement:</span>
                 <span>
                   it clearly define the rights, responsibilities, and
@@ -163,14 +163,14 @@ export default async function Home() {
                   preventing future disputes
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Complex Agreement:</span>
                 <span>
                   we helps you expand your business by letting others use your
                   brand and system, ensuring everyone follows the rules
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Employment & Executive Compensation Contracts:</span>
                 <span>
                   sets clear terms for hiring key people, ensuring they&apos;re
@@ -182,30 +182,30 @@ export default async function Home() {
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[02]</h3>
+              <h3 className="headline_3 antiselector">[02]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">LITIGATION SERVICES</h3>
+              <h3 className="headline_3 antiselector">LITIGATION SERVICES</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
-            <div className="title_2">
-              <div className="animated">
+            <div className="title_2 antiselector">
+              <div className=" antiselector">
                 <span>Commercial & Civil litigation:</span>
                 <span>
                   representing client in court disputes such as: employment,
                   rental, property & commercial cases
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Debt Recovery:</span>
                 <span>
                   through Civil cases and Criminal actions in order to collect
                   and recover monetary claims{" "}
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Compensation claims:</span>
                 <span>
                   litigated through Civil, Criminal, Labour, Commercial and
@@ -217,16 +217,16 @@ export default async function Home() {
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[03]</h3>
+              <h3 className="headline_3 antiselector">[03]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">Corporate Services</h3>
+              <h3 className="headline_3 antiselector">Corporate Services</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
-            <div className="title_2">
-              <div className="animated">
+            <div className="title_2 antiselector">
+              <div className=" antiselector">
                 <span>Mergers and Acquisitions:</span>
                 <span>
                   our documented procedures guarantee adherence to all relevant
@@ -234,14 +234,14 @@ export default async function Home() {
                   operations
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Corporate Restructuring Services:</span>
                 <span>
                   addressing debt, optimizing capital structure, and securing
                   new financing and etc.{" "}
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Trademark and patent Registration services:</span>
                 <span>
                   local & WIPO (World Intellectual Property Organization) under
@@ -253,23 +253,23 @@ export default async function Home() {
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[04]</h3>
+              <h3 className="headline_3 antiselector">[04]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">Business set up and Compliance</h3>
+              <h3 className="headline_3 antiselector">Business set up and Compliance</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Company Formation:</span>
                 <span>
                   incorporating offshore, freezone, mainland with most strategic
                   structure
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Bank account opening:</span>
                 <span>
                   preparation of documents and taxation consultancies,
@@ -277,7 +277,7 @@ export default async function Home() {
                   operation{" "}
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Compliance:</span>
                 <span>
                   advising on regulatory obligations, drafting internal
@@ -289,30 +289,30 @@ export default async function Home() {
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[05]</h3>
+              <h3 className="headline_3 antiselector">[05]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">Notarization & Attestation</h3>
+              <h3 className="headline_3 antiselector">Notarization & Attestation</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
-            <div className="title_2">
-              <div className="animated">
+            <div className="title_2 antiselector">
+              <div className=" antiselector">
                 <span>True copy attestation:</span>
                 <span>
                   birth certificates, passport attestation, marriage
                   certificates, educational certificates and etc.
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Public & private notary:</span>
                 <span>
                   including drafting and notarizing POA, shareholder
                   resolutions, agreements and etc.{" "}
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Private lawyer notarization:</span>
                 <span>
                   drafting and notarizing affidavits and private agreements,
@@ -324,30 +324,30 @@ export default async function Home() {
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3">[06]</h3>
+              <h3 className="headline_3 antiselector">[06]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3">Other services</h3>
+              <h3 className="headline_3 antiselector">Other services</h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
-            <div className="title_2">
-              <div className="animated">
+            <div className="title_2 antiselector">
+              <div className=" antiselector">
                 <span>SPL Trustee Services:</span>
                 <span>
                   Special Purpose Legal (SPL) structures, ensuring compliance,
                   asset protection, and fiduciary oversight
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Pre-Dispute Management:</span>
                 <span>
                   we help with conflicts through early risk assessment,
                   strategic communication, and contract clarity{" "}
                 </span>
               </div>
-              <div className="animated">
+              <div className=" antiselector">
                 <span>Travel Ban verification:</span>
                 <span>
                   providing travel ban verification services to the clients for
@@ -399,7 +399,7 @@ export default async function Home() {
             <div className="studies-boxes-top">
               <div className="study-box">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Build Your Business with Unshakeable Legal Confidence{" "}
                   </div>
                   <Image
@@ -409,7 +409,7 @@ export default async function Home() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   Growing your business creates complex legal challenges. We
                   build a comprehensive legal framework — your business&apos;s legal
                   operating system. This provides smart contracts and clear
@@ -419,7 +419,7 @@ export default async function Home() {
               </div>
               <div className="study-box">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     The Strategic Components That Power Your Legal Success{" "}
                   </div>
                   <Image
@@ -429,7 +429,7 @@ export default async function Home() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   Transforming scattered legal documents into integrated systems
                   that enable reliant growth. We build 5 strategic components:
                   compliance systems, master agreements, operational policies,
@@ -442,7 +442,7 @@ export default async function Home() {
             <div className="studies-boxes-bottom">
               <div className="study-box">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     The Life-Changing Benefits That Transform Your Success{" "}
                   </div>
                   <Image
@@ -452,7 +452,7 @@ export default async function Home() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   We deliver five benefits: risk transformation enabling growth,
                   proactive protection preventing surprises, financial freedom
                   through cost control, operational excellence accelerating
@@ -462,7 +462,7 @@ export default async function Home() {
               </div>
               <div className="study-box">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Our Proven Process for Building Your Legal Foundation{" "}
                   </div>
                   <Image
@@ -472,7 +472,7 @@ export default async function Home() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   We use a proven seven-step transformation process: strategic
                   discovery, proposal development, stakeholder engagement, risk
                   assessment, transparent investment planning, meticulous

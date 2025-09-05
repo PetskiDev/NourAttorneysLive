@@ -43,7 +43,7 @@ export default async function HomePeopleGrid() {
       }
       const person = people[p++];
       desktopSlots.push(
-        <AnimatedCard key={`d-${i}`} delay={i * 0.05}>
+        <AnimatedCard key={`d-${i}`}>
           {renderPersonCard(person, `d-${i}`)}
         </AnimatedCard>,
       );
@@ -77,7 +77,7 @@ export default async function HomePeopleGrid() {
       }
       const person = people[p++];
       tabletSlots.push(
-        <AnimatedCard key={`t-${i}`} delay={i * 0.05}>
+        <AnimatedCard key={`t-${i}`}>
           {renderPersonCard(person, `t-${i}`)}
         </AnimatedCard>,
       );
@@ -89,7 +89,7 @@ export default async function HomePeopleGrid() {
   {
     for (let i = 0; i < Math.min(6, people.length); i++) {
       mobileSlots.push(
-        <AnimatedCard key={`m-${i}`} delay={i * 0.05}>
+        <AnimatedCard key={`m-${i}`}>
           {renderPersonCard(people[i], `m-${i}`)}
         </AnimatedCard>,
       );
@@ -144,8 +144,10 @@ function renderPersonCard(
           />
         ) : null}
       </div>
-      <div className={styles.title + " title_1" + " antiselector"}>{person.name}</div>
-      <div className={styles.subtitle + " subtitle_1"}>{person.role}</div>
+      <div className={styles.title + " title_1"}>{person.name}</div>
+      <div className={styles.subtitle + " subtitle_1" + " animselector"}>
+        {person.role}
+      </div>
     </div>
   );
 }

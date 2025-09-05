@@ -63,12 +63,12 @@ export default async function ServicePage({
           <div className={styles.servicesRow}>
 
             <div className={styles.servicesRowLeft}>
-              <EditableText relUrl={relUrl} placeholderContent="Your Trusted Partner in Judicial Proceedings" placeholderTag="p" className="subtitle_4" blockKey="leftText"/>
+              <EditableText relUrl={relUrl} placeholderContent="Your Trusted Partner in Judicial Proceedings" placeholderTag="p" className="subtitle_4 antiselector" blockKey="leftText"/>
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH1"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP1"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH1"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP1"/>
             </div>
 
           </div>
@@ -79,8 +79,8 @@ export default async function ServicePage({
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH2"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP2"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH2"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP2"/>
             </div>
 
           </div>
@@ -91,8 +91,8 @@ export default async function ServicePage({
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH3"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP3"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH3"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP3"/>
             </div>
 
           </div>
@@ -115,8 +115,8 @@ export default async function ServicePage({
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH4"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP4"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH4"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP4"/>
             </div>
 
           </div>
@@ -127,8 +127,8 @@ export default async function ServicePage({
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH5"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP5"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH5"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP5"/>
             </div>
 
           </div>
@@ -139,8 +139,8 @@ export default async function ServicePage({
             </div>
 
             <div className={styles.servicesRowRight}>
-              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3" blockKey="rightH6"/>
-              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text" blockKey="rightP6"/>
+              <EditableText relUrl={relUrl} placeholderContent="Expert Navigation of Legal Disputes and Court Procedures" placeholderTag="h3" className="headline_3 antiselector" blockKey="rightH6"/>
+              <EditableText relUrl={relUrl} placeholderContent="We stand ready to represent you before all courts and official bodies, dedicated to helping you reclaim and protect your deserved rights. Our team is well-versed in all litigation procedures and possesses a deep understanding of the laws that judges will apply to resolve the dispute, providing elite, tech-driven litigation services for civil, commercial, labor, or criminal cases." placeholderTag="p" className="body_text antiselector" blockKey="rightP6"/>
             </div>
 
           </div>

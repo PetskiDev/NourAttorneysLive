@@ -153,13 +153,13 @@
     }
 
     .partnerThreeLeftTop{
-        width: 50%;
+        width: 34%;
         justify-content: flex-end;
-        align-items: flex-end;
+        align-items: flex-start;
     }
 
     .partnerThreeLeftTop h5{
-        width: 75%;
+        width: 100%;
     }
 
     .partnerThreeLeftTop ul li{

@@ -46,6 +46,7 @@ export default function EditablePersonImage({
           fill
           sizes="100vw"
           style={{ objectFit: "cover" }}
+
         />
       ) : !isAdmin ? null : (
         <p className={styles.placeholder}>Click edit to select an image</p>

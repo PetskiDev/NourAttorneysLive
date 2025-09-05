@@ -243,7 +243,7 @@ export default async function Advertisement() {
       </section>
       <section className={styles.experts}>
         <div className="containerr">
-          <h5 className="headline_2">OUR EXPERTS</h5>
+          <h5 className="headline_2 antiselector">OUR EXPERTS</h5>
           <div className={styles.expertsRow}>
             <div className={styles.expertsLeft}>
               <Image
@@ -254,7 +254,7 @@ export default async function Advertisement() {
               />
             </div>
             <div className={styles.expertsRight}>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Our dedicated Tax Consultation team combines decades of
                 practical tax experience with in-depth knowledge of local and
                 international tax legislation, including UAE Corporate Tax, VAT
@@ -264,7 +264,7 @@ export default async function Advertisement() {
                 businesses operating in the Emirates, from mainland companies to
                 DIFC/ADGM entities.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 By merging technical expertise with financial analysis skills,
                 we go beyond basic compliance to develop tax optimization
                 solutions that legally reduce your liabilities while aligning
@@ -275,7 +275,7 @@ export default async function Advertisement() {
               </p>
 
               <EditableImage relUrl="/ads" blockKey="mobile-image" placeholderUrl="/tax-image-2.jpg"/>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Understanding that tax complexities can hinder growth in the
                 UAE&apos;s competitive landscape, we provide end-to-end support:
                 from initial tax health checks and compliance planning to audit
@@ -313,8 +313,8 @@ export default async function Advertisement() {
 
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">Business protection & legal victory</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Business protection & legal victory</div>
+              <p className="body_text antiselector">
                 When a client dispute threatened my business, Nour Attorneys
                 didn&apos;t just win my case - they secured full reimbursement for
                 all legal fees and expenses as outlined in our contract. Their
@@ -327,10 +327,10 @@ export default async function Advertisement() {
 
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 First-class service & strategic legal expertise
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Mr. Nour delivers first-class legal service by valuing my time
                 and adjusting his working hours to my business preferences. His
                 prompt responses with clear, business-tailored advice, combined
@@ -341,10 +341,10 @@ export default async function Advertisement() {
               </p>
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Strategic UAE legal expertise & client advocacy
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 For my UAE business needs, Nour Attorneys exceeded expectations
                 through their strategic thinking and keen understanding of UAE
                 law. Nour crafts and executes effective strategies tailored to
@@ -357,8 +357,8 @@ export default async function Advertisement() {
 
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">Speed advantage</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Speed advantage</div>
+              <p className="body_text antiselector">
                 From dozens of lawyers contacted, Nour Attorneys is the ONLY one
                 that works with real speed. My requests are fulfilled within
                 days, instead of weeks with other lawyers. This responsiveness,
@@ -373,8 +373,8 @@ export default async function Advertisement() {
             </div>
 
             <div className={styles.reviewBox}>
-              <div className="title_2">Responsive service & value</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Responsive service & value</div>
+              <p className="body_text antiselector">
                 Nour Attorneys provides excellent legal advice with exceptional
                 responsiveness to client requests and minimal service charges
                 compared to other Dubai law firms. Their quick assistance
@@ -382,8 +382,8 @@ export default async function Advertisement() {
               </p>
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">Business conduct excellence</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Business conduct excellence</div>
+              <p className="body_text antiselector">
                 After over a year with Mr. Mohamed and his team, our experience
                 summarizes in three words: honesty, reliability, punctuality.
                 Their consistent business conduct makes them trusted strategic
@@ -401,8 +401,8 @@ export default async function Advertisement() {
 
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">Business professional excellence</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Business professional excellence</div>
+              <p className="body_text antiselector">
                 Nour Attorneys helped me obtain the best possible case outcome.
                 Mr. Nour&apos;s kindness, patience, and professionalism demonstrate
                 he is a great asset to the firm, delivering results that exceed
@@ -421,8 +421,8 @@ export default async function Advertisement() {
               </Link>
             </div>
             <div className={styles.reviewBox}>
-              <div className="title_2">Human-centered approach</div>
-              <p className="body_text">
+              <div className="title_2 antiselector">Human-centered approach</div>
+              <p className="body_text antiselector">
                 Who thought lawyers could be human? Mohammed delivers exactly
                 that through his top-class, supportive, and personally engaged
                 business model that transforms the legal experience.

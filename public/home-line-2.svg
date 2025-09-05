@@ -8,8 +8,10 @@
         stroke-dashoffset="1330">
     <animate attributeName="stroke-dashoffset"
              from="1330" to="0"
-             dur="3s"
-             fill="freeze" />
+             dur="1.5s"
+             begin="1.5s"
+             fill="freeze"
+             calcMode="linear" />
   </path>
 
   <!-- start cap -->
@@ -17,7 +19,7 @@
     <animate attributeName="opacity"
              values="0;1"
              dur="0.3s"
-             begin="0s"
+             begin="1.5s"
              fill="freeze" />
   </rect>
 
@@ -26,7 +28,7 @@
     <animate attributeName="opacity"
              values="0;1"
              dur="0.3s"
-             begin="2.7s"
+             begin="3s"
              fill="freeze" />
   </rect>
 

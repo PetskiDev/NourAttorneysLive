@@ -11,23 +11,23 @@ export default async function esgPage() {
     <main>
       <section className={styles.esgHero}>
         <div className="containerr">
-          <h1 className="headline_1_3">ESG & SUSTAINABILITY</h1>
+          <h1 className="headline_1_3 antiselector">ESG & SUSTAINABILITY</h1>
 
-          <h6 className="accent_text_3">We believe in the power of</h6>
-          <h6 className="accent_text_3">
+          <h6 className="accent_text_3 antiselector">We believe in the power of</h6>
+          <h6 className="accent_text_3 antiselector">
             giving back to the world around us. Giving back is to provide to our
             universe with all within, our clients, team, communities,
           </h6>
-          <h6 className="accent_text_3">
+          <h6 className="accent_text_3 antiselector">
             and environment,and, it&#39;s how we stay connected to our humanity and
             create a positive and lasting impact. It&#39;s not only a value,
           </h6>
-          <h6 className="accent_text_3">
+          <h6 className="accent_text_3 antiselector">
             but a commitment rooted in care and sincerity. By supporting those
             in need, we preserve our humanity and investing a better future for
             everyone we serve. Our approach includes
           </h6>
-          <h6 className="accent_text_3">
+          <h6 className="accent_text_3 antiselector">
             improving quality and time-frame of services, building flexible
             legal frameworks that solve today&#39;s problems with preparing for the
             future.
@@ -60,9 +60,9 @@ export default async function esgPage() {
           </h4>
 
           <div>
-            <span className="title_5">INTEGRITY</span>
-            <span className="title_5">RELIABILITY</span>
-            <span className="title_5">INNOVATION</span>
+            <span className="title_5 antiselector">INTEGRITY</span>
+            <span className="title_5 antiselector">RELIABILITY</span>
+            <span className="title_5 antiselector">INNOVATION</span>
           </div>
 
           <Image width={270} height={320} src={"/esg-element.svg"} alt="esg" />
@@ -85,9 +85,9 @@ export default async function esgPage() {
           <div className={styles.esgOneRight}>
             <div>
               <span></span>
-              <div className="title_3">SUSTAINABLE LEGAL FOUNDATIONS</div>
+              <div className="title_3 antiselector">SUSTAINABLE LEGAL FOUNDATIONS</div>
             </div>
-            <p className="body_text">
+            <p className="body_text antiselector">
               Nour Attorneys is the official legal partner of the SECOTO
               Organization. From COP28 to the World Green Cup, we&#39;re dedicated
               to supporting all initiatives that connect communities with nature
@@ -101,9 +101,9 @@ export default async function esgPage() {
             </p>
             <div>
               <span></span>
-              <div className="title_3">INNOVATING LEGAL FRAMEWORKS</div>
+              <div className="title_3 antiselector">INNOVATING LEGAL FRAMEWORKS</div>
             </div>
-            <p className="body_text">
+            <p className="body_text antiselector">
               Nour Attorneys&#39; bespoke strategies are designed to adapt to the
               changing issues our clients face, enabling them to stay ahead in
               today&#39;s competitive and fast-paced world. Nour Attorneys don&#39;t
@@ -112,11 +112,11 @@ export default async function esgPage() {
             </p>
             <div>
               <span></span>
-              <div className="title_3">
+              <div className="title_3 antiselector">
                 EMPOWERING COMMUNITIES, BUILDING FUTURES
               </div>
             </div>
-            <p className="body_text">
+            <p className="body_text antiselector">
               At Nour Attorneys, we always think outside the box. The primary
               focus is to empower our community through strategic investments
               that foster growth and create new opportunities. We actively
@@ -129,9 +129,9 @@ export default async function esgPage() {
             </p>
             <div>
               <span></span>
-              <div className="title_3">LEGAL KNOWLEDGE FOR GROWTH</div>
+              <div className="title_3 antiselector">LEGAL KNOWLEDGE FOR GROWTH</div>
             </div>
-            <p className="body_text">
+            <p className="body_text antiselector">
               We strongly believe that continuous learning is key to growth. To
               ensure Nour Attorneys&#39; legal advisors are always at the forefront
               of legal updates and advancements, we are integrating learning
@@ -158,31 +158,31 @@ export default async function esgPage() {
           <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
-              <div className="title_5">[01]</div>
-              <div className="title_5">E-ENVIRONMENTAL</div>
+              <div className="title_5 antiselector">[01]</div>
+              <div className="title_5 antiselector">E-ENVIRONMENTAL</div>
             </div>
             <div className={styles.esgTwoRowRight}>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Paperless Operations:</strong> transition to a fully
                 digital system to reduce paper usage, utilizing e-signatures,
                 cloud storage, AI-driven document management.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Green Office Practices:</strong> implement
                 energy-efficient lighting, reduce plastic waste, and encourage
                 remote work to lower the firm&#39;s carbon footprint.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Sustainable Procurement:</strong> partner with
                 eco-friendly vendors for office supplies, catering, and
                 operational needs.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Carbon Offsetting:</strong> support global carbon offset
                 programs and consider reducing travel emissions by prioritizing
                 virtual client meetings.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Eco-Conscious Legal Advice:</strong> guide clients on
                 compliance with environmental regulations and sustainable
                 business strategies.
@@ -192,27 +192,27 @@ export default async function esgPage() {
           <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
-              <div className="title_5">[02]</div>
-              <div className="title_5">S-SOCIAL</div>
+              <div className="title_5 antiselector">[02]</div>
+              <div className="title_5 antiselector">S-SOCIAL</div>
             </div>
             <div className={styles.esgTwoRowRight}>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Community Legal Support:</strong> publish legal
                 publications, webinars, and educational legal materials for
                 common subjects such as labor laws, offering pro-bone or
                 discounted legal services.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Employee Well-being & Development:</strong> provide
                 wellness programs, flexible work arrangements, and Continuous
                 legal training for professional growth.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Ethical Client Selection:</strong> prioritize working
                 with clients who align with ethical, sustainable, and socially
                 responsible business models.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Community Engagement:</strong> support local charities,
                 legal awareness programs, and mentorship initiatives for young
                 lawyers and trainees.
@@ -222,23 +222,23 @@ export default async function esgPage() {
           <div className="line"></div>
           <div className={styles.esgTwoRow}>
             <div className={styles.esgTwoRowLeft}>
-              <div className="title_5">[03]</div>
-              <div className="title_5">G-GOVERNANCE</div>
+              <div className="title_5 antiselector">[03]</div>
+              <div className="title_5 antiselector">G-GOVERNANCE</div>
             </div>
             <div className={styles.esgTwoRowRight}>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Committee Management:</strong> transition to internal
                 committee management, led by team members, to ensure long-term
                 business sustainability.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Joint Beneficiaries:</strong> change our beneficiary
                 structure to a foundation model with clear profit rights for
                 stakeholders and a profit share for team members and a
                 supporting fund to ensure long term sustainable growth and
                 stability.
               </p>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 <strong>Single Founder to Foundation:</strong> transition of
                 ownership to the foundation, with clear and regulated rules and
                 regulations, ensures that our message and vision will continue

@@ -203,15 +203,15 @@ export default async function AboutUsPage() {
 
       <section className={styles.history}>
         <div className="containerr">
-          <h2 className="headline_2">OUR HISTORY</h2>
+          <h2 className="headline_2 antiselector">OUR HISTORY</h2>
 
-          <h5 className="accent_text_2">
+          <h5 className="accent_text_2 antiselector">
             Nour Attorneys was founded in the year 2009 and started its
             operation from a small office with one lawyer, Nour. Nour was
             determined and aimed to achieve the leading positions in the field
           </h5>
 
-          <h5 className="accent_text_2">
+          <h5 className="accent_text_2 antiselector">
             of corporate law in the middle east by providing unique services
             that thrives the legal community to follow his steps.
           </h5>
@@ -227,7 +227,7 @@ export default async function AboutUsPage() {
             </div>
 
             <div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Nour began his legal career in 2007 after graduating from
                 Egypt&apos;s Faculty of Law. He gained valuable experience
                 handling civil, corporate and tax cases before founding Nour
@@ -237,7 +237,7 @@ export default async function AboutUsPage() {
                 joint ventures and real estate deals quickly established his
                 reputation.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 In 2017, Nour moved his practice to Dubai to better serve
                 growing client demand in the emirate. The same year, he
                 qualified to practice before Appeal Courts, expanding his legal
@@ -245,7 +245,7 @@ export default async function AboutUsPage() {
                 brand across the Middle East. Known for innovative solutions,
                 the firm specialized in cross-border business matters.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Today, Nour Attorneys continues growing through strategic
                 partnerships. The firm remains committed to excellence while
                 expanding its regional presence.
@@ -274,9 +274,9 @@ export default async function AboutUsPage() {
 
           <div className="studies-boxes">
             <div className="studies-boxes-top">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Corporate defense: neutralizing a hostile takeover
                   </div>
                   <Image
@@ -286,16 +286,16 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   A technology startup faced a forced buyout - we drafted a
                   shareholder agreement with strategic veto power. The offer
                   failed and the client received $20 million in growth
                   financing.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     ESG breakthrough: from greenwashing to industry leader
                   </div>
                   <Image
@@ -305,7 +305,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   The manufacturer faced reputational damage due to
                   environmental claims - we rewrote the contracts to include
                   verifiable metrics. In a year the company was ranked 3rd in
@@ -315,9 +315,9 @@ export default async function AboutUsPage() {
             </div>
 
             <div className="studies-boxes-bottom">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Arbitration win: turning the tables on a $50M Default
                   </div>
                   <Image
@@ -327,16 +327,16 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   A contractor refused payment, citing &quot;breach of
                   contract&quot; - we exposed flawed arbitration clauses and
                   shifted the forum. The client recovered every dollar, plus 12%
                   penalties.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Tax revival: resurrecting a cross-border deal
                   </div>
                   <Image
@@ -346,7 +346,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   A European holding company bled €2M yearly from double
                   taxation - we restructured its entity chain via treaty
                   jurisdictions. Now, they save €1.8M annually, compliantly.
@@ -398,14 +398,14 @@ export default async function AboutUsPage() {
                 alt="image"
               />
 
-              <div className="body_text">
+              <div className="body_text antiselector">
                 Message from Mohamed Noureldin, Founder
               </div>
 
               <div className={styles.threePart}>
                 <div></div>
                 <div className={styles.threePartTwo}>
-                  <p className="body_text">
+                  <p className="body_text antiselector">
                     Dear Friends, Colleagues, and Valued Clients,<br></br>
                     <br></br>
                     Nour Attorneys Law Firm was established not merely as a
@@ -433,7 +433,7 @@ export default async function AboutUsPage() {
                     how you, our clients, perceive us – as a trusted asset and a
                     dedicated partner in your business journey.
                   </p>
-                  <p className="body_text">
+                  <p className="body_text antiselector">
                     To my colleagues, the dedicated members of our Firm,
                     regardless of position or title: you are the true investors
                     in Nour Attorneys. You contribute your invaluable time,

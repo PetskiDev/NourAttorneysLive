@@ -1,39 +1,70 @@
-<svg width="805" height="376" viewBox="0 0 805 376" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Animated stroke path -->
-  <path d="M803 0.611572 
-           V147.446 
-           H7.67969 
-           V366.831 
-           C9.73169 367.087 11.31934 368.838 11.31934 370.96 
-           C11.31932 373.258 9.45745 375.121 7.16016 375.121 
-           C4.86273 375.121 3 373.258 3 370.96 
-           C3 368.838 4.58775 367.087 6.63965 366.831 
-           V146.406 
-           H801 
-           V0.611572 
-           H803Z"
-        stroke="#8F91AF"
-        stroke-width="3"
-        fill="none"
-        stroke-dasharray="2360"
-        stroke-dashoffset="2360">
-    <animate attributeName="stroke-dashoffset"
-             from="2360" to="0"
-             dur="3s"
-             fill="freeze" />
+<svg width="802" height="376" viewBox="-2 0 804 376" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 1) Top → Down -->
+  <path d="M800 0.6116 V147.446"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="147" stroke-dashoffset="147" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="3s" fill="freeze"/>
+    <animate id="anim1" attributeName="stroke-dashoffset"
+             from="147" to="0"
+             dur="0.2s" begin="3.05s"
+             fill="freeze"
+             calcMode="linear"/>
   </path>
 
-  <!-- Circle appears last -->
-  <circle cx="7.16" cy="371" r="6" fill="#8F91AF" opacity="0">
-    <animate attributeName="opacity"
-             from="0" to="1"
-             begin="3s" dur="0.3s"
-             fill="freeze" />
-  </circle>
+  <!-- 2) Right → Left -->
+  <path d="M800 147.446 H4.67969"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="796" stroke-dashoffset="796" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim1.end" fill="freeze"/>
+    <animate id="anim2" attributeName="stroke-dashoffset"
+             from="796" to="0"
+             dur="0.6s" begin="anim1.end+0.05s"
+             fill="freeze"
+             calcMode="linear"/>
+  </path>
 
-  <!-- Gradient bar -->
-  <rect width="82" height="5" transform="matrix(0 1 1 0 800 0)" fill="url(#paint0_linear_107237_8873)"/>
+  <!-- 3) Left side → Down -->
+  <path d="M4.67969 147.446 V366.831"
+        stroke="#8F91AF" stroke-width="3"
+        stroke-dasharray="219" stroke-dashoffset="219" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim2.end" fill="freeze"/>
+    <animate id="anim3" attributeName="stroke-dashoffset"
+             from="219" to="0"
+             dur="0.4s" begin="anim2.end+0.05s"
+             fill="freeze"
+             calcMode="linear"/>
+  </path>
 
+  <!-- 4) Circle detail -->
+<path d="M5.17969 366.831 
+         C7.23169 367.087 8.81934 368.838 8.81934 370.96 
+         C8.81932 373.258 6.95745 375.121 4.66016 375.121 
+         C2.36273 375.121 0.5 373.258 0.5 370.96 
+         C0.5 368.838 2.08775 367.087 4.13965 366.831"
+      stroke="#8F91AF" stroke-width="3"
+      stroke-dasharray="30" stroke-dashoffset="30" opacity="0">
+  <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim3.end" fill="freeze"/>
+  <animate id="anim4" attributeName="stroke-dashoffset"
+           from="30" to="0"
+           dur="0.3s" begin="anim3.end+0.05s"
+           fill="freeze"
+           calcMode="linear"/>
+</path>
+
+
+  <!-- 5) Fill at the end -->
+  <path d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.31932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z"
+        fill="#8F91AF" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="anim4.end" fill="freeze"/>
+  </path>
+
+  <!-- 6) Blue gradient fade -->
+  <rect width="82" height="5" transform="matrix(0 1 1 0 799 0)" 
+        fill="url(#paint0_linear_107237_8873)" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="3s" fill="freeze"/>
+  </rect>
+
+  <!-- Gradient definition -->
   <defs>
     <linearGradient id="paint0_linear_107237_8873" x1="0" y1="2.5" x2="82" y2="2.5" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0033A0"/>

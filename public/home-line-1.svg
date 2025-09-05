@@ -1,5 +1,6 @@
 <svg width="1628" height="157" viewBox="0 0 1628 157" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M0 3H435.561V154H1628"
+  <!-- main path -->
+  <path d="M1628 154H435.561V3H0"
         stroke="#8F91AF"
         stroke-width="3"
         fill="none"
@@ -7,12 +8,28 @@
         stroke-dashoffset="1775">
     <animate attributeName="stroke-dashoffset"
              from="1775" to="0"
-             dur="3s"
-             fill="freeze" />
+             dur="1.5s"
+             fill="freeze"
+             calcMode="linear"/>
   </path>
 
-  <rect width="82" height="6" fill="url(#paint0_linear_107238_8876)"/>
-  <rect width="82" height="6" transform="matrix(-1 0 0 1 1628 151)" fill="url(#paint1_linear_107238_8876)"/>
+  <!-- right cap (start) -->
+  <rect width="82" height="6" transform="matrix(-1 0 0 1 1628 151)" fill="url(#paint0_linear_107238_8876)" opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             dur="0.2s"
+             begin="0s"
+             fill="freeze"/>
+  </rect>
+
+  <!-- left cap (end) -->
+  <rect width="82" height="6" fill="url(#paint1_linear_107238_8876)" opacity="0">
+    <animate attributeName="opacity"
+             values="0;1"
+             dur="0.2s"
+             begin="1.5s"
+             fill="freeze"/>
+  </rect>
 
   <defs>
     <linearGradient id="paint0_linear_107238_8876" x1="0" y1="3" x2="82" y2="3" gradientUnits="userSpaceOnUse">

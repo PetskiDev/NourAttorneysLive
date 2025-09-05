@@ -25,6 +25,7 @@
 
 .esgHero>*>h6:nth-child(3) {
     width: 42%;
+    text-align: right;
     margin-left: 8%;
     position: relative;
     z-index: 6;

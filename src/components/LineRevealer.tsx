@@ -7,7 +7,7 @@ export default function LineRevealer() {
   const pathname = usePathname(); // updates on client-side navigation
 
   useEffect(() => {
-    const lines = document.querySelectorAll<HTMLElement>(".line");
+    const lines = document.querySelectorAll<HTMLElement>(".line:not(.antiline)");
 
     // hide initially
     lines.forEach((el) => {

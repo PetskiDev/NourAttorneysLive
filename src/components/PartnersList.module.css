@@ -148,6 +148,7 @@
 
   .leftCell{
     width: 100%;
+    padding-top: 5px;
   }
 
   .rightCell{
@@ -158,6 +159,6 @@
   }
 
   .itemTag{
-    font-size: 12px;
+    font-size: 16px;
   }
 }

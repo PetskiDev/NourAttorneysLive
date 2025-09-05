@@ -58,6 +58,8 @@
     letter-spacing: -0.045vw;
     margin-top: 24%;
     margin-bottom: 5%;
+    font-weight: 500;
+    font-family: var(--font-inter);
 }
 
 .line1{
@@ -149,6 +151,7 @@
 .aboutBoxes{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .aboutBox{

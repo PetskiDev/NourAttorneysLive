@@ -53,20 +53,20 @@ export default async function AboutUsPage() {
           <div className={styles.frameworksRow}>
             <div></div>
             <div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 When you know you&apos;re comprehensively protected and
                 operating on solid legal ground, you can pursue opportunities
                 aggressively, make decisions quickly, and focus your energy on
                 growth rather than worry.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 When legal uncertainty no longer holds you back, when you can
                 move confidently on opportunities, when your operations run
                 smoothly because everyone knows the rules, when your reputation
                 for professionalism opens doors - that&apos;s when you realize
                 the true value of having the right legal foundation.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Every successful business, investor, and professional reaches a
                 critical moment when informal approaches to legal matters become
                 dangerous liabilities. You&apos;ve worked too hard building your
@@ -75,7 +75,7 @@ export default async function AboutUsPage() {
                 a comprehensive legal foundation that transforms legal
                 complexity from an obstacle into a competitive advantage.
               </p>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Whether you&apos;re a growing business ready to scale, an active
                 investor protecting and expanding your portfolio, or a
                 professional managing significant transactions, the right legal
@@ -88,15 +88,15 @@ export default async function AboutUsPage() {
           <div className="line"></div>
           <div className={styles.frameworksRowTwo}>
             <div>
-              <p className="descriptor_1">
+              <p className="descriptor_1 antiselector">
                 Who Thrives with Our Legal Frameworks
               </p>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Growing businesses ready to scale without legal anxiety
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 You&apos;ve built something meaningful, and now you&apos;re
                 ready to take it to the next level. But growth brings complexity
                 - more contracts, more employees, more regulations, more risks.
@@ -105,10 +105,10 @@ export default async function AboutUsPage() {
                 confidence to pursue aggressive growth while knowing you&apos;re
                 fully protected at every step.
               </p>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Strategic investors seeking competitive advantage
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Whether you&apos;re building a portfolio or making strategic
                 investments, you understand that legal protection isn&apos;t
                 just about avoiding problems - it&apos;s about positioning
@@ -117,10 +117,10 @@ export default async function AboutUsPage() {
                 deals while ensuring your interests are protected in every
                 transaction.
               </p>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Active professionals managing complex transactions
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 If you&apos;re handling regular transactions, managing multiple
                 client relationships, or operating in legally complex
                 environments, you need systems that protect your interests while
@@ -135,15 +135,15 @@ export default async function AboutUsPage() {
           <div className="line"></div>
           <div className={styles.frameworksRowTwo}>
             <div>
-              <p className="descriptor_1">
+              <p className="descriptor_1 antiselector">
                 Your Complete Legal Transformation Package
               </p>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Master legal documents that give you the upper hand
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Forget generic templates and one-size-fits-all contracts.
                 You&apos;ll receive battle-tested agreements developed through
                 years of real-world experience, incorporating lessons learned
@@ -152,10 +152,10 @@ export default async function AboutUsPage() {
                 strengthen your negotiating position and often compel favorable
                 settlements because your legal position is unassailable.
               </p>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Proactive risk management that keeps you ahead
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Instead of reacting to legal problems after they arise,
                 you&apos;ll have comprehensive systems that identify and
                 neutralize risks before they become costly disputes. We monitor
@@ -163,10 +163,10 @@ export default async function AboutUsPage() {
                 framework continuously so you&apos;re always ahead of the curve
                 while your competitors are scrambling to catch up.
               </p>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Implementation support that ensures success
               </div>
-              <p className="body_text">
+              <p className="body_text antiselector">
                 Having great legal documents isn&apos;t enough - you need to
                 know how to use them effectively. We provide comprehensive
                 training for your team, integration support for your operations,
@@ -208,13 +208,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[01] Core Framework Foundation</div>
+              <div className="title_5 antiselector">[01] Core Framework Foundation</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Build your business with unshakeable legal confidence
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Discover how comprehensive legal frameworks transform
                 uncertainty into competitive advantage and provide the
                 foundation for sustainable success. Learn how to operate with
@@ -235,13 +235,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[02] Framework Architecture</div>
+              <div className="title_5 antiselector">[02] Framework Architecture</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 The strategic components that power your legal success
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Explore the five essential building blocks that create
                 comprehensive protection while enabling efficient operations and
                 confident decision-making. Understand how these strategic
@@ -261,13 +261,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[03] Risk Transformation</div>
+              <div className="title_5 antiselector">[03] Risk Transformation</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Turn legal risks into competitive advantages
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Learn advanced strategies that identify and neutralize legal
                 risks before they become costly problems, keeping you ahead of
                 challenges that derail competitors. Transform fear of legal
@@ -287,13 +287,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[04] Client Transformation</div>
+              <div className="title_5 antiselector">[04] Client Transformation</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 The life-changing benefits that transform your success
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Experience the specific advantages and outcomes that our
                 frameworks deliver, from cost savings and risk reduction to
                 operational efficiency and strategic growth. Understand the
@@ -314,13 +314,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[05] Partnership Approach</div>
+              <div className="title_5 antiselector">[05] Partnership Approach</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Why our success is built on your success
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Understand our strategic partnership approach that creates
                 mutual growth and exceptional value. Discover how your success
                 becomes our success story and why this creates superior outcomes
@@ -340,13 +340,13 @@ export default async function AboutUsPage() {
 
           <div className={styles.frameworksRowThree}>
             <div>
-              <div className="title_5">[06] Implementation Process</div>
+              <div className="title_5 antiselector">[06] Implementation Process</div>
             </div>
             <div>
-              <div className="title_2">
+              <div className="title_2 antiselector">
                 Our proven process for building your legal foundation
               </div>
-              <p className="subtitle_2">
+              <p className="subtitle_2 antiselector">
                 Follow our step-by-step methodology for building and
                 implementing frameworks that deliver measurable results and
                 lasting value. From initial discovery to complete
@@ -372,9 +372,9 @@ export default async function AboutUsPage() {
 
           <div className="studies-boxes">
             <div className="studies-boxes-top">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Proactive protection that prevents costly surprises
                   </div>
                   <Image
@@ -384,7 +384,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   You&apos;ll sleep better knowing that potential legal issues
                   are identified and addressed before they become expensive
                   problems. Your framework acts as an early warning system,
@@ -392,9 +392,9 @@ export default async function AboutUsPage() {
                   inexpensive to resolve.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Dramatic cost savings that improve your bottom line
                   </div>
                   <Image
@@ -404,7 +404,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   By handling routine legal matters through your framework
                   instead of hiring lawyers for every decision, you&apos;ll
                   reduce your legal expenses significantly while actually
@@ -415,9 +415,9 @@ export default async function AboutUsPage() {
             </div>
 
             <div className="studies-boxes-bottom">
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Operational efficiency that accelerates growth
                   </div>
                   <Image
@@ -427,7 +427,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   Your team will operate more efficiently because they have
                   clear guidelines and proven processes. Deals close faster
                   because your legal position is clear and strong. Negotiations
@@ -435,9 +435,9 @@ export default async function AboutUsPage() {
                   dealing with a professionally managed organization.
                 </p>
               </div>
-              <div className="study-box">
+              <div className="study-box antiselector">
                 <div>
-                  <div className="title_2">
+                  <div className="title_2 antiselector">
                     Strategic growth foundation that scales with success
                   </div>
                   <Image
@@ -447,7 +447,7 @@ export default async function AboutUsPage() {
                     height={25}
                   />
                 </div>
-                <p className="subtitle_2">
+                <p className="subtitle_2 antiselector">
                   As your business grows, your investments expand, or your
                   professional activities become more complex, your framework
                   grows with you. You&apos;re not constantly rebuilding legal
