@@ -8,8 +8,8 @@
         stroke-dashoffset="1330.1">
     <animate attributeName="stroke-dashoffset"
              from="1330.1" to="0"
-             dur="1.5s"
-             begin="1.5s"
+             dur="1s"
+             begin="1s"
              fill="freeze"
              calcMode="linear" />
   </path>
@@ -19,7 +19,7 @@
     <animate attributeName="opacity"
              values="0;1"
              dur="0.3s"
-             begin="1.5s"
+             begin="1s"
              fill="freeze" />
   </rect>
 
@@ -28,7 +28,7 @@
     <animate attributeName="opacity"
              values="0;1"
              dur="0.3s"
-             begin="3s"
+             begin="2s"
              fill="freeze" />
   </rect>
 

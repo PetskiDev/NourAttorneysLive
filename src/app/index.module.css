@@ -27,7 +27,7 @@
     position: absolute;
     left: 50%;
     top: 4.5%;
-    width: 531px;
+    width: 39%;
 }
 
 .absText>h4{
@@ -37,7 +37,7 @@
     line-height: 100%;
     letter-spacing: -0.05vw;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.25vw;
 }
 
 .absText>h4>span{

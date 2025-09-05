@@ -37,7 +37,6 @@ const fontMap: Record<string, number> = {
   headline_1_5: 6,
 };
 
-// detect Safari
 const isSafari = () => {
   if (typeof navigator === "undefined") return false;
   return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -52,7 +51,6 @@ export default function FontScaler() {
     const applySizes = () => {
       const width = window.innerWidth;
 
-      // --- Safari fix for hero h2 on mobile (<768px) ---
       const heroH2 = document.querySelector<HTMLElement>(
         ".index-module__ifV0vq__hero h2"
       );
@@ -63,7 +61,27 @@ export default function FontScaler() {
         heroH2.style.fontSize = "";
       }
 
-      // --- Safari fix for mapped classes (1024px–1930px) ---
+      const heroH1 = document.querySelectorAll<HTMLElement>(
+        ".app_hero__TWtkw > div > h1"
+      );
+      const absText = document.querySelectorAll<HTMLElement>(
+        ".index-module__ifV0vq__absText h4"
+      );
+      if (width >= 768 && width < 1024) {
+        heroH1.forEach((el) => {
+          const pxSize = (width * 9) / 100;
+          el.style.fontSize = `${pxSize}px`;
+        });
+        absText.forEach((el) => {
+          const pxSize = (width * 1.8) / 100;
+          el.style.fontSize = `${pxSize}px`;
+        });
+      } else {
+        heroH1.forEach((el) => {
+          el.style.fontSize = "";
+        });
+      }
+
       if (width >= 1024 && width <= 1930) {
         Object.entries(fontMap).forEach(([className, vwValue]) => {
           const pxSize = (width * vwValue) / 100;
@@ -74,16 +92,23 @@ export default function FontScaler() {
           });
         });
 
-        // --- Safari fix for frameworksHero paragraph ---
         const frameworksP = document.querySelectorAll<HTMLElement>(
           ".frameworks-module__Dh8X6q__frameworksHero > div > p"
         );
         frameworksP.forEach((el) => {
-          const pxSize = (width * 1.05) / 100; // 1.05vw
+          const pxSize = (width * 1.05) / 100;
+          el.style.fontSize = `${pxSize}px`;
+        });
+
+        // Safari-only absText h4 fix (1.25vw)
+        const absTextH4s = document.querySelectorAll<HTMLElement>(
+          ".index-module__ifV0vq__absText > h4"
+        );
+        absTextH4s.forEach((el) => {
+          const pxSize = (width * 1.25) / 100;
           el.style.fontSize = `${pxSize}px`;
         });
       } else {
-        // reset outside range
         Object.keys(fontMap).forEach((className) => {
           const elements =
             document.querySelectorAll<HTMLElement>(`.${className}`);
@@ -96,6 +121,13 @@ export default function FontScaler() {
           ".frameworks-module__Dh8X6q__frameworksHero > div > p"
         );
         frameworksP.forEach((el) => {
+          el.style.fontSize = "";
+        });
+
+        const absTextH4s = document.querySelectorAll<HTMLElement>(
+          ".index-module__ifV0vq__absText > h4"
+        );
+        absTextH4s.forEach((el) => {
           el.style.fontSize = "";
         });
       }

@@ -35,13 +35,89 @@ export default async function Home() {
           <Link href={"/contact"}>contact us</Link>
 
           {/* Updated to SvgResetter */}
-          <SvgResetter
-            src="/home-line-1.svg"
-            alt="line"
+          <svg
+            width="1628"
+            height="157"
+            viewBox="0 0 1628 157"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             className={styles.line1}
-            width={40}
-            height={40}
-          />
+          >
+            <path
+              d="M1628 154H435.561V3H0"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              fill="none"
+              stroke-dasharray="1775"
+              stroke-dashoffset="1775"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="1775"
+                to="0"
+                dur="1s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <rect
+              width="82"
+              height="6"
+              transform="matrix(-1 0 0 1 1628 151)"
+              fill="url(#paint0_linear_107238_8876)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.2s"
+                begin="0s"
+                fill="freeze"
+              />
+            </rect>
+
+            <rect
+              width="82"
+              height="6"
+              fill="url(#paint1_linear_107238_8876)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.2s"
+                begin="1s"
+                fill="freeze"
+              />
+            </rect>
+
+            <defs>
+              <linearGradient
+                id="paint0_linear_107238_8876"
+                x1="0"
+                y1="3"
+                x2="82"
+                y2="3"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient
+                id="paint1_linear_107238_8876"
+                x1="0"
+                y1="3"
+                x2="82"
+                y2="3"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+
           <svg
             width="1164"
             height="158"
@@ -62,8 +138,8 @@ export default async function Home() {
                 attributeName="stroke-dashoffset"
                 from="1330.1"
                 to="0"
-                dur="1.5s"
-                begin="1.5s"
+                dur="1s"
+                begin="1s"
                 fill="freeze"
                 calcMode="linear"
               />
@@ -74,7 +150,7 @@ export default async function Home() {
                 attributeName="opacity"
                 values="0;1"
                 dur="0.3s"
-                begin="1.5s"
+                begin="1s"
                 fill="freeze"
               />
             </rect>
@@ -91,7 +167,7 @@ export default async function Home() {
                 attributeName="opacity"
                 values="0;1"
                 dur="0.3s"
-                begin="3s"
+                begin="2s"
                 fill="freeze"
               />
             </rect>
@@ -143,8 +219,8 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.05s"
-                begin="3s"
+                dur="0.03s"
+                begin="2s"
                 fill="freeze"
               />
               <animate
@@ -152,8 +228,8 @@ export default async function Home() {
                 attributeName="stroke-dashoffset"
                 from="147.1"
                 to="0"
-                dur="0.2s"
-                begin="3.05s"
+                dur="0.12s"
+                begin="2.03s"
                 fill="freeze"
                 calcMode="linear"
               />
@@ -171,7 +247,7 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.05s"
+                dur="0.03s"
                 begin="anim1.end"
                 fill="freeze"
               />
@@ -180,8 +256,8 @@ export default async function Home() {
                 attributeName="stroke-dashoffset"
                 from="796.1"
                 to="0"
-                dur="0.6s"
-                begin="anim1.end+0.05s"
+                dur="0.36s"
+                begin="anim1.end+0.03s"
                 fill="freeze"
                 calcMode="linear"
               />
@@ -199,7 +275,7 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.05s"
+                dur="0.03s"
                 begin="anim2.end"
                 fill="freeze"
               />
@@ -208,8 +284,8 @@ export default async function Home() {
                 attributeName="stroke-dashoffset"
                 from="219.1"
                 to="0"
-                dur="0.4s"
-                begin="anim2.end+0.05s"
+                dur="0.24s"
+                begin="anim2.end+0.03s"
                 fill="freeze"
                 calcMode="linear"
               />
@@ -217,10 +293,10 @@ export default async function Home() {
 
             <path
               d="M5.17969 366.831 
-         C7.23169 367.087 8.81934 368.838 8.81934 370.96 
-         C8.81932 373.258 6.95745 375.121 4.66016 375.121 
-         C2.36273 375.121 0.5 373.258 0.5 370.96 
-         C0.5 368.838 2.08775 367.087 4.13965 366.831"
+       C7.23169 367.087 8.81934 368.838 8.81934 370.96 
+       C8.81932 373.258 6.95745 375.121 4.66016 375.121 
+       C2.36273 375.121 0.5 373.258 0.5 370.96 
+       C0.5 368.838 2.08775 367.087 4.13965 366.831"
               stroke="#8F91AF"
               stroke-width="1.5"
               stroke-dasharray="30.1"
@@ -231,7 +307,7 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.05s"
+                dur="0.03s"
                 begin="anim3.end"
                 fill="freeze"
               />
@@ -240,8 +316,8 @@ export default async function Home() {
                 attributeName="stroke-dashoffset"
                 from="30.1"
                 to="0"
-                dur="0.3s"
-                begin="anim3.end+0.05s"
+                dur="0.18s"
+                begin="anim3.end+0.03s"
                 fill="freeze"
                 calcMode="linear"
               />
@@ -256,7 +332,7 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.3s"
+                dur="0.18s"
                 begin="anim4.end"
                 fill="freeze"
               />
@@ -273,8 +349,8 @@ export default async function Home() {
                 attributeName="opacity"
                 from="0"
                 to="1"
-                dur="0.2s"
-                begin="3s"
+                dur="0.12s"
+                begin="2s"
                 fill="freeze"
               />
             </rect>
@@ -303,75 +379,112 @@ export default async function Home() {
           />
         </div>
 
-        <SvgResetter
-          src="/home-line-4.svg"
-          alt="line"
-          className={styles.line4}
-          width={40}
-          height={40}
-        />
-        <svg
-          width="805"
-          height="355"
-          viewBox="-34 -28 845 395"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={styles.line5}
-        >
-          <g transform="translate(835,10) scale(-1,1)">
-            <path
-              d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
-             C798.636 5.41636 800.016 6.64453 801.682 6.64453
-             C803.514 6.6444 805 5.15695 805 3.32227
-             C805 1.48755 803.514 0.000132083 801.682 0
-             C800.009 0 798.626 1.23819 798.396 2.84863
-             C504.347 3.10886 221.257 128.825 0 355Z"
-              stroke="#8F91AF"
-              stroke-width="1.5"
-              stroke-dasharray="2930"
-              stroke-dashoffset="2930"
-              opacity="0"
-            >
-              <animate
-                attributeName="opacity"
-                from="0"
-                to="1"
-                begin="4.5s"
-                dur="0.1s"
-                fill="freeze"
-              />
-              <animate
-                attributeName="stroke-dashoffset"
-                from="2930"
-                to="0"
-                begin="4.5s"
-                dur="1.5s"
-                fill="freeze"
-                calcMode="linear"
-              />
-            </path>
+       <svg
+  width="805"
+  height="355"
+  className={styles.line4}
+  viewBox="14 -28 845 395"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
+       C798.636 5.41636 800.016 6.64453 801.682 6.64453
+       C803.514 6.6444 805 5.15695 805 3.32227
+       C805 1.48755 803.514 0.000132083 801.682 0
+       C800.009 0 798.626 1.23819 798.396 2.84863
+       C504.347 3.10886 221.257 128.825 0 355Z"
+    transform="translate(-10,10)"
+    stroke="#8F91AF"
+    stroke-width="1.5"
+    stroke-linecap="butt"
+    pathLength="3000"
+    stroke-dasharray="0 3000"
+    stroke-dashoffset="0"
+    fill="#8F91AF"
+    fill-opacity="0"
+  >
+    <animate
+      attributeName="stroke-dasharray"
+      from="0 3000"
+      to="3000 0"
+      dur="2s"
+      fill="freeze"
+      calcMode="linear"
+      begin="indefinite"
+      data-delay="0"
+    />
+    <animate
+      attributeName="fill-opacity"
+      from="0"
+      to="1"
+      dur="0.2s"
+      fill="freeze"
+      begin="indefinite"
+      data-delay="2"
+    />
+  </path>
+</svg>
 
-            <path
-              d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
-             C798.636 5.41636 800.016 6.64453 801.682 6.64453
-             C803.514 6.6444 805 5.15695 805 3.32227
-             C805 1.48755 803.514 0.000132083 801.682 0
-             C800.009 0 798.626 1.23819 798.396 2.84863
-             C504.347 3.10886 221.257 128.825 0 355Z"
-              fill="#8F91AF"
-              opacity="0"
-            >
-              <animate
-                attributeName="opacity"
-                from="0"
-                to="1"
-                begin="6.5s"
-                dur="0.3s"
-                fill="freeze"
-              />
-            </path>
-          </g>
-        </svg>
+
+
+
+
+
+
+
+
+
+       <svg
+  width="805"
+  height="355"
+  viewBox="-34 -28 845 395"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  className={styles.line5}
+>
+  <g transform="translate(835,10) scale(-1,1)">
+    <path
+      d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
+         C798.636 5.41636 800.016 6.64453 801.682 6.64453
+         C803.514 6.6444 805 5.15695 805 3.32227
+         C805 1.48755 803.514 0.000132083 801.682 0
+         C800.009 0 798.626 1.23819 798.396 2.84863
+         C504.347 3.10886 221.257 128.825 0 355Z"
+      transform="translate(0,0)"
+      stroke="#8F91AF"
+      stroke-width="1.5"
+      stroke-linecap="butt"
+      pathLength="2930"
+      stroke-dasharray="0 2930"
+      stroke-dashoffset="0"
+      fill="#8F91AF"
+      fill-opacity="0"
+    >
+      <animate
+        attributeName="stroke-dasharray"
+        from="0 2930"
+        to="2930 0"
+        dur="2s"
+        fill="freeze"
+        calcMode="linear"
+        begin="indefinite"
+        data-delay="0"
+      />
+      <animate
+        attributeName="fill-opacity"
+        from="0"
+        to="1"
+        dur="0.2s"
+        fill="freeze"
+        begin="indefinite"
+        data-delay="2"
+      />
+    </path>
+  </g>
+</svg>
+
+
       </section>
 
       <section className={styles.about}>

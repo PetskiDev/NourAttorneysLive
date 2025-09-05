@@ -8,6 +8,7 @@ import RevealController from "./RevealController";
 import LineRevealer from "~/components/LineRevealer";
 import FontScaler from "./FontScaler";
 import LineObserver from "./LineObserver";
+import SvgInView from "./SvgInView";
 
 
 type Mode = "light" | "dark";
@@ -36,6 +37,7 @@ export default function ClientShell({ children }: { children: React.ReactNode })
       <RevealController/>
       <LineObserver/>
       <LineRevealer/>
+      <SvgInView/>
       <FontScaler/>
       <NavBar key={pathname} mode={mode} />
       {children}
