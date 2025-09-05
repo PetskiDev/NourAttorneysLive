@@ -2,8 +2,6 @@
   <!-- 1) Top → Down -->
   <path d="M800 0.6116 V147.446"
         stroke="#8F91AF" stroke-width="1.5"
-        vector-effect="non-scaling-stroke"
-        shape-rendering="geometricPrecision"
         stroke-dasharray="147.1" stroke-dashoffset="147.1" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="3s" fill="freeze"/>
     <animate id="anim1" attributeName="stroke-dashoffset"
@@ -16,8 +14,6 @@
   <!-- 2) Right → Left -->
   <path d="M800 147.446 H4.67969"
         stroke="#8F91AF" stroke-width="1.5"
-        vector-effect="non-scaling-stroke"
-        shape-rendering="geometricPrecision"
         stroke-dasharray="796.1" stroke-dashoffset="796.1" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim1.end" fill="freeze"/>
     <animate id="anim2" attributeName="stroke-dashoffset"
@@ -30,8 +26,6 @@
   <!-- 3) Left side → Down -->
   <path d="M4.67969 147.446 V366.831"
         stroke="#8F91AF" stroke-width="1.5"
-        vector-effect="non-scaling-stroke"
-        shape-rendering="geometricPrecision"
         stroke-dasharray="219.1" stroke-dashoffset="219.1" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim2.end" fill="freeze"/>
     <animate id="anim3" attributeName="stroke-dashoffset"
@@ -48,8 +42,6 @@
          C2.36273 375.121 0.5 373.258 0.5 370.96 
          C0.5 368.838 2.08775 367.087 4.13965 366.831"
       stroke="#8F91AF" stroke-width="1.5"
-      vector-effect="non-scaling-stroke"
-      shape-rendering="geometricPrecision"
       stroke-dasharray="30.1" stroke-dashoffset="30.1" opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.05s" begin="anim3.end" fill="freeze"/>
     <animate id="anim4" attributeName="stroke-dashoffset"
