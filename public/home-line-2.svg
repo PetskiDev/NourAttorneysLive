@@ -3,11 +3,13 @@
   <path d="M0 3H434.259V155H1164"
         stroke="#8F91AF"
         stroke-width="1.5"
+        vector-effect="non-scaling-stroke"
+        shape-rendering="geometricPrecision"
         fill="none"
-        stroke-dasharray="1330"
-        stroke-dashoffset="1330">
+        stroke-dasharray="1330.1"
+        stroke-dashoffset="1330.1">
     <animate attributeName="stroke-dashoffset"
-             from="1330" to="0"
+             from="1330.1" to="0"
              dur="1.5s"
              begin="1.5s"
              fill="freeze"
@@ -23,8 +25,8 @@
              fill="freeze" />
   </rect>
 
-  <!-- end cap -->
-  <rect x="1164" y="158" width="82" height="6" transform="rotate(-180 1164 158)" fill="url(#paint1_linear_107238_8875)" opacity="0">
+  <!-- end cap (no rotate, uses reversed gradient) -->
+  <rect x="1082" y="152" width="82" height="6" fill="url(#paint1_linear_107238_8875)" opacity="0">
     <animate attributeName="opacity"
              values="0;1"
              dur="0.3s"
@@ -33,11 +35,14 @@
   </rect>
 
   <defs>
+    <!-- Left fade -->
     <linearGradient id="paint0_linear_107238_8875" x1="0" y1="3" x2="82" y2="3" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0033A0"/>
       <stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="paint1_linear_107238_8875" x1="1164" y1="161" x2="1246" y2="161" gradientUnits="userSpaceOnUse">
+
+    <!-- Right fade (reversed so it matches the original rotated look) -->
+    <linearGradient id="paint1_linear_107238_8875" x1="1164" y1="155" x2="1082" y2="155" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0033A0"/>
       <stop offset="1" stop-color="#0033A0" stop-opacity="0"/>
     </linearGradient>
