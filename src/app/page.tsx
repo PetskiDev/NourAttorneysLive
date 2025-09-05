@@ -42,13 +42,87 @@ export default async function Home() {
             width={40}
             height={40}
           />
-          <SvgResetter
-            src="/home-line-2.svg"
-            alt="line"
+          <svg
+            width="1164"
+            height="158"
+            viewBox="0 0 1164 158"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             className={styles.line2}
-            width={40}
-            height={40}
-          />
+          >
+            <path
+              d="M0 3H434.259V155H1164"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              fill="none"
+              stroke-dasharray="1330.1"
+              stroke-dashoffset="1330.1"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="1330.1"
+                to="0"
+                dur="1.5s"
+                begin="1.5s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <rect width="82" height="6" fill="url(#fadeLeft)" opacity="0">
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.3s"
+                begin="1.5s"
+                fill="freeze"
+              />
+            </rect>
+
+            <rect
+              x="1082"
+              y="152"
+              width="82"
+              height="6"
+              fill="url(#fadeRight)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.3s"
+                begin="3s"
+                fill="freeze"
+              />
+            </rect>
+
+            <defs>
+              <linearGradient
+                id="fadeLeft"
+                gradientUnits="objectBoundingBox"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="0"
+              >
+                <stop offset="0" stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+
+              <linearGradient
+                id="fadeRight"
+                gradientUnits="objectBoundingBox"
+                x1="1"
+                y1="0"
+                x2="0"
+                y2="0"
+              >
+                <stop offset="0" stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+
           <svg
             className={styles.line3}
             width="802"
