@@ -2,7 +2,7 @@
   <!-- main path -->
   <path d="M0 3H434.259V155H1164"
         stroke="#8F91AF"
-        stroke-width="3"
+        stroke-width="1.5"
         fill="none"
         stroke-dasharray="1330"
         stroke-dashoffset="1330">
