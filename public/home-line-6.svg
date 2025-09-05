@@ -2,7 +2,7 @@
   <!-- Animated path -->
   <path d="M3 0.165771V50.4407H203"
         stroke="#8F91AF"
-        stroke-width="2"
+        stroke-width="1"
         stroke-dasharray="300"
         stroke-dashoffset="300">
     <animate attributeName="stroke-dashoffset"
