@@ -49,13 +49,177 @@ export default async function Home() {
             width={40}
             height={40}
           />
-          <SvgResetter
-            src="/home-line-3.svg"
-            alt="line"
+          <svg
             className={styles.line3}
-            width={40}
-            height={40}
-          />
+            width="802"
+            height="376"
+            viewBox="-2 0 804 376"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M800 0.6116 V147.446"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              stroke-dasharray="147.1"
+              stroke-dashoffset="147.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.05s"
+                begin="3s"
+                fill="freeze"
+              />
+              <animate
+                id="anim1"
+                attributeName="stroke-dashoffset"
+                from="147.1"
+                to="0"
+                dur="0.2s"
+                begin="3.05s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <path
+              d="M800 147.446 H4.67969"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              stroke-dasharray="796.1"
+              stroke-dashoffset="796.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.05s"
+                begin="anim1.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim2"
+                attributeName="stroke-dashoffset"
+                from="796.1"
+                to="0"
+                dur="0.6s"
+                begin="anim1.end+0.05s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <path
+              d="M4.67969 147.446 V366.831"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              stroke-dasharray="219.1"
+              stroke-dashoffset="219.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.05s"
+                begin="anim2.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim3"
+                attributeName="stroke-dashoffset"
+                from="219.1"
+                to="0"
+                dur="0.4s"
+                begin="anim2.end+0.05s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <path
+              d="M5.17969 366.831 
+         C7.23169 367.087 8.81934 368.838 8.81934 370.96 
+         C8.81932 373.258 6.95745 375.121 4.66016 375.121 
+         C2.36273 375.121 0.5 373.258 0.5 370.96 
+         C0.5 368.838 2.08775 367.087 4.13965 366.831"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              stroke-dasharray="30.1"
+              stroke-dashoffset="30.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.05s"
+                begin="anim3.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim4"
+                attributeName="stroke-dashoffset"
+                from="30.1"
+                to="0"
+                dur="0.3s"
+                begin="anim3.end+0.05s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <path
+              d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.81932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z"
+              fill="#8F91AF"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.3s"
+                begin="anim4.end"
+                fill="freeze"
+              />
+            </path>
+
+            <rect
+              width="82"
+              height="5"
+              transform="matrix(0 1 1 0 799 0)"
+              fill="url(#paint0_linear_107237_8873)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.2s"
+                begin="3s"
+                fill="freeze"
+              />
+            </rect>
+
+            <defs>
+              <linearGradient
+                id="paint0_linear_107237_8873"
+                x1="0"
+                y1="2.5"
+                x2="82"
+                y2="2.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+
           <SvgResetter
             src="/home-line-6.svg"
             alt="line"
@@ -72,13 +236,68 @@ export default async function Home() {
           width={40}
           height={40}
         />
-        <SvgResetter
-          src="/home-line-5.svg"
-          alt="line"
+        <svg
+          width="805"
+          height="355"
+          viewBox="-34 -28 845 395"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           className={styles.line5}
-          width={40}
-          height={40}
-        />
+        >
+          <g transform="translate(835,10) scale(-1,1)">
+            <path
+              d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
+             C798.636 5.41636 800.016 6.64453 801.682 6.64453
+             C803.514 6.6444 805 5.15695 805 3.32227
+             C805 1.48755 803.514 0.000132083 801.682 0
+             C800.009 0 798.626 1.23819 798.396 2.84863
+             C504.347 3.10886 221.257 128.825 0 355Z"
+              stroke="#8F91AF"
+              stroke-width="1.5"
+              stroke-dasharray="2930"
+              stroke-dashoffset="2930"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                begin="4.5s"
+                dur="0.1s"
+                fill="freeze"
+              />
+              <animate
+                attributeName="stroke-dashoffset"
+                from="2930"
+                to="0"
+                begin="4.5s"
+                dur="1.5s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
+
+            <path
+              d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
+             C798.636 5.41636 800.016 6.64453 801.682 6.64453
+             C803.514 6.6444 805 5.15695 805 3.32227
+             C805 1.48755 803.514 0.000132083 801.682 0
+             C800.009 0 798.626 1.23819 798.396 2.84863
+             C504.347 3.10886 221.257 128.825 0 355Z"
+              fill="#8F91AF"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                begin="6.5s"
+                dur="0.3s"
+                fill="freeze"
+              />
+            </path>
+          </g>
+        </svg>
       </section>
 
       <section className={styles.about}>
@@ -118,7 +337,9 @@ export default async function Home() {
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.03</h3>
               <h5 className="subheadline_2">
-                Win More<br />Deals
+                Win More
+                <br />
+                Deals
               </h5>
               <p className="body_text">through superior legal strategy</p>
             </div>
@@ -126,7 +347,9 @@ export default async function Home() {
             <div className={styles.aboutBox}>
               <h3 className="subheadline_2">.04</h3>
               <h5 className="subheadline_2">
-                Eliminate<br />contract risks
+                Eliminate
+                <br />
+                contract risks
               </h5>
               <p className="body_text">while creating competitive advantages</p>
             </div>
@@ -256,7 +479,9 @@ export default async function Home() {
               <h3 className="headline_3 antiselector">[04]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">Business set up and Compliance</h3>
+              <h3 className="headline_3 antiselector">
+                Business set up and Compliance
+              </h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
@@ -292,7 +517,9 @@ export default async function Home() {
               <h3 className="headline_3 antiselector">[05]</h3>
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">Notarization & Attestation</h3>
+              <h3 className="headline_3 antiselector">
+                Notarization & Attestation
+              </h3>
             </div>
           </div>
           <div className={styles.expertiseRow}>
@@ -411,10 +638,10 @@ export default async function Home() {
                 </div>
                 <p className="subtitle_2 antiselector">
                   Growing your business creates complex legal challenges. We
-                  build a comprehensive legal framework — your business&apos;s legal
-                  operating system. This provides smart contracts and clear
-                  policies, giving you the confidence to operate, make bold
-                  decisions and grow without constant legal.
+                  build a comprehensive legal framework — your business&apos;s
+                  legal operating system. This provides smart contracts and
+                  clear policies, giving you the confidence to operate, make
+                  bold decisions and grow without constant legal.
                 </p>
               </div>
               <div className="study-box">
