@@ -46,7 +46,7 @@ export default async function Home() {
             <path
               d="M1628 154H435.561V3H0"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               fill="none"
               stroke-dasharray="1775"
               stroke-dashoffset="1775"
@@ -129,7 +129,7 @@ export default async function Home() {
             <path
               d="M0 3H434.259V155H1164"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               fill="none"
               stroke-dasharray="1330.1"
               stroke-dashoffset="1330.1"
@@ -210,7 +210,7 @@ export default async function Home() {
             <path
               d="M800 0.6116 V147.446"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-dasharray="147.1"
               stroke-dashoffset="147.1"
               opacity="0"
@@ -238,7 +238,7 @@ export default async function Home() {
             <path
               d="M800 147.446 H4.67969"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-dasharray="796.1"
               stroke-dashoffset="796.1"
               opacity="0"
@@ -266,7 +266,7 @@ export default async function Home() {
             <path
               d="M4.67969 147.446 V366.831"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-dasharray="219.1"
               stroke-dashoffset="219.1"
               opacity="0"
@@ -298,7 +298,7 @@ export default async function Home() {
        C2.36273 375.121 0.5 373.258 0.5 370.96 
        C0.5 368.838 2.08775 367.087 4.13965 366.831"
               stroke="#8F91AF"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke-dasharray="30.1"
               stroke-dashoffset="30.1"
               opacity="0"
@@ -396,7 +396,7 @@ export default async function Home() {
        C504.347 3.10886 221.257 128.825 0 355Z"
     transform="translate(-10,10)"
     stroke="#8F91AF"
-    stroke-width="1.5"
+    strokeWidth="1.5"
     stroke-linecap="butt"
     pathLength="3000"
     stroke-dasharray="0 3000"
@@ -453,7 +453,7 @@ export default async function Home() {
          C504.347 3.10886 221.257 128.825 0 355Z"
       transform="translate(0,0)"
       stroke="#8F91AF"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke-linecap="butt"
       pathLength="2930"
       stroke-dasharray="0 2930"
