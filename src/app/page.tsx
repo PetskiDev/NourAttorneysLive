@@ -386,6 +386,7 @@ export default async function Home() {
   viewBox="14 -28 845 395"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  data-anim="line4"
 >
   <path
     d="M0 355H1.24902C222.254 129.436 504.862 4.07474 798.398 3.81543
@@ -442,6 +443,7 @@ export default async function Home() {
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   className={styles.line5}
+  data-anim="line5"
 >
   <g transform="translate(835,10) scale(-1,1)">
     <path
