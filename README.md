@@ -1,7 +1,3 @@
 redeploy
 
-y
-
-
-
-
+yy
