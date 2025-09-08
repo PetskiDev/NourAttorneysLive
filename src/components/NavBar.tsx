@@ -76,7 +76,7 @@ export default function NavBar({ mode = "light" }: { mode?: Mode }) {
         setMenuAnimating(false);
         clearTimers();
       },
-      start * 100 + 20,
+      20,
     );
     timersRef.current.push(done);
   };

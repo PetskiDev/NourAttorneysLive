@@ -438,8 +438,8 @@
     .homeMobile{
         height: 200px;
         width: 5.5px;
-        animation: lineSeven 3.5s ease forwards;
         margin: 0 auto;
+        margin-top: 30px;
     }
 
 
