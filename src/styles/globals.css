@@ -700,6 +700,34 @@ body {
 
 
 @media only screen and (max-width: 1024px) {
+
+    .custom-line {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.custom-line > div {
+  background-color: #D9D9D9;
+}
+
+.custom-line > div:nth-child(1),
+.custom-line > div:nth-child(3) {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.custom-line > div:nth-child(2) {
+  width: 1px;
+  height: 0;              /* start collapsed */
+  transition: height 1.5s ease-out;
+}
+
+.custom-line.revealed > div:nth-child(2) {
+  height: 200px;          /* grow down */
+}
   .studies-boxes {
     display: flex;
     flex-direction: column;
@@ -781,7 +809,7 @@ body {
 }
 
 .custom-line > div:nth-child(2) {
-  width: 0.5px;
+  width: 1px;
   height: 0;              /* start collapsed */
   transition: height 1.5s ease-out;
 }
