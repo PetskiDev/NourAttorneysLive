@@ -701,6 +701,11 @@ body {
 
 @media only screen and (max-width: 1024px) {
 
+  .safarihones {
+    font-size: calc(7.8vw)!important;
+}
+
+
     .custom-line {
   display: flex;
   flex-direction: column;
