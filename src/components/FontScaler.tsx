@@ -51,88 +51,73 @@ export default function FontScaler() {
     const applySizes = () => {
       const width = window.innerWidth;
 
-      // Hero H2 scaling for mobile
+      // HERO H2 (mobile only)
       const heroH2 = document.querySelector<HTMLElement>(".thehtwob");
       if (heroH2 && width < 768) {
         const pxSize = (width * 16) / 100;
-        heroH2.style.fontSize = `${pxSize}px`;
+        heroH2.style.setProperty("font-size", `${pxSize}px`, "important");
       } else if (heroH2) {
         heroH2.style.fontSize = "";
       }
 
-      // Hero H1 and absText for tablets
+      // HERO H1 + absText (tablet)
       const heroH1 = document.querySelectorAll<HTMLElement>(".hones");
       const absText = document.querySelectorAll<HTMLElement>(".thehgourr");
 
-      if (width >= 768 && width < 1024) {
-        heroH1.forEach((el) => {
-          const pxSize = (width * 9) / 100;
-          el.style.fontSize = `${pxSize}px`;
-        });
-        absText.forEach((el) => {
-          const pxSize = (width * 1.8) / 100;
-          el.style.fontSize = `${pxSize}px`;
-        });
+      if (width >= 768 && width <= 1024) {
+        heroH1.forEach((el) =>
+          el.style.setProperty("font-size", `${(width * 9) / 100}px`, "important")
+        );
+        absText.forEach((el) =>
+          el.style.setProperty("font-size", `${(width * 1.8) / 100}px`, "important")
+        );
       }
 
-      // Clear only when <768 OR >1930
+      // clear when <768 or >1930
       if (width < 768 || width > 1930) {
         heroH1.forEach((el) => (el.style.fontSize = ""));
         absText.forEach((el) => (el.style.fontSize = ""));
       }
 
-      // Font scaling for desktop and large screens
+      // DESKTOP scaling (fontMap + extras)
       if (width >= 1024 && width <= 1930) {
         Object.entries(fontMap).forEach(([className, vwValue]) => {
           const pxSize = (width * vwValue) / 100;
-          const elements = document.querySelectorAll<HTMLElement>(
-            `.${className}`
+          const elements = document.querySelectorAll<HTMLElement>(`.${className}`);
+          elements.forEach((el) =>
+            el.style.setProperty("font-size", `${pxSize}px`, "important")
           );
-          elements.forEach((el) => {
-            el.style.fontSize = `${pxSize}px`;
-          });
         });
 
-        const frameworksP =
-          document.querySelectorAll<HTMLElement>(".theonepp");
-        frameworksP.forEach((el) => {
-          const pxSize = (width * 1.05) / 100;
-          el.style.fontSize = `${pxSize}px`;
-        });
+        // frameworks P
+        const frameworksP = document.querySelectorAll<HTMLElement>(".theonepp");
+        frameworksP.forEach((el) =>
+          el.style.setProperty("font-size", `${(width * 1.05) / 100}px`, "important")
+        );
 
         // Safari-only absText h4 fix (1.25vw)
-        const absTextH4s =
-          document.querySelectorAll<HTMLElement>(".thehgourr");
-        absTextH4s.forEach((el) => {
-          const pxSize = (width * 1.25) / 100;
-          el.style.fontSize = `${pxSize}px`;
-        });
+        const absTextH4s = document.querySelectorAll<HTMLElement>(".thehgourr");
+        absTextH4s.forEach((el) =>
+          el.style.setProperty("font-size", `${(width * 1.25) / 100}px`, "important")
+        );
       } else {
-        // Clear fontMap-based sizes when not in desktop range
+        // clear fontMap + extras outside desktop range
         Object.keys(fontMap).forEach((className) => {
-          const elements = document.querySelectorAll<HTMLElement>(
-            `.${className}`
-          );
-          elements.forEach((el) => {
-            el.style.fontSize = "";
-          });
+          const elements = document.querySelectorAll<HTMLElement>(`.${className}`);
+          elements.forEach((el) => (el.style.fontSize = ""));
         });
 
-        const frameworksP =
-          document.querySelectorAll<HTMLElement>(".theonepp");
-        frameworksP.forEach((el) => {
-          el.style.fontSize = "";
-        });
+        const frameworksP = document.querySelectorAll<HTMLElement>(".theonepp");
+        frameworksP.forEach((el) => (el.style.fontSize = ""));
 
-        const absTextH4s =
-          document.querySelectorAll<HTMLElement>(".thehgourr");
-        absTextH4s.forEach((el) => {
-          el.style.fontSize = "";
-        });
+        const absTextH4s = document.querySelectorAll<HTMLElement>(".thehgourr");
+        absTextH4s.forEach((el) => (el.style.fontSize = ""));
       }
     };
 
-    applySizes();
+    // ensure DOM is painted before first run
+    requestAnimationFrame(applySizes);
+
     window.addEventListener("resize", applySizes);
     return () => window.removeEventListener("resize", applySizes);
   }, [pathname]);
