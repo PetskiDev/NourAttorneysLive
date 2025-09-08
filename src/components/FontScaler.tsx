@@ -65,8 +65,9 @@ export default function FontScaler() {
       const absText = document.querySelectorAll<HTMLElement>(".thehgourr");
 
       if (width >= 768 && width <= 1024) {
-        heroH1.forEach((el) =>
-          el.style.setProperty("font-size", `${(width * 9) / 100}px`, "important")
+        heroH1.forEach((el) =>{
+          console.log(el)
+          el.style.setProperty("font-size", `${(width * 9) / 100}px`, "important")}
         );
         absText.forEach((el) =>
           el.style.setProperty("font-size", `${(width * 1.8) / 100}px`, "important")

@@ -704,12 +704,14 @@ body {
     .custom-line {
   display: flex;
   flex-direction: column;
-  margin: 20px 0!important;
+  margin: 20px 0;
+  margin-top: 30px!important;
+  margin-bottom: 30px!important;
   align-items: center;
 }
 
 .custom-line > div {
-  background-color: #D9D9D9;
+  background-color: #a2a2a2;
 }
 
 .custom-line > div:nth-child(1),
