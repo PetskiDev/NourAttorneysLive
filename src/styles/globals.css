@@ -781,7 +781,7 @@ body {
 }
 
 .custom-line > div:nth-child(2) {
-  width: 0.2px;
+  width: 0.5px;
   height: 0;              /* start collapsed */
   transition: height 1.5s ease-out;
 }

@@ -52,7 +52,7 @@ export default function FontScaler() {
       const width = window.innerWidth;
 
       const heroH2 = document.querySelector<HTMLElement>(
-        ".index-module__ifV0vq__hero h2"
+        ".thehtwob"
       );
       if (heroH2 && width < 768) {
         const pxSize = (width * 16) / 100;
@@ -62,7 +62,7 @@ export default function FontScaler() {
       }
 
       const heroH1 = document.querySelectorAll<HTMLElement>(
-        ".app_hero__TWtkw > div > h1"
+        ".hones"
       );
       const absText = document.querySelectorAll<HTMLElement>(
         ".thehgourr"

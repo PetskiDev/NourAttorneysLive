@@ -13,10 +13,10 @@ export default async function Home() {
     <main>
       <section style={{ paddingTop: 10 }} className={styles.hero}>
         <div className="containerr">
-          <h1 className="headline_1_1">YOUR</h1>
-          <h1 className="headline_1_1">TRUSTED PARTNER IN</h1>
-          <h1 className="headline_1_1">LEGAL MATTERS</h1>
-          <h2>your trusted partner in legal matters</h2>
+          <h1 className="headline_1_1 hones">YOUR</h1>
+          <h1 className="headline_1_1 hones">TRUSTED PARTNER IN</h1>
+          <h1 className="headline_1_1 hones">LEGAL MATTERS</h1>
+          <h2 className="thehtwob">your trusted partner in legal matters</h2>
           <div className={styles.absText}>
             <h4 className="thehgourr">
               Nour Attorneys transforms legal risks into strategic advantages,
