@@ -20,7 +20,7 @@ export default async function AboutUsPage() {
             alt="element"
           />
           <div className="subheadline_1">Exceptional success</div>
-          <p>
+          <p className="theonepp">
             The most successful{" "}
             <span>businesses, investors, and professionals</span> don&apos;t
             wait for legal problems to force their hand. They proactively build

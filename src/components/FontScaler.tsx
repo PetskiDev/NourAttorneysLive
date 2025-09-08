@@ -65,7 +65,7 @@ export default function FontScaler() {
         ".app_hero__TWtkw > div > h1"
       );
       const absText = document.querySelectorAll<HTMLElement>(
-        ".index-module__ifV0vq__absText h4"
+        ".thehgourr"
       );
       if (width >= 768 && width < 1024) {
         heroH1.forEach((el) => {
@@ -93,7 +93,7 @@ export default function FontScaler() {
         });
 
         const frameworksP = document.querySelectorAll<HTMLElement>(
-          ".frameworks-module__Dh8X6q__frameworksHero > div > p"
+          ".theonepp"
         );
         frameworksP.forEach((el) => {
           const pxSize = (width * 1.05) / 100;
@@ -102,7 +102,7 @@ export default function FontScaler() {
 
         // Safari-only absText h4 fix (1.25vw)
         const absTextH4s = document.querySelectorAll<HTMLElement>(
-          ".index-module__ifV0vq__absText > h4"
+          ".thehgourr"
         );
         absTextH4s.forEach((el) => {
           const pxSize = (width * 1.25) / 100;
@@ -118,14 +118,14 @@ export default function FontScaler() {
         });
 
         const frameworksP = document.querySelectorAll<HTMLElement>(
-          ".frameworks-module__Dh8X6q__frameworksHero > div > p"
+          ".theonepp"
         );
         frameworksP.forEach((el) => {
           el.style.fontSize = "";
         });
 
         const absTextH4s = document.querySelectorAll<HTMLElement>(
-          ".index-module__ifV0vq__absText > h4"
+          ".thehgourr"
         );
         absTextH4s.forEach((el) => {
           el.style.fontSize = "";

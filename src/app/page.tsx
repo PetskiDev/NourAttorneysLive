@@ -18,7 +18,7 @@ export default async function Home() {
           <h1 className="headline_1_1">LEGAL MATTERS</h1>
           <h2>your trusted partner in legal matters</h2>
           <div className={styles.absText}>
-            <h4>
+            <h4 className="thehgourr">
               Nour Attorneys transforms legal risks into strategic advantages,
               through our integrity, we treat every client matter as a duty with
               <span>honesty, devotion, and sincerity,</span> guided by a deep
