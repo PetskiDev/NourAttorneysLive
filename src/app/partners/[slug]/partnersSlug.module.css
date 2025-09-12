@@ -202,7 +202,7 @@
     }
 
     .partnerThreeRight p{
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .partnerMain>div>div>h5 {
@@ -273,10 +273,26 @@
     }
 
     .partnerMain h5{
-        font-size: 6vw;
+        font-size: 4.2vw;
     }
 
     .partnerOne > div{
         padding-top: 10px;
+    }
+
+    .partnerThreeLeft ul li{
+        position: relative;
+    }
+
+    .partnerThreeLeft ul li::before{
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        border-radius: 20px;
+        content: "";
+        left: -20px;
+        background-color: #101010;
+        top: 50%;
+        transform: translateY(-50%);
     }
 }

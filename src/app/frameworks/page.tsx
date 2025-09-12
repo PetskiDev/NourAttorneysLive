@@ -40,13 +40,21 @@ export default async function AboutUsPage() {
 
       <section className={styles.frameworksMain}>
         <div className="containerr">
-          <h4 className="subheadline_2 antiselector">
+          <h4 className="subheadline_2 antiselector mobnot">
             the difference between businesses, investors, and professionals who
             thrive and those who struggle often comes down to one factor:{" "}
             <span className="blue-text">[legal confidence].</span> Our
             frameworks give it to
           </h4>
-          <h4 className="subheadline_2 antiselector">
+          <h4 className="subheadline_2 antiselector mobnot">
+            pursue aggressive growth while knowing you&apos;re fully protected
+            at every step.
+          </h4>
+          <h4 className="subheadline_2 antiselector mob">
+            the difference between businesses, investors, and professionals who
+            thrive and those who struggle often comes down to one factor:{" "}
+            <span className="blue-text">[legal confidence].</span> Our
+            frameworks give it to
             pursue aggressive growth while knowing you&apos;re fully protected
             at every step.
           </h4>

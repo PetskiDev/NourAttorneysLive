@@ -345,6 +345,14 @@
         display: none;
     }
 
+    .esgOne{
+        padding-top: 40px;
+    }
+
+    .esgTwo{
+        padding-bottom: 40px;
+    }
+
     .esgHero h4{
         display: block;
         text-align: center;
@@ -353,6 +361,8 @@
         margin:  100px auto;
         font-weight: 500;
         width: 85%;
+        font-size: 4vw;
+        line-height: 100%;
     }
 
     .esgHero img:nth-of-type(1){

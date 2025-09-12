@@ -340,11 +340,19 @@
     .benefitBox{
         width: calc((100% - 20px) / 2);
         aspect-ratio: 359 / 325;
-        padding: 4.5% 6%;
+        padding: 4.5% 45px;
     }
 
     .benefitBoxTop h2{
         font-size: 3vw;
+    }
+
+    .experts>div{
+        padding-top: 50px;
+    }
+
+    .reviews{
+        padding-top: 20px;
     }
 
     .benefitBoxTop p{
@@ -371,8 +379,29 @@
         font-size: 2vw;
     }
 
-    .reviewBox:nth-child(1), .reviewBox:nth-child(3), .reviewBox:nth-child(6), .reviewBox:nth-child(8), .reviewBox:nth-child(9), .reviewBox:nth-child(12), .reviewBox:nth-child(13), .reviewBox:nth-child(15){
+    .reviewBox:nth-child(1), .reviewBox:nth-child(3), .reviewBox:nth-child(6), .reviewBox:nth-child(8), .reviewBox:nth-child(9), .reviewBox:nth-child(12), .reviewBox:nth-child(13), .reviewBox:nth-child(14), .reviewBox:nth-child(16){
         display: none;
+    }
+
+    .reviewBox:nth-child(15){
+        order: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(3.5);
+        padding-top: 40px;
+    }
+
+    .reviewBox a{
+        gap: 0;
+    }
+
+    .reviewsBoxes{
+        padding-top: 40px;
+    }
+
+    .reviewBox a img{
+        margin-bottom: -2px;
     }
 
     .reviewBox{
@@ -443,6 +472,7 @@ margin-top: 0;
         font-size: 3.7vw;
         width: 85%;
         line-height: 100%;
+        font-family: var(--font-manrope);
     }
 
     .adsHero>div img{
@@ -459,10 +489,11 @@ margin-top: 0;
         width: 100%;
         font-size: 5.5vw;
         text-align: left;
+        font-weight: 600;
     }
 
     .approachBox h3{
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .approachRow{
@@ -503,11 +534,11 @@ margin-top: 0;
     .benefits > div > h4{
         width: 100%!important;
         text-align: left;
-        font-size: 3.8vw;
+        font-size: 4.1vw;
     }
 
     .benefits h5{
-        font-size: 4vw;
+        font-size: 4.5vw;
         margin-top: 30px;
     }
 

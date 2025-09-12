@@ -152,10 +152,12 @@
 
     .servicesRowRight p{
         font-size: 18px!important;
+        letter-spacing: -0.5px;
     }
 
     .servicesRowRight>div>h3{
         font-size: 18px!important;
+        letter-spacing: -0.5px;
     }
 
     .servicesRowLeft p{
@@ -184,6 +186,8 @@
 
     .servicesRowLeft p{
         text-align: center;
+        color: #101010;
+        letter-spacing: -0.5px;
     }
 
     .servicesRowLeft, .servicesRowRight{
@@ -192,6 +196,10 @@
 
     .servicesRowRight>*{
         width: 100%;
+    }
+
+    .insights>div{
+        margin-top: 20px;
     }
 
     .servicesRowLeft>div{
@@ -218,9 +226,11 @@
     .servicesHero p{
         margin-left: auto;
         margin-right: auto;
-        width: 70%;
+        width: 90%;
         text-align: center;
         font-size: 18px;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
     }
 
     .servicesHero h1{

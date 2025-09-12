@@ -362,7 +362,7 @@ export default async function AboutUsPage() {
           <div className={styles.founderTop}>
             <div style={{ marginLeft: "25%" }}>
               <div className="descriptor_2">FOUNDER</div>
-              <h5 className="accent_text_3">
+              <h5 className="accent_text_3 mobnot">
                 Mohamed Noureldin is the visionary behind Nour Attorneys, a
                 leader who goes beyond traditional legal services to create
                 meaningful impact. Nour’s
@@ -370,7 +370,17 @@ export default async function AboutUsPage() {
             </div>
           </div>
           <div className={styles.founderMid}>
-            <h5 className="accent_text_3">
+            <h5 className="accent_text_3 mobnot">
+              background reflects a commitment to excellence, shaping a firm
+              that blends deep legal expertise with a forward-thinking approach.
+              Nour is not just the founder but an active force behind every
+              strategic decision, ensuring that Nour Attorneys operates with the
+              highest standards of service, innovation, and client care.
+            </h5>
+            <h5 className="accent_text_3 mob">
+              Mohamed Noureldin is the visionary behind Nour Attorneys, a
+                leader who goes beyond traditional legal services to create
+                meaningful impact. Nour’s
               background reflects a commitment to excellence, shaping a firm
               that blends deep legal expertise with a forward-thinking approach.
               Nour is not just the founder but an active force behind every

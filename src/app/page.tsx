@@ -786,13 +786,22 @@ export default async function Home() {
         <div className="containerr">
           <h2 className="headline_2">frameworks</h2>
 
-          <h6 className="accent_text_1">
+          <h6 className="accent_text_1 mobnot">
             NOUR ATTORNEYS ENABLE YOU TO{" "}
             <span className="blue-text">[FUTURE-PROOF YOUR SUCCESS]</span> BY
             CONVERTING LEGAL RISKS INTO STRATEGIC SAFEGUARDS AND UNPREDICTABLE
             CHALLENGES INTO GROWTH CATALYSTS, GUARANTEEING
           </h6>
-          <h6 className="accent_text_1">
+          <h6 className="accent_text_1 mobnot">
+            <span className="blue-text">[SUSTAINABLE PROSPERITY]</span> FOR YOUR
+            BUSINESS, PEOPLE, AND COMMUNITY, PROVING THAT VISIONARY LAW BUILDS
+            LEGACIES.
+          </h6>
+          <h6 className="accent_text_1 mob">
+            NOUR ATTORNEYS ENABLE YOU TO{" "}
+            <span className="blue-text">[FUTURE-PROOF YOUR SUCCESS]</span> BY
+            CONVERTING LEGAL RISKS INTO STRATEGIC SAFEGUARDS AND UNPREDICTABLE
+            CHALLENGES INTO GROWTH CATALYSTS, GUARANTEEING
             <span className="blue-text">[SUSTAINABLE PROSPERITY]</span> FOR YOUR
             BUSINESS, PEOPLE, AND COMMUNITY, PROVING THAT VISIONARY LAW BUILDS
             LEGACIES.

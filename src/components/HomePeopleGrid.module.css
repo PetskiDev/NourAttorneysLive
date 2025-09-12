@@ -133,8 +133,9 @@ align-items: center; }
     }
 
     .viewAllBelow img {
-        height: 42px;
-        width: 42px;
+        height: 52px;
+        width: 52px;
+        margin-bottom: -12px;
     }
 
     .grid2 .title{

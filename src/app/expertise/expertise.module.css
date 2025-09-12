@@ -61,4 +61,12 @@
     .expertiseHero>*{
         gap: 20px;
     }
+
+    .expertiseHero img{
+        display: none;
+    }
+
+    .expertiseHero p{
+        text-align: center;
+    }
 }

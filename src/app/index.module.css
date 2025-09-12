@@ -436,10 +436,10 @@
     }
 
     .homeMobile{
-        height: 200px;
+        height: 100px;
         width: 5.5px;
         margin: 0 auto;
-        margin-top: 30px;
+        margin-top: 10px;
     }
 
 
@@ -605,8 +605,12 @@
         margin-top: 25%;
     }
 
+    .partners h4{
+        font-size: 5vw;
+    }
+
     .hero>div>a{
-        margin-top: 5%;
+        margin-top: 1%;
         height: 55px;
         width: 263px;
         font-size: 20px;
@@ -680,12 +684,14 @@
     }
 
     .expertiseRow a img {
-        height: 42px;
-        width: 42px;
+        height: 52px;
+        width: 52px;
+        margin-bottom: -3px;
+        margin-left: -10px;
     }
 
     .caseStudies h6{
-        font-size: 6vw;
+        font-size: 5.1vw;
     }
 
     .expertiseBlackRowRight > *{

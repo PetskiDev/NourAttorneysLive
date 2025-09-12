@@ -99,7 +99,7 @@ export default async function ServicePage({
 
           <div className={styles.servicesRow}>
 
-            <div className={styles.servicesRowLeft}>
+            <div className={`${styles.servicesRowLeft} mobnot`}>
               <EditableImage relUrl={relUrl} blockKey="leftImage" placeholderAlt="left-image" placeholderUrl="/service-template-placeholder-1.jpg"/>
             </div>
 

@@ -306,6 +306,7 @@
 
   .searchBox::before{
     height: 16px;
+    z-index: 5;
     width: 16px;
   }
 

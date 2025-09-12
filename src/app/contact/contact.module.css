@@ -525,8 +525,14 @@
     }
 
     .leftHero h5{
-        font-size: 3.4vw;
-        width: 100%;
+        font-size: 4vw;
+        width: 95%;
+    }
+
+    .boxLinkDiv a img{
+        height: 20px;
+        width: 20px;
+        margin-bottom: -2px;
     }
 
     .rightHero{
@@ -645,10 +651,10 @@
     }
 
     .contactRightThreeRow{
-        gap: 5px;
+        gap: 10px;
     }
 
     .contactRightThree{
-        gap: 10px;
+        gap: 15px;
     }
 }

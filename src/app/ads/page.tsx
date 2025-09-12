@@ -300,14 +300,19 @@ export default async function Advertisement() {
       <section className={styles.reviews}>
         <div className="containerr">
           <h5 className="headline_2">REVIEWS</h5>
-          <h4 className="subheadline_2">
+          <h4 className="subheadline_2 mobnot">
             Trusted by businesses across industries, our clients consistently
             praise our ability to deliver results while ensuring full
             compliance. Their{" "}
             <span className="blue-text">[successfull stories]</span> speak
             volumes{" "}
           </h4>
-          <h4 className="subheadline_2">about our commitment to excellence.</h4>
+          <h4 className="subheadline_2 mobnot">about our commitment to excellence.</h4>
+          <h4 className="subheadline_2 mob">Trusted by businesses across industries, our clients consistently
+            praise our ability to deliver results while ensuring full
+            compliance. Their{" "}
+            <span className="blue-text">[successfull stories]</span> speak
+            volumes{" "} about our commitment to excellence.</h4>
           <div className={styles.reviewsBoxes}>
             <div className={styles.reviewBox}>
 

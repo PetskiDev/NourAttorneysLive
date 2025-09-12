@@ -204,7 +204,7 @@
   }
 
   .email {
-    font-size: 22px;
+    font-size: 32px;
   }
 
   .inlineList {
@@ -252,19 +252,24 @@
   }
 
   .email {
-    font-size: 18px;
+    font-size: 26px;
   }
 
     .footer :global(.title_4){
-    font-size: 3vw;
+    font-size: 15px;
   }
 
   .footer :global(.subtitle_3){
-    font-size: 3vw;
+    font-size: 15px;
   }
 
   .container>div:nth-child(1) :global(.title_4){
     margin-bottom: 10px;
+  }
+
+  .social{
+    margin-bottom: 20px;
+    gap: 10px;
   }
 
   .container>div:nth-child(6){
@@ -272,5 +277,8 @@
     font-size: 3vw;
     flex-direction: column;
     color: #B7B7B7;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
   }
 }

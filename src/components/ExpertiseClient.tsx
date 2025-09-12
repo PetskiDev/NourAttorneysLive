@@ -3,6 +3,7 @@
 import styles from "./ExpertiseClient.module.css";
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
+import { transform } from "typescript";
 
 type Service = {
   id: number;
@@ -153,7 +154,7 @@ export default function ExpertiseClient({
                   <sup className={styles.counts}>{activeCategory?.count}</sup>
                 </span>
 
-                <span className={styles.chevron} aria-hidden="true" />
+                <span style={isMobileOpen ? { transform: "rotate(225deg)" } : {}}className={styles.chevron} aria-hidden="true" />
               </button>
             </div>
 

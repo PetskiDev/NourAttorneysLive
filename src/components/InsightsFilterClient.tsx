@@ -105,7 +105,7 @@ export default function InsightsFilterClient({
           className={`headline_3 ${styles.categoryCurrentBtn}`}
           onClick={() => setOpen((v) => !v)}
         >
-          {currentLabel} <span className={styles.chevron} />
+          {currentLabel} <span style={open ? { transform: "rotate(225deg) translate(-0%, -0%)" } : {}} className={styles.chevron} />
         </button>
         {open && (
           <div className={styles.panel} role="dialog" aria-modal="true">

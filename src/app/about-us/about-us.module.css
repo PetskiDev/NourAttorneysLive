@@ -790,7 +790,7 @@
     }
 
     .numbersInner :global(.headline_5) {
-        font-size: 20vw;
+        font-size: 15vw;
     }
 
 
@@ -813,13 +813,13 @@
         margin-left: 0%;
         width: 100%;
         text-align: left;
-        font-size: 4.5vw;
+        font-size: 4.8vw;
     }
 
     .history>:global(.containerr)>:global(.accent_text_2):nth-child(3) {
         margin-left: 0%;
         text-align: left;
-        font-size: 4.5vw;
+        font-size: 4.8vw;
         width: 100%;
     }
 
@@ -860,7 +860,7 @@
     .timelineDiv>div:nth-child(2)>p {
         width: 100%;
         color: #545454;
-        font-size: 3.5vw !important;
+        font-size: 3.8vw !important;
     }
 
     .aboutOne>div {
@@ -913,7 +913,7 @@
     }
 
     .founderMid h5 {
-        font-size: 4.6vw;
+        font-size: 4.5vw;
     }
 
     .founderBottom {
@@ -944,12 +944,13 @@
 
     .threePart {
         display: flex;
-        gap: 5px;
+        gap: 10px;
         align-items: stretch;
     }
 
     .threePart>div:nth-child(1) {
         width: 1px;
+        min-height: 248vw;
         height: 100%;
         background-color: #C4C4C4;
     }
@@ -964,10 +965,12 @@
 
     .caseStudies>*>h6:nth-child(2) {
         font-size: 4.1vw !important;
+        font-weight: 600;
     }
 
     .caseStudies>*>h6:nth-child(3) {
         font-size: 4.1vw !important;
+        font-weight: 600;
     }
 
     .numbersInner :global(.body_text) {
@@ -975,15 +978,17 @@
     }
 
     .aboutTwoLine :global(.body_text) {
-        font-size: 3.3vw !important;
+        font-size: 3.7vw !important;
     }
 
     .aboutTwoLine :global(.title_5) {
-        font-size: 3.3vw !important;
+        font-size: 3.7vw !important;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .aboutHero h6 {
-        font-size: 3.5vw !important;
+        font-size: 3.7vw !important;
     }
 
     .numbersAbs {
@@ -993,11 +998,13 @@
     }
 
     .numbersAbs :global(.title_3) {
-        font-size: 5vw;
+        font-size: 5.45vw;
+        letter-spacing: -0.2vw;
     }
 
     .numbersAbs :global(.subtitle_4) {
         font-size: 4vw;
+        font-weight: 400;
     }
 
     .aboutTwoLine>div:first-child {

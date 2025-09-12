@@ -102,7 +102,7 @@ export default async function ContactPage() {
       <section className={styles.contactMain}>
         <div className="containerr">
           <h3 className="subheadline_2 antiselector">
-            At Nour Attorneys Law Firm, we believe that the foundation of a
+            At Nour Attorneys <span className="mobnot">Law Firm,</span> we believe that the foundation of a
             successful legal practice
           </h3>
           <h3 className="subheadline_2 antiselector">
@@ -112,7 +112,7 @@ export default async function ContactPage() {
             we provide bespoke legal services characterized by the highest
             levels of quality, professionalism, and strategic insight. Our
           </h5>
-          <h5 className="accent_text_2 mobno antiselector">
+          <h5 className="accent_text_2 mobnot antiselector">
             commitment to these principles is not merely aspirational; it is
             embedded in our core service standards, which guide every
             interaction and every mandate we undertake.

@@ -202,11 +202,12 @@
     }
 
     .memberCard :global(.title_1) {
-        font-size: 3.2vw;
+        font-size: 3.4vw;
     }
 
     .memberCard :global(.subtitle_1) {
-        font-size: 3.2vw;
+        font-size: 3.4vw;
+        margin-top: -5px;
     }
 
     .peopleTopContainer h4{
