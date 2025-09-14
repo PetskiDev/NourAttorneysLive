@@ -800,8 +800,10 @@ body {
   .custom-line {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin: -0px auto!important;
+  margin-bottom: 20px!important;
   align-items: center;
+  transform: scale(0.75);
 }
 
 .custom-line > div {
@@ -810,19 +812,19 @@ body {
 
 .custom-line > div:nth-child(1),
 .custom-line > div:nth-child(3) {
-  width: 5px;
-  height: 5px;
+  width: 2.5px;
+  height: 2.5px;
   border-radius: 50%;
 }
 
 .custom-line > div:nth-child(2) {
-  width: 1px;
+  width: 0.5px;
   height: 0;              /* start collapsed */
   transition: height 1.5s ease-out;
 }
 
 .custom-line.revealed > div:nth-child(2) {
-  height: 200px;          /* grow down */
+  height: 120px;
 }
 
   .studies-boxes {
