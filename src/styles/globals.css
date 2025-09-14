@@ -832,7 +832,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: -0px auto!important;
-  margin-bottom: 20px!important;
+  margin-bottom: 0px!important;
   align-items: center;
   transform: scale(0.75);
 }

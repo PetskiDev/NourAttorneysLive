@@ -1,54 +1,86 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function LineObserver() {
   const pathname = usePathname();
-  const observed = useRef<WeakSet<Element>>(new WeakSet());
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    // --- IO for regular lines ---
+    const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const el = entry.target as HTMLElement;
-          el.classList.add("revealed");
-          observer.unobserve(el);
+          (entry.target as HTMLElement).classList.add("revealed");
+          io.unobserve(entry.target);
         });
       },
       { threshold: 0.2 }
     );
 
-    const observeNodes = (selector: string) => {
-      document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
-        if (!observed.current.has(el)) {
-          observed.current.add(el);
-          observer.observe(el);
+    document
+      .querySelectorAll<HTMLElement>(".custom-line:not(.custom-linee)")
+      .forEach((el) => io.observe(el));
+
+    // --- Scroll-gated reveal for .custom-linee ---
+    const specials = Array.from(
+      document.querySelectorAll<HTMLElement>(".custom-line.custom-linee")
+    );
+    const revealed = new WeakSet<Element>();
+
+    const isVisible20 = (el: HTMLElement) => {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const vw = window.innerWidth || document.documentElement.clientWidth;
+      if (r.bottom <= 0 || r.top >= vh || r.right <= 0 || r.left >= vw) return false;
+      const visibleY = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+      const ratioY = visibleY / Math.min(r.height || 1, vh);
+      return ratioY >= 0.2;
+    };
+
+    let initialY: number | null = null;
+    let hasUserScrolled = false;
+
+    const tryReveal = () => {
+      if (!hasUserScrolled) return;
+      specials.forEach((el) => {
+        if (revealed.has(el)) return;
+        if (isVisible20(el)) {
+          el.classList.add("revealed");
+          revealed.add(el);
         }
       });
     };
 
-    // 1) Observe ONLY .custom-line that are NOT .custom-linee at load
-    observeNodes(".custom-line:not(.custom-linee)");
-
-    // 2) On first scroll (your virtual scroll event), start observing .custom-linee
-    const onFirstVirtualScroll = () => {
-      observeNodes(".custom-line.custom-linee");
+    const onVirtual = (e: Event) => {
+      const y = (e as CustomEvent).detail?.y ?? 0;
+      if (initialY == null) {
+        // Ignore the initial programmatic dispatch at mount
+        initialY = y;
+        return;
+      }
+      if (!hasUserScrolled && Math.abs(y - initialY) > 0.5) {
+        hasUserScrolled = true;
+      }
+      tryReveal();
     };
-    window.addEventListener("virtualscroll", onFirstVirtualScroll, { once: true });
 
-    // (Optional) Fallback for environments without your provider
-    const onFirstNativeScroll = () => {
-      observeNodes(".custom-line.custom-linee");
-      window.removeEventListener("scroll", onFirstNativeScroll);
+    const onNativeScroll = () => {
+      hasUserScrolled = true;
+      tryReveal();
     };
-    window.addEventListener("scroll", onFirstNativeScroll, { passive: true });
+
+    window.addEventListener("virtualscroll", onVirtual);
+    window.addEventListener("scroll", onNativeScroll, { passive: true });
+
+    // Also attempt once after mount (in case user already scrolled before effect attached)
+    setTimeout(tryReveal, 0);
 
     return () => {
-      observer.disconnect();
-      window.removeEventListener("virtualscroll", onFirstVirtualScroll);
-      window.removeEventListener("scroll", onFirstNativeScroll);
+      io.disconnect();
+      window.removeEventListener("virtualscroll", onVirtual);
+      window.removeEventListener("scroll", onNativeScroll);
     };
   }, [pathname]);
 
