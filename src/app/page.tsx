@@ -26,7 +26,7 @@ export default async function Home() {
             </h4>
           </div>
             
-            <div className={`${styles.homeMobile} mob custom-line`}>
+            <div className={`${styles.homeMobile} mob custom-line custom-linee`}>
             <div></div>
             <div></div>
             <div></div>

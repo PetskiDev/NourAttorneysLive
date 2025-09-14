@@ -7,7 +7,7 @@
         stroke-dashoffset="300">
     <animate attributeName="stroke-dashoffset"
              from="300" to="0"
-             dur="2s"
+             dur="1s"
              begin="0s"
              fill="freeze"
              />

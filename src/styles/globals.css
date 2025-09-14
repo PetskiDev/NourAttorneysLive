@@ -800,10 +800,8 @@ body {
   .custom-line {
   display: flex;
   flex-direction: column;
-  margin: -0px auto!important;
-  margin-bottom: 20px!important;
+  margin: 20px 0;
   align-items: center;
-  transform: scale(0.75);
 }
 
 .custom-line > div {
@@ -812,8 +810,8 @@ body {
 
 .custom-line > div:nth-child(1),
 .custom-line > div:nth-child(3) {
-  width: 2.5px;
-  height: 2.5px;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
 }
 
@@ -824,8 +822,43 @@ body {
 }
 
 .custom-line.revealed > div:nth-child(2) {
-  height: 120px;
+  height: 200px;          /* grow down */
 }
+
+
+
+
+  .custom-linee {
+  display: flex;
+  flex-direction: column;
+  margin: -0px auto!important;
+  margin-bottom: 20px!important;
+  align-items: center;
+  transform: scale(0.75);
+}
+
+.custom-linee > div {
+  background-color: #a2a2a2;
+}
+
+.custom-linee > div:nth-child(1),
+.custom-linee > div:nth-child(3) {
+  width: 2.5px;
+  height: 2.5px;
+  border-radius: 50%;
+}
+
+.custom-linee > div:nth-child(2) {
+  width: 0.5px;
+  height: 0;              /* start collapsed */
+  transition: height 1.5s ease-out;
+}
+
+
+
+
+
+
 
   .studies-boxes {
     gap: 10px;
