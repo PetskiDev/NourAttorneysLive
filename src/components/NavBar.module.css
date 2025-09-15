@@ -325,7 +325,7 @@
     min-width: 0;
     /* allow shrinking in flex row */
     max-width: 0;
-    font-size: 14px;
+    font-size: 16px;
     /* collapsed */
     opacity: 0;
     /* matches your existing behavior */
