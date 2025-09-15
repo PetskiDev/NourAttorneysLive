@@ -3,6 +3,16 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+type VirtualScrollDetail = { y: number };
+
+function isVirtualScrollEvent(e: Event): e is CustomEvent<VirtualScrollDetail> {
+  return (
+    e instanceof CustomEvent &&
+    e.detail != null &&
+    typeof (e as CustomEvent<VirtualScrollDetail>).detail.y === "number"
+  );
+}
+
 export default function LineObserver() {
   const pathname = usePathname();
 
@@ -27,7 +37,7 @@ export default function LineObserver() {
     const specials = Array.from(
       document.querySelectorAll<HTMLElement>(".custom-line.custom-linee")
     );
-    const revealed = new WeakSet<Element>();
+    const revealed = new WeakSet<HTMLElement>();
 
     const isVisible20 = (el: HTMLElement) => {
       const r = el.getBoundingClientRect();
@@ -54,7 +64,9 @@ export default function LineObserver() {
     };
 
     const onVirtual = (e: Event) => {
-      const y = (e as CustomEvent).detail?.y ?? 0;
+      if (!isVirtualScrollEvent(e)) return; // narrows to CustomEvent<{y:number}>
+      const y = e.detail.y;
+
       if (initialY == null) {
         // Ignore the initial programmatic dispatch at mount
         initialY = y;
@@ -71,7 +83,7 @@ export default function LineObserver() {
       tryReveal();
     };
 
-    window.addEventListener("virtualscroll", onVirtual);
+    window.addEventListener("virtualscroll", onVirtual as EventListener);
     window.addEventListener("scroll", onNativeScroll, { passive: true });
 
     // Also attempt once after mount (in case user already scrolled before effect attached)
@@ -79,7 +91,7 @@ export default function LineObserver() {
 
     return () => {
       io.disconnect();
-      window.removeEventListener("virtualscroll", onVirtual);
+      window.removeEventListener("virtualscroll", onVirtual as EventListener);
       window.removeEventListener("scroll", onNativeScroll);
     };
   }, [pathname]);
