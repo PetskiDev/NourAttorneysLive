@@ -62,8 +62,17 @@ export default function FontScaler() {
       const heroH1 = document.querySelectorAll<HTMLElement>(".hones");
       heroH1.forEach((el) => {
         el.classList.add("safarihones");
-        el.style.fontSize = ""; // clear inline to let CSS handle it
+        el.style.fontSize = ""; // clear inline to let CSS or tablet rule handle it
       });
+
+      // HERO H1 (tablet 768–1024) → 7.8vw in px
+      const safariH1s = document.querySelectorAll<HTMLElement>(".safarihones");
+      if (width >= 768 && width <= 1024) {
+        const px = (width * 7.8) / 100;
+        safariH1s.forEach((el) => setPx(el, px));
+      } else {
+        safariH1s.forEach((el) => (el.style.fontSize = ""));
+      }
 
       // HERO H2 (mobile only)
       const heroH2 = document.querySelector<HTMLElement>(".thehtwob");

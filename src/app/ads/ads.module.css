@@ -383,14 +383,7 @@
         display: none;
     }
 
-    .reviewBox:nth-child(15){
-        order: 100;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: scale(3.5);
-        padding-top: 40px;
-    }
+    
 
     .reviewBox a{
         gap: 0;
@@ -451,11 +444,30 @@ margin-top: 0;
         transform: translateY(-50%);
     }
 
+    .reviewBox:nth-child(15){
+        order: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(1.8);
+        padding-top: 40px;
+        margin: 0 auto;
+    }
+
 }
 
 @media only screen and (max-width: 768px){
     .heroAbs{
         display: none;
+    }
+
+.reviewBox:nth-child(15){
+        order: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(3.5);
+        padding-top: 40px;
     }
 
     .reviews h5, .experts h5{
