@@ -584,6 +584,28 @@
         display: none;
     }
 
+    .caseStudies>div>h2{
+        margin-bottom: 30px;
+    }
+
+    .insights>div{
+        padding-top: 0;
+        gap: 30px;
+    }
+
+    .partners>div{
+        padding-bottom: 20px;
+    }
+
+
+    .expertiseRow a{
+        margin-top: 0;
+    }
+
+    .expertiseRow a span{
+        letter-spacing: -2px;
+    }
+
     .hero h2{
         font-size: 16vw;
         display: block;
@@ -662,7 +684,7 @@
     }
 
     .about>div h4{
-        font-size: 4.5vw!important;
+        font-size: 5vw!important;
         width: 100%!important;
     }
 

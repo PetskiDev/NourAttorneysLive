@@ -87,12 +87,27 @@ export default async function esgPage() {
               <span></span>
               <div className="title_3 antiselector">SUSTAINABLE LEGAL FOUNDATIONS</div>
             </div>
-            <p className="body_text antiselector">
+            <p className="body_text antiselector mobnot">
               Nour Attorneys is the official legal partner of the SECOTO
               Organization. From COP28 to the World Green Cup, we&#39;re dedicated
               to supporting all initiatives that connect communities with nature
               and promote environmental awareness through heritages, arts and
               more. Nour Attorneys are committed to helping our clients build
+              empires that are not just legally sound but also socially and
+              environmentally responsible. Sustainability goes even in our legal
+              solutions by providing long-lasting legal frameworks that ensure
+              business sustainability for the client in the long term to
+              withstand legal risks and unpredicted challenges.
+            </p>
+            <p className="body_text antiselector mob">
+              Nour Attorneys is the official legal partner of the SECOTO
+              Organization. From COP28 to the World Green Cup, we&#39;re dedicated
+              to supporting all initiatives that connect communities with nature
+              and promote environmental awareness through heritages, arts and
+              more.
+            </p>
+            <p className="body_text antiselector mob">
+               Nour Attorneys are committed to helping our clients build
               empires that are not just legally sound but also socially and
               environmentally responsible. Sustainability goes even in our legal
               solutions by providing long-lasting legal frameworks that ensure
@@ -116,12 +131,26 @@ export default async function esgPage() {
                 EMPOWERING COMMUNITIES, BUILDING FUTURES
               </div>
             </div>
-            <p className="body_text antiselector">
+            <p className="body_text antiselector mobnot">
               At Nour Attorneys, we always think outside the box. The primary
               focus is to empower our community through strategic investments
               that foster growth and create new opportunities. We actively
               support our local initiatives, ensuring that our community members
               thrive. We aim to create a strong yet lasting impact that not only
+              help individuals today but also sets the foundation for future
+              generations through investments and partnerships. By integrating
+              our expertise and resources, we empower those we serve to build
+              stronger and more resilient communities.
+            </p>
+            <p className="body_text antiselector mob">
+              At Nour Attorneys, we always think outside the box. The primary
+              focus is to empower our community through strategic investments
+              that foster growth and create new opportunities. We actively
+              support our local initiatives, ensuring that our community members
+              thrive.
+            </p>
+            <p className="body_text antiselector mob">
+              We aim to create a strong yet lasting impact that not only
               help individuals today but also sets the foundation for future
               generations through investments and partnerships. By integrating
               our expertise and resources, we empower those we serve to build

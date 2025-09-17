@@ -204,4 +204,8 @@
     font-size: 14px;
   }
 
+  .wrap{
+    gap: 10px;
+  }
+
 }

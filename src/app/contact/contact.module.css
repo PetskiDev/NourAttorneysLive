@@ -565,6 +565,7 @@
         width: 100%!important;
         margin: 0!important;
         font-size: 4vw;
+        letter-spacing: -.2vw;
         margin-top: 10px!important;
     }
 
@@ -656,5 +657,9 @@
 
     .contactRightThree{
         gap: 15px;
+    }
+
+    .contactMain>div{
+        padding-top: 50px;
     }
 }

@@ -55,7 +55,7 @@ export default async function AboutUsPage() {
           <div className={styles.aboutOneRight}>
             <div>
               <EditableText
-                className="subheadline_2"
+                className="subheadline_2 antiselector"
                 relUrl="/about-us"
                 blockKey="about-one"
                 placeholderContent="Nour Attorneys aims to redefine the experience by offering strategic, ethical, and client-focused solutions"
@@ -85,18 +85,31 @@ export default async function AboutUsPage() {
               </div>
             </div>
             <EditableText
-              className="body_text"
+              className="body_text mobnot"
               relUrl="/about-us"
               blockKey="about-ap-1"
-              placeholderContent="Nour Attorneys is not just another law firm, it’s a framework for success. It doesn’t see its clients as just another revenue stream but as a partnership. For Nour Attorneys every assigned mission by a client is a commitment, and every solution is designed not"
+              placeholderContent="Nour Attorneys is not just another law firm, it's a framework for success. It doesn't see its clients as just another revenue stream but as a partnership. For Nour Attorneys every assigned mission by a client is a commitment, and every solution is designed not"
             />
-            <div>
+            <div className="mobnot">
               <p className="body_text">
-                just for today but for the future. True legal expertise isn’t
-                just about knowing the law, but it’s also about understanding
-                people, businesses, and the world and market they operate in.
+                just for today but for the future. True legal expertise
+                isn&apos;t just about knowing the law, but it&apos;s also about
+                understanding people, businesses, and the world and market they
+                operate in.
               </p>
             </div>
+            <p className="body_text mob">
+              Nour Attorneys is not just another law firm, it&apos;s a framework
+              for success. It doesn&apos;t see its clients as just another
+              revenue stream but as a partnership.
+            </p>
+            <p className="body_text mob">
+              For Nour Attorneys every assigned mission by a client is a
+              commitment, and every solution is designed not just for today but
+              for the future. True legal expertise isn&apos;t just about knowing
+              the law, but it&apos;s also about understanding people,
+              businesses, and the world and market they operate in.
+            </p>
           </div>
           <div className={styles.aboutTwoLine}>
             <div>
@@ -116,14 +129,22 @@ export default async function AboutUsPage() {
               relUrl="/about-us"
               blockKey="about-vi-1"
               placeholderContent="Nour Attorneys strives to be more than just legal advisors; we are partners in progress, empowering businesses and individuals with the knowledge, support, and strategies they need to succeed. Through sustainability, education, and investment in our"
-              className="body_text"
+              className="body_text mobnot"
             />
             <EditableText
               relUrl="/about-us"
               blockKey="about-vi-2"
-              className="body_text"
+              className="body_text mobnot"
               placeholderContent="people and community, we are building a lasting legacy of trust, growth, and positive change."
             />
+            <p className="body_text mob">
+              Nour Attorneys strives to be more than just legal advisors; we are
+              partners in progress, empowering businesses and individuals with
+              the knowledge, support, and strategies they need to succeed.
+              Through sustainability, education, and investment in our people
+              and community, we are building a lasting legacy of trust, growth,
+              and positive change.{" "}
+            </p>
           </div>
           <div className={styles.aboutTwoLine}>
             <div>
@@ -140,66 +161,78 @@ export default async function AboutUsPage() {
               </div>
             </div>
             <EditableText
-              className="body_text"
+              className="body_text mobnot"
               relUrl="/about-us"
               blockKey="about-mi-1"
               placeholderContent="Through the utilization of innovative technology, alternative dispute resolution, and sustainable legal practices, Nour Attorneys ensures that its clients receive proactive, transparent and personalized legal to withstand legal risks and unpredicted legal "
             />
             <EditableText
-              className="body_text"
+              className="body_text mobnot"
               relUrl="/about-us"
               blockKey="about-mi-2"
-              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients&apos; legal risks management, establishing a partnership based on trust, strategy, and discretion."
+              placeholderContent="challenges. Along with providing legal solutions, we develop legal frameworks for long-term sustainability to support our clients' legal risks management, establishing a partnership based on trust, strategy, and discretion."
             />
+            <p className="body_text mob">
+              Through the utilization of innovative technology, alternative
+              dispute resolution, and sustainable legal practices, Nour
+              Attorneys ensures that its clients receive proactive, transparent
+              and personalized legal to withstand legal risks and unpredicted
+              legal challenges.{" "}
+            </p>
+            <p className="body_text mob">
+              Along with providing legal solutions, we develop legal frameworks
+              for long-term sustainability to support our clients&apos; legal
+              risks management, establishing a partnership based on trust,
+              strategy, and discretion.{" "}
+            </p>
           </div>
         </div>
       </section>
 
       <section className={styles.aboutNumbers}>
-  <div className="containerr">
-    <div className={styles.numbersLeft}>
-      <div className={styles.numbersLeftTop}>
-        <div className={styles.numbersInner}>
-          <CountUpOnView end={12466} />
-          <p className="body_text">legal consultations were provided</p>
+        <div className="containerr">
+          <div className={styles.numbersLeft}>
+            <div className={styles.numbersLeftTop}>
+              <div className={styles.numbersInner}>
+                <CountUpOnView end={12466} />
+                <p className="body_text">legal consultations were provided</p>
+              </div>
+            </div>
+
+            <div className={styles.numbersLeftBottom}>
+              <div className={styles.numbersInner}>
+                <CountUpOnView end={14680} />
+                <p className="body_text">contracts drafted</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.numbersRight}>
+            <div className={styles.numbersRightTop}>
+              <div className={styles.numbersInner}>
+                <CountUpOnView end={3455} />
+                <p className="body_text">commercial transactions completed</p>
+              </div>
+            </div>
+
+            <div className={styles.numbersRightBottom}>
+              <div className={styles.numbersInner}>
+                <CountUpOnView end={93.7} suffix="%" />
+                <p className="body_text">case win rate</p>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.numbersAbs}>
+            <p className="title_3">
+              At Nour Attorneys, we see our role as more than just providing
+              legal services, we protect your interests and secure your future
+            </p>
+
+            <p className="subtitle_4">Do not settle for average</p>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.numbersLeftBottom}>
-        <div className={styles.numbersInner}>
-          <CountUpOnView end={14680} />
-          <p className="body_text">contracts drafted</p>
-        </div>
-      </div>
-    </div>
-
-    <div className={styles.numbersRight}>
-      <div className={styles.numbersRightTop}>
-        <div className={styles.numbersInner}>
-          <CountUpOnView end={3455} />
-          <p className="body_text">commercial transactions completed</p>
-        </div>
-      </div>
-
-      <div className={styles.numbersRightBottom}>
-        <div className={styles.numbersInner}>
-          <CountUpOnView end={93.7} suffix="%" />
-          <p className="body_text">case win rate</p>
-        </div>
-      </div>
-    </div>
-
-    <div className={styles.numbersAbs}>
-      <p className="title_3">
-        At Nour Attorneys, we see our role as more than just providing
-        legal services, we protect your interests and secure your future
-      </p>
-
-      <p className="subtitle_4">Do not settle for average</p>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <section className={styles.history}>
         <div className="containerr">
@@ -212,6 +245,14 @@ export default async function AboutUsPage() {
           </h5>
 
           <h5 className="accent_text_2 antiselector">
+            of corporate law in the middle east by providing unique services
+            that thrives the legal community to follow his steps.
+          </h5>
+
+          <h5 className="accent_text_2 antiselector">
+            Nour Attorneys was founded in the year 2009 and started its
+            operation from a small office with one lawyer, Nour. Nour was
+            determined and aimed to achieve the leading positions in the field
             of corporate law in the middle east by providing unique services
             that thrives the legal community to follow his steps.
           </h5>
@@ -261,8 +302,8 @@ export default async function AboutUsPage() {
 
           <h6 className="accent_text_1">
             Behind every case lies a story of strategy, precision, and human
-            impact. Our case studies don’t just document victories - they reveal
-            how
+            impact. Our case studies don&apos;t just document victories - they
+            reveal how
             <span className="blue-text">
               &nbsp;[legal insight transforms challenges]&nbsp;
             </span>
@@ -365,7 +406,7 @@ export default async function AboutUsPage() {
               <h5 className="accent_text_3 mobnot">
                 Mohamed Noureldin is the visionary behind Nour Attorneys, a
                 leader who goes beyond traditional legal services to create
-                meaningful impact. Nour’s
+                meaningful impact. Nour&apos;s
               </h5>
             </div>
           </div>
@@ -378,14 +419,14 @@ export default async function AboutUsPage() {
               highest standards of service, innovation, and client care.
             </h5>
             <h5 className="accent_text_3 mob">
-              Mohamed Noureldin is the visionary behind Nour Attorneys, a
-                leader who goes beyond traditional legal services to create
-                meaningful impact. Nour’s
-              background reflects a commitment to excellence, shaping a firm
-              that blends deep legal expertise with a forward-thinking approach.
-              Nour is not just the founder but an active force behind every
-              strategic decision, ensuring that Nour Attorneys operates with the
-              highest standards of service, innovation, and client care.
+              Mohamed Noureldin is the visionary behind Nour Attorneys, a leader
+              who goes beyond traditional legal services to create meaningful
+              impact. Nour&apos;s background reflects a commitment to
+              excellence, shaping a firm that blends deep legal expertise with a
+              forward-thinking approach. Nour is not just the founder but an
+              active force behind every strategic decision, ensuring that Nour
+              Attorneys operates with the highest standards of service,
+              innovation, and client care.
             </h5>
           </div>
 
@@ -415,7 +456,7 @@ export default async function AboutUsPage() {
               <div className={styles.threePart}>
                 <div></div>
                 <div className={styles.threePartTwo}>
-                  <p className="body_text antiselector">
+                  <p className="body_text antiselector mobnot">
                     Dear Friends, Colleagues, and Valued Clients,<br></br>
                     <br></br>
                     Nour Attorneys Law Firm was established not merely as a
@@ -439,11 +480,11 @@ export default async function AboutUsPage() {
                     framework, we help your businesses and corporate endeavors
                     to flourish and achieve even greater heights. Therefore, I
                     respectfully disagree with the common notion that a law
-                    firm’s biggest asset is its clients. Instead, we focus on
-                    how you, our clients, perceive us – as a trusted asset and a
-                    dedicated partner in your business journey.
+                    firm&apos;s biggest asset is its clients. Instead, we focus
+                    on how you, our clients, perceive us – as a trusted asset
+                    and a dedicated partner in your business journey.
                   </p>
-                  <p className="body_text antiselector">
+                  <p className="body_text antiselector mobnot">
                     To my colleagues, the dedicated members of our Firm,
                     regardless of position or title: you are the true investors
                     in Nour Attorneys. You contribute your invaluable time,
@@ -473,6 +514,27 @@ export default async function AboutUsPage() {
                     meaningful in this life.<br></br>
                     <br></br>
                     Best regards,<br></br>Mohamed Noureldin
+                  </p>
+                  <p className="body_text antiselector mob">
+                    Dear Friends, Colleagues, and Valued Clients,<br></br><br></br> Nour Attorneys
+                    Law Firm was established not merely as a legal practice, but
+                    with a profound passion for helping others – a desire that
+                    has been with me since my childhood. I have always aspired
+                    to contribute meaningfully to the lives of people and to the
+                    growth of our community, making efforts that can bring about
+                    noticeable, positive change. When I speak of “People and
+                    Community,” I envision an inclusive circle that embraces
+                    myself, my family, my esteemed colleagues and their
+                    families, and, of course, our valued clients, their team
+                    members, and their families. It is this expansive vision
+                    that guides our work and our understanding of our purpose.<br></br><br></br>
+                    This message is a sincere reflection of my feelings and bona
+                    fide intentions, drafted from the heart and dedicated to
+                    each and every one of you. It is my earnest hope that during
+                    our shared journey, we will all find the peace and
+                    fulfillment we seek through the discovery of our true
+                    selves, and in doing so, achieve the goals that we deem most
+                    meaningful in this life.<br></br><br></br> Best regards,<br></br>Mohamed Noureldin
                   </p>
                 </div>
               </div>

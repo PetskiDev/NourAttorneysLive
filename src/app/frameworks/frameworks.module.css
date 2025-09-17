@@ -143,12 +143,12 @@
     width: 4vw;
 }
 
-.frameworksMain>div>h4:nth-of-type(3) {
+.frameworksMain>div>h4:nth-of-type(4) {
     margin-left: 50%;
     width: 50%;
 }
 
-.frameworksMain>div>h4:nth-of-type(4) {
+.frameworksMain>div>h4:nth-of-type(5) {
     margin-bottom: 2vw;
 }
 
@@ -270,6 +270,10 @@
         font-size: 1.5vw;
     }
 
+    .frameworksMain>div{
+        padding-top: 40px;
+    }
+
     .frameworksRowTwo:before {
         width: 100%;
     }
@@ -286,8 +290,9 @@
     }
 
     .frameworksRowTwo>div:nth-child(2)>div{
-        font-size: 1.6vw;
+        font-size: 1.7vw;
         margin-bottom: 5px;
+        margin-top: 15px;
     }
 
     .frameworksRowThree>div:nth-child(2)>* {
@@ -416,7 +421,7 @@
     }
 
     .frameworksRowTwo > div:nth-child(2) > *{
-        font-size: 16px!important;
+        font-size: 4.2vw!important;
     }
 
     .frameworksRowThree > div:first-child > div{
@@ -424,10 +429,11 @@
         font-weight: 500;
         margin-bottom: 10px;
         margin-top: 20px;
+        color: #545454;
     }
 
     .frameworksRowThree > div:nth-child(2) *{
-        font-size: 4vw!important;
+        font-size: 4.2vw!important;
     }
 
     .frameworksRowThree > div:nth-child(2) img{
@@ -458,13 +464,18 @@
 
     .frameworksMain > div > h4:last-of-type{
         font-size: 18px;
-        margin-top: 30px;
-        margin-bottom: 15px;
+        margin-top: 60px;
+        margin-bottom: 0px;
         width: 75%;
         font-weight: 600;
     }
 
     .frameworksRow p{
         font-size: 4vw;
+    }
+
+    .frameworksMain :global(.study-box) img{
+        width: 35px;
+        height: 35px;
     }
 }

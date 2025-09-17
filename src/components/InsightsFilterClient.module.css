@@ -33,6 +33,12 @@
   width: 100%;
 }
 
+@media only screen and (min-width: 1024px){
+  .categoryCurrentBtn{
+    justify-content: flex-start;
+  }
+}
+
 .chevron {
   width: 8px;
   height: 8px;
@@ -277,6 +283,10 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
+}
+
+.insightsHero>div{
+  margin-bottom: 70px;
 }
 
 .grid{

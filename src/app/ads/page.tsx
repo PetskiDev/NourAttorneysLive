@@ -434,6 +434,15 @@ export default async function Advertisement() {
               </p>
             </div>
           </div>
+          <Link href={"/contact"}>
+                <span className="button_link mob">All Reviews</span>
+                <Image
+                  src={"/diagonal-arrow.svg"}
+                  alt="arrow"
+                  width={30}
+                  height={30}
+                />
+              </Link>
         </div>
       </section>
     </main>

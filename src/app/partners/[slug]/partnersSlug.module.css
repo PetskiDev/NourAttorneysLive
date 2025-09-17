@@ -118,6 +118,7 @@
 
     .partnerTwo{
         flex-direction: column;
+        margin-top: 25px;
     }
 
     .partnerTwo>div{
@@ -207,7 +208,7 @@
 
     .partnerMain>div>div>h5 {
     width: 100%;
-    font-size: 5.2vw;
+    font-size: 5.8vw;
     margin-left: 0%;
 }
 

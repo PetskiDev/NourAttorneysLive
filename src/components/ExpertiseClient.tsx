@@ -74,7 +74,7 @@ export default function ExpertiseClient({
   return (
     <div className={styles.wrap}>
       <div className={styles.topRow}>
-        <h6 className="headline_6">
+        <h6 style={{opacity: 1}} className="headline_6 antiselector">
           EXPERTISE
           <sup className={styles.counts}>{allServices.length}</sup>
         </h6>

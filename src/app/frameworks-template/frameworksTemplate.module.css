@@ -569,15 +569,16 @@
         font-size: 4.1vw;
         color: black;
         position: relative;
+        margin: 5px 0;
     }
 
     .frameworksTwo ul li::before{
         content: "";
         position: absolute;
-        height: 12px;
-        width: 12px;
+        height: 10px;
+        width: 10px;
         border-radius: 50%;
-        left: -20px;
+        left: -17px;
         top: 50%;
         transform: translateY(-50%);
         background-color: #101010;
@@ -600,8 +601,13 @@
     }
 
     .frameworksThree h4{
-        font-size: 5vw;
+        font-size: 5.8vw;
+        width: 75%;
         letter-spacing: 0;
         margin-top: 30px;
+    }
+
+    .frameworksOne>div{
+        padding-top: 40px;
     }
 }

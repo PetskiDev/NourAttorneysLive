@@ -805,6 +805,10 @@ body {
   align-items: center;
 }
 
+a>span{
+  letter-spacing: -.4vw!important;
+}
+
 .custom-line > div {
   background-color: #a2a2a2;
 }
@@ -813,6 +817,7 @@ body {
 .custom-line > div:nth-child(3) {
   width: 3px;
   height: 3px;
+  min-height: 3px;
   border-radius: 50%;
 }
 
@@ -846,6 +851,8 @@ body {
 .custom-linee > div:nth-child(3) {
   width: 2.5px;
   height: 2.5px;
+  min-width: 2.5px;
+  min-height: 2.5px;
   border-radius: 50%;
 }
 

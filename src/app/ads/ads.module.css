@@ -169,7 +169,7 @@
     gap: 10px;
 }
 
-.expertsRight a {
+.expertsRight a, .reviews a {
     border-bottom: 1px solid #0033A0;
     display: flex;
     align-items: center;
@@ -179,11 +179,11 @@
     margin-bottom: 2vw;
 }
 
-.expertsRight a span {
+.expertsRight a span, .reviews a span {
     color: #0033A0;
 }
 
-.expertsRight a img {
+.expertsRight a img, .reviews a img {
     height: 4vw;
     width: 4vw;
 }
@@ -395,6 +395,8 @@
 
     .reviewBox a img{
         margin-bottom: -2px;
+        height: 3.5vw;
+        width: 3.5vw;
     }
 
     .reviewBox{
@@ -452,6 +454,7 @@ margin-top: 0;
         transform: scale(1.8);
         padding-top: 40px;
         margin: 0 auto;
+        display: none!important;
     }
 
 }
@@ -459,6 +462,10 @@ margin-top: 0;
 @media only screen and (max-width: 768px){
     .heroAbs{
         display: none;
+    }
+
+    .adsOne>div{
+        padding-top: 40px;
     }
 
 .reviewBox:nth-child(15){
@@ -471,13 +478,25 @@ margin-top: 0;
     }
 
     .reviews h5, .experts h5{
-        font-size: 4vw;
+        font-size: 4.8vw;
+    }
+
+    .experts h5{
+        margin-top: 10px;
+    }
+
+    .reviewsBoxes{
+        padding-top: 15px;
     }
 
     .adsHero>div h1{
         font-size: 9.5vw;
         text-align: center;
         width: 85%;
+    }
+
+    .reviewBox a{
+        border-bottom: 0.1px solid #0033A0;
     }
 
     .adsHero>div p{
@@ -572,19 +591,21 @@ margin-top: 0;
         font-size: 18px;
     }
 
-    .expertsRight>a{
+    .expertsRight>a, .reviews a{
         margin: 0 auto;
         width: auto;
         margin-bottom: 20px;
     }
 
-    .expertsRight>a>span{
+    .expertsRight>a>span, .reviews a>span{
         font-size: 44px;
     }
 
-    .expertsRight>a>img{
-        height: 48px;
-        width: 48px;
+    .expertsRight>a>img, .reviews a>img{
+        height: 12.5vw;
+        width: 12.5vw;
+        margin-bottom: -5px;
+        margin-left: -10px;
     }
 
     .reviewBox{
