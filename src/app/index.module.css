@@ -262,7 +262,7 @@
 }
 
 .expertiseRow>div:nth-child(1){
-    width: calc(50% + 42px);
+    width: calc(50%);
 }
 
 .expertiseRow>div>div>span:first-of-type{

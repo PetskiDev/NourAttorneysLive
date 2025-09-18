@@ -166,7 +166,7 @@
   padding-bottom: 5px;
   gap: 10px;
   width: auto;
-  margin-left: 50%;
+  margin-left: calc(50% + 20px);
   margin-top: 20px;
   margin-bottom: 160px;
 }
