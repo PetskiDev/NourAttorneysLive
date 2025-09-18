@@ -261,6 +261,10 @@
     gap: 5px;
 }
 
+.expertiseRow>div:nth-child(1){
+    width: calc(50% + 42px);
+}
+
 .expertiseRow>div>div>span:first-of-type{
     font-weight: 600;
     margin-right: 3px;

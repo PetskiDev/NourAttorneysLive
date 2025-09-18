@@ -84,7 +84,7 @@
 
 .frameworksMain :global(.line){
     height: 2vw;
-    width: 60%;
+    width: 55%;
     margin: 0 auto;
     border-top: 1px solid #C4C4C4;
     border-left: 1px solid #C4C4C4;
@@ -101,8 +101,8 @@
 }
 
 .frameworksRowTwo>div:nth-child(1)>p {
-    width: 58%;
-    padding-right: 31%;
+    width: 50%;
+    padding-right: 23%;
 }
 
 .frameworksRowTwo>div:nth-child(2) {
