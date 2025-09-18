@@ -285,7 +285,7 @@ export default async function ServicePage({
 
           <div className="studies-boxes">
             <div className={styles.studyAbs}>
-              <div className="descriptor_1 antiselector">Essential for any industry</div>
+              <div className="descriptor_1 antiselector">ESSENTIAL FOR ANY INDUSTRY</div>
             </div>
             <div className="studies-boxes-top">
               <div className="study-box antiselector">

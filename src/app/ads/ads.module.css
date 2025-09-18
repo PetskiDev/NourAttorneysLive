@@ -57,7 +57,7 @@
 .approachBox {
     display: flex;
     flex-direction: column;
-    width: 51%;
+    width: 50%;
 }
 
 .approachBox>h3 {
@@ -81,7 +81,7 @@
     width: 50%;
 }
 
-.approachRow p{
+.approachRow p {
     color: #101010;
 }
 
@@ -90,6 +90,12 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+@media only screen and (min-width: 1024px) {
+    .benefits>div {
+        padding-top: 50px;
+    }
 }
 
 .benefits>div h4 {
@@ -251,7 +257,7 @@
     margin-right: 15px;
 }
 
-.reviewBox p{
+.reviewBox p {
     color: #545454;
 }
 
@@ -281,172 +287,172 @@
     cursor: pointer;
 }
 
-.reviewBox a span{
+.reviewBox a span {
     font-size: 3vw;
 }
 
-.reviewBox:has(a){
+.reviewBox:has(a) {
     display: flex;
     justify-content: flex-end;
 }
 
-.reviewBox img{
+.reviewBox img {
     height: 3vw;
     width: auto;
 }
 
-.benefitBox:nth-child(3), .benefitBox:nth-child(5){
+.benefitBox:nth-child(3), .benefitBox:nth-child(5) {
     opacity: 0;
     pointer-events: none;
 }
 
-.expertsRight>div>img{
+.expertsRight>div>img {
     display: none;
 }
 
-@media only screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px) {
 
-    .adsOne h4{
+    .adsOne h4 {
         width: 90%;
         font-size: 3vw;
     }
 
-    .approachBox{
+    .approachBox {
         width: 100%;
     }
 
-    .approachBox h3{
+    .approachBox h3 {
         height: 36px;
     }
 
-    .approachRow>div:nth-child(2) p{
+    .approachRow>div:nth-child(2) p {
         font-size: 1.5vw;
     }
 
-    .approachRow>div:nth-child(1){
+    .approachRow>div:nth-child(1) {
         font-size: 1.5vw;
     }
 
-    .benefits h5{
+    .benefits h5 {
         font-size: 3vw;
     }
 
-    .benefits h4{
+    .benefits h4 {
         font-size: 2.7vw;
-        width: 85%!important;
+        width: 85% !important;
         margin-bottom: 20px;
     }
 
-    .benefitBox{
+    .benefitBox {
         width: calc((100% - 20px) / 2);
         aspect-ratio: 359 / 325;
         padding: 4.5% 45px;
     }
 
-    .benefitBoxTop h2{
+    .benefitBoxTop h2 {
         font-size: 3vw;
     }
 
-    .experts>div{
+    .experts>div {
         padding-top: 50px;
     }
 
-    .reviews{
+    .reviews {
         padding-top: 20px;
     }
 
-    .benefitBoxTop p{
+    .benefitBoxTop p {
         font-size: 2.5vw;
     }
 
-    .benefitBox>div:nth-child(2) h3{
+    .benefitBox>div:nth-child(2) h3 {
         font-size: 10vw;
     }
 
-    .benefitBox:nth-child(3), .benefitBox:nth-child(5){
+    .benefitBox:nth-child(3), .benefitBox:nth-child(5) {
         display: none;
     }
 
-    .expertsRight > *:not(a) {
+    .expertsRight>*:not(a) {
         width: 100%;
     }
 
-    .expertsLeft img{
+    .expertsLeft img {
         width: 100%;
     }
 
-    .expertsRight p{
+    .expertsRight p {
         font-size: 2vw;
     }
 
-    .reviewBox:nth-child(1), .reviewBox:nth-child(3), .reviewBox:nth-child(6), .reviewBox:nth-child(8), .reviewBox:nth-child(9), .reviewBox:nth-child(12), .reviewBox:nth-child(13), .reviewBox:nth-child(14), .reviewBox:nth-child(16){
+    .reviewBox:nth-child(1), .reviewBox:nth-child(3), .reviewBox:nth-child(6), .reviewBox:nth-child(8), .reviewBox:nth-child(9), .reviewBox:nth-child(12), .reviewBox:nth-child(13), .reviewBox:nth-child(14), .reviewBox:nth-child(16) {
         display: none;
     }
 
-    
 
-    .reviewBox a{
+
+    .reviewBox a {
         gap: 0;
     }
 
-    .reviewsBoxes{
+    .reviewsBoxes {
         padding-top: 40px;
     }
 
-    .reviewBox a img{
+    .reviewBox a img {
         margin-bottom: -2px;
         height: 3.5vw;
         width: 3.5vw;
     }
 
-    .reviewBox{
+    .reviewBox {
         width: calc((100% - 15px) / 2);
         aspect-ratio: auto;
         gap: 10px;
     }
 
-    .reviewBox div{
+    .reviewBox div {
         font-size: 2vw;
     }
 
-    .reviewBox p{
+    .reviewBox p {
         font-size: 1.5vw;
     }
 
-    .reviewsBoxes{
+    .reviewsBoxes {
         padding-bottom: 50px;
     }
 
-    .reviews>div h4:last-of-type{
+    .reviews>div h4:last-of-type {
         width: 100%;
         margin-left: 0;
     }
 
-    .reviews h4{
+    .reviews h4 {
         font-size: 3.5vw;
     }
 
-    .reviews h5, .experts h5{
+    .reviews h5, .experts h5 {
         font-size: 3vw;
     }
 
-    .adsHero > div p{
+    .adsHero>div p {
         width: 35%;
         font-size: 1.5vw;
         margin-bottom: 0;
-margin-top: 0;
+        margin-top: 0;
     }
 
-    .adsHero>div{
+    .adsHero>div {
         aspect-ratio: 1920 / 1050;
     }
 
-    .heroAbs{
+    .heroAbs {
         top: 50%;
         transform: translateY(-50%);
     }
 
-    .reviewBox:nth-child(15){
+    .reviewBox:nth-child(15) {
         order: 100;
         display: flex;
         justify-content: center;
@@ -454,21 +460,21 @@ margin-top: 0;
         transform: scale(1.8);
         padding-top: 40px;
         margin: 0 auto;
-        display: none!important;
+        display: none !important;
     }
 
 }
 
-@media only screen and (max-width: 768px){
-    .heroAbs{
+@media only screen and (max-width: 768px) {
+    .heroAbs {
         display: none;
     }
 
-    .adsOne>div{
+    .adsOne>div {
         padding-top: 40px;
     }
 
-.reviewBox:nth-child(15){
+    .reviewBox:nth-child(15) {
         order: 100;
         display: flex;
         justify-content: center;
@@ -477,75 +483,75 @@ margin-top: 0;
         padding-top: 40px;
     }
 
-    .reviews h5, .experts h5{
+    .reviews h5, .experts h5 {
         font-size: 4.8vw;
     }
 
-    .experts h5{
+    .experts h5 {
         margin-top: 10px;
     }
 
-    .reviewsBoxes{
+    .reviewsBoxes {
         padding-top: 15px;
     }
 
-    .adsHero>div h1{
+    .adsHero>div h1 {
         font-size: 9.5vw;
         text-align: center;
         width: 85%;
     }
 
-    .reviewBox a{
+    .reviewBox a {
         border-bottom: 0.1px solid #0033A0;
     }
 
-    .adsHero>div p{
+    .adsHero>div p {
         font-size: 3.7vw;
         width: 85%;
         line-height: 100%;
         font-family: var(--font-manrope);
     }
 
-    .adsHero>div img{
-        width: 85%!important;
-        height: auto!important;
+    .adsHero>div img {
+        width: 85% !important;
+        height: auto !important;
         margin-top: 15px;
     }
 
-    .adsHero>div{
+    .adsHero>div {
         padding: 30px 0;
     }
 
-    .adsOne h4{
+    .adsOne h4 {
         width: 100%;
         font-size: 5.5vw;
         text-align: left;
         font-weight: 600;
     }
 
-    .approachBox h3{
+    .approachBox h3 {
         font-size: 4vw;
     }
 
-    .approachRow{
+    .approachRow {
         flex-direction: column;
         padding-bottom: 10px;
         gap: 5px;
     }
 
-    .approachRow>div{
+    .approachRow>div {
         width: 100%;
     }
 
-    .approachRow>div:first-child{
+    .approachRow>div:first-child {
         font-size: 18px;
     }
 
-    .approachRow >div p{
-        font-size: 18px!important;
+    .approachRow>div p {
+        font-size: 18px !important;
     }
 
-    .benefitBox{
+    .benefitBox {
         width: 100%;
         aspect-ratio: 370 / 250;
     }
@@ -558,65 +564,65 @@ margin-top: 0;
         font-size: 4vw;
     }
 
-    .benefitBox > div:nth-child(2) h3 {
+    .benefitBox>div:nth-child(2) h3 {
         font-size: 15vw;
     }
 
-    .benefits > div > h4{
-        width: 100%!important;
+    .benefits>div>h4 {
+        width: 100% !important;
         text-align: left;
         font-size: 4.1vw;
     }
 
-    .benefits h5{
+    .benefits h5 {
         font-size: 4.5vw;
         margin-top: 30px;
     }
 
-    .expertsLeft{
+    .expertsLeft {
         display: none;
     }
 
-    .expertsRight{
+    .expertsRight {
         width: 100%;
     }
 
-    .expertsRight>div>img{
+    .expertsRight>div>img {
         display: inline-block;
         width: 100%;
         height: auto;
     }
 
-    .expertsRight p{
+    .expertsRight p {
         font-size: 18px;
     }
 
-    .expertsRight>a, .reviews a{
+    .expertsRight>a, .reviews a {
         margin: 0 auto;
         width: auto;
         margin-bottom: 20px;
     }
 
-    .expertsRight>a>span, .reviews a>span{
+    .expertsRight>a>span, .reviews a>span {
         font-size: 44px;
     }
 
-    .expertsRight>a>img, .reviews a>img{
+    .expertsRight>a>img, .reviews a>img {
         height: 12.5vw;
         width: 12.5vw;
         margin-bottom: -5px;
         margin-left: -10px;
     }
 
-    .reviewBox{
+    .reviewBox {
         width: 100%;
     }
 
-    .reviewBox div{
+    .reviewBox div {
         font-size: 18px;
     }
 
-    .reviewBox p{
+    .reviewBox p {
         font-size: 18px;
     }
 
@@ -624,7 +630,7 @@ margin-top: 0;
         font-size: 5.5vw;
     }
 
-    .reviews h5{
+    .reviews h5 {
         font-size: 22px;
     }
 

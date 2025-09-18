@@ -20,6 +20,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   flex: 0 0 45%; /* fixed 45% */
+  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
 }
 
 .left {
@@ -78,6 +81,7 @@
   /* 4 cards visible: 3 gaps (3*24px) and 45% expanded; remaining space divided by 3 */
   flex: 0 0 calc((100% - 45% - 72px) / 3);
   align-items: flex-start;
+  flex: 1;
 }
 .compact .title {
   flex-grow: 1;

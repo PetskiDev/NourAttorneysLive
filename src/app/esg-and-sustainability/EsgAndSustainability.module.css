@@ -139,6 +139,12 @@
     width: 100%;
 }
 
+@media only screen and (min-width: 1024px){
+    .esgTwoRow p{
+        width: calc(100% - 20px);
+    }
+}
+
 .esgTwo :global(.line){
     width: 85%;
     left: 0;

@@ -205,7 +205,7 @@
 }
 
 .insightsHero p{
-  margin-left: 50%;
+  margin-left: calc(50% + 20px);
   width: 22%;
   position: relative;
   z-index: 5;

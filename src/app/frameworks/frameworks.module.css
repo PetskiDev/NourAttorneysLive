@@ -121,6 +121,7 @@
     display: flex;
     justify-content: flex-start;
     width: auto;
+    margin-bottom: 100px;
 }
 
 .frameworksRow a {
@@ -166,7 +167,7 @@
 }
 
 .frameworksRowThree>div:nth-child(1)>div {
-    width: 40%;
+    width: 50%;
 }
 
 .frameworksRowThree>div:nth-child(2) {
@@ -211,7 +212,7 @@
     width: 60%;
     text-align: center;
     margin: 0 auto;
-    margin-top: 3vw;
+    margin-top: 130px;
 }
 
 .frameworksMain :global(.descriptor_1) {

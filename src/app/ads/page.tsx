@@ -434,8 +434,8 @@ export default async function Advertisement() {
               </p>
             </div>
           </div>
-          <Link href={"/contact"}>
-                <span className="button_link mob">All Reviews</span>
+          <Link href={"/contact"} className="mob">
+                <span className="button_link">All Reviews</span>
                 <Image
                   src={"/diagonal-arrow.svg"}
                   alt="arrow"
