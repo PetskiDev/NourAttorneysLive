@@ -242,8 +242,12 @@
     width: 4vw;
 }
 
-.fiveRight img{
+
+
+@media only screen and (min-width: 1024px){
+.fiveRight>div>img{
     display: none;
+}
 }
 
 .fiveRight p{
