@@ -91,7 +91,7 @@
     width: 50%;
 }
 
-.twoRight>img{
+.twoRight img{
     width: 100%;
     height: auto;
 }
@@ -242,7 +242,7 @@
     width: 4vw;
 }
 
-.fiveRight>img{
+.fiveRight img{
     display: none;
 }
 

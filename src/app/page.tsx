@@ -25,8 +25,8 @@ export default async function Home() {
               sense of self-accountability: “All for one, one for all.”
             </h4>
           </div>
-            
-            <div className={`${styles.homeMobile} mob custom-line custom-linee`}>
+
+          <div className={`${styles.homeMobile} mob custom-line custom-linee`}>
             <div></div>
             <div></div>
             <div></div>
@@ -119,259 +119,256 @@ export default async function Home() {
           </svg>
 
           <svg
-  width="1164"
-  height="158"
-  viewBox="0 0 1164 158"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  className={styles.line2}
->
-  <path
-    d="M0 3H434.259V155H1164"
-    stroke="#8F91AF"
-    strokeWidth="1.5"
-    fill="none"
-    stroke-dasharray="1330.1"
-    stroke-dashoffset="1330.1"
-  >
-    <animate
-      attributeName="stroke-dashoffset"
-      from="1330.1"
-      to="0"
-      dur="1s"
-      begin="0.5s"
-      fill="freeze"
-      calcMode="linear"
-    />
-  </path>
+            width="1164"
+            height="158"
+            viewBox="0 0 1164 158"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className={styles.line2}
+          >
+            <path
+              d="M0 3H434.259V155H1164"
+              stroke="#8F91AF"
+              strokeWidth="1.5"
+              fill="none"
+              stroke-dasharray="1330.1"
+              stroke-dashoffset="1330.1"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                from="1330.1"
+                to="0"
+                dur="1s"
+                begin="0.5s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
 
-  <rect width="82" height="6" fill="url(#fadeLeft)" opacity="0">
-    <animate
-      attributeName="opacity"
-      values="0;1"
-      dur="0.3s"
-      begin="0.5s"
-      fill="freeze"
-    />
-  </rect>
+            <rect width="82" height="6" fill="url(#fadeLeft)" opacity="0">
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.3s"
+                begin="0.5s"
+                fill="freeze"
+              />
+            </rect>
 
-  <rect
-    x="1082"
-    y="152"
-    width="82"
-    height="6"
-    fill="url(#fadeRight)"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      values="0;1"
-      dur="0.3s"
-      begin="1s"
-      fill="freeze"
-    />
-  </rect>
+            <rect
+              x="1082"
+              y="152"
+              width="82"
+              height="6"
+              fill="url(#fadeRight)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                values="0;1"
+                dur="0.3s"
+                begin="1s"
+                fill="freeze"
+              />
+            </rect>
 
-  <defs>
-    <linearGradient
-      id="fadeLeft"
-      gradientUnits="objectBoundingBox"
-      x1="0"
-      y1="0"
-      x2="1"
-      y2="0"
-    >
-      <stop offset="0" stop-color="#0033A0" />
-      <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
-    </linearGradient>
+            <defs>
+              <linearGradient
+                id="fadeLeft"
+                gradientUnits="objectBoundingBox"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="0"
+              >
+                <stop offset="0" stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
 
-    <linearGradient
-      id="fadeRight"
-      gradientUnits="objectBoundingBox"
-      x1="1"
-      y1="0"
-      x2="0"
-      y2="0"
-    >
-      <stop offset="0" stop-color="#0033A0" />
-      <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
-    </linearGradient>
-  </defs>
-</svg>
-
+              <linearGradient
+                id="fadeRight"
+                gradientUnits="objectBoundingBox"
+                x1="1"
+                y1="0"
+                x2="0"
+                y2="0"
+              >
+                <stop offset="0" stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
 
           <svg
-  className={styles.line3}
-  width="802"
-  height="376"
-  viewBox="-2 0 804 376"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M800 0.6116 V147.446"
-    stroke="#8F91AF"
-    strokeWidth="1.5"
-    stroke-dasharray="147.1"
-    stroke-dashoffset="147.1"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.03s"
-      begin="1.03s"
-      fill="freeze"
-    />
-    <animate
-      id="anim1"
-      attributeName="stroke-dashoffset"
-      from="147.1"
-      to="0"
-      dur="0.12s"
-      begin="1.06s"
-      fill="freeze"
-      calcMode="linear"
-    />
-  </path>
+            className={styles.line3}
+            width="802"
+            height="376"
+            viewBox="-2 0 804 376"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M800 0.6116 V147.446"
+              stroke="#8F91AF"
+              strokeWidth="1.5"
+              stroke-dasharray="147.1"
+              stroke-dashoffset="147.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.03s"
+                begin="1.03s"
+                fill="freeze"
+              />
+              <animate
+                id="anim1"
+                attributeName="stroke-dashoffset"
+                from="147.1"
+                to="0"
+                dur="0.12s"
+                begin="1.06s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
 
-  <path
-    d="M800 147.446 H4.67969"
-    stroke="#8F91AF"
-    strokeWidth="1.5"
-    stroke-dasharray="796.1"
-    stroke-dashoffset="796.1"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.03s"
-      begin="anim1.end"
-      fill="freeze"
-    />
-    <animate
-      id="anim2"
-      attributeName="stroke-dashoffset"
-      from="796.1"
-      to="0"
-      dur="0.36s"
-      begin="anim1.end+0.03s"
-      fill="freeze"
-      calcMode="linear"
-    />
-  </path>
+            <path
+              d="M800 147.446 H4.67969"
+              stroke="#8F91AF"
+              strokeWidth="1.5"
+              stroke-dasharray="796.1"
+              stroke-dashoffset="796.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.03s"
+                begin="anim1.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim2"
+                attributeName="stroke-dashoffset"
+                from="796.1"
+                to="0"
+                dur="0.36s"
+                begin="anim1.end+0.03s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
 
-  <path
-    d="M4.67969 147.446 V366.831"
-    stroke="#8F91AF"
-    strokeWidth="1.5"
-    stroke-dasharray="219.1"
-    stroke-dashoffset="219.1"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.03s"
-      begin="anim2.end"
-      fill="freeze"
-    />
-    <animate
-      id="anim3"
-      attributeName="stroke-dashoffset"
-      from="219.1"
-      to="0"
-      dur="0.24s"
-      begin="anim2.end+0.03s"
-      fill="freeze"
-      calcMode="linear"
-    />
-  </path>
+            <path
+              d="M4.67969 147.446 V366.831"
+              stroke="#8F91AF"
+              strokeWidth="1.5"
+              stroke-dasharray="219.1"
+              stroke-dashoffset="219.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.03s"
+                begin="anim2.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim3"
+                attributeName="stroke-dashoffset"
+                from="219.1"
+                to="0"
+                dur="0.24s"
+                begin="anim2.end+0.03s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
 
-  <path
-    d="M5.17969 366.831 
+            <path
+              d="M5.17969 366.831 
        C7.23169 367.087 8.81934 368.838 8.81934 370.96 
        C8.81932 373.258 6.95745 375.121 4.66016 375.121 
        C2.36273 375.121 0.5 373.258 0.5 370.96 
        C0.5 368.838 2.08775 367.087 4.13965 366.831"
-    stroke="#8F91AF"
-    strokeWidth="1.5"
-    stroke-dasharray="30.1"
-    stroke-dashoffset="30.1"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.03s"
-      begin="anim3.end"
-      fill="freeze"
-    />
-    <animate
-      id="anim4"
-      attributeName="stroke-dashoffset"
-      from="30.1"
-      to="0"
-      dur="0.18s"
-      begin="anim3.end+0.03s"
-      fill="freeze"
-      calcMode="linear"
-    />
-  </path>
+              stroke="#8F91AF"
+              strokeWidth="1.5"
+              stroke-dasharray="30.1"
+              stroke-dashoffset="30.1"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.03s"
+                begin="anim3.end"
+                fill="freeze"
+              />
+              <animate
+                id="anim4"
+                attributeName="stroke-dashoffset"
+                from="30.1"
+                to="0"
+                dur="0.18s"
+                begin="anim3.end+0.03s"
+                fill="freeze"
+                calcMode="linear"
+              />
+            </path>
 
-  <path
-    d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.81932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z"
-    fill="#8F91AF"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.18s"
-      begin="anim4.end"
-      fill="freeze"
-    />
-  </path>
+            <path
+              d="M800 147.446H4.67969V366.831C6.73169 367.087 8.31934 368.838 8.31934 370.96C8.81932 373.258 6.45745 375.121 4.16016 375.121C1.86273 375.121 1.64877e-05 373.258 0 370.96C0 368.838 1.58775 367.087 3.63965 366.831V146.406H798.96V0.611572H800V147.446Z"
+              fill="#8F91AF"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.18s"
+                begin="anim4.end"
+                fill="freeze"
+              />
+            </path>
 
-  <rect
-    width="82"
-    height="5"
-    transform="matrix(0 1 1 0 799 0)"
-    fill="url(#paint0_linear_107237_8873)"
-    opacity="0"
-  >
-    <animate
-      attributeName="opacity"
-      from="0"
-      to="1"
-      dur="0.12s"
-      begin="1.03s"
-      fill="freeze"
-    />
-  </rect>
+            <rect
+              width="82"
+              height="5"
+              transform="matrix(0 1 1 0 799 0)"
+              fill="url(#paint0_linear_107237_8873)"
+              opacity="0"
+            >
+              <animate
+                attributeName="opacity"
+                from="0"
+                to="1"
+                dur="0.12s"
+                begin="1.03s"
+                fill="freeze"
+              />
+            </rect>
 
-  <defs>
-    <linearGradient
-      id="paint0_linear_107237_8873"
-      x1="0"
-      y1="2.5"
-      x2="82"
-      y2="2.5"
-      gradientUnits="userSpaceOnUse"
-    >
-      <stop stop-color="#0033A0" />
-      <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
-    </linearGradient>
-  </defs>
-</svg>
-
-
+            <defs>
+              <linearGradient
+                id="paint0_linear_107237_8873"
+                x1="0"
+                y1="2.5"
+                x2="82"
+                y2="2.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#0033A0" />
+                <stop offset="1" stop-color="#0033A0" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
 
           <SvgResetter
             src="/home-line-6.svg"

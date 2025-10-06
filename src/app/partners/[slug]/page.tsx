@@ -91,7 +91,12 @@ export default async function PartnerPage({
             </div>
           </div>
           <div className={styles.partnerVideo}>
-            <video src=""></video>
+            <EditableImage
+              relUrl={relUrl}
+              blockKey="partnerVideo"
+              placeholderUrl="/partner-video-placeholder.jpg"
+              placeholderAlt="partner video"
+            />
           </div>
           <div className={styles.partnerThree}>
             <div className={styles.partnerThreeLeft}>

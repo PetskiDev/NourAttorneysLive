@@ -22,7 +22,9 @@ const TAGS = [
 type Tag = (typeof TAGS)[number];
 
 function isTag(value: unknown): value is Tag {
-  return typeof value === "string" && (TAGS as readonly string[]).includes(value);
+  return (
+    typeof value === "string" && (TAGS as readonly string[]).includes(value)
+  );
 }
 
 export async function EditableText({
@@ -50,31 +52,31 @@ export async function EditableText({
   const dbElementTag = block?.elementTag;
   const dbTag: Tag = isTag(dbElementTag) ? dbElementTag : "p";
 
-  const hasDbContent = dbContent !== null && dbContent !== undefined && dbContent !== "";
+  const hasDbContent =
+    dbContent !== null && dbContent !== undefined && dbContent !== "";
   const effectiveContent: string | null = hasDbContent
     ? dbContent
-    : placeholderContent ?? null;
+    : (placeholderContent ?? null);
   const tag: Tag = hasDbContent
     ? dbTag
-    : isTag(placeholderTag) ? placeholderTag : "p";
+    : isTag(placeholderTag)
+      ? placeholderTag
+      : "p";
 
   const TagToRender: Tag = tag;
 
   const TagComponent = TagToRender as ElementType;
 
   return (
-    <div style={{ position: "relative" }}>
-      {effectiveContent ? (
-        <TagComponent className={className}>{effectiveContent}</TagComponent>
-      ) : null}
+    <TagComponent style={{ position: "relative" }} className={className}>
+      {effectiveContent ?? null}
 
       <EditableTextClient
         relUrl={relUrl}
         blockKey={blockKey}
-        initialContent={hasDbContent ? dbContent ?? "" : ""}
+        initialContent={hasDbContent ? (dbContent ?? "") : ""}
         initialTag={TagToRender}
       />
-    </div>
+    </TagComponent>
   );
 }
-
