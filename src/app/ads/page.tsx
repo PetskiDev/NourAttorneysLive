@@ -24,7 +24,7 @@ export default async function Advertisement() {
             className="subtitle_2"
             placeholderContent="Navigating the complexities of tax laws and regulations is crucial for individuals and businesses to ensure compliance, optimize financial outcomes, and avoid penalties."
           />
-          <Image src={"/tax-image.jpg"} alt="image" height={300} width={700} />
+          <EditableImage relUrl="/ads" blockKey="hero-image" placeholderAlt="image" placeholderUrl="/tax-image.jpg"/>
           
         </div>
         <Image
@@ -265,12 +265,7 @@ export default async function Advertisement() {
           <h5 className="headline_2 antiselector">OUR EXPERTS</h5>
           <div className={styles.expertsRow}>
             <div className={styles.expertsLeft}>
-              <Image
-                src={"/tax-image-2.jpg"}
-                alt="tax"
-                width={300}
-                height={150}
-              />
+              <EditableImage relUrl="/ads" blockKey="experts-image" placeholderAlt="tax" placeholderUrl="/tax-image-2.jpg"/>
             </div>
             <div className={styles.expertsRight}>
               <p className="body_text antiselector">

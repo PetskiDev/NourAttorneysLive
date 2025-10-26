@@ -2,7 +2,7 @@
 import { EditableText } from "~/components/EditableText";
 import styles from "./about-us.module.css";
 import Image from "next/image";
-// import { EditableImage } from "~/components/EditableImage";
+import { EditableImage } from "~/components/EditableImage";
 import CountUpOnView from "~/components/CountUpOnView";
 
 export default async function AboutUsPage() {
@@ -49,7 +49,12 @@ export default async function AboutUsPage() {
       <section className={styles.aboutOne}>
         <div className="containerr">
           <div className={styles.aboutOneLeft}>
-            <Image src={"/about-1.jpg"} height={300} width={140} alt="image" />
+            <EditableImage
+              relUrl="/about-us"
+              blockKey="about-one-left-image"
+              placeholderUrl="/about-1.jpg"
+              placeholderAlt="image"
+            />
           </div>
 
           <div className={styles.aboutOneRight}>
@@ -63,7 +68,12 @@ export default async function AboutUsPage() {
               />
             </div>
 
-            <Image src={"/about-2.jpg"} height={600} width={240} alt="image" />
+            <EditableImage
+              relUrl="/about-us"
+              blockKey="about-one-right-image"
+              placeholderUrl="/about-2.jpg"
+              placeholderAlt="image"
+            />
           </div>
         </div>
       </section>
@@ -486,11 +496,11 @@ export default async function AboutUsPage() {
                 a forward-thinking approach.
               </p>
 
-              <Image
-                src={"/founder.jpg"}
-                height={600}
-                width={240}
-                alt="image"
+              <EditableImage
+                relUrl="/about-us"
+                blockKey="founder-image"
+                placeholderUrl="/founder.jpg"
+                placeholderAlt="founder"
               />
 
               <div className="body_text antiselector">

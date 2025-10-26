@@ -45,7 +45,9 @@ export default function EditableImageClient({
   return (
     <>
       {isAdmin && (
-        <button className={styles.editBtn} onClick={() => setShowMedia(true)}>
+        <button className={styles.editBtn} 
+        style={{ left: -10, right: "auto", top: -15, zIndex: 100000 }}
+        onClick={() => setShowMedia(true)}>
           ✏️
         </button>
       )}

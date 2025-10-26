@@ -22,7 +22,7 @@ export async function EditableImage({
   const url = dbUrl ?? placeholderUrl ?? null;
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "100%", position: "relative" }}>
       {url ? (
         <Image
           src={url}

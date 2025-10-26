@@ -2,6 +2,8 @@
 // import { EditableText } from "~/components/EditableText";
 import styles from "./EsgAndSustainability.module.css";
 import Image from "next/image";
+import { EditableText } from "~/components/EditableText";
+import { EditableImage } from "~/components/EditableImage";
 // import { EditableImage } from "~/components/EditableImage";
 
 export default async function esgPage() {
@@ -11,41 +13,68 @@ export default async function esgPage() {
     <main>
       <section className={styles.esgHero}>
         <div className="containerr">
-          <h1 className="headline_1_3 antiselector">ESG & SUSTAINABILITY</h1>
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-title"
+            placeholderTag="h1"
+            className="headline_1_3 antiselector"
+            placeholderContent="ESG & SUSTAINABILITY"
+          />
 
-          <h6 className="accent_text_3 antiselector">We believe in the power of</h6>
-          <h6 className="accent_text_3 antiselector">
-            giving back to the world around us. Giving back is to provide to our
-            universe with all within, our clients, team, communities,
-          </h6>
-          <h6 className="accent_text_3 antiselector">
-            and environment,and, it&#39;s how we stay connected to our humanity and
-            create a positive and lasting impact. It&#39;s not only a value,
-          </h6>
-          <h6 className="accent_text_3 antiselector">
-            but a commitment rooted in care and sincerity. By supporting those
-            in need, we preserve our humanity and investing a better future for
-            everyone we serve. Our approach includes
-          </h6>
-          <h6 className="accent_text_3 antiselector">
-            improving quality and time-frame of services, building flexible
-            legal frameworks that solve today&#39;s problems with preparing for the
-            future.
-          </h6>
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-line-1"
+            placeholderTag="h6"
+            className="accent_text_3 antiselector"
+            placeholderContent="We believe in the power of"
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-line-2"
+            placeholderTag="h6"
+            className="accent_text_3 antiselector"
+            placeholderContent="giving back to the world around us. Giving back is to provide to our universe with all within, our clients, team, communities,"
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-line-3"
+            placeholderTag="h6"
+            className="accent_text_3 antiselector"
+            placeholderContent="and environment,and, it&#39;s how we stay connected to our humanity and create a positive and lasting impact. It&#39;s not only a value,"
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-line-4"
+            placeholderTag="h6"
+            className="accent_text_3 antiselector"
+            placeholderContent="but a commitment rooted in care and sincerity. By supporting those in need, we preserve our humanity and investing a better future for everyone we serve. Our approach includes"
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="hero-line-5"
+            placeholderTag="h6"
+            className="accent_text_3 antiselector"
+            placeholderContent="improving quality and time-frame of services, building flexible legal frameworks that solve today&#39;s problems with preparing for the future."
+          />
 
-          <h5>
-            We believe in the power of giving back to the world around us.
-            Giving back is to provide to our universe with all within, team, our
-            clients, communities, and environment,and, it&#39;s how we stay{" "}
-          </h5>
-          <h5>
-            connected to our humanity and create a positive and lasting impact.
-          </h5>
-          <h5>
-            Our approach includes improving quality and time-frame of services,
-            building flexible legal frameworks that solve today&#39;s problems with
-            preparing for the future.
-          </h5>
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="intro-h5-1"
+            placeholderTag="h5"
+            placeholderContent="We believe in the power of giving back to the world around us. Giving back is to provide to our universe with all within, team, our clients, communities, and environment,and, it&#39;s how we stay"
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="intro-h5-2"
+            placeholderTag="h5"
+            placeholderContent="connected to our humanity and create a positive and lasting impact."
+          />
+          <EditableText
+            relUrl="/esg-and-sustainability"
+            blockKey="intro-h5-3"
+            placeholderTag="h5"
+            placeholderContent="Our approach includes improving quality and time-frame of services, building flexible legal frameworks that solve today&#39;s problems with preparing for the future."
+          />
 
           <h4>
             We believe in the power of giving back to the world around us.
@@ -60,9 +89,27 @@ export default async function esgPage() {
           </h4>
 
           <div>
-            <span className="title_5 antiselector">INTEGRITY</span>
-            <span className="title_5 antiselector">RELIABILITY</span>
-            <span className="title_5 antiselector">INNOVATION</span>
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="value-integrity"
+              placeholderTag="span"
+              className="title_5 antiselector"
+              placeholderContent="INTEGRITY"
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="value-reliability"
+              placeholderTag="span"
+              className="title_5 antiselector"
+              placeholderContent="RELIABILITY"
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="value-innovation"
+              placeholderTag="span"
+              className="title_5 antiselector"
+              placeholderContent="INNOVATION"
+            />
           </div>
 
           <Image width={270} height={320} src={"/esg-element.svg"} alt="esg" />
@@ -79,96 +126,106 @@ export default async function esgPage() {
       <section className={styles.esgOne}>
         <div className="containerr">
           <div className={styles.esgOneLeft}>
-            <Image width={270} height={320} src={"/esg1.jpg"} alt="esg" />
+            <EditableImage relUrl="/esg-and-sustainability" blockKey="esg-one-left" placeholderAlt="esg" placeholderUrl="/esg1.jpg"/>
           </div>
 
           <div className={styles.esgOneRight}>
             <div>
               <span></span>
-              <div className="title_3 antiselector">SUSTAINABLE LEGAL FOUNDATIONS</div>
+              <EditableText
+                relUrl="/esg-and-sustainability"
+                blockKey="title-sustainable-foundations"
+                placeholderTag="div"
+                className="title_3 antiselector"
+                placeholderContent="SUSTAINABLE LEGAL FOUNDATIONS"
+              />
             </div>
-            <p className="body_text antiselector mobnot">
-              Nour Attorneys is the official legal partner of the SECOTO
-              Organization. From COP28 to the World Green Cup, we&#39;re dedicated
-              to supporting all initiatives that connect communities with nature
-              and promote environmental awareness through heritages, arts and
-              more. Nour Attorneys are committed to helping our clients build
-              empires that are not just legally sound but also socially and
-              environmentally responsible. Sustainability goes even in our legal
-              solutions by providing long-lasting legal frameworks that ensure
-              business sustainability for the client in the long term to
-              withstand legal risks and unpredicted challenges.
-            </p>
-            <p className="body_text antiselector mob">
-              Nour Attorneys is the official legal partner of the SECOTO
-              Organization. From COP28 to the World Green Cup, we&#39;re dedicated
-              to supporting all initiatives that connect communities with nature
-              and promote environmental awareness through heritages, arts and
-              more.
-            </p>
-            <p className="body_text antiselector mob">
-               Nour Attorneys are committed to helping our clients build
-              empires that are not just legally sound but also socially and
-              environmentally responsible. Sustainability goes even in our legal
-              solutions by providing long-lasting legal frameworks that ensure
-              business sustainability for the client in the long term to
-              withstand legal risks and unpredicted challenges.
-            </p>
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="sustainable-para-desktop"
+              placeholderTag="p"
+              className="body_text antiselector mobnot"
+              placeholderContent="Nour Attorneys is the official legal partner of the SECOTO Organization. From COP28 to the World Green Cup, we&#39;re dedicated to supporting all initiatives that connect communities with nature and promote environmental awareness through heritages, arts and more. Nour Attorneys are committed to helping our clients build empires that are not just legally sound but also socially and environmentally responsible. Sustainability goes even in our legal solutions by providing long-lasting legal frameworks that ensure business sustainability for the client in the long term to withstand legal risks and unpredicted challenges."
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="sustainable-para-mob-1"
+              placeholderTag="p"
+              className="body_text antiselector mob"
+              placeholderContent="Nour Attorneys is the official legal partner of the SECOTO Organization. From COP28 to the World Green Cup, we&#39;re dedicated to supporting all initiatives that connect communities with nature and promote environmental awareness through heritages, arts and more."
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="sustainable-para-mob-2"
+              placeholderTag="p"
+              className="body_text antiselector mob"
+              placeholderContent="Nour Attorneys are committed to helping our clients build empires that are not just legally sound but also socially and environmentally responsible. Sustainability goes even in our legal solutions by providing long-lasting legal frameworks that ensure business sustainability for the client in the long term to withstand legal risks and unpredicted challenges."
+            />
             <div>
               <span></span>
-              <div className="title_3 antiselector">INNOVATING LEGAL FRAMEWORKS</div>
+              <EditableText
+                relUrl="/esg-and-sustainability"
+                blockKey="title-innovating-frameworks"
+                placeholderTag="div"
+                className="title_3 antiselector"
+                placeholderContent="INNOVATING LEGAL FRAMEWORKS"
+              />
             </div>
-            <p className="body_text antiselector">
-              Nour Attorneys&#39; bespoke strategies are designed to adapt to the
-              changing issues our clients face, enabling them to stay ahead in
-              today&#39;s competitive and fast-paced world. Nour Attorneys don&#39;t
-              just follow the rules; Nour Attorneys lead with innovative, tech
-              driven legal solutions that guarantee precision and efficiency.
-            </p>
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="innovating-para"
+              placeholderTag="p"
+              className="body_text antiselector"
+              placeholderContent="Nour Attorneys&#39; bespoke strategies are designed to adapt to the changing issues our clients face, enabling them to stay ahead in today&#39;s competitive and fast-paced world. Nour Attorneys don&#39;t just follow the rules; Nour Attorneys lead with innovative, tech driven legal solutions that guarantee precision and efficiency."
+            />
             <div>
               <span></span>
-              <div className="title_3 antiselector">
-                EMPOWERING COMMUNITIES, BUILDING FUTURES
-              </div>
+              <EditableText
+                relUrl="/esg-and-sustainability"
+                blockKey="title-empowering"
+                placeholderTag="div"
+                className="title_3 antiselector"
+                placeholderContent="EMPOWERING COMMUNITIES, BUILDING FUTURES"
+              />
             </div>
-            <p className="body_text antiselector mobnot">
-              At Nour Attorneys, we always think outside the box. The primary
-              focus is to empower our community through strategic investments
-              that foster growth and create new opportunities. We actively
-              support our local initiatives, ensuring that our community members
-              thrive. We aim to create a strong yet lasting impact that not only
-              help individuals today but also sets the foundation for future
-              generations through investments and partnerships. By integrating
-              our expertise and resources, we empower those we serve to build
-              stronger and more resilient communities.
-            </p>
-            <p className="body_text antiselector mob">
-              At Nour Attorneys, we always think outside the box. The primary
-              focus is to empower our community through strategic investments
-              that foster growth and create new opportunities. We actively
-              support our local initiatives, ensuring that our community members
-              thrive.
-            </p>
-            <p className="body_text antiselector mob">
-              We aim to create a strong yet lasting impact that not only
-              help individuals today but also sets the foundation for future
-              generations through investments and partnerships. By integrating
-              our expertise and resources, we empower those we serve to build
-              stronger and more resilient communities.
-            </p>
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="empowering-para-desktop"
+              placeholderTag="p"
+              className="body_text antiselector mobnot"
+              placeholderContent="At Nour Attorneys, we always think outside the box. The primary focus is to empower our community through strategic investments that foster growth and create new opportunities. We actively support our local initiatives, ensuring that our community members thrive. We aim to create a strong yet lasting impact that not only help individuals today but also sets the foundation for future generations through investments and partnerships. By integrating our expertise and resources, we empower those we serve to build stronger and more resilient communities."
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="empowering-para-mob-1"
+              placeholderTag="p"
+              className="body_text antiselector mob"
+              placeholderContent="At Nour Attorneys, we always think outside the box. The primary focus is to empower our community through strategic investments that foster growth and create new opportunities. We actively support our local initiatives, ensuring that our community members thrive."
+            />
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="empowering-para-mob-2"
+              placeholderTag="p"
+              className="body_text antiselector mob"
+              placeholderContent="We aim to create a strong yet lasting impact that not only help individuals today but also sets the foundation for future generations through investments and partnerships. By integrating our expertise and resources, we empower those we serve to build stronger and more resilient communities."
+            />
             <div>
               <span></span>
-              <div className="title_3 antiselector">LEGAL KNOWLEDGE FOR GROWTH</div>
+              <EditableText
+                relUrl="/esg-and-sustainability"
+                blockKey="title-knowledge"
+                placeholderTag="div"
+                className="title_3 antiselector"
+                placeholderContent="LEGAL KNOWLEDGE FOR GROWTH"
+              />
             </div>
-            <p className="body_text antiselector">
-              We strongly believe that continuous learning is key to growth. To
-              ensure Nour Attorneys&#39; legal advisors are always at the forefront
-              of legal updates and advancements, we are integrating learning
-              goals as part of Key Performance Indicators (KPIs) and sponsoring
-              team educational courses. We also sponsor and dedicate initiatives
-              to promoting legal knowledge, including our free legal webinars
-              available on our channels and legal publications.
-            </p>
+            <EditableText
+              relUrl="/esg-and-sustainability"
+              blockKey="knowledge-para"
+              placeholderTag="p"
+              className="body_text antiselector"
+              placeholderContent="We strongly believe that continuous learning is key to growth. To ensure Nour Attorneys&#39; legal advisors are always at the forefront of legal updates and advancements, we are integrating learning goals as part of Key Performance Indicators (KPIs) and sponsoring team educational courses. We also sponsor and dedicate initiatives to promoting legal knowledge, including our free legal webinars available on our channels and legal publications."
+            />
           </div>
         </div>
       </section>
