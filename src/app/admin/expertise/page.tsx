@@ -89,6 +89,7 @@ export default function AdminExpertisePage() {
   async function deleteExpertise(id: number) {
     setError(null);
     try {
+      if (!window.confirm("Delete this expertise and all its services? This cannot be undone.")) return;
       const res = await fetch(`/api/expertise/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
       await loadAll();
@@ -146,6 +147,7 @@ export default function AdminExpertisePage() {
   async function deleteService(serviceId: number) {
     setError(null);
     try {
+      if (!window.confirm("Delete this service? This cannot be undone.")) return;
       const res = await fetch(`/api/services/${serviceId}`, { method: "DELETE" });
       if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
       await loadAll();

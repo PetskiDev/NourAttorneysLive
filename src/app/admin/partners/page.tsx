@@ -114,6 +114,7 @@ export default function AdminPartnersPage() {
   async function deleteItem(id: number) {
     setError(null);
     try {
+      if (!window.confirm("Delete this partner? This cannot be undone.")) return;
       const res = await fetch(`/api/partners/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
       await loadAll();

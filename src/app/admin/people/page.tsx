@@ -139,6 +139,7 @@ export default function AdminPeoplePage() {
   async function deletePerson(id: number) {
     setError(null);
     try {
+      if (!window.confirm("Delete this person? This cannot be undone.")) return;
       const res = await fetch(`/api/people/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(`Delete failed: ${res.status}`);
       await loadPeople();

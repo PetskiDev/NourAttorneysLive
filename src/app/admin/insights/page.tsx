@@ -130,6 +130,7 @@ export default function AdminInsightsPage() {
 
   async function deleteInsight(id: number) {
     try {
+      if (!window.confirm("Delete this insight? This cannot be undone.")) return;
       const res = await fetch(`/api/insights/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(await res.text());
       await loadInsights();

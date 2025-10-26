@@ -178,6 +178,7 @@ function CategoryPanel({ category, title, links, onChanged }: { category: Footer
   }
 
   async function remove(id: number) {
+    if (!window.confirm("Delete this link? This cannot be undone.")) return;
     await fetch(`/api/footer/${id}`, { method: "DELETE" });
     onChanged();
     if (typeof window !== "undefined") window.location.reload();

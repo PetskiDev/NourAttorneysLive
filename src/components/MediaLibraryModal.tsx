@@ -124,6 +124,7 @@ export default function MediaLibraryModal({
 
   async function handleDelete(key: string) {
     try {
+      if (!window.confirm("Delete this file? This cannot be undone.")) return;
       await fetch("/api/media", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
