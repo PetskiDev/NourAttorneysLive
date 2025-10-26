@@ -10,12 +10,20 @@ export default async function Advertisement() {
     <main>
       <section className={styles.adsHero}>
         <div className="containerr">
-          <h1 className="headline_1_3">TAX CONSULTATION</h1>
-          <p className="subtitle_2">
-            Navigating the complexities of tax laws and regulations is crucial
-            for individuals and businesses to ensure compliance, optimize
-            financial outcomes, and avoid penalties.
-          </p>
+          <EditableText
+            relUrl="/ads"
+            blockKey="hero-title"
+            placeholderTag="h1"
+            className="headline_1_3"
+            placeholderContent="TAX CONSULTATION"
+          />
+          <EditableText
+            relUrl="/ads"
+            blockKey="hero-description"
+            placeholderTag="p"
+            className="subtitle_2"
+            placeholderContent="Navigating the complexities of tax laws and regulations is crucial for individuals and businesses to ensure compliance, optimize financial outcomes, and avoid penalties."
+          />
           <Image src={"/tax-image.jpg"} alt="image" height={300} width={700} />
           
         </div>
@@ -37,18 +45,29 @@ export default async function Advertisement() {
           </h4>
 
           <div className={styles.approachBox}>
-            <h3 className="headline_3">APPROACH</h3>
+            <EditableText
+              relUrl="/ads"
+              blockKey="approach-title"
+              placeholderTag="h3"
+              className="headline_3"
+              placeholderContent="APPROACH"
+            />
             <div className={styles.approachRow}>
-              <div className="title_1">Tax Planning and Strategy</div>
+              <EditableText
+                relUrl="/ads"
+                blockKey="approach-item-1-title"
+                placeholderTag="div"
+                className="title_1"
+                placeholderContent="Tax Planning and Strategy"
+              />
               <div>
-                <p className="subtitle_2">
-                  We work closely with clients to develop personalized tax
-                  planning strategies that align with their financial goals.
-                  This includes advising on tax-efficient structures for
-                  businesses, investment vehicles, and personal wealth
-                  management to minimize tax liabilities within legal
-                  frameworks.
-                </p>
+                <EditableText
+                  relUrl="/ads"
+                  blockKey="approach-item-1-text"
+                  placeholderTag="p"
+                  className="subtitle_2"
+                  placeholderContent="We work closely with clients to develop personalized tax planning strategies that align with their financial goals. This includes advising on tax-efficient structures for businesses, investment vehicles, and personal wealth management to minimize tax liabilities within legal frameworks."
+                />
               </div>
             </div>
             <div className="line"></div>

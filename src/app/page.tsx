@@ -1,5 +1,4 @@
 import { EditableText } from "~/components/EditableText";
-import { EditableImage } from "~/components/EditableImage";
 import PartnersList from "~/components/PartnersList";
 import LatestInsightsServer from "~/components/LatestInsightsServer";
 import HomePeopleGrid from "~/components/HomePeopleGrid";
@@ -13,10 +12,34 @@ export default async function Home() {
     <main>
       <section style={{ paddingTop: 10 }} className={styles.hero}>
         <div className="containerr">
-          <h1 className="headline_1_1 hones">YOUR</h1>
-          <h1 className="headline_1_1 hones">TRUSTED PARTNER IN</h1>
-          <h1 className="headline_1_1 hones">LEGAL MATTERS</h1>
-          <h2 className="thehtwob">your trusted partner in legal matters</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="hero-h1-1"
+            placeholderTag="h1"
+            className="headline_1_1 hones"
+            placeholderContent="YOUR"
+          />
+          <EditableText
+            relUrl="/"
+            blockKey="hero-h1-2"
+            placeholderTag="h1"
+            className="headline_1_1 hones"
+            placeholderContent="TRUSTED PARTNER IN"
+          />
+          <EditableText
+            relUrl="/"
+            blockKey="hero-h1-3"
+            placeholderTag="h1"
+            className="headline_1_1 hones"
+            placeholderContent="LEGAL MATTERS"
+          />
+          <EditableText
+            relUrl="/"
+            blockKey="hero-h2"
+            placeholderTag="h2"
+            className="thehtwob"
+            placeholderContent="your trusted partner in legal matters"
+          />
           <div className={styles.absText}>
             <h4 className="thehgourr">
               Nour Attorneys transforms legal risks into strategic advantages,
@@ -32,7 +55,14 @@ export default async function Home() {
             <div></div>
           </div>
 
-          <Link href={"/contact"}>contact us</Link>
+          <Link href={"/contact"}>
+            <EditableText
+              relUrl="/"
+              blockKey="hero-cta-contact"
+              placeholderTag="span"
+              placeholderContent="contact us"
+            />
+          </Link>
 
           {/* Updated to SvgResetter */}
           <svg
@@ -480,7 +510,13 @@ export default async function Home() {
 
       <section className={styles.about}>
         <div className="containerr">
-          <h2 className="headline_2">ABOUT US</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="about-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="ABOUT US"
+          />
 
           <h4 className="accent_text_1">
             FOR Ambitious individuals, Investors, BUSINESS OWNERS, AND
@@ -537,227 +573,430 @@ export default async function Home() {
 
       <section className={styles.people}>
         <div className="containerr">
-          <h2 className="headline_2">OUR PEOPLE</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="people-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="OUR PEOPLE"
+          />
           <HomePeopleGrid />
         </div>
       </section>
 
       <section className={styles.expertise}>
         <div className="containerr">
-          <h2 className="headline_2">EXPERTISE</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="expertise-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="EXPERTISE"
+          />
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[01]</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-01-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[01]"
+              />
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">DRAFTING CONTRACTS</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-01-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="DRAFTING CONTRACTS"
+              />
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2 antiselector">
               <div className="antiselector">
-                <span>Shareholder Agreement:</span>
-                <span>
-                  it clearly define the rights, responsibilities, and
-                  obligations of all owners, safeguarding their interests and
-                  preventing future disputes
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="Shareholder Agreement:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="it clearly define the rights, responsibilities, and obligations of all owners, safeguarding their interests and preventing future disputes"
+                />
               </div>
               <div className=" antiselector">
-                <span>Complex Agreement:</span>
-                <span>
-                  we helps you expand your business by letting others use your
-                  brand and system, ensuring everyone follows the rules
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Complex Agreement:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="we helps you expand your business by letting others use your brand and system, ensuring everyone follows the rules"
+                />
               </div>
               <div className=" antiselector">
-                <span>Employment & Executive Compensation Contracts:</span>
-                <span>
-                  sets clear terms for hiring key people, ensuring they&apos;re
-                  motivated and their roles are defined
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Employment & Executive Compensation Contracts:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-01-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="sets clear terms for hiring key people, ensuring they&apos;re motivated and their roles are defined"
+                />
               </div>
             </div>
           </div>
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[02]</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-02-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[02]"
+              />
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">LITIGATION SERVICES</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-02-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="LITIGATION SERVICES"
+              />
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2 antiselector">
               <div className=" antiselector">
-                <span>Commercial & Civil litigation:</span>
-                <span>
-                  representing client in court disputes such as: employment,
-                  rental, property & commercial cases
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="Commercial & Civil litigation:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="representing client in court disputes such as: employment, rental, property & commercial cases"
+                />
               </div>
               <div className=" antiselector">
-                <span>Debt Recovery:</span>
-                <span>
-                  through Civil cases and Criminal actions in order to collect
-                  and recover monetary claims{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Debt Recovery:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="through Civil cases and Criminal actions in order to collect and recover monetary claims"
+                />
               </div>
               <div className=" antiselector">
-                <span>Compensation claims:</span>
-                <span>
-                  litigated through Civil, Criminal, Labour, Commercial and
-                  rental cases
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Compensation claims:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-02-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="litigated through Civil, Criminal, Labour, Commercial and rental cases"
+                />
               </div>
             </div>
           </div>
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[03]</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-03-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[03]"
+              />
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">Corporate Services</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-03-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="Corporate Services"
+              />
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2 antiselector">
               <div className=" antiselector">
-                <span>Mergers and Acquisitions:</span>
-                <span>
-                  our documented procedures guarantee adherence to all relevant
-                  legislation and regulations across our local & international
-                  operations
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="Mergers and Acquisitions:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="our documented procedures guarantee adherence to all relevant legislation and regulations across our local & international operations"
+                />
               </div>
               <div className=" antiselector">
-                <span>Corporate Restructuring Services:</span>
-                <span>
-                  addressing debt, optimizing capital structure, and securing
-                  new financing and etc.{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Corporate Restructuring Services:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="addressing debt, optimizing capital structure, and securing new financing and etc."
+                />
               </div>
               <div className=" antiselector">
-                <span>Trademark and patent Registration services:</span>
-                <span>
-                  local & WIPO (World Intellectual Property Organization) under
-                  the PCT Protocol{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Trademark and patent Registration services:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-03-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="local & WIPO (World Intellectual Property Organization) under the PCT Protocol"
+                />
               </div>
             </div>
           </div>
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[04]</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-04-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[04]"
+              />
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">
-                Business set up and Compliance
-              </h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-04-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="Business set up and Compliance"
+              />
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div>
               <div className=" antiselector">
-                <span>Company Formation:</span>
-                <span>
-                  incorporating offshore, freezone, mainland with most strategic
-                  structure
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="Company Formation:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="incorporating offshore, freezone, mainland with most strategic structure"
+                />
               </div>
               <div className=" antiselector">
-                <span>Bank account opening:</span>
-                <span>
-                  preparation of documents and taxation consultancies,
-                  application filing drafting shareholder resolution and legal
-                  operation{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Bank account opening:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="preparation of documents and taxation consultancies, application filing drafting shareholder resolution and legal operation"
+                />
               </div>
               <div className=" antiselector">
-                <span>Compliance:</span>
-                <span>
-                  advising on regulatory obligations, drafting internal
-                  policies, and conducting legal audits
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.expertiseBlackRow}>
-            <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[05]</h3>
-            </div>
-            <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">
-                Notarization & Attestation
-              </h3>
-            </div>
-          </div>
-          <div className={styles.expertiseRow}>
-            <div></div>
-            <div className="title_2 antiselector">
-              <div className=" antiselector">
-                <span>True copy attestation:</span>
-                <span>
-                  birth certificates, passport attestation, marriage
-                  certificates, educational certificates and etc.
-                </span>
-              </div>
-              <div className=" antiselector">
-                <span>Public & private notary:</span>
-                <span>
-                  including drafting and notarizing POA, shareholder
-                  resolutions, agreements and etc.{" "}
-                </span>
-              </div>
-              <div className=" antiselector">
-                <span>Private lawyer notarization:</span>
-                <span>
-                  drafting and notarizing affidavits and private agreements,
-                  nominee agreements and etc.{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Compliance:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-04-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="advising on regulatory obligations, drafting internal policies, and conducting legal audits"
+                />
               </div>
             </div>
           </div>
 
           <div className={styles.expertiseBlackRow}>
             <div className={styles.expertiseBlackRowLeft}>
-              <h3 className="headline_3 antiselector">[06]</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-05-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[05]"
+              />
             </div>
             <div className={styles.expertiseBlackRowRight}>
-              <h3 className="headline_3 antiselector">Other services</h3>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-05-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="Notarization & Attestation"
+              />
             </div>
           </div>
           <div className={styles.expertiseRow}>
             <div></div>
             <div className="title_2 antiselector">
               <div className=" antiselector">
-                <span>SPL Trustee Services:</span>
-                <span>
-                  Special Purpose Legal (SPL) structures, ensuring compliance,
-                  asset protection, and fiduciary oversight
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="True copy attestation:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="birth certificates, passport attestation, marriage certificates, educational certificates and etc."
+                />
               </div>
               <div className=" antiselector">
-                <span>Pre-Dispute Management:</span>
-                <span>
-                  we help with conflicts through early risk assessment,
-                  strategic communication, and contract clarity{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Public & private notary:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="including drafting and notarizing POA, shareholder resolutions, agreements and etc."
+                />
               </div>
               <div className=" antiselector">
-                <span>Travel Ban verification:</span>
-                <span>
-                  providing travel ban verification services to the clients for
-                  checking their travel ban status{" "}
-                </span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Private lawyer notarization:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-05-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="drafting and notarizing affidavits and private agreements, nominee agreements and etc."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.expertiseBlackRow}>
+            <div className={styles.expertiseBlackRowLeft}>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-06-number"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="[06]"
+              />
+            </div>
+            <div className={styles.expertiseBlackRowRight}>
+              <EditableText
+                relUrl="/"
+                blockKey="expertise-06-title"
+                placeholderTag="h3"
+                className="headline_3 antiselector"
+                placeholderContent="Other services"
+              />
+            </div>
+          </div>
+          <div className={styles.expertiseRow}>
+            <div></div>
+            <div className="title_2 antiselector">
+              <div className=" antiselector">
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-1-label"
+                  placeholderTag="span"
+                  placeholderContent="SPL Trustee Services:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-1-text"
+                  placeholderTag="span"
+                  placeholderContent="Special Purpose Legal (SPL) structures, ensuring compliance, asset protection, and fiduciary oversight"
+                />
+              </div>
+              <div className=" antiselector">
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-2-label"
+                  placeholderTag="span"
+                  placeholderContent="Pre-Dispute Management:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-2-text"
+                  placeholderTag="span"
+                  placeholderContent="we help with conflicts through early risk assessment, strategic communication, and contract clarity"
+                />
+              </div>
+              <div className=" antiselector">
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-3-label"
+                  placeholderTag="span"
+                  placeholderContent="Travel Ban verification:"
+                />
+                <EditableText
+                  relUrl="/"
+                  blockKey="expertise-06-item-3-text"
+                  placeholderTag="span"
+                  placeholderContent="providing travel ban verification services to the clients for checking their travel ban status"
+                />
               </div>
             </div>
           </div>
@@ -766,7 +1005,13 @@ export default async function Home() {
             <div></div>
             <div>
               <Link href={"/expertise"}>
-                <span className="button_link">All Services</span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="cta-all-services"
+                  placeholderTag="span"
+                  className="button_link"
+                  placeholderContent="All Services"
+                />
                 <Image
                   src={"/diagonal-arrow.svg"}
                   alt="arrow"
@@ -781,7 +1026,13 @@ export default async function Home() {
 
       <section className={styles.caseStudies}>
         <div className="containerr">
-          <h2 className="headline_2">frameworks</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="frameworks-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="frameworks"
+          />
 
           <h6 className="accent_text_1 mobnot">
             NOUR ATTORNEYS ENABLE YOU TO{" "}
@@ -900,7 +1151,13 @@ export default async function Home() {
 
       <section className={styles.partners}>
         <div className="containerr">
-          <h2 className="headline_2">PARTNERSHIP</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="partnership-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="PARTNERSHIP"
+          />
           <h4 className="subheadline_1">
             WE BUILD EVERY PARTNERSHIP FOR YOUR SUCCESS AND COLLABORATE WITH
             TOTAL DEDICATION
@@ -911,13 +1168,25 @@ export default async function Home() {
 
       <section className={styles.insights}>
         <div className="containerr">
-          <h2 className="headline_2">INSIGHTS</h2>
+          <EditableText
+            relUrl="/"
+            blockKey="insights-title"
+            placeholderTag="h2"
+            className="headline_2"
+            placeholderContent="INSIGHTS"
+          />
           <LatestInsightsServer />
           <div className={styles.expertiseRow}>
             <div></div>
             <div>
               <Link href={"/insights"}>
-                <span className="button_link">All Insights</span>
+                <EditableText
+                  relUrl="/"
+                  blockKey="cta-all-insights"
+                  placeholderTag="span"
+                  className="button_link"
+                  placeholderContent="All Insights"
+                />
                 <Image
                   src={"/diagonal-arrow.svg"}
                   alt="arrow"

@@ -1,6 +1,7 @@
 import styles from "./Footer.module.css";
 import Link from "next/link";
 import { getFooterLinksCached, getFooterTextCached } from "~/server/cachedReads";
+import { EditableText } from "~/components/EditableText";
 
 function groupLinks() {
   return getFooterLinksCached().then((all) => {
@@ -55,11 +56,25 @@ export default async function Footer() {
             <ul className={styles.list}>
               <li className="subtitle_3">
                 <span>Telephone: </span>
-                <a className={styles.linkUnderline} href="tel:+971585552999">+971 58 555 2999</a>
+                <a className={styles.linkUnderline} href="tel:+971585552999">
+                  <EditableText
+                    relUrl="/footer"
+                    blockKey="telephone-value"
+                    placeholderTag="span"
+                    placeholderContent="+971 58 555 2999"
+                  />
+                </a>
               </li>
               <li className="subtitle_3">
                 <span>WhatsApp: </span>
-                <a className={styles.linkUnderline} href="https://wa.me/971585552999" target="_blank" rel="noreferrer">+971 58 555 2999</a>
+                <a className={styles.linkUnderline} href="https://wa.me/971585552999" target="_blank" rel="noreferrer">
+                  <EditableText
+                    relUrl="/footer"
+                    blockKey="whatsapp-value"
+                    placeholderTag="span"
+                    placeholderContent="+971 58 555 2999"
+                  />
+                </a>
               </li>
               <li className="subtitle_3">
                 <Link className={styles.linkUnderline} href="#">Chatbot</Link>
@@ -68,7 +83,14 @@ export default async function Footer() {
         </div>
 
         <div className={styles.emailWrap}>
-          <a className={`${styles.email} headline_4`} href="mailto:info@nourattorneys.com">INFO@NOURATTORNEYS.COM</a>
+          <a className={`${styles.email} headline_4`} href="mailto:info@nourattorneys.com">
+            <EditableText
+              relUrl="/footer"
+              blockKey="email-value"
+              placeholderTag="span"
+              placeholderContent="INFO@NOURATTORNEYS.COM"
+            />
+          </a>
         </div>
         <div className={styles.bottom}>
           <div className={styles.copyright}>Copyright © 2025 Nour Attorneys. All Rights Reserved</div>

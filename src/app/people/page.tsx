@@ -53,9 +53,13 @@ export default async function PeoplePage() {
             </div>
           </div>
           <div className={styles.peopleTopBottom}>
-            <h4 className="subheadline_2">
-              team united by knowledge, integrity and commitment to sustainable growth
-            </h4>
+            <EditableText
+              className="subheadline_2"
+              relUrl="/people"
+              blockKey="subheadline"
+              placeholderContent="team united by knowledge, integrity and commitment to sustainable growth"
+              placeholderTag="h4"
+            />
           </div>
         </div>
       </section>

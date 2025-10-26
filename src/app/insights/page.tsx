@@ -2,6 +2,7 @@ import { getInsightsListCached } from "~/server/cachedReads";
 import styles from "~/components/InsightsFilterClient.module.css";
 import InsightsListClient from "~/components/InsightsListClient";
 import { Suspense } from "react";
+import { EditableText } from "~/components/EditableText";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,13 +15,21 @@ export default async function InsightsPage() {
     <main className={styles.wrap}>
       <section className={styles.insightsHero}>
         <div className="containerr">
-          <h1 className="headline_1 antiselector">INSIGHTS</h1>
+          <EditableText
+            relUrl="/insights"
+            blockKey="hero-title"
+            placeholderTag="h1"
+            className="headline_1 antiselector"
+            placeholderContent="INSIGHTS"
+          />
 
-          <p className="subtitle_2 antiselector">
-            Where deep legal expertise meets foresight. Explore our insights to
-            turn legislative changes into competitive advantages for your
-            enterprise
-          </p>
+          <EditableText
+            relUrl="/insights"
+            blockKey="hero-description"
+            placeholderTag="p"
+            className="subtitle_2 antiselector"
+            placeholderContent="Where deep legal expertise meets foresight. Explore our insights to turn legislative changes into competitive advantages for your enterprise"
+          />
 
           <Image
             src={"/insights-illustration.svg"}
@@ -37,7 +46,13 @@ export default async function InsightsPage() {
           </Suspense>
 
           <Link href={"/contact"}>
-            <span className="button_link">Load More</span>
+            <EditableText
+              relUrl="/insights"
+              blockKey="cta-load-more"
+              placeholderTag="span"
+              className="button_link"
+              placeholderContent="Load More"
+            />
             <Image
               src={"/diagonal-arrow.svg"}
               alt="arrow"

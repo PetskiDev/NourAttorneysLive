@@ -1,12 +1,12 @@
-import { getBlocksForPage } from "~/server/blocks";
+// import { getBlocksForPage } from "~/server/blocks";
 import { EditableText } from "~/components/EditableText";
 import styles from "./about-us.module.css";
 import Image from "next/image";
-import { EditableImage } from "~/components/EditableImage";
+// import { EditableImage } from "~/components/EditableImage";
 import CountUpOnView from "~/components/CountUpOnView";
 
 export default async function AboutUsPage() {
-  const blockMap = await getBlocksForPage("/about-us");
+  // const blockMap = await getBlocksForPage("/about-us");
 
   return (
     <main>
@@ -195,14 +195,26 @@ export default async function AboutUsPage() {
             <div className={styles.numbersLeftTop}>
               <div className={styles.numbersInner}>
                 <CountUpOnView end={12466} />
-                <p className="body_text">legal consultations were provided</p>
+              <EditableText
+                relUrl="/about-us"
+                blockKey="numbers-consultations"
+                placeholderTag="p"
+                className="body_text"
+                placeholderContent="legal consultations were provided"
+              />
               </div>
             </div>
 
             <div className={styles.numbersLeftBottom}>
               <div className={styles.numbersInner}>
                 <CountUpOnView end={14680} />
-                <p className="body_text">contracts drafted</p>
+              <EditableText
+                relUrl="/about-us"
+                blockKey="numbers-contracts"
+                placeholderTag="p"
+                className="body_text"
+                placeholderContent="contracts drafted"
+              />
               </div>
             </div>
           </div>
@@ -211,51 +223,83 @@ export default async function AboutUsPage() {
             <div className={styles.numbersRightTop}>
               <div className={styles.numbersInner}>
                 <CountUpOnView end={3455} />
-                <p className="body_text">commercial transactions completed</p>
+              <EditableText
+                relUrl="/about-us"
+                blockKey="numbers-transactions"
+                placeholderTag="p"
+                className="body_text"
+                placeholderContent="commercial transactions completed"
+              />
               </div>
             </div>
 
             <div className={styles.numbersRightBottom}>
               <div className={styles.numbersInner}>
                 <CountUpOnView end={93.7} suffix="%" />
-                <p className="body_text">case win rate</p>
+              <EditableText
+                relUrl="/about-us"
+                blockKey="numbers-winrate"
+                placeholderTag="p"
+                className="body_text"
+                placeholderContent="case win rate"
+              />
               </div>
             </div>
           </div>
 
           <div className={styles.numbersAbs}>
-            <p className="title_3">
-              At Nour Attorneys, we see our role as more than just providing
-              legal services, we protect your interests and secure your future
-            </p>
+            <EditableText
+              relUrl="/about-us"
+              blockKey="numbers-abs-title"
+              placeholderTag="p"
+              className="title_3"
+              placeholderContent="At Nour Attorneys, we see our role as more than just providing legal services, we protect your interests and secure your future"
+            />
 
-            <p className="subtitle_4">Do not settle for average</p>
+            <EditableText
+              relUrl="/about-us"
+              blockKey="numbers-abs-subtitle"
+              placeholderTag="p"
+              className="subtitle_4"
+              placeholderContent="Do not settle for average"
+            />
           </div>
         </div>
       </section>
 
       <section className={styles.history}>
         <div className="containerr">
-          <h2 className="headline_2 antiselector">OUR HISTORY</h2>
+          <EditableText
+            relUrl="/about-us"
+            blockKey="history-title"
+            placeholderTag="h2"
+            className="headline_2 antiselector"
+            placeholderContent="OUR HISTORY"
+          />
 
-          <h5 className="accent_text_2 antiselector">
-            Nour Attorneys was founded in the year 2009 and started its
-            operation from a small office with one lawyer, Nour. Nour was
-            determined and aimed to achieve the leading positions in the field
-          </h5>
+          <EditableText
+            relUrl="/about-us"
+            blockKey="history-p1"
+            placeholderTag="h5"
+            className="accent_text_2 antiselector"
+            placeholderContent="Nour Attorneys was founded in the year 2009 and started its operation from a small office with one lawyer, Nour. Nour was determined and aimed to achieve the leading positions in the field"
+          />
 
-          <h5 className="accent_text_2 antiselector">
-            of corporate law in the middle east by providing unique services
-            that thrives the legal community to follow his steps.
-          </h5>
+          <EditableText
+            relUrl="/about-us"
+            blockKey="history-p2"
+            placeholderTag="h5"
+            className="accent_text_2 antiselector"
+            placeholderContent="of corporate law in the middle east by providing unique services that thrives the legal community to follow his steps."
+          />
 
-          <h5 className="accent_text_2 antiselector">
-            Nour Attorneys was founded in the year 2009 and started its
-            operation from a small office with one lawyer, Nour. Nour was
-            determined and aimed to achieve the leading positions in the field
-            of corporate law in the middle east by providing unique services
-            that thrives the legal community to follow his steps.
-          </h5>
+          <EditableText
+            relUrl="/about-us"
+            blockKey="history-p3"
+            placeholderTag="h5"
+            className="accent_text_2 antiselector"
+            placeholderContent="Nour Attorneys was founded in the year 2009 and started its operation from a small office with one lawyer, Nour. Nour was determined and aimed to achieve the leading positions in the field of corporate law in the middle east by providing unique services that thrives the legal community to follow his steps."
+          />
 
           <div className={styles.timelineDiv}>
             <div>
